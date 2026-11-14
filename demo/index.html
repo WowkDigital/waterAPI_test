@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WodoStrażnik Pola — API & GIS Demo (Bydgoszcz)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>WodoStrażnik Pola — Live API Tester (HTML + Vanilla JS)</h1>
+      <div class="subtitle">Test otwartych API bez kluczy: GUGiK ULDK + GUGiK NMT + Geoportal WMS + Open-Meteo + IMGW-PIB</div>
+    </div>
+    <div class="toolbar">
+      <button id="btn-sicienko" class="primary">Pole #1: Sicienko / Osówiec (~1.26 ha)</button>
+      <button id="btn-dobrcz">Pole #2: Dobrcz / Borówno (~186 ha)</button>
+      <select id="soil-category" title="Kategoria podatności gleb IUNG">
+        <option value="1">Gleba Kat. I (bardzo podatna, piaski, WOD &lt; 127.5 mm)</option>
+        <option value="2" selected>Gleba Kat. II (podatna, piaski gliniaste, WOD 127.5–169.9 mm)</option>
+        <option value="3">Gleba Kat. III (średnio podatna, gliny lekkie, WOD 170–202.5 mm)</option>
+        <option value="4">Gleba Kat. IV (mało podatna, gliny ciężkie/iły, WOD &gt; 202.5 mm)</option>
+      </select>
+      <button id="btn-sim-rain" class="warn">Symuluj ulewę (+25 mm)</button>
+      <button id="btn-sim-vpd" class="danger">Symuluj stres VPD (2.1 kPa)</button>
+      <button id="btn-notify">Włącz powiadomienia Push</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="card">
+        <h2>
+          <span>Mapa Działki (kliknij dowolne pole w Polsce)</span>
+          <span id="status-badge" class="badge info">Gotowy</span>
+        </h2>
+        <div id="map"></div>
+        <div style="margin-top:8px; font-size:0.78rem; color:var(--muted);">
+          Warstwy w prawym górnym rogu mapy: OpenStreetMap, Ortofotomapa Geoportal WMS, Mapa Hydrograficzna Polski WMS (rowy i cieki). Strzałka na działce pokazuje wyliczony z NMT kierunek spływu wody.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>
+          <span>Surowy Inspektor API (URL + status + czas + odpowiedź)</span>
+          <span id="api-timing" class="badge info">—</span>
+        </h2>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="uldk">ULDK (Działka)</button>
+          <button class="tab-btn" data-tab="nmt">NMT (Wysokości)</button>
+          <button class="tab-btn" data-tab="openmeteo">Open-Meteo (48h)</button>
+          <button class="tab-btn" data-tab="imgw">IMGW (Alerty &amp; Meteo)</button>
+        </div>
+        <pre id="raw-output" class="raw-output">Wybierz pole powyżej lub kliknij na mapie, aby zobaczyć surowe odpowiedzi API...</pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>
+          <span>Dane ewidencyjne i rzeźba terenu (ULDK + NMT)</span>
+          <span id="parcel-teryt" class="badge info">—</span>
+        </h2>
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="label">Działka / Obręb</div>
+            <div class="val" id="kpi-parcel">—</div>
+            <div class="sub" id="kpi-commune">—</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Powierzchnia</div>
+            <div class="val" id="kpi-area">—</div>
+            <div class="sub">z poligonu ULDK</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Wysokość NMT (min–max)</div>
+            <div class="val" id="kpi-elev">—</div>
+            <div class="sub" id="kpi-slope">—</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Kierunek odpływu</div>
+            <div class="val" id="kpi-dir">—</div>
+            <div class="sub">z różnicy rzędnych</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>
+          <span>Deterministyczny Bilans Wody na Działce (najbliższe 48h)</span>
+          <span id="balance-badge" class="badge info">—</span>
+        </h2>
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="label">Opad 48h (m³ na działkę)</div>
+            <div class="val" id="kpi-rain-m3">—</div>
+            <div class="sub" id="kpi-rain-mm">—</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Parowanie ET₀ 48h (m³)</div>
+            <div class="val" id="kpi-et0-m3">—</div>
+            <div class="sub" id="kpi-et0-mm">—</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Bilans KBW lokalny (m³)</div>
+            <div class="val" id="kpi-kbw-m3">—</div>
+            <div class="sub" id="kpi-soil-moisture">—</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Max VPD / Min T gruntu</div>
+            <div class="val" id="kpi-vpd">—</div>
+            <div class="sub" id="kpi-ground-t">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2><span>Alerty i Rekomendacje Operacyjne (Real-Time)</span></h2>
+        <div id="alerts-container">
+          <div class="alert-box">Wybierz działkę, aby uruchomić analizę progową.</div>
+        </div>
+        <div style="margin-top:10px; font-size:0.78rem; color:var(--muted);">
+          Semafor najbliższych 24 godzin (co 2h — Zielony: bezpieczne / Żółty: uwaga / Czerwony: duży spływ lub stres VPD &gt; 1.6 kPa):
+        </div>
+        <div id="semaphore-row" class="semaphore-row"></div>
+      </div>
+
+      <div class="card">
+        <h2><span>IMGW-PIB — Alerty dla powiatu i najbliższa stacja</span></h2>
+        <div id="imgw-summary" style="font-size:0.86rem; color:var(--muted);">Brak danych — kliknij na mapie.</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
