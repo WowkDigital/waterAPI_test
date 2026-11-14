@@ -1,107 +1,3 @@
-// Rejestracja układu PUWG 1992 (EPSG:2180) dla zapytań GUGiK NMT
-proj4.defs(
-  "EPSG:2180",
-  "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs"
-);
-
-const PRESETS = {
-  sicienko: { name: "Sicienko / Osówiec", lat: 53.1850, lon: 17.8550, zoom: 16 },
-  dobrcz: { name: "Dobrcz / Borówno", lat: 53.2450, lon: 18.1450, zoom: 14 },
-};
-
-const SOIL_MODIFIERS = {
-  "1": { name: "Kat. I (piaski, WOD < 127.5 mm)", retentionFactor: 0.65, droughtThresholdMm: -5 },
-  "2": { name: "Kat. II (piaski gliniaste, WOD 127.5–169.9 mm)", retentionFactor: 0.80, droughtThresholdMm: -10 },
-  "3": { name: "Kat. III (gliny lekkie, WOD 170–202.5 mm)", retentionFactor: 0.90, droughtThresholdMm: -15 },
-  "4": { name: "Kat. IV (gliny ciężkie/iły, WOD > 202.5 mm)", retentionFactor: 1.00, droughtThresholdMm: -20 },
-};
-
-// Stan bieżącej analizy (do przełączania gleby i symulacji bez ponownego fetchowania)
-let state = {
-  lat: PRESETS.sicienko.lat,
-  lon: PRESETS.sicienko.lon,
-  parcel: null,
-  nmt: null,
-  openMeteo: null,
-  imgw: null,
-  simulation: null, // null | "rain" | "vpd"
-  activeTab: "uldk",
-  rawLogs: {
-    uldk: "Brak danych",
-    nmt: "Brak danych",
-    openmeteo: "Brak danych",
-    imgw: "Brak danych",
-  },
-};
-
-// Inicjalizacja mapy Leaflet + warstwy WMS Geoportalu
-const osmLayer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: "&copy; OpenStreetMap",
-});
-
-const ortoWms = L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution", {
-  layers: "Raster",
-  format: "image/png",
-  transparent: false,
-  maxZoom: 19,
-  attribution: "GUGiK Ortofotomapa",
-});
-
-const hydroWms = L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/img/guest/HYDRO/MapServer/WMSServer", {
-  layers: "0,1,2,3,4,5,6",
-  format: "image/png",
-  transparent: true,
-  opacity: 0.75,
-  attribution: "GUGiK Mapa Hydrograficzna",
-});
-
-const map = L.map("map", {
-  center: [PRESETS.sicienko.lat, PRESETS.sicienko.lon],
-  zoom: PRESETS.sicienko.zoom,
-  layers: [osmLayer],
-});
-
-L.control.layers(
-  {
-    "OpenStreetMap": osmLayer,
-    "Ortofotomapa Geoportal (WMS)": ortoWms,
-  },
-  {
-    "Mapa Hydrograficzna Polski (WMS)": hydroWms,
-  }
-).addTo(map);
-
-const overlayGroup = L.layerGroup().addTo(map);
-
-// Helpery UI
-const $ = (id) => document.getElementById(id);
-
-function setStatus(text, type = "info") {
-  const el = $("status-badge");
-  el.textContent = text;
-  el.className = `badge ${type}`;
-}
-
-function showToast(title, body) {
-  const toast = $("toast");
-  toast.innerHTML = `<strong style="color:var(--accent)">${title}</strong><div style="margin-top:4px;font-size:0.84rem">${body}</div>`;
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 7000);
-
-  if ("Notification" in window && Notification.permission === "granted") {
-    try {
-      new Notification(title, { body });
-    } catch (_) {
-      // Fallback gdy przeglądarka wymaga ServiceWorkera
-    }
-  }
-}
-
-function renderRawTab() {
-  $("raw-output").textContent = state.rawLogs[state.activeTab] || "Brak danych";
-}
-
 // Parsowanie WKT POLYGON / MULTIPOLYGON z ULDK
 function parseWktPolygon(wkt) {
   const match = wkt.match(/\(\(([^()]+)\)\)/);
@@ -156,350 +52,514 @@ function bearingLabel(from, to) {
   return dirs[Math.round(deg / 45) % 8];
 }
 
-// Konwersja WGS84 (lat, lon) -> GUGiK NMT (X=Northing, Y=Easting w EPSG:2180)
-async function fetchNmtElevation(lat, lon) {
-  const [easting, northing] = proj4("EPSG:4326", "EPSG:2180", [lon, lat]);
-  const url = `https://services.gugik.gov.pl/nmt/?request=GetHbyXY&x=${northing.toFixed(2)}&y=${easting.toFixed(2)}`;
-  const t0 = performance.now();
-  const res = await fetch(url);
-  const text = (await res.text()).trim();
-  const h = parseFloat(text);
-  return {
-    lat,
-    lon,
-    northing: northing.toFixed(2),
-    easting: easting.toFixed(2),
-    url,
-    ms: Math.round(performance.now() - t0),
-    elevation: Number.isNaN(h) ? null : h,
-    raw: text,
-  };
-}
 
-async function analyzeLocation(lat, lon, zoomTo = null) {
-  state.lat = lat;
-  state.lon = lon;
-  state.simulation = null;
-  setStatus("Pobieranie API...", "info");
-  const totalStart = performance.now();
-
-  overlayGroup.clearLayers();
-  L.circleMarker([lat, lon], { radius: 6, color: "#38bdf8", fillOpacity: 0.9 }).addTo(overlayGroup);
-  if (zoomTo) map.setView([lat, lon], zoomTo);
-
-  // 1. ULDK + Open-Meteo + IMGW równolegle
-  const uldkUrl = `https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=${lon.toFixed(6)},${lat.toFixed(6)},4326&result=geom_wkt,voivodeship,county,commune,region,parcel,teryt&srid=4326`;
-  const omUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat.toFixed(4)}&longitude=${lon.toFixed(4)}&hourly=precipitation,precipitation_probability,et0_fao_evapotranspiration,vapour_pressure_deficit,soil_moisture_0_to_1cm,soil_moisture_1_to_3cm,soil_moisture_3_to_9cm,soil_temperature_0cm,wind_speed_10m&forecast_days=2&timezone=Europe/Warsaw`;
-  const imgwWarnUrl = "https://danepubliczne.imgw.pl/api/data/warningsmeteo";
-  const imgwHydroWarnUrl = "https://danepubliczne.imgw.pl/api/data/warningshydro";
-  const imgwSynopUrl = "https://danepubliczne.imgw.pl/api/data/synop";
-
-  try {
-    const [uldkRes, omRes, wMeteoRes, wHydroRes, synopRes] = await Promise.all([
-      fetch(uldkUrl).then(async (r) => ({ status: r.status, text: await r.text() })),
-      fetch(omUrl).then(async (r) => ({ status: r.status, data: await r.json() })),
-      fetch(imgwWarnUrl).then(async (r) => ({ status: r.status, data: await r.json() })),
-      fetch(imgwHydroWarnUrl).then(async (r) => ({ status: r.status, data: await r.json() })),
-      fetch(imgwSynopUrl).then(async (r) => ({ status: r.status, data: await r.json() })),
-    ]);
-
-    // Parsowanie ULDK
-    const lines = uldkRes.text.trim().split(/\r?\n/);
-    let parcelObj = null;
-    if (lines[0] === "0" && lines[1]) {
-      const [wkt, voivodeship, county, commune, region, parcelNo, teryt] = lines[1].split("|");
-      const latLngs = parseWktPolygon(wkt);
-      const areaHa = polygonAreaHa(latLngs);
-      parcelObj = { wkt, voivodeship, county, commune, region, parcelNo, teryt, latLngs, areaHa };
-
-      if (latLngs.length >= 3) {
-        const poly = L.polygon(latLngs, { color: "#22c55e", weight: 2.5, fillOpacity: 0.18 }).addTo(overlayGroup);
-        if (!zoomTo) map.fitBounds(poly.getBounds(), { maxZoom: 17, padding: [20, 20] });
-      }
-    }
-    state.parcel = parcelObj;
-    state.rawLogs.uldk = `GET ${uldkUrl}\nHTTP ${uldkRes.status}\n\n${uldkRes.text}`;
-
-    // 2. NMT — pobierz próbki wysokości z poligonu (max 5 równomiernie rozłożonych punktów)
-    let samplePoints = [[lat, lon]];
-    if (parcelObj && parcelObj.latLngs.length >= 4) {
-      const pts = parcelObj.latLngs;
-      const step = Math.max(1, Math.floor((pts.length - 1) / 4));
-      for (let i = 0; i < pts.length - 1 && samplePoints.length < 5; i += step) {
-        samplePoints.push(pts[i]);
-      }
-    } else {
-      samplePoints.push([lat + 0.001, lon], [lat - 0.001, lon], [lat, lon + 0.0015], [lat, lon - 0.0015]);
-    }
-
-    const nmtSamples = await Promise.all(samplePoints.map(([pLat, pLon]) => fetchNmtElevation(pLat, pLon)));
-    const validSamples = nmtSamples.filter((s) => s.elevation !== null);
-    let nmtSummary = null;
-    if (validSamples.length >= 2) {
-      validSamples.sort((a, b) => a.elevation - b.elevation);
-      const lowest = validSamples[0];
-      const highest = validSamples[validSamples.length - 1];
-      const deltaH = highest.elevation - lowest.elevation;
-      const dist = Math.max(1, distanceMeters([highest.lat, highest.lon], [lowest.lat, lowest.lon]));
-      const slopePct = (deltaH / dist) * 100;
-      const dir = deltaH > 0.1 ? bearingLabel([highest.lat, highest.lon], [lowest.lat, lowest.lon]) : "Teren płaski";
-      nmtSummary = { lowest, highest, deltaH, dist, slopePct, dir, samples: nmtSamples };
-
-      if (deltaH > 0.1) {
-        L.polyline(
-          [
-            [highest.lat, highest.lon],
-            [lowest.lat, lowest.lon],
-          ],
-          { color: "#38bdf8", weight: 3, dashArray: "6,6" }
-        )
-          .bindTooltip(`Spływ wody: -${deltaH.toFixed(1)} m (${slopePct.toFixed(1)}%)`)
-          .addTo(overlayGroup);
-        L.circleMarker([lowest.lat, lowest.lon], { radius: 6, color: "#ef4444", fillOpacity: 0.9 })
-          .bindTooltip(`Najniższy punkt: ${lowest.elevation.toFixed(1)} m n.p.m. (tu zbiera się woda)`)
-          .addTo(overlayGroup);
-      }
-    }
-    state.nmt = nmtSummary;
-    state.rawLogs.nmt = nmtSamples
-      .map((s, idx) => `#${idx + 1} (${s.lat.toFixed(5)}, ${s.lon.toFixed(5)}) -> EPSG:2180 (${s.northing}, ${s.easting})\nGET ${s.url}\nWysokość: ${s.raw} m n.p.m. (${s.ms} ms)`)
-      .join("\n\n");
-
-    // 3. Open-Meteo & IMGW
-    state.openMeteo = omRes.data;
-    state.rawLogs.openmeteo = `GET ${omUrl}\nHTTP ${omRes.status}\n\n${JSON.stringify(omRes.data, null, 2).slice(0, 8000)}`;
-
-    state.imgw = {
-      warningsMeteo: Array.isArray(wMeteoRes.data) ? wMeteoRes.data : [],
-      warningsHydro: Array.isArray(wHydroRes.data) ? wHydroRes.data : [],
-      synop: Array.isArray(synopRes.data) ? synopRes.data : [],
-    };
-    state.rawLogs.imgw =
-      `GET ${imgwWarnUrl} -> ${state.imgw.warningsMeteo.length} aktywnych ostrzeżeń meteo\n` +
-      `GET ${imgwHydroWarnUrl} -> ${state.imgw.warningsHydro.length} aktywnych ostrzeżeń hydro\n` +
-      `GET ${imgwSynopUrl} -> ${state.imgw.synop.length} stacji synoptycznych\n\n` +
-      `=== WARNINGS METEO ===\n${JSON.stringify(state.imgw.warningsMeteo.slice(0, 5), null, 2)}\n\n` +
-      `=== WARNINGS HYDRO ===\n${JSON.stringify(state.imgw.warningsHydro.slice(0, 5), null, 2)}`;
-
-    const totalMs = Math.round(performance.now() - totalStart);
-    $("api-timing").textContent = `${totalMs} ms`;
-    setStatus("Dane aktualne", "ok");
-    renderAll();
-    renderRawTab();
-  } catch (err) {
-    console.error(err);
-    setStatus("Błąd API", "crit");
-    $("raw-output").textContent = `Błąd zapytania:\n${err.message}`;
-  }
-}
-
-function renderAll() {
-  const soilKey = $("soil-category").value;
-  const soil = SOIL_MODIFIERS[soilKey];
-
-  // Działka i NMT
-  if (state.parcel) {
-    $("parcel-teryt").textContent = `TERYT: ${state.parcel.teryt || "—"}`;
-    $("kpi-parcel").textContent = `dz. ${state.parcel.parcelNo}`;
-    $("kpi-commune").textContent = `${state.parcel.commune}, obr. ${state.parcel.region}`;
-    $("kpi-area").textContent = `${state.parcel.areaHa.toFixed(2)} ha`;
-  } else {
-    $("parcel-teryt").textContent = "Poza działką";
-    $("kpi-parcel").textContent = "Brak działki";
-    $("kpi-commune").textContent = "Kliknij wewnątrz gruntu rolnego";
-    $("kpi-area").textContent = "1.00 ha (test)";
-  }
-
-  const areaHa = state.parcel && state.parcel.areaHa > 0 ? state.parcel.areaHa : 1.0;
-
-  if (state.nmt) {
-    $("kpi-elev").textContent = `${state.nmt.lowest.elevation.toFixed(1)}–${state.nmt.highest.elevation.toFixed(1)} m`;
-    $("kpi-slope").textContent = `ΔH=${state.nmt.deltaH.toFixed(1)} m | spadek ${state.nmt.slopePct.toFixed(1)}%`;
-    $("kpi-dir").textContent = state.nmt.dir;
-  } else {
-    $("kpi-elev").textContent = "—";
-    $("kpi-slope").textContent = "Brak danych NMT";
-    $("kpi-dir").textContent = "—";
-  }
-
-  // Open-Meteo + ewentualna symulacja
-  if (!state.openMeteo || !state.openMeteo.hourly) return;
-  const h = state.openMeteo.hourly;
-  let precipArr = [...h.precipitation];
-  const et0Arr = [...h.et0_fao_evapotranspiration];
-  let vpdArr = [...h.vapour_pressure_deficit];
-  const soilMoist0 = h.soil_moisture_0_to_1cm[0];
-  const minGroundT = Math.min(...h.soil_temperature_0cm);
-
-  if (state.simulation === "rain") {
-    // Symulacja nawalnego opadu +25 mm w godzinach 6..10
-    for (let i = 6; i < 11 && i < precipArr.length; i++) precipArr[i] += 5.0;
-  } else if (state.simulation === "vpd") {
-    // Symulacja gorącego, suchego popołudnia VPD > 2.1 kPa
-    for (let i = 10; i < 18 && i < vpdArr.length; i++) vpdArr[i] = 2.15;
-  }
-
-  const sumRainMm = precipArr.reduce((a, b) => a + (b || 0), 0);
-  const sumEt0Mm = et0Arr.reduce((a, b) => a + (b || 0), 0);
-  const kbwMm = sumRainMm - sumEt0Mm;
-  const maxVpd = Math.max(...vpdArr);
-
-  // 1 mm = 10 m3 / ha
-  const rainM3 = sumRainMm * 10 * areaHa;
-  const et0M3 = sumEt0Mm * 10 * areaHa;
-  const kbwM3 = kbwMm * 10 * areaHa;
-
-  $("kpi-rain-m3").textContent = `${Math.round(rainM3)} m³`;
-  $("kpi-rain-mm").textContent = `${sumRainMm.toFixed(1)} mm w 48h`;
-  $("kpi-et0-m3").textContent = `-${Math.round(et0M3)} m³`;
-  $("kpi-et0-mm").textContent = `${sumEt0Mm.toFixed(1)} mm (FAO-56)`;
-  $("kpi-kbw-m3").textContent = `${kbwM3 >= 0 ? "+" : ""}${Math.round(kbwM3)} m³`;
-  $("kpi-soil-moisture").textContent = `Wilg. 0-1cm: ${(soilMoist0 * 100).toFixed(0)}%`;
-  $("kpi-vpd").textContent = `${maxVpd.toFixed(2)} kPa`;
-  $("kpi-ground-t").textContent = `Min T gruntu: ${minGroundT.toFixed(1)} °C`;
-
-  const balBadge = $("balance-badge");
-  if (kbwMm < soil.droughtThresholdMm) {
-    balBadge.textContent = "Deficyt wodny";
-    balBadge.className = "badge crit";
-  } else if (sumRainMm >= 15) {
-    balBadge.textContent = "Duży opad / Szansa retencji";
-    balBadge.className = "badge warn";
-  } else {
-    balBadge.textContent = "Bilans stabilny";
-    balBadge.className = "badge ok";
-  }
-
-  // Alerty deterministyczne
-  const alerts = [];
-  const slopePct = state.nmt ? state.nmt.slopePct : 0;
-  const dirText = state.nmt ? state.nmt.dir : "w dół działki";
-
-  if (sumRainMm >= 15 && slopePct >= 1.0) {
-    const runoffM3 = Math.round(rainM3 * (1 - soil.retentionFactor) + rainM3 * 0.25);
-    alerts.push({
-      level: "warn",
-      title: `ALERT RETENCYJNY: Zatrzymaj ~${runoffM3} m³ wody przed spływem!`,
-      body: `Prognoza ${sumRainMm.toFixed(1)} mm opadu na działce ${areaHa.toFixed(2)} ha przy spadku ${slopePct.toFixed(1)}% (kierunek: ${dirText}). Zamknij zastawki na rowach i zabezpiecz odpływ przed falą opadu.`,
-    });
-  }
-
-  if (maxVpd > 1.6) {
-    alerts.push({
-      level: "crit",
-      title: `ALERT STRESU VPD (${maxVpd.toFixed(2)} kPa > 1.6 kPa)`,
-      body: `Silny niedosyt wilgotności powietrza powoduje zamykanie aparatów szparkowych i duże straty parowania. Wstrzymaj nawadnianie i opryski w godzinach popołudniowych — przenieś zabiegi na noc/świt.`,
-    });
-  }
-
-  if (minGroundT <= 2.0) {
-    alerts.push({
-      level: "warn",
-      title: `ALERT PRZYMROZKOWY: T gruntu spadnie do ${minGroundT.toFixed(1)} °C`,
-      body: `Zabezpiecz wrażliwe wschody i sady; rozważ nawadnianie antyprzymrozkowe lub opóźnienie zabiegów stresujących rośliny.`,
-    });
-  }
-
-  if (kbwMm < soil.droughtThresholdMm) {
-    alerts.push({
-      level: "crit",
-      title: `DEFICYT KBW (${kbwMm.toFixed(1)} mm) na glebie ${soil.name}`,
-      body: `Działka straci netto ${Math.abs(Math.round(kbwM3))} m³ wody w 48h. Zalecane utrzymanie okrywy / mulczu i piętrzenie wody w rowach melioracyjnych.`,
-    });
-  }
-
-  if (alerts.length === 0) {
-    alerts.push({
-      level: "ok",
-      title: "Brak zagrożeń krytycznych w najbliższych 48h",
-      body: `Parametry VPD (${maxVpd.toFixed(2)} kPa), T gruntu (${minGroundT.toFixed(1)} °C) i bilansu (${kbwMm.toFixed(1)} mm) w normie. Użyj przycisków „Symuluj” u góry, aby przetestować wyzwalanie alertów.`,
-    });
-  }
-
-  $("alerts-container").innerHTML = alerts
-    .map((a) => `<div class="alert-box ${a.level}"><strong>${a.title}</strong><div style="margin-top:3px;color:var(--muted)">${a.body}</div></div>`)
-    .join("");
-
-  // Semafor 24h (12 bloków co 2h)
-  const semHtml = [];
-  for (let i = 0; i < 24 && i < h.time.length; i += 2) {
-    const hourLabel = h.time[i].slice(11, 16);
-    const vpd = vpdArr[i];
-    const p2h = (precipArr[i] || 0) + (precipArr[i + 1] || 0);
-    let cls = "sem-green";
-    if (vpd > 1.6 || p2h >= 8) cls = "sem-red";
-    else if (vpd > 1.2 || p2h >= 3) cls = "sem-yellow";
-    semHtml.push(`<div class="sem-cell ${cls}" title="Opad 2h: ${p2h.toFixed(1)} mm | VPD: ${vpd.toFixed(2)} kPa">${hourLabel}</div>`);
-  }
-  $("semaphore-row").innerHTML = semHtml.join("");
-
-  // Podsumowanie IMGW dla powiatu
-  if (state.imgw) {
-    const countyTeryt = state.parcel && state.parcel.teryt ? state.parcel.teryt.slice(0, 4) : "0403";
-    const localWarnings = state.imgw.warningsMeteo.filter(
-      (w) => Array.isArray(w.teryt) && w.teryt.some((t) => String(t).startsWith(countyTeryt))
-    );
-    const synopByd = state.imgw.synop.find((s) => /toru|chojnic|bydgoszcz|inowroc/i.test(s.stacja)) || state.imgw.synop[0];
-    const synopText = synopByd
-      ? `Najbliższa stacja synoptyczna IMGW: <strong>${synopByd.stacja}</strong> (${synopByd.data_pomiaru} ${synopByd.godzina_pomiaru}:00) — T: <strong>${synopByd.temperatura} °C</strong>, wilgotność: ${synopByd.wilgotnosc_wzgledna}%, wiatr: ${synopByd.predkosc_wiatru} m/s, opad dobowy: ${synopByd.suma_opadu} mm.`
-      : "Brak danych synop.";
-
-    const warnText =
-      localWarnings.length > 0
-        ? localWarnings.map((w) => `<div class="alert-box warn"><strong>IMGW (${w.stopien} st.): ${w.nazwa_zdarzenia}</strong><br>${w.tresc}</div>`).join("")
-        : `<div>Brak aktywnych ostrzeżeń meteorologicznych IMGW dla powiatu TERYT <code>${countyTeryt}</code> (łącznie w Polsce aktywnych: ${state.imgw.warningsMeteo.length} meteo, ${state.imgw.warningsHydro.length} hydro).</div>`;
-
-    $("imgw-summary").innerHTML = `${warnText}<div style="margin-top:8px">${synopText}</div>`;
-  }
-}
-
-// Zdarzenia UI
-map.on("click", (e) => analyzeLocation(e.latlng.lat, e.latlng.lng));
-
-$("btn-sicienko").addEventListener("click", () =>
-  analyzeLocation(PRESETS.sicienko.lat, PRESETS.sicienko.lon, PRESETS.sicienko.zoom)
-);
-$("btn-dobrcz").addEventListener("click", () =>
-  analyzeLocation(PRESETS.dobrcz.lat, PRESETS.dobrcz.lon, PRESETS.dobrcz.zoom)
-);
-$("soil-category").addEventListener("change", renderAll);
-
-$("btn-sim-rain").addEventListener("click", () => {
-  state.simulation = "rain";
-  renderAll();
-  const area = state.parcel ? state.parcel.areaHa.toFixed(2) : "1.00";
-  showToast(
-    "WodoStrażnik — Symulacja Ulewy (+25 mm)",
-    `Na działkę (${area} ha) spadnie +${Math.round(25 * 10 * parseFloat(area))} m³ wody. Zamknij zastawkę przed spływem!`
-  );
+const $ = (id) => document.getElementById(id);
+const PRESETS = {
+  sicienko: { lat: 53.1850, lon: 17.8550, zoom: 16 },
+  dobrcz: { lat: 53.2450, lon: 18.1450, zoom: 14 },
+};
+const SOILS = {
+  "1": { retention: 0.65, drought: -5 },
+  "2": { retention: 0.80, drought: -10 },
+  "3": { retention: 0.90, drought: -15 },
+  "4": { retention: 1.00, drought: -20 },
+};
+const SCENARIOS = {
+  rain: "Symulacja ulewy · dodatkowe 25 mm opadu",
+  vpd: "Symulacja stresu roślin · VPD do 2,15 kPa",
+};
+const FORECAST_FIELDS = [
+  "precipitation", "et0_fao_evapotranspiration", "vapour_pressure_deficit",
+  "soil_moisture_0_to_1cm", "soil_temperature_0cm",
+];
+const state = {
+  request: null,
+  location: null,
+  parcel: null,
+  terrain: null,
+  forecast: null,
+  imgw: null,
+  scenario: null,
+  activeTab: "uldk",
+  logs: {},
+};
+const format = (value, digits = 0) => value.toLocaleString("pl-PL", {
+  minimumFractionDigits: digits,
+  maximumFractionDigits: digits,
 });
+let map, overlays, toastTimer;
 
-$("btn-sim-vpd").addEventListener("click", () => {
-  state.simulation = "vpd";
-  renderAll();
-  showToast(
-    "WodoStrażnik — Alert Stresu VPD (2.15 kPa)",
-    "Krytyczne parowanie! Wstrzymaj nawadnianie i opryski do godziny 20:00."
+function initMap() {
+  if (!window.L) {
+    showMapFeedback("Mapa jest niedostępna. Wybierz jedno z przykładowych pól.");
+    return;
+  }
+  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  });
+  const ortho = L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution", {
+    layers: "Raster", format: "image/png", maxZoom: 19, attribution: "GUGiK",
+  });
+  const hydro = L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/img/guest/HYDRO/MapServer/WMSServer", {
+    layers: "0,1,2,3,4,5,6", format: "image/png", transparent: true, opacity: 0.75, attribution: "GUGiK",
+  });
+  map = L.map("map", {
+    center: [PRESETS.sicienko.lat, PRESETS.sicienko.lon],
+    zoom: PRESETS.sicienko.zoom,
+    layers: [osm],
+  });
+  L.control.layers(
+    { "OpenStreetMap": osm, "Ortofotomapa Geoportalu": ortho },
+    { "Mapa hydrograficzna": hydro }
+  ).addTo(map);
+  overlays = L.layerGroup().addTo(map);
+
+  for (const layer of [osm, ortho]) {
+    let loadedTile = false;
+    layer.on("loading", () => { loadedTile = false; });
+    layer.on("tileload", () => { loadedTile = true; });
+    layer.on("load", () => {
+      if (map.hasLayer(layer)) showMapFeedback(loadedTile ? "" : "Nie udało się wczytać podkładu mapy. Zmień warstwę lub przybliż widok.");
+    });
+  }
+  map.on("click", ({ latlng }) => analyzeLocation(latlng.lat, latlng.lng));
+}
+
+function showMapFeedback(message) {
+  $("map-feedback").textContent = message;
+  $("map-feedback").hidden = !message;
+}
+
+function badge(id, label, level = "info") {
+  const element = $(id);
+  element.textContent = label;
+  element.className = "badge " + level;
+}
+
+function showToast(title, body) {
+  const toast = $("toast");
+  const heading = document.createElement("strong");
+  const message = document.createElement("p");
+  heading.textContent = title;
+  message.textContent = body;
+  toast.replaceChildren(heading, message);
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 6500);
+}
+
+async function readSource(url, signal, parse = (body) => body) {
+  const started = performance.now();
+  let status = "";
+  let body = "";
+  let data;
+  let error;
+  try {
+    const response = await fetch(url, { signal: AbortSignal.any([signal, AbortSignal.timeout(12000)]) });
+    status = "HTTP " + response.status;
+    body = await response.text();
+    if (!response.ok) throw new Error(status);
+    data = parse(body);
+  } catch (failure) {
+    error = failure.name === "TimeoutError" ? "Przekroczono czas oczekiwania" : failure.message;
+  }
+  const timing = Math.round(performance.now() - started) + " ms";
+  const log = ["GET " + url, [status, timing].filter(Boolean).join(" · "), error, body.slice(0, 16000)].filter(Boolean).join("\n\n");
+  return { data, error, log };
+}
+
+function parseParcel(body) {
+  const [code, record] = body.trim().split(/\r?\n/);
+  if (code !== "0" || !record) return null;
+  const [wkt, , , commune, region, number, teryt] = record.split("|");
+  const points = parseWktPolygon(wkt);
+  return { commune, region, number, teryt, points, area: polygonAreaHa(points) };
+}
+
+function parseForecast(body) {
+  const { hourly } = JSON.parse(body);
+  if (!Array.isArray(hourly?.time) || hourly.time.length !== 48 ||
+      FORECAST_FIELDS.some((key) => hourly[key]?.length !== hourly.time.length)) {
+    throw new Error("Brak pełnego zakresu prognozy");
+  }
+  return hourly;
+}
+
+function parseList(body) {
+  const data = JSON.parse(body);
+  if (!Array.isArray(data)) throw new Error("Nieoczekiwany format odpowiedzi IMGW");
+  return data;
+}
+
+async function requestTerrain(lat, lon, parcel, signal) {
+  if (!window.proj4) return { data: null, log: "Biblioteka przeliczeń współrzędnych jest niedostępna." };
+  const outline = parcel?.points;
+  const points = [[lat, lon]];
+  if (outline?.length >= 4) {
+    const step = Math.max(1, Math.floor((outline.length - 1) / 4));
+    for (let i = 0; i < outline.length - 1 && points.length < 5; i += step) points.push(outline[i]);
+  } else {
+    points.push([lat + .001, lon], [lat - .001, lon], [lat, lon + .0015], [lat, lon - .0015]);
+  }
+  const results = await Promise.all(points.map(async (point) => {
+    const [north, east] = projectPoint(point);
+    const url = "https://services.gugik.gov.pl/nmt/?request=GetHbyXY&x=" + north.toFixed(2) + "&y=" + east.toFixed(2);
+    const result = await readSource(url, signal, (body) => {
+      const value = Number(body.trim().replace(",", "."));
+      if (!body.trim() || !Number.isFinite(value)) throw new Error("Brak wysokości");
+      return value;
+    });
+    return { ...result, point };
+  }));
+  const valid = results.filter((sample) => Number.isFinite(sample.data)).sort((a, b) => a.data - b.data);
+  const log = results.map((sample) => sample.log).join("\n\n");
+  if (valid.length < 2) return { data: null, log };
+
+  const lowest = valid[0], highest = valid.at(-1);
+  const delta = highest.data - lowest.data;
+  const slope = delta * 100 / Math.max(1, distanceMeters(highest.point, lowest.point));
+  const direction = delta > 0.1 ? bearingLabel(highest.point, lowest.point) : "Teren płaski";
+  return { data: { lowest, highest, delta, slope, direction }, log };
+}
+
+function projectPoint([lat, lon]) {
+  const [east, north] = proj4("EPSG:4326", "EPSG:2180", [lon, lat]);
+  return [north, east];
+}
+
+async function analyzeLocation(lat, lon, preset) {
+  state.request?.abort();
+  const request = new AbortController();
+  const { signal } = request;
+  Object.assign(state, { request, location: { lat, lon, preset }, parcel: null, terrain: null, forecast: null, imgw: null, scenario: null, logs: {} });
+
+  for (const key of Object.keys(PRESETS)) $("btn-" + key).setAttribute("aria-pressed", key === preset);
+  const latitude = format(Math.abs(lat), 5) + (lat < 0 ? "° S" : "° N");
+  const longitude = format(Math.abs(lon), 5) + (lon < 0 ? "° W" : "° E");
+  $("map-coordinates").textContent = latitude + " · " + longitude;
+  $("btn-retry").hidden = true;
+  $("api-timing").textContent = "Pobieranie";
+  badge("status-badge", "Pobieranie danych");
+  renderTerrain();
+  renderForecast();
+  renderImgw();
+  renderRawTab();
+
+  if (map) {
+    overlays.clearLayers();
+    L.circleMarker([lat, lon], { radius: 7, color: "#fff", weight: 2, fillColor: "#11644c", fillOpacity: 1 }).addTo(overlays);
+    if (preset) map.setView([lat, lon], PRESETS[preset].zoom);
+  }
+
+  const started = performance.now();
+  const parcelUrl = "https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=" + lon.toFixed(6) + "," + lat.toFixed(6) + ",4326&result=geom_wkt,voivodeship,county,commune,region,parcel,teryt&srid=4326";
+  const weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=" + lat.toFixed(4) + "&longitude=" + lon.toFixed(4) + "&hourly=" + FORECAST_FIELDS.join(",") + "&forecast_hours=48&timezone=Europe/Warsaw";
+  const imgwBase = "https://danepubliczne.imgw.pl/api/data/";
+
+  const parcelAndTerrain = (async () => {
+    const parcel = await readSource(parcelUrl, signal, parseParcel);
+    if (signal.aborted) return;
+    state.parcel = parcel.data;
+    state.logs.uldk = parcel.log;
+    renderTerrain();
+    if (map && state.parcel?.points.length >= 3) {
+      const polygon = L.polygon(state.parcel.points, { color: "#428440", weight: 2.5, fillOpacity: .24 }).addTo(overlays);
+      if (!preset) map.fitBounds(polygon.getBounds(), { maxZoom: 17, padding: [20, 20] });
+    }
+    renderForecast();
+    renderImgw();
+    renderRawTab();
+
+    const terrain = await requestTerrain(lat, lon, state.parcel, signal);
+    if (signal.aborted) return;
+    state.terrain = terrain.data;
+    state.logs.nmt = terrain.log;
+    if (map && state.terrain?.delta > .1) {
+      const { highest, lowest, slope } = state.terrain;
+      L.polyline([highest.point, lowest.point], { color: "#247b95", weight: 3, dashArray: "6,6" })
+        .bindTooltip("Szacowany spływ · nachylenie " + format(slope, 1) + "%")
+        .addTo(overlays);
+      L.circleMarker(lowest.point, { radius: 5, color: "#247b95", fillOpacity: 1 })
+        .bindTooltip("Najniższy punkt próbki · " + format(lowest.data, 1) + " m n.p.m.")
+        .addTo(overlays);
+    }
+    renderTerrain();
+    renderForecast();
+    renderRawTab();
+  })();
+
+  const weather = readSource(weatherUrl, signal, parseForecast).then((result) => {
+    if (signal.aborted) return;
+    state.forecast = result.data;
+    state.logs.openmeteo = result.log;
+    renderForecast();
+    renderRawTab();
+  });
+
+  const imgw = Promise.all(["warningsmeteo", "warningshydro", "synop"].map((endpoint) =>
+    readSource(imgwBase + endpoint, signal, parseList)
+  )).then(([meteo, hydro, synop]) => {
+    if (signal.aborted) return;
+    state.imgw = { meteo: meteo.data, hydro: hydro.data, synop: synop.data };
+    state.logs.imgw = [meteo.log, hydro.log, synop.log].join("\n\n");
+    renderImgw();
+    renderRawTab();
+  });
+
+  const results = await Promise.allSettled([parcelAndTerrain, weather, imgw]);
+  if (signal.aborted) return;
+  for (const result of results) {
+    if (result.status === "rejected") console.error(result.reason);
+  }
+  $("api-timing").textContent = format(performance.now() - started) + " ms";
+  const imgwParts = Object.values(state.imgw ?? {});
+  const complete = state.parcel && state.terrain && state.forecast && state.imgw && imgwParts.every(Array.isArray);
+  $("btn-retry").hidden = Boolean(complete);
+  if (!state.parcel && !state.terrain && !state.forecast && !imgwParts.some(Array.isArray)) {
+    badge("status-badge", "Brak danych", "crit");
+  } else if (!complete) {
+    badge("status-badge", "Dane częściowe", "warn");
+  } else {
+    badge("status-badge", "Dane pobrane", "ok");
+  }
+}
+
+function renderTerrain() {
+  const { parcel, terrain, logs } = state;
+  $("kpi-parcel").textContent = parcel?.number ? "dz. " + parcel.number : (logs.uldk ? "Niedostępny" : "—");
+  $("kpi-commune").textContent = parcel?.commune ? parcel.commune + ", obr. " + parcel.region : "—";
+  $("kpi-area").textContent = parcel?.area > 0 ? format(parcel.area, 2) + " ha" : "—";
+  $("parcel-teryt").textContent = parcel?.teryt ? "TERYT " + parcel.teryt : "—";
+  $("kpi-elev").textContent = terrain ? format(terrain.lowest.data, 1) + "–" + format(terrain.highest.data, 1) + " m" : "—";
+  $("kpi-slope").textContent = terrain ? "Spadek " + format(terrain.slope, 1) + "%" : (logs.nmt ? "Brak danych NMT" : "—");
+  $("kpi-dir").textContent = terrain?.direction ?? "—";
+}
+
+function appendText(parent, tag, text) {
+  const element = document.createElement(tag);
+  element.textContent = text;
+  parent.append(element);
+}
+
+function addAlert(parent, level, title, body) {
+  const box = document.createElement("div");
+  box.className = "alert-box " + level;
+  appendText(box, "strong", title);
+  if (body) appendText(box, "p", body);
+  parent.append(box);
+}
+
+function renderForecast() {
+  const { forecast, terrain, parcel, scenario, logs } = state;
+  const alerts = $("alerts-container");
+  alerts.replaceChildren();
+  for (const key of Object.keys(SCENARIOS)) {
+    $("btn-sim-" + key).disabled = !forecast;
+    $("btn-sim-" + key).setAttribute("aria-pressed", key === scenario);
+  }
+  $("btn-reset").hidden = !scenario;
+  $("scenario-status").textContent = SCENARIOS[scenario] ?? (forecast
+    ? "Wybierz scenariusz, aby przeliczyć bilans i alerty."
+    : "Symulacje wymagają prognozy dla wybranej lokalizacji.");
+  $("timeline").hidden = !forecast;
+  if (!forecast) {
+    for (const key of ["rain-m3", "rain-mm", "et0-m3", "et0-mm", "kbw-m3", "soil-moisture", "vpd", "ground-t"]) $("kpi-" + key).textContent = "—";
+    badge("balance-badge", logs.openmeteo ? "Brak prognozy" : "—");
+    $("balance-area").textContent = "";
+    $("semaphore-row").replaceChildren();
+    addAlert(alerts, "", logs.openmeteo ? "Prognoza jest niedostępna" : "Pobieranie prognozy", logs.openmeteo
+      ? "Ponów pobieranie w panelu mapy lub wybierz inną lokalizację."
+      : "");
+    return;
+  }
+
+  const soil = SOILS[$("soil-category").value];
+  const area = parcel?.area > 0 ? parcel.area : 1;
+  const isReferenceArea = !(parcel?.area > 0);
+  $("balance-area").textContent = isReferenceArea ? " · przeliczenie dla 1 ha" : " · " + format(area, 2) + " ha";
+  const rain = forecast.precipitation.map((value, hour) =>
+    scenario === "rain" && hour >= 6 && hour < 11 ? (value ?? 0) + 5 : value
   );
+  const vpd = forecast.vapour_pressure_deficit.map((value, hour) =>
+    scenario === "vpd" && hour >= 10 && hour < 18 ? Math.max(value ?? 0, 2.15) : value
+  );
+  const rainMm = sumComplete(rain);
+  const etMm = sumComplete(forecast.et0_fao_evapotranspiration);
+  const balance = rainMm !== null && etMm !== null ? rainMm - etMm : null;
+  const maxVpd = rangeExtreme(vpd, Math.max);
+  const minGround = rangeExtreme(forecast.soil_temperature_0cm, Math.min);
+  const moisture = forecast.soil_moisture_0_to_1cm[0];
+  const volume = (mm) => mm === null ? "—" : format(mm * 10 * area) + (isReferenceArea ? " m³/ha" : " m³");
+  const depth = (mm) => mm === null ? "Brak danych" : format(mm, 1) + " mm";
+
+  $("kpi-rain-m3").textContent = volume(rainMm);
+  $("kpi-rain-mm").textContent = depth(rainMm);
+  $("kpi-et0-m3").textContent = volume(etMm);
+  $("kpi-et0-mm").textContent = depth(etMm);
+  $("kpi-kbw-m3").textContent = (balance > 0 ? "+" : "") + volume(balance);
+  $("kpi-soil-moisture").textContent = moisture == null ? "Brak danych o wilgotności" : "Wilgotność gleby (0–1 cm) " + format(moisture * 100) + "%";
+  $("kpi-vpd").textContent = maxVpd === null ? "—" : format(maxVpd, 2) + " kPa";
+  $("kpi-ground-t").textContent = minGround === null ? "Brak temperatury gruntu" : "Min. przy gruncie " + format(minGround, 1) + " °C";
+
+  if (balance === null) badge("balance-badge", "Niepełna prognoza", "warn");
+  else if (balance < soil.drought) badge("balance-badge", "Deficyt wodny", "crit");
+  else if (rainMm >= 15) badge("balance-badge", "Duży opad", "warn");
+  else badge("balance-badge", "Bilans stabilny", "ok");
+  if (scenario) {
+    const badgeText = $("balance-badge").textContent;
+    $("balance-badge").textContent = "Symulacja · " + badgeText;
+  }
+
+  if (rainMm >= 15 && terrain?.slope >= 1) {
+    const runoff = rainMm * (1 - soil.retention + .25);
+    addAlert(alerts, "warn", "Ryzyko spływu · ok. " + volume(runoff), "Prognozowany opad wynosi " + depth(rainMm) + ", a szacowany spadek terenu " + format(terrain.slope, 1) + "%. Sprawdź kierunek spływu i miejsca, w których można zatrzymać wodę.");
+  } else if (rainMm >= 15 && !terrain) {
+    addAlert(alerts, "warn", "Duży opad · " + depth(rainMm), "Ocena spływu wymaga danych o nachyleniu terenu.");
+  }
+  if (maxVpd > 1.6) addAlert(alerts, "crit", "Stres roślin · VPD " + format(maxVpd, 2) + " kPa", "Suche powietrze może zwiększyć stres roślin. Sprawdź godziny podwyższonego ryzyka przed zabiegami.");
+  if (minGround !== null && minGround <= 2) addAlert(alerts, "warn", "Ryzyko przymrozku · " + format(minGround, 1) + " °C przy gruncie", "Sprawdź wrażliwe uprawy przed planowanymi zabiegami.");
+  if (balance !== null && balance < soil.drought) addAlert(alerts, "crit", "Deficyt wody · " + volume(balance), "Saldo " + depth(balance) + " spada poniżej progu dla wybranej gleby (" + depth(soil.drought) + ").");
+  if (!alerts.childElementCount) {
+    const partial = balance === null || maxVpd === null || minGround === null;
+    addAlert(alerts, partial ? "warn" : "ok", partial ? "Niepełna ocena ryzyka" : "Brak przekroczeń progów w prognozie",
+      partial ? "Część parametrów pogodowych jest niedostępna." : "Sprawdź okna pogodowe na osi czasu.");
+  }
+  renderTimeline(forecast.time, rain, vpd);
+}
+
+function sumComplete(values) {
+  return values.every(Number.isFinite) ? values.reduce((sum, value) => sum + value, 0) : null;
+}
+
+function rangeExtreme(values, extreme) {
+  const available = values.filter(Number.isFinite);
+  return available.length ? extreme(...available) : null;
+}
+
+function renderTimeline(times, rain, vpd) {
+  const row = $("semaphore-row");
+  row.replaceChildren();
+  for (let hour = 0; hour < 24; hour += 2) {
+    const rain2h = sumComplete(rain.slice(hour, hour + 2));
+    const vpd2h = rangeExtreme(vpd.slice(hour, hour + 2), Math.max);
+    let level = "green", label = "Niskie ryzyko";
+    if (vpd2h > 1.6 || rain2h >= 8) [level, label] = ["red", "Wysokie ryzyko"];
+    else if (vpd2h > 1.2 || rain2h >= 3) [level, label] = ["yellow", "Uwaga"];
+    else if (rain2h === null || vpd2h === null) [level, label] = ["unknown", "Brak danych"];
+
+    const cell = document.createElement("div");
+    cell.className = "sem-cell sem-" + level;
+    const timeLabel = times[hour].slice(11, 16);
+    const dayLabel = times[hour].slice(5, 10).split("-").reverse().join(".");
+    const symbol = { green: "✓", yellow: "!", red: "!!", unknown: "–" }[level];
+    appendText(cell, "span", symbol);
+    appendText(cell, "span", timeLabel);
+    cell.title = dayLabel + " · " + label + " · opad " + (rain2h === null ? "—" : format(rain2h, 1) + " mm") + " · VPD " + (vpd2h === null ? "—" : format(vpd2h, 2) + " kPa");
+    cell.setAttribute("role", "img");
+    cell.setAttribute("aria-label", timeLabel + " · " + cell.title);
+    row.append(cell);
+  }
+}
+
+function renderImgw() {
+  const summary = $("imgw-summary");
+  summary.replaceChildren();
+  if (!state.imgw) {
+    appendText(summary, "p", "Pobieranie danych IMGW.");
+    return;
+  }
+  const { meteo, hydro, synop } = state.imgw;
+  const county = state.parcel?.teryt?.slice(0, 4);
+  if (!meteo) {
+    appendText(summary, "p", "Ostrzeżenia meteorologiczne są niedostępne.");
+  } else if (!county) {
+    appendText(summary, "p", "Ustalenie ostrzeżeń lokalnych wymaga kodu TERYT działki.");
+  } else {
+    const local = meteo.filter((warning) => Array.isArray(warning.teryt) && warning.teryt.some((value) => String(value).startsWith(county)));
+    for (const warning of local) {
+      addAlert(summary, "warn", String(warning.nazwa_zdarzenia) + " · stopień " + warning.stopien, warning.tresc);
+    }
+    if (!local.length) appendText(summary, "p", "Brak aktywnych ostrzeżeń meteorologicznych dla powiatu " + county + ".");
+  }
+  if (hydro) appendText(summary, "p", "Ostrzeżenia hydrologiczne w kraju · " + hydro.length);
+  const station = synop?.find((item) => /toru|chojnic|bydgoszcz|inowroc/i.test(item.stacja)) ?? synop?.[0];
+  if (station) {
+    appendText(summary, "p", "Stacja " + station.stacja + " · " + station.data_pomiaru + " " + station.godzina_pomiaru + ":00 · " + (station.temperatura ?? "—") + " °C");
+  }
+}
+
+function renderRawTab() {
+  $("raw-output").textContent = state.logs[state.activeTab] ?? "Pobieranie danych ze źródła.";
+}
+
+function selectScenario(scenario) {
+  state.scenario = scenario;
+  renderForecast();
+  if (!scenario) {
+    showToast("Przywrócono prognozę", "Bilans i alerty znów korzystają z danych Open-Meteo.");
+    return;
+  }
+  const title = "Symulacja aktywna";
+  showToast(title, SCENARIOS[scenario]);
+  if ("Notification" in window && Notification.permission === "granted") {
+    try {
+      new Notification(title, { body: SCENARIOS[scenario] });
+    } catch {
+      // Komunikat na stronie jest dostępny także bez zgody systemowej.
+    }
+  }
+}
+
+for (const [key, preset] of Object.entries(PRESETS)) {
+  $("btn-" + key).addEventListener("click", () => analyzeLocation(preset.lat, preset.lon, key));
+}
+$("btn-retry").addEventListener("click", () => {
+  const { lat, lon, preset } = state.location;
+  analyzeLocation(lat, lon, preset);
+});
+$("soil-category").addEventListener("change", renderForecast);
+$("btn-sim-rain").addEventListener("click", () => selectScenario("rain"));
+$("btn-sim-vpd").addEventListener("click", () => selectScenario("vpd"));
+$("btn-reset").addEventListener("click", () => {
+  const previous = $("btn-sim-" + state.scenario);
+  selectScenario(null);
+  previous?.focus();
 });
 
 $("btn-notify").addEventListener("click", async () => {
-  if (!("Notification" in window)) {
-    alert("Twoja przeglądarka nie obsługuje Notification API.");
-    return;
+  let message = "Powiadomienia systemowe są niedostępne w tej przeglądarce.";
+  if ("Notification" in window) {
+    try {
+      const permission = await Notification.requestPermission();
+      if (permission === "granted") {
+        message = "Zgoda jest włączona. Strona może wyświetlać powiadomienia podczas analizy.";
+        new Notification("WodoStrażnik Pola", { body: "Powiadomienia są włączone." });
+      } else {
+        message = permission === "denied" ? "Zmień zgodę w ustawieniach tej witryny, aby włączyć powiadomienia." : "Przeglądarka jeszcze nie przyznała zgody.";
+      }
+    } catch {
+      message = "Ta przeglądarka nie udostępnia powiadomień systemowych dla tej strony.";
+    }
   }
-  const perm = await Notification.requestPermission();
-  showToast("Status powiadomień", `Uprawnienie przeglądarki: ${perm}`);
+  showToast("Powiadomienia", message);
 });
 
-document.querySelectorAll(".tab-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    state.activeTab = btn.dataset.tab;
+const tabs = document.querySelectorAll(".tab-btn");
+for (const button of tabs) {
+  button.addEventListener("click", () => {
+    state.activeTab = button.dataset.tab;
+    for (const tab of tabs) {
+      const selected = tab === button;
+      tab.classList.toggle("active", selected);
+      tab.setAttribute("aria-pressed", selected);
+    }
     renderRawTab();
   });
-});
+}
 
-// Start na polu #1 pod Bydgoszczą
-analyzeLocation(PRESETS.sicienko.lat, PRESETS.sicienko.lon, PRESETS.sicienko.zoom);
+if (window.proj4) {
+  proj4.defs("EPSG:2180", "+proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs");
+}
+initMap();
+analyzeLocation(PRESETS.sicienko.lat, PRESETS.sicienko.lon, "sicienko");

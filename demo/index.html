@@ -3,140 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WodoStrażnik Pola — API & GIS Demo (Bydgoszcz)</title>
+  <meta name="theme-color" content="#f4f6f2" />
+  <meta name="description" content="Sprawdź prognozę bilansu wody, rzeźbę terenu i alerty pogodowe dla swojej działki." />
+  <title>WodoStrażnik Pola | Bilans wody i mapa działki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div>
-      <h1>WodoStrażnik Pola — Live API Tester (HTML + Vanilla JS)</h1>
-      <div class="subtitle">Test otwartych API bez kluczy: GUGiK ULDK + GUGiK NMT + Geoportal WMS + Open-Meteo + IMGW-PIB</div>
-    </div>
-    <div class="toolbar">
-      <button id="btn-sicienko" class="primary">Pole #1: Sicienko / Osówiec (~1.26 ha)</button>
-      <button id="btn-dobrcz">Pole #2: Dobrcz / Borówno (~186 ha)</button>
-      <select id="soil-category" title="Kategoria podatności gleb IUNG">
-        <option value="1">Gleba Kat. I (bardzo podatna, piaski, WOD &lt; 127.5 mm)</option>
-        <option value="2" selected>Gleba Kat. II (podatna, piaski gliniaste, WOD 127.5–169.9 mm)</option>
-        <option value="3">Gleba Kat. III (średnio podatna, gliny lekkie, WOD 170–202.5 mm)</option>
-        <option value="4">Gleba Kat. IV (mało podatna, gliny ciężkie/iły, WOD &gt; 202.5 mm)</option>
-      </select>
-      <button id="btn-sim-rain" class="warn">Symuluj ulewę (+25 mm)</button>
-      <button id="btn-sim-vpd" class="danger">Symuluj stres VPD (2.1 kPa)</button>
-      <button id="btn-notify">Włącz powiadomienia Push</button>
+  <a class="skip-link" href="#panel">Przejdź do analizy</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#panel"><span class="brand-mark" aria-hidden="true"><span class="drop"></span></span> WodoStrażnik<span class="brand-secondary"> Pola</span></a>
+      <nav class="top-nav" aria-label="Nawigacja po panelu">
+        <a href="#dzialka">Działka</a>
+        <a href="#bilans">Bilans wody</a>
+        <a href="#alerty">Alerty</a>
+      </nav>
+      <button id="btn-notify" class="button button-quiet" type="button"><span class="bell" aria-hidden="true"></span> Powiadomienia</button>
     </div>
   </header>
 
-  <main>
-    <section>
-      <div class="card">
-        <h2>
-          <span>Mapa Działki (kliknij dowolne pole w Polsce)</span>
-          <span id="status-badge" class="badge info">Gotowy</span>
-        </h2>
-        <div id="map"></div>
-        <div style="margin-top:8px; font-size:0.78rem; color:var(--muted);">
-          Warstwy w prawym górnym rogu mapy: OpenStreetMap, Ortofotomapa Geoportal WMS, Mapa Hydrograficzna Polski WMS (rowy i cieki). Strzałka na działce pokazuje wyliczony z NMT kierunek spływu wody.
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>
-          <span>Surowy Inspektor API (URL + status + czas + odpowiedź)</span>
-          <span id="api-timing" class="badge info">—</span>
-        </h2>
-        <div class="tabs">
-          <button class="tab-btn active" data-tab="uldk">ULDK (Działka)</button>
-          <button class="tab-btn" data-tab="nmt">NMT (Wysokości)</button>
-          <button class="tab-btn" data-tab="openmeteo">Open-Meteo (48h)</button>
-          <button class="tab-btn" data-tab="imgw">IMGW (Alerty &amp; Meteo)</button>
-        </div>
-        <pre id="raw-output" class="raw-output">Wybierz pole powyżej lub kliknij na mapie, aby zobaczyć surowe odpowiedzi API...</pre>
+  <main id="panel" class="shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="hero-content">
+        <h1 id="page-title">Monitoring wody<br class="hero-break" /> na działce</h1>
+        <p>Sprawdź, ile wody przyniosą najbliższe 48 godzin i jakie warunki czekają Twoje pole.</p>
       </div>
     </section>
 
-    <section>
-      <div class="card">
-        <h2>
-          <span>Dane ewidencyjne i rzeźba terenu (ULDK + NMT)</span>
-          <span id="parcel-teryt" class="badge info">—</span>
-        </h2>
-        <div class="kpi-grid">
-          <div class="kpi">
-            <div class="label">Działka / Obręb</div>
-            <div class="val" id="kpi-parcel">—</div>
-            <div class="sub" id="kpi-commune">—</div>
+    <div class="workspace" id="dzialka">
+      <section class="card map-card" aria-labelledby="map-title">
+        <div class="card-head">
+          <div>
+            <h2 id="map-title">Mapa działki</h2>
+            <p>Kliknij dowolny punkt w Polsce, aby go przeanalizować.</p>
           </div>
-          <div class="kpi">
-            <div class="label">Powierzchnia</div>
-            <div class="val" id="kpi-area">—</div>
-            <div class="sub">z poligonu ULDK</div>
-          </div>
-          <div class="kpi">
-            <div class="label">Wysokość NMT (min–max)</div>
-            <div class="val" id="kpi-elev">—</div>
-            <div class="sub" id="kpi-slope">—</div>
-          </div>
-          <div class="kpi">
-            <div class="label">Kierunek odpływu</div>
-            <div class="val" id="kpi-dir">—</div>
-            <div class="sub">z różnicy rzędnych</div>
+          <div class="map-actions">
+            <span id="status-badge" class="badge info" role="status">Oczekiwanie</span>
+            <button id="btn-retry" class="text-button" type="button" hidden>Ponów pobieranie</button>
           </div>
         </div>
-      </div>
+        <div class="map-frame">
+          <div id="map" aria-label="Interaktywna mapa działek"></div>
+          <p id="map-feedback" class="map-feedback" hidden></p>
+        </div>
+        <div class="map-meta">
+          <span class="legend-item"><i class="legend-point"></i> Wybrany punkt</span>
+          <span class="legend-item"><i class="legend-parcel"></i> Granica działki</span>
+          <span class="legend-item"><i class="legend-runoff"></i> Spływ wody</span>
+          <span id="map-coordinates" class="map-coordinates">—</span>
+        </div>
+      </section>
 
-      <div class="card">
-        <h2>
-          <span>Deterministyczny Bilans Wody na Działce (najbliższe 48h)</span>
-          <span id="balance-badge" class="badge info">—</span>
-        </h2>
-        <div class="kpi-grid">
-          <div class="kpi">
-            <div class="label">Opad 48h (m³ na działkę)</div>
-            <div class="val" id="kpi-rain-m3">—</div>
-            <div class="sub" id="kpi-rain-mm">—</div>
-          </div>
-          <div class="kpi">
-            <div class="label">Parowanie ET₀ 48h (m³)</div>
-            <div class="val" id="kpi-et0-m3">—</div>
-            <div class="sub" id="kpi-et0-mm">—</div>
-          </div>
-          <div class="kpi">
-            <div class="label">Bilans KBW lokalny (m³)</div>
-            <div class="val" id="kpi-kbw-m3">—</div>
-            <div class="sub" id="kpi-soil-moisture">—</div>
-          </div>
-          <div class="kpi">
-            <div class="label">Max VPD / Min T gruntu</div>
-            <div class="val" id="kpi-vpd">—</div>
-            <div class="sub" id="kpi-ground-t">—</div>
-          </div>
+      <section class="card settings-card" aria-labelledby="selection-title">
+        <h2 id="selection-title">Wybór działki</h2>
+        <p class="section-note">Zacznij od jednego z przykładowych pól lub wskaż punkt na mapie.</p>
+        <div class="preset-list" aria-label="Przykładowe pola">
+          <button id="btn-sicienko" class="preset" type="button" aria-pressed="true">
+            <span class="preset-marker" aria-hidden="true">⌖</span>
+            <span><strong>Sicienko</strong><small>Osówiec</small></span>
+            <span class="preset-indicator" aria-hidden="true"></span>
+          </button>
+          <button id="btn-dobrcz" class="preset" type="button" aria-pressed="false">
+            <span class="preset-marker" aria-hidden="true">⌖</span>
+            <span><strong>Dobrcz</strong><small>Borówno</small></span>
+            <span class="preset-indicator" aria-hidden="true"></span>
+          </button>
         </div>
-      </div>
+        <div class="soil-field">
+          <label for="soil-category">Kategoria gleby</label>
+          <select id="soil-category" aria-describedby="soil-note">
+            <option value="1">I · Piaski</option>
+            <option value="2" selected>II · Piaski gliniaste</option>
+            <option value="3">III · Gliny lekkie</option>
+            <option value="4">IV · Gliny ciężkie i iły</option>
+          </select>
+          <p id="soil-note">Wpływa na próg deficytu i szacunek retencji.</p>
+        </div>
+        <div class="scenario">
+          <div class="scenario-head">
+            <h3>Symulacja pogodowa</h3>
+            <button id="btn-reset" class="text-button" type="button" hidden>Przywróć prognozę</button>
+          </div>
+          <div class="scenario-controls" aria-label="Scenariusze pogodowe">
+            <button id="btn-sim-rain" class="button scenario-button" type="button" aria-pressed="false" disabled>Ulewa +25 mm</button>
+            <button id="btn-sim-vpd" class="button scenario-button" type="button" aria-pressed="false" disabled>Stres VPD</button>
+          </div>
+          <p id="scenario-status" class="section-note" role="status">Symulacje wymagają prognozy dla wybranej lokalizacji.</p>
+        </div>
+      </section>
+    </div>
 
-      <div class="card">
-        <h2><span>Alerty i Rekomendacje Operacyjne (Real-Time)</span></h2>
-        <div id="alerts-container">
-          <div class="alert-box">Wybierz działkę, aby uruchomić analizę progową.</div>
+    <section id="bilans" class="card data-card" aria-labelledby="balance-title">
+      <div class="card-head">
+        <div>
+          <h2 id="balance-title">Bilans wody</h2>
+          <p>Prognoza na 48 godzin · Open-Meteo <span id="balance-area"></span></p>
         </div>
-        <div style="margin-top:10px; font-size:0.78rem; color:var(--muted);">
-          Semafor najbliższych 24 godzin (co 2h — Zielony: bezpieczne / Żółty: uwaga / Czerwony: duży spływ lub stres VPD &gt; 1.6 kPa):
-        </div>
-        <div id="semaphore-row" class="semaphore-row"></div>
+        <span id="balance-badge" class="badge info" role="status">—</span>
       </div>
-
-      <div class="card">
-        <h2><span>IMGW-PIB — Alerty dla powiatu i najbliższa stacja</span></h2>
-        <div id="imgw-summary" style="font-size:0.86rem; color:var(--muted);">Brak danych — kliknij na mapie.</div>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="label">Opad</div><div class="val" id="kpi-rain-m3">—</div><div class="sub" id="kpi-rain-mm">—</div></div>
+        <div class="kpi"><div class="label">Ewapotranspiracja ET₀</div><div class="val" id="kpi-et0-m3">—</div><div class="sub" id="kpi-et0-mm">—</div></div>
+        <div class="kpi featured"><div class="label">Saldo wody</div><div class="val" id="kpi-kbw-m3">—</div><div class="sub" id="kpi-soil-moisture">—</div></div>
+        <div class="kpi"><div class="label">Maksymalny stres VPD</div><div class="val" id="kpi-vpd">—</div><div class="sub" id="kpi-ground-t">—</div></div>
       </div>
     </section>
+
+    <div class="workspace lower-workspace">
+      <section id="alerty" class="card data-card" aria-labelledby="alerts-title">
+        <div class="card-head">
+          <div><h2 id="alerts-title">Alerty dla pola</h2><p>Ocena ryzyka na podstawie prognozy i parametrów działki.</p></div>
+        </div>
+        <div id="alerts-container" aria-live="polite"><p class="alert-box">Oczekiwanie na prognozę.</p></div>
+        <div class="timeline" id="timeline" hidden>
+          <h3>Ryzyko w ciągu 24 godzin</h3>
+          <div class="risk-legend" aria-label="Legenda ryzyka">
+            <span class="legend-item"><i class="risk-low"></i> Niskie</span>
+            <span class="legend-item"><i class="risk-medium"></i> Uwaga</span>
+            <span class="legend-item"><i class="risk-high"></i> Wysokie</span>
+          </div>
+          <div id="semaphore-row" class="semaphore-row"></div>
+        </div>
+      </section>
+
+      <section class="card data-card terrain-card" aria-labelledby="terrain-title">
+        <div class="card-head">
+          <div><h2 id="terrain-title">Działka i teren</h2><p>Ewidencja ULDK i model wysokościowy NMT.</p></div>
+        </div>
+        <div class="kpi-grid terrain-grid">
+          <div class="kpi"><div class="label">Numer działki</div><div class="val" id="kpi-parcel">—</div><div class="sub" id="kpi-commune">—</div></div>
+          <div class="kpi"><div class="label">Powierzchnia</div><div class="val" id="kpi-area">—</div><div class="sub" id="parcel-teryt">—</div></div>
+          <div class="kpi"><div class="label">Wysokość min.–maks.</div><div class="val" id="kpi-elev">—</div><div class="sub" id="kpi-slope">—</div></div>
+          <div class="kpi"><div class="label">Kierunek spływu</div><div class="val" id="kpi-dir">—</div></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card data-card imgw-card" aria-labelledby="imgw-title">
+      <div class="card-head">
+        <div><h2 id="imgw-title">Komunikaty IMGW</h2><p>Ostrzeżenia meteorologiczne i dane stacji.</p></div>
+      </div>
+      <div id="imgw-summary">Oczekiwanie na dane IMGW.</div>
+    </section>
+
+    <details class="card api-card">
+      <summary><span>Diagnostyka API</span><span id="api-timing" class="badge info">—</span></summary>
+      <div class="api-content">
+        <div class="tabs" aria-label="Źródło odpowiedzi API">
+          <button type="button" class="tab-btn active" data-tab="uldk" aria-pressed="true">ULDK</button>
+          <button type="button" class="tab-btn" data-tab="nmt" aria-pressed="false">NMT</button>
+          <button type="button" class="tab-btn" data-tab="openmeteo" aria-pressed="false">Open-Meteo</button>
+          <button type="button" class="tab-btn" data-tab="imgw" aria-pressed="false">IMGW</button>
+        </div>
+        <pre id="raw-output" class="raw-output" tabindex="0" aria-label="Odpowiedź wybranego API">Oczekiwanie na dane.</pre>
+      </div>
+    </details>
   </main>
 
-  <div id="toast" class="toast"></div>
+  <footer class="shell footer">
+    <span>WodoStrażnik Pola</span><span>Źródła danych · GUGiK, Open-Meteo i IMGW-PIB</span>
+  </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js"></script>
-  <script src="app.js"></script>
+  <div id="toast" class="toast" role="status"></div>
+
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js"></script>
+  <script defer src="app.js"></script>
 </body>
 </html>
