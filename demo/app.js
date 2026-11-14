@@ -1,14 +1,17 @@
 // Parsowanie WKT POLYGON / MULTIPOLYGON z ULDK
 function parseWktPolygon(wkt) {
-  const match = wkt.match(/\(\(([^()]+)\)\)/);
-  if (!match) return [];
-  return match[1]
-    .split(",")
-    .map((pair) => {
-      const [lonStr, latStr] = pair.trim().split(/\s+/);
-      return [parseFloat(latStr), parseFloat(lonStr)]; // Leaflet: [lat, lon]
+  const shape = wkt?.match(/^(?:SRID=\d+;)?(MULTIPOLYGON|POLYGON)\s*(\(.*\))$/i);
+  if (!shape) return [];
+  const text = shape[2].slice(1, -1);
+  const polygons = shape[1].toUpperCase() === "POLYGON" ? [text] : (text.match(/\([^()]*\([^()]+\)(?:\s*,\s*\([^()]+\))*\s*\)/g) ?? []);
+  return polygons.map((polygon) => [...polygon.matchAll(/\(([^()]+)\)/g)].map(([, ring]) =>
+    ring.split(",").map((pair) => {
+      const [lon, lat] = pair.trim().split(/\s+/).map(Number);
+      return [lat, lon];
     })
-    .filter(([lat, lon]) => !Number.isNaN(lat) && !Number.isNaN(lon));
+  )).filter((polygon) => polygon.length && polygon.every((ring) =>
+    ring.length >= 4 && ring.every((point) => point.every(Number.isFinite))
+  ));
 }
 
 function polygonAreaHa(latLngs) {
@@ -88,6 +91,50 @@ const format = (value, digits = 0) => value.toLocaleString("pl-PL", {
   maximumFractionDigits: digits,
 });
 let map, overlays, toastTimer;
+const mapTools = { onClick: null, inspectTerrain: null };
+const IMGW_TTL = 15 * 60 * 1000;
+let imgwCache;
+
+const weatherFields = FORECAST_FIELDS.join(",");
+const weatherBase = "https://api.open-meteo.com/v1/forecast";
+function forecastUrl(locations) {
+  return weatherBase + "?" + new URLSearchParams({
+    latitude: locations.map(({ lat }) => lat.toFixed(4)).join(","),
+    longitude: locations.map(({ lon }) => lon.toFixed(4)).join(","),
+    hourly: weatherFields,
+    forecast_hours: "48",
+    timezone: "Europe/Warsaw",
+  });
+}
+
+const WEATHER_TTL = 30 * 60 * 1000;
+const weatherCache = new Map();
+function weatherKey({ lat, lon }) {
+  return lat.toFixed(4) + "," + lon.toFixed(4);
+}
+
+function rememberWeather(location, data) {
+  weatherCache.set(weatherKey(location), { data, expires: Date.now() + WEATHER_TTL });
+}
+
+function parcelUrl(lat, lon) {
+  return "https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=" + lon.toFixed(6) + "," + lat.toFixed(6) + ",4326&result=geom_wkt,voivodeship,county,commune,region,parcel,teryt&srid=4326";
+}
+
+function getImgw() {
+  if (!imgwCache || imgwCache.expires <= Date.now()) {
+    const controller = new AbortController();
+    const entry = { expires: Date.now() + IMGW_TTL };
+    entry.promise = Promise.all(["warningsmeteo", "warningshydro", "synop"].map((endpoint) =>
+      readSource("https://danepubliczne.imgw.pl/api/data/" + endpoint, controller.signal, parseList)
+    )).then((results) => {
+      if (results.some(({ error }) => error)) entry.expires = Date.now() + 60 * 1000;
+      return results;
+    });
+    imgwCache = entry;
+  }
+  return imgwCache.promise;
+}
 
 function initMap() {
   if (!window.L) {
@@ -123,7 +170,10 @@ function initMap() {
       if (map.hasLayer(layer)) showMapFeedback(loadedTile ? "" : "Nie udało się wczytać podkładu mapy. Zmień warstwę lub przybliż widok.");
     });
   }
-  map.on("click", ({ latlng }) => analyzeLocation(latlng.lat, latlng.lng));
+  map.on("click", ({ latlng }) => {
+    if (mapTools.onClick) mapTools.onClick(latlng);
+    else if (!mapTools.inspectTerrain?.(latlng)) analyzeLocation(latlng.lat, latlng.lng);
+  });
 }
 
 function showMapFeedback(message) {
@@ -173,12 +223,17 @@ function parseParcel(body) {
   const [code, record] = body.trim().split(/\r?\n/);
   if (code !== "0" || !record) return null;
   const [wkt, , , commune, region, number, teryt] = record.split("|");
-  const points = parseWktPolygon(wkt);
-  return { commune, region, number, teryt, points, area: polygonAreaHa(points) };
+  const rings = parseWktPolygon(wkt);
+  const area = rings.reduce((sum, [outer, ...holes]) =>
+    sum + polygonAreaHa(outer) - holes.reduce((total, hole) => total + polygonAreaHa(hole), 0), 0);
+  return { commune, region, number, teryt, rings, points: rings[0]?.[0] ?? [], area };
 }
 
 function parseForecast(body) {
-  const { hourly } = JSON.parse(body);
+  return validateForecast(JSON.parse(body));
+}
+
+function validateForecast({ hourly }) {
   if (!Array.isArray(hourly?.time) || hourly.time.length !== 48 ||
       FORECAST_FIELDS.some((key) => hourly[key]?.length !== hourly.time.length)) {
     throw new Error("Brak pełnego zakresu prognozy");
@@ -228,11 +283,11 @@ function projectPoint([lat, lon]) {
   return [north, east];
 }
 
-async function analyzeLocation(lat, lon, preset) {
+async function analyzeLocation(lat, lon, preset, savedField) {
   state.request?.abort();
   const request = new AbortController();
   const { signal } = request;
-  Object.assign(state, { request, location: { lat, lon, preset }, parcel: null, terrain: null, forecast: null, imgw: null, scenario: null, logs: {} });
+  Object.assign(state, { request, location: { lat, lon, preset, savedField }, parcel: savedField?.parcel ?? null, terrain: null, forecast: null, imgw: null, scenario: null, logs: {} });
 
   for (const key of Object.keys(PRESETS)) $("btn-" + key).setAttribute("aria-pressed", key === preset);
   const latitude = format(Math.abs(lat), 5) + (lat < 0 ? "° S" : "° N");
@@ -253,18 +308,17 @@ async function analyzeLocation(lat, lon, preset) {
   }
 
   const started = performance.now();
-  const parcelUrl = "https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy=" + lon.toFixed(6) + "," + lat.toFixed(6) + ",4326&result=geom_wkt,voivodeship,county,commune,region,parcel,teryt&srid=4326";
-  const weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=" + lat.toFixed(4) + "&longitude=" + lon.toFixed(4) + "&hourly=" + FORECAST_FIELDS.join(",") + "&forecast_hours=48&timezone=Europe/Warsaw";
-  const imgwBase = "https://danepubliczne.imgw.pl/api/data/";
-
+  const location = { lat, lon };
   const parcelAndTerrain = (async () => {
-    const parcel = await readSource(parcelUrl, signal, parseParcel);
+    const parcel = savedField
+      ? { data: savedField.parcel, log: "Granica z listy Moje pola." }
+      : await readSource(parcelUrl(lat, lon), signal, parseParcel);
     if (signal.aborted) return;
     state.parcel = parcel.data;
     state.logs.uldk = parcel.log;
     renderTerrain();
     if (map && state.parcel?.points.length >= 3) {
-      const polygon = L.polygon(state.parcel.points, { color: "#428440", weight: 2.5, fillOpacity: .24 }).addTo(overlays);
+      const polygon = L.polygon(state.parcel.rings ?? state.parcel.points, { color: "#428440", weight: 2.5, fillOpacity: .24 }).addTo(overlays);
       if (!preset) map.fitBounds(polygon.getBounds(), { maxZoom: 17, padding: [20, 20] });
     }
     renderForecast();
@@ -289,17 +343,20 @@ async function analyzeLocation(lat, lon, preset) {
     renderRawTab();
   })();
 
-  const weather = readSource(weatherUrl, signal, parseForecast).then((result) => {
+  const cached = weatherCache.get(weatherKey(location));
+  const weatherRequest = cached?.expires > Date.now()
+    ? Promise.resolve({ data: cached.data, log: "Prognoza z pamięci bieżącej sesji." })
+    : readSource(forecastUrl([location]), signal, parseForecast);
+  const weather = weatherRequest.then((result) => {
     if (signal.aborted) return;
     state.forecast = result.data;
+    if (result.data && !(cached?.expires > Date.now())) rememberWeather(location, result.data);
     state.logs.openmeteo = result.log;
     renderForecast();
     renderRawTab();
   });
 
-  const imgw = Promise.all(["warningsmeteo", "warningshydro", "synop"].map((endpoint) =>
-    readSource(imgwBase + endpoint, signal, parseList)
-  )).then(([meteo, hydro, synop]) => {
+  const imgw = getImgw().then(([meteo, hydro, synop]) => {
     if (signal.aborted) return;
     state.imgw = { meteo: meteo.data, hydro: hydro.data, synop: synop.data };
     state.logs.imgw = [meteo.log, hydro.log, synop.log].join("\n\n");
@@ -327,6 +384,7 @@ async function analyzeLocation(lat, lon, preset) {
 
 function renderTerrain() {
   const { parcel, terrain, logs } = state;
+  $("field-save").disabled = !(parcel?.area > 0);
   $("kpi-parcel").textContent = parcel?.number ? "dz. " + parcel.number : (logs.uldk ? "Niedostępny" : "—");
   $("kpi-commune").textContent = parcel?.commune ? parcel.commune + ", obr. " + parcel.region : "—";
   $("kpi-area").textContent = parcel?.area > 0 ? format(parcel.area, 2) + " ha" : "—";
@@ -515,8 +573,8 @@ for (const [key, preset] of Object.entries(PRESETS)) {
   $("btn-" + key).addEventListener("click", () => analyzeLocation(preset.lat, preset.lon, key));
 }
 $("btn-retry").addEventListener("click", () => {
-  const { lat, lon, preset } = state.location;
-  analyzeLocation(lat, lon, preset);
+  const { lat, lon, preset, savedField } = state.location;
+  analyzeLocation(lat, lon, preset, savedField);
 });
 $("soil-category").addEventListener("change", renderForecast);
 $("btn-sim-rain").addEventListener("click", () => selectScenario("rain"));

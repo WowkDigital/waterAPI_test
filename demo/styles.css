@@ -301,3 +301,44 @@ select { width: 100%; min-height: 41px; padding: 7px 10px; border: 1px solid var
   .button-quiet { font-size: .75rem; padding-inline: 8px; }
   .button-quiet .bell { display: none; }
 }
+.map-tools, .terrain-tools, .area-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px 9px;
+}
+.map-tools { margin-bottom: 10px; }
+.map-tools .button, .terrain-tools .button, .area-actions .button { min-height: 36px; padding: 6px 9px; }
+.button[aria-pressed="true"] { border-color: #78a48a; background: var(--accent-light); color: var(--accent); }
+.map-guide { margin-bottom: 9px; }
+#map.is-drawing, #map.is-drawing .leaflet-interactive { cursor: crosshair; }
+.terrain-tools { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 12px; font-size: .82rem; }
+.terrain-tools select { width: auto; max-width: 100%; min-height: 36px; }
+.terrain-tools a, .area-actions a { color: var(--accent); font-size: .83rem; text-underline-offset: 3px; }
+.file-button { cursor: pointer; }
+.file-button:has(+ .file-input:focus-visible) { outline: 3px solid #177c60; outline-offset: 3px; }
+.file-input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.profile-panel { border-top: 1px solid var(--line); margin-top: 13px; padding-top: 12px; }
+#profile-chart { display: block; width: 100%; height: auto; margin-top: 6px; }
+.terrain-legend { margin-top: 8px; color: var(--muted); font-size: .8rem; }
+.slope-key { display: flex; flex-wrap: wrap; gap: 5px 14px; margin-top: 5px; }
+.slope-key span { display: flex; align-items: center; gap: 5px; }
+.slope-key span::before { content: ""; width: 11px; height: 11px; border: 1px solid #52655d; border-radius: 2px; background: var(--key); }
+.save-field { margin-top: 12px; width: 100%; color: var(--accent); background: var(--accent-light); }
+.farm-card { margin-top: 20px; }
+.farm-summary { padding: 11px 13px; margin-top: 12px; border-radius: 9px; background: var(--accent-light); color: var(--accent); font-weight: 700; }
+.farm-list { list-style: none; padding: 0; margin: 0; }
+.farm-row { display: grid; align-items: center; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 12px; padding: 10px 2px; border-bottom: 1px solid var(--line); font-size: .88rem; }
+.farm-row small { display: block; color: var(--muted); overflow-wrap: anywhere; }
+.farm-field-link { padding: 5px 0; border: 0; background: transparent; color: var(--accent); font-weight: 700; text-align: left; }
+.farm-field-link:hover { text-decoration: underline; }
+.area-results { margin-top: 15px; padding: 13px; background: var(--soft); border: 1px solid var(--line); border-radius: 11px; }
+.area-actions, .area-candidates { margin-top: 8px; }
+.area-candidates { max-height: 220px; overflow: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 5px 12px; }
+.area-candidates label { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; font-size: .83rem; }
+@media (max-width: 600px) {
+  .farm-card { margin-top: 13px; }
+  .farm-row { gap: 7px; }
+  .farm-row > span { font-size: .8rem; }
+  .map-tools .button, .terrain-tools .button, .area-actions .button { min-height: 42px; }
+}

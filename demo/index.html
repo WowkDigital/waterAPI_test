@@ -18,7 +18,7 @@
     <div class="shell topbar-inner">
       <a class="brand" href="#panel"><span class="brand-mark" aria-hidden="true"><span class="drop"></span></span> WodoStrażnik<span class="brand-secondary"> Pola</span></a>
       <nav class="top-nav" aria-label="Nawigacja po panelu">
-        <a href="#dzialka">Działka</a>
+        <a href="#moje-pola">Moje pola</a>
         <a href="#bilans">Bilans wody</a>
         <a href="#alerty">Alerty</a>
       </nav>
@@ -47,6 +47,14 @@
             <button id="btn-retry" class="text-button" type="button" hidden>Ponów pobieranie</button>
           </div>
         </div>
+        <div class="map-tools" aria-label="Narzędzia mapy">
+          <button class="button" id="area-draw" type="button" aria-pressed="false">Zaznacz obszar</button>
+          <button class="button" id="field-draw" type="button" aria-pressed="false">Obrys pola</button>
+          <button class="button" id="profile-draw" type="button" aria-pressed="false">Profil wysokości</button>
+          <button class="button" id="draw-finish" type="button" hidden>Zakończ obrys</button>
+          <button class="text-button" id="draw-cancel" type="button" hidden>Anuluj</button>
+        </div>
+        <p id="draw-guide" class="section-note map-guide" role="status" hidden></p>
         <div class="map-frame">
           <div id="map" aria-label="Interaktywna mapa działek"></div>
           <p id="map-feedback" class="map-feedback" hidden></p>
@@ -57,6 +65,26 @@
           <span class="legend-item"><i class="legend-runoff"></i> Spływ wody</span>
           <span id="map-coordinates" class="map-coordinates">—</span>
         </div>
+        <div class="terrain-tools">
+          <label for="terrain-layer">Warstwa terenu</label>
+          <select id="terrain-layer">
+            <option value="">Mapa bazowa</option>
+            <option value="shade">Cieniowanie GUGiK</option>
+            <option value="contours">Warstwice</option>
+            <option value="slope">Nachylenie (%)</option>
+            <option value="flow">Potencjalny spływ</option>
+          </select>
+          <label class="file-button button" for="terrain-file">Wczytaj NMT GeoTIFF</label>
+          <input class="file-input" id="terrain-file" type="file" accept=".tif,.tiff,image/tiff" />
+          <a id="terrain-download" href="#" target="_blank" rel="noopener" hidden>Pobierz NMT dla obszaru</a>
+        </div>
+        <p id="terrain-note" class="section-note" role="status">Źródło dokładnych wysokości można dodać jako GeoTIFF z Geoportalu.</p>
+        <div id="terrain-legend" class="terrain-legend" hidden></div>
+        <section id="profile-panel" class="profile-panel" aria-labelledby="profile-title" hidden>
+          <h3 id="profile-title">Profil wysokości</h3>
+          <p id="profile-summary" class="section-note"></p>
+          <canvas id="profile-chart" width="760" height="170" role="img" aria-label="Profil wysokości"></canvas>
+        </section>
       </section>
 
       <section class="card settings-card" aria-labelledby="selection-title">
@@ -74,6 +102,7 @@
             <span class="preset-indicator" aria-hidden="true"></span>
           </button>
         </div>
+        <button id="field-save" class="button save-field" type="button" disabled>Dodaj działkę do moich pól</button>
         <div class="soil-field">
           <label for="soil-category">Kategoria gleby</label>
           <select id="soil-category" aria-describedby="soil-note">
@@ -97,6 +126,27 @@
         </div>
       </section>
     </div>
+
+    <section id="moje-pola" class="card data-card farm-card" aria-labelledby="farm-title">
+      <div class="card-head">
+        <div><h2 id="farm-title">Moje pola</h2><p>Bilans na 48 godzin dla zapisanych pól.</p></div>
+        <button id="farm-refresh" class="button" type="button" disabled>Odśwież prognozę</button>
+      </div>
+      <p id="farm-status" class="section-note" role="status"></p>
+      <div id="farm-summary" class="farm-summary" hidden></div>
+      <ul id="farm-list" class="farm-list"></ul>
+      <div id="area-results" class="area-results" hidden>
+        <h3>Działki w zaznaczonym obszarze</h3>
+        <p id="area-status" class="section-note" role="status"></p>
+        <div class="area-actions">
+          <a id="area-download" href="#" target="_blank" rel="noopener">Pobierz działki z Geoportalu</a>
+          <label class="file-button button" for="area-file">Wczytaj GeoJSON</label>
+          <input class="file-input" id="area-file" type="file" accept=".geojson,.json,application/json" />
+          <button id="area-save" class="button" type="button" disabled>Dodaj wybrane</button>
+        </div>
+        <div id="area-candidates" class="area-candidates"></div>
+      </div>
+    </section>
 
     <section id="bilans" class="card data-card" aria-labelledby="balance-title">
       <div class="card-head">
@@ -174,5 +224,7 @@
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="fields.js"></script>
+  <script defer src="terrain.js"></script>
 </body>
 </html>
