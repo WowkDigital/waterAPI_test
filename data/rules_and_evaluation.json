@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "effective_date": "2026-09-28",
+  "sources": [
+    "Regulamin HackNation (PDF)",
+    "Załącznik nr 1 do Regulaminu — Zgoda na wykorzystanie wizerunku (PDF)",
+    "Polityka Prywatności (PDF)",
+    "Przewodnik Uczestnika PL (PDF)",
+    "Tutorial Platformy HackTribe PL (PDF)",
+    "FAQ na hacknation.pl/faq"
+  ],
+  "eligibility": {
+    "age": "Wyłącznie osoby pełnoletnie (ukończone 18 lat, pełna zdolność do czynności prawnych).",
+    "citizenship_or_residency": "Obywatelstwo państwa członkowskiego UE LUB pełnoletnia osoba ze statusem rezydenta w jednym z państw członkowskich UE.",
+    "sanctions_exclusion": "Udział niedozwolony dla obywateli oraz rezydentów państw objętych sankcjami UE lub uznanych przez UE, ONZ lub RP za stanowiące zagrożenie dla bezpieczeństwa międzynarodowego. Organizator ma prawo weryfikacji i ostatecznego wykluczenia bez uzasadnienia ze względów bezpieczeństwa lub interesu publicznego.",
+    "cost": "Udział całkowicie bezpłatny.",
+    "ticket_rules": "Bilety imienne (zmiana danych wymaga uprzedniej pisemnej zgody Organizatora). Zakaz rekrutacji pracowników oraz reklamowania własnych towarów/usług pod rygorem odmowy udziału.",
+    "alcohol_and_conduct": "Zakaz wnoszenia broni, materiałów wybuchowych/pirotechnicznych, alkoholu, środków odurzających i substancji psychotropowych; obowiązkowe noszenie opaski i identyfikatora w widocznym miejscu."
+  },
+  "team_and_challenge_rules": {
+    "team_size_min": 1,
+    "team_size_max": 6,
+    "multi_team_membership": "Zabronione — Uczestnik może być członkiem tylko jednego Zespołu.",
+    "max_challenges_per_team": 2,
+    "one_project_per_challenge": true,
+    "cross_submission_warning": "Organizator stanowczo odradza zgłaszanie tego samego projektu do więcej niż jednej kategorii (różne specyfikacje + kolizja przeniesienia majątkowych praw autorskich do zwycięskich prac).",
+    "hacktribe_two_category_mechanic": "Na HackTribe jedna osoba (Team Leader) może utworzyć tylko 1 projekt. Aby wystartować w 2 zadaniach przed 20:00 w sobotę, inna osoba z zespołu zakłada 2. projekt jako Team Leader i dodaje resztę składu (uczestnik solo może utworzyć drugie konto na platformie).",
+    "team_changes_window": "Skład drużyny (imię, nazwisko, e-mail członków) można edytować w HackTribe do końca kodowania w niedzielę 22.11 o 11:00."
+  },
+  "submission_workflow_hacktribe": {
+    "platform": "HackTribe (język interfejsu: angielski; dedykowany link aktywacyjny na Discordzie #ogłoszenia)",
+    "stage_1_draft_checkpoint": {
+      "deadline": "2026-11-21T20:00:00+01:00",
+      "is_mandatory": true,
+      "lockout_rule": "Po 20:00 w sobotę nie ma możliwości utworzenia nowego projektu ani zmiany wybranego Zadania Partnerskiego.",
+      "required_fields": [
+        "Project Name",
+        "Wybrane Zadanie Partnerskie",
+        "Problem (kilkuzdaniowy opis + warto podać statystyki)",
+        "Solution (kilkuzdaniowy opis rozwiązania)",
+        "Przyjęte podejście",
+        "Dotychczasowy postęp",
+        "Link do repozytorium",
+        "Nazwa drużyny",
+        "Numer stolika"
+      ]
+    },
+    "stage_2_final_submission": {
+      "deadline": "2026-11-22T11:00:00+01:00",
+      "lockout_rule": "Zmiany i poprawki dokonane po godz. 11:00 w niedzielę nie są brane pod uwagę przez jury (§ 5.8). Zaleca się wysłanie wersji roboczej wcześniej i aktualizowanie jej przed deadline'em.",
+      "required_deliverables": [
+        "Prezentacja projektu w formacie PDF (maksymalnie 10 MB)",
+        "Zaktualizowany, zwięzły opis projektu i rozwiązania",
+        "Działające linki umożliwiające uruchomienie lub zobaczenie projektu (repozytorium, live demo)",
+        "Zalecane krótkie wideo demo do 2 minut (jurorzy mają tylko kilka minut na ocenę zgłoszenia)"
+      ]
+    }
+  },
+  "evaluation_and_judging": {
+    "jury_composition": "Minimum 3 członków na każdy Konkurs (skład publikowany najpóźniej 2. dnia Wydarzenia).",
+    "minimum_threshold_rule": "Jury może odmówić wyłonienia zwycięzców i przyznania nagród, jeżeli żadne rozwiązanie nie zdobędzie co najmniej 50% maksymalnej liczby punktów (§ 5.4).",
+    "round_1_screening": {
+      "time_window": "Niedziela 22.11.2026, 11:00 – 14:45",
+      "mechanism": "Jurorzy oceniają w HackTribe wszystkie ważne zgłoszenia w skali 0–10 dla każdego kryterium z regulaminu danego Zadania; system stosuje wagi zadania.",
+      "advancement": "Top 5 zespołów z najwyższymi wynikami w każdym Zadaniu Partnerskim awansuje do finału (ogłoszenie o 14:45 na Discordzie; oceny z Etapu 1 widoczne ok. 15:00)."
+    },
+    "round_2_finals": {
+      "time_window": "Niedziela 22.11.2026, od 15:15",
+      "score_carryover": false,
+      "mechanism": "Wyniki z Etapu 1 NIE są przenoszone do finału. Finaliści prezentują rozwiązanie na żywo przed Jury + Q&A (prezentacje nie są nagrywane). Jury wyłania zwycięzców zwykłą większością głosów (w razie remisu decyduje przewodniczący Jury).",
+      "finality": "Decyzje jury są ostateczne i nie przysługuje od nich odwołanie (§ 5.7)."
+    },
+    "recommended_pitch_structure": [
+      "Jaki problem rozwiązujecie i co stworzyliście",
+      "Jak działa Wasze rozwiązanie (demo)",
+      "Dlaczego jest wartościowe lub czym się wyróżnia",
+      "Co konkretnie udało się wdrożyć/zbudować podczas 24h HackNation"
+    ]
+  },
+  "intellectual_property_and_external_code": {
+    "ip_transfer_policy": "Zgodnie z FAQ #6 oraz § 6.3 Regulaminu, przewiduje się przeniesienie autorskich praw majątkowych do zwycięskich projektów na instytucje zgłaszające wyzwania (w szczególności na zasadach art. 921 § 3 KC – przyrzeczenie publiczne na podstawie umowy), choć w niektórych zadaniach mogą obowiązywać inne rozwiązania (np. licencja open source). Wiążące postanowienia IP publikowane są w regulaminach konkretnych wyzwań do 21.11.2026 godz. 11:00.",
+    "originality_warranty": "Uczestnik oświadcza, że jego wkład jest wolny od wad prawnych i nie narusza praw autorskich majątkowych ani osobistych osób trzecich (§ 6.1–6.2).",
+    "preexisting_code_and_ai": "Zgodnie z FAQ #11: jeśli korzystasz z wcześniej ukończonych lub zewnętrznych zasobów, narzędzi lub repozytoriów, musisz je rzetelnie zacytować / wymienić w prezentacji i kodzie. Wszelkie wątpliwości nt. użycia AI lub gotowych fragmentów kodu należy wyjaśnić z Organizatorami przed zgłoszeniem."
+  },
+  "prizes_and_taxes": {
+    "promisor_liability": "Przyrzekającym nagrodę (art. 919 § 1 KC) jest Partner albo Organizator – zależnie od wskazania w regulaminie danego zadania (§ 4.9–4.11).",
+    "payout_timeline": "Nagrody w konkursach Organizatora wydawane w terminie do 7 dni od ogłoszenia wyników (chyba że regulamin zadania stanowi inaczej).",
+    "taxation": "Nagrody podlegają opodatkowaniu zgodnie z ustawą o PIT (26 lipca 1991 r.); płatnikiem obliczającym, pobierającym i odprowadzającym podatek jest odpowiednio Partner lub Organizator (§ 4.17–4.18)."
+  },
+  "image_consent_and_gdpr": {
+    "controller": "Minister Cyfryzacji (współadministrator: PROIDEA sp. z o.o.)",
+    "subprocessors": [
+      "Collective Path Inc. (Eventory, Japonia)",
+      "SIA Uxinolab (HackTribe, Łotwa)",
+      "Lovable Labs Incorporated (USA) & home.pl S.A. (Polska) — hosting",
+      "Proidea sp. z o.o. (Polska) — obsługa operacyjna"
+    ],
+    "image_consent_note": "W Załączniku nr 1: zgoda na nieodpłatne utrwalanie i publikację wizerunku w kanałach MC (art. 81 prawa autorskiego) jest oznaczona jako dobrowolna, natomiast akceptacja klauzuli informacyjnej RODO jest obowiązkowa, aby wziąć udział w wydarzeniu."
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "event_name": "HackNation 2025 (Edycja 1 — Archiwum)",
+  "dates": "2025-12-06 do 2025-12-07",
+  "venue": "Bydgoskie Centrum Targowo-Wystawiennicze (BCTW), Bydgoszcz",
+  "organizers": [
+    "Ministerstwo Cyfryzacji (Departament GovTech Polska)",
+    "Ministerstwo Finansów – Krajowa Administracja Skarbowa",
+    "Miasto Bydgoszcz"
+  ],
+  "scale": {
+    "participants": "~1500",
+    "submitted_solutions": 437,
+    "tasks_count": 16,
+    "standard_prize_per_category_pln": 25000
+  },
+  "sources": [
+    "https://hacknation.pl/ (statystyka edycji 2025: blisko 1500 uczestników i 437 zgłoszonych rozwiązań)",
+    "https://www.gov.pl/web/cyfryzacja / https://www.gov.pl/web/kas",
+    "Rzeczpospolita (rp.pl), CHIP.pl, ITReseller.pl, Kosmonauta.net, Wyborcza.pl, PWR.edu.pl, PW.edu.pl, PO.edu.pl"
+  ],
+  "tasks_and_winners": [
+    {
+      "id": 1,
+      "title": "Bydgoszcz – Ścieżki Pamięci 2.0",
+      "sponsor": "Urząd Miasta Bydgoszcz",
+      "winner": "Adrian Michalski (start indywidualny / projekt '052 Quest')",
+      "prize_pln": 25000,
+      "solution_summary": "Aplikacja mobilna '052 Quest' zamieniająca zwiedzanie Bydgoszczy w interaktywną grę miejską z wykorzystaniem AI do rozpoznawania zabytków i popularyzacji lokalnej historii.",
+      "winning_pattern": "Silny UX, grywalizacja + praktyczne użycie AI (rozpoznawanie obiektów) w aplikacji gotowej do testu od razu przez mieszkańca/turystę; dowód, że nawet 1-osobowy zespół może wygrać przy świetnym produkcie."
+    },
+    {
+      "id": 2,
+      "title": "Cyfrowy nieśmiertelnik",
+      "sponsor": "Komenda Główna Państwowej Straży Pożarnej",
+      "winner": "WiWav",
+      "prize_pln": 25000,
+      "solution_summary": "System i narzędzie poprawiające bezpieczeństwo oraz identyfikację/monitoring strażaków podczas akcji ratowniczo-gaśniczych.",
+      "winning_pattern": "Projekt ściśle dopasowany do krytycznych warunków operacyjnych służb ratowniczych (niezawodność, minimalne tarcie w użyciu)."
+    },
+    {
+      "id": 3,
+      "title": "Gaming: Los decyduje",
+      "sponsor": "Totalizator Sportowy",
+      "winner": "All ink",
+      "prize_pln": 25000,
+      "solution_summary": "Gra losowa / rozwiązanie gamingowe inspirowane mechanikami Lotto dla Totalizatora Sportowego.",
+      "winning_pattern": "Kompletny, grywalny prototyp z atrakcyjną mechaniką i dopasowaniem do marki partnera."
+    },
+    {
+      "id": 4,
+      "title": "Scenariusze jutra",
+      "sponsor": "Ministerstwo Spraw Zagranicznych",
+      "winner": "Maciej Kopiec (w składzie m.in. Maciej Kopiec, Ireneusz Dawidowicz, Dawid Rutkowski — projekt AIDA)",
+      "prize_pln": 25000,
+      "solution_summary": "System AIDA (Automated Intelligent Data Analysis) wspierający analityków MSZ w przewidywaniu trendów i scenariuszy w niestabilnym środowisku międzynarodowym.",
+      "winning_pattern": "Narzędzie analityczno-prognostyczne dostarczające dyplomatom ustrukturyzowanych scenariuszy i analiz zamiast surowych podsumowań tekstu."
+    },
+    {
+      "id": 5,
+      "title": "Odnalezione zguby",
+      "sponsor": "Ministerstwo Cyfryzacji",
+      "winner": "OneMoreFix",
+      "prize_pln": 25000,
+      "solution_summary": "System 'jednego okna' dla samorządów i obywateli do centralnej rejestracji, wyszukiwania oraz obsługi rzeczy znalezionych trafiających do biur rzeczy znalezionych.",
+      "winning_pattern": "Rozwiązanie konkretnego, rozproszonego problemu administracyjnego prostym centralnym workflow, gotowe do szybkiej integracji między urzędami."
+    },
+    {
+      "id": 6,
+      "title": "Zobacz to, czego nie widać",
+      "sponsor": "JSW IT Systems",
+      "winner": "CombAIns (studenci Politechniki Warszawskiej)",
+      "prize_pln": 25000,
+      "solution_summary": "System oparty na wizji komputerowej (CV) i AI automatycznie mierzący szerokość taśmy przenośnikowej w kopalniach oraz wykrywający uszkodzenia i anomalie z generowaniem raportów segmentowych w aplikacji webowej.",
+      "winning_pattern": "Mierzalny problem przemysłowy + precyzyjne metryki z CV + przejrzysty raport segmentowy gotowy dla utrzymania ruchu."
+    },
+    {
+      "id": 7,
+      "title": "Wyszukiwarka anomalii",
+      "sponsor": "Ministerstwo Finansów – Krajowa Administracja Skarbowa",
+      "winner": "MEWA",
+      "prize_pln": 25000,
+      "solution_summary": "System 'Automatyczna wyszukiwarka anomalii' wykorzystujący segmentację semantyczną oraz modele AI (YOLO) do porównywania obrazów RTG pojazdów z wzorcami referencyjnymi w celu wykrywania przeróbek konstrukcyjnych i przemytu przy niskim odsetku fałszywych alarmów.",
+      "winning_pattern": "Wysoka precyzja techniczna, redukcja false positives (kluczowe dla funkcjonariuszy granicznych/KAS) i porównanie ze wzorcem referencyjnym."
+    },
+    {
+      "id": 8,
+      "title": "Kontrola zakładów wzajemnych",
+      "sponsor": "Ministerstwo Finansów – Krajowa Administracja Skarbowa",
+      "winner": "Extempore",
+      "prize_pln": 25000,
+      "solution_summary": "System AI automatyzujący całodobowy nadzór i monitorowanie rynku zakładów wzajemnych w Polsce pod kątem legalności oraz zgodności z przepisami skarbowymi.",
+      "winning_pattern": "Automatyzacja żmudnego, ciągłego monitoringu (24/7) i wsparcie konkretnej jednostki kontrolnej KAS."
+    },
+    {
+      "id": 9,
+      "title": "AI w służbie decyzji",
+      "sponsor": "Ministerstwo Sportu i Turystyki",
+      "winner": "Programiści PWR (studenci Politechniki Wrocławskiej / koło White Hats)",
+      "prize_pln": 25000,
+      "solution_summary": "Asystent AI dla orzeczników i urzędników: automatycznie agreguje i streszcza akta spraw, ekstraktuje dane z dokumentów, pilnuje terminów oraz generuje projekty decyzji i pism urzędowych.",
+      "winning_pattern": "Realne odciążenie urzędnika w codziennym obiegu spraw (akta -> streszczenie -> projekt decyzji przy zachowaniu kontroli człowieka)."
+    },
+    {
+      "id": 10,
+      "title": "ZUS Accident Notification Tool",
+      "sponsor": "Zakład Ubezpieczeń Społecznych",
+      "winner": "kanapowcy",
+      "prize_pln": 25000,
+      "solution_summary": "Narzędzie ZANT usprawniające i cyfryzujące zgłaszanie oraz obsługę zgłoszeń wypadkowych w procedurach ubezpieczeniowych ZUS.",
+      "winning_pattern": "Przełożenie trudnego, stresującego formularza/procesu dla obywatela w intuicyjną ścieżkę zmniejszającą liczbę błędów formalnych."
+    },
+    {
+      "id": 11,
+      "title": "Chmura pod kontrolą",
+      "sponsor": "Centralny Port Komunikacyjny (CPK)",
+      "winner": "HackStorm (projekt D.R.W.A.L.)",
+      "prize_pln": 25000,
+      "solution_summary": "System D.R.W.A.L. automatycznie klasyfikujący infrastrukturę kolejową na podstawie chmur punktów LiDAR i standardów BIM.",
+      "winning_pattern": "Głębokie zrozumienie standardów branżowych inwestora (BIM, LiDAR) i automatyzacja bardzo kosztownego etapu inżynierskiego."
+    },
+    {
+      "id": 12,
+      "title": "Ścieżka prawa",
+      "sponsor": "Ministerstwo Cyfryzacji + Grupa Robocza ds. AI",
+      "winner": "Code Casimir (m.in. reprezentanci Uniwersytetu Kazimierza Wielkiego w Bydgoszczy)",
+      "prize_pln": 25000,
+      "solution_summary": "Platforma (Next.js + Supabase) do śledzenia procesu legislacyjnego w czasie rzeczywistym, integrująca dane Sejmu, RCL i Dziennika Ustaw (ELI), z wyszukiwarką, alertami konsultacji publicznych i streszczeniami AI/analizą skutków regulacji.",
+      "winning_pattern": "Integracja realnych publicznych API (Sejm, RCL, ELI) w nowoczesnym, czystym produkcie dla obywateli i biznesu."
+    },
+    {
+      "id": 13,
+      "title": "Prawda w sieci",
+      "sponsor": "Centralny Ośrodek Informatyki (COI)",
+      "winner": "no signal (projekt mZaufanaStrona)",
+      "prize_pln": 25000,
+      "solution_summary": "Rozwiązanie mZaufanaStrona: widżet z kodem QR na oficjalnych stronach urzędowych, skanowany przez aplikację typu mObywatel, łączący się z niezależnym centralnym backendem weryfikującym domenę, certyfikat TLS i konfigurację bezpieczeństwa.",
+      "winning_pattern": "Genialnie prosta architektura bezpieczeństwa dopasowana wprost do ekosystemu mObywatela i realnego problemu phishingu na urzędy."
+    },
+    {
+      "id": 14,
+      "title": "Zgrany budżet",
+      "sponsor": "Ministerstwo Cyfryzacji",
+      "winner": "kurki",
+      "prize_pln": 25000,
+      "solution_summary": "Aplikacja wspomagająca rozproszone planowanie i zarządzanie budżetem między departamentami w urzędach z automatyczną synchronizacją wersji, limitów wydatków i uwag.",
+      "winning_pattern": "Uderzenie w realny ból pracy wewnątrz ministerstw (koniec z ręcznym scalaniem dziesiątek arkuszy Excela między departamentami)."
+    },
+    {
+      "id": 15,
+      "title": "Indeks Branż",
+      "sponsor": "PKO Bank Polski",
+      "winner": "Dominik (kozlowski_d — start indywidualny, projekt Industrial Risk Monitor)",
+      "prize_pln": 25000,
+      "solution_summary": "System Industrial Risk Monitor do monitorowania, indeksacji oraz przewidywania kondycji i ryzyka w poszczególnych sektorach polskiej gospodarki.",
+      "winning_pattern": "Konkretne wskaźniki sektorowe i model predykcyjny gotowy dla analityków bankowych; kolejny przykład wygranej solo."
+    },
+    {
+      "id": 16,
+      "title": "Dane bez twarzy",
+      "sponsor": "NASK – Państwowy Instytut Badawczy",
+      "winner": "Habanero Code",
+      "prize_pln": 25000,
+      "solution_summary": "Narzędzie z obszaru Privacy-Enhancing Technologies (PET) / anonimizacji danych służące do skutecznego usuwania lub maskowania danych osobowych i wrażliwych w dużych zbiorach instytucji publicznych.",
+      "winning_pattern": "Rozwiązanie blokera prawnego (RODO) umożliwiającego bezpieczne otwieranie i analizowanie danych publicznych."
+    }
+  ],
+  "meta_takeaways_for_2026": [
+    "Większość zwycięskich rozwiązań z 2025 r. miała wyraźny fokus na wdrożeniowość i redukcję konkretnego bólu operacyjnego urzędnika, analityka lub obywatela (np. mZaufanaStrona, Ścieżka prawa, Zgrany budżet, AI w służbie decyzji).",
+    "W 2025 r. wygrywały zarówno zespoły akademickie/techniczne (PWR, PW, UKW), jak i startujący solo (Adrian Michalski, Dominik / kozlowski_d) — kluczowa jest jakość MVP i trafność domenowa, nie liczba osób.",
+    "Kluczowi partnerzy z 2025 r. wrócili w 2026 r. z ewolucją tematyczną: MC, MF/KAS (2 zadania w 2025 -> OSINT krypto w 2026), MSZ (Scenariusze jutra -> Prawdowid), COI (Prawda w sieci -> Cyfryzacja formularzy), NASK (Dane bez twarzy -> Kolekcjoner fejków), ZUS (ZANT -> Przewodnik przyszłej mamy).",
+    "Bardzo wysoko punktowane jest: łączenie danych z rzeczywistych rejestrów/API publicznych, wyjaśnialność decyzji AI (brak ślepego LLM), redukcja false positives dla analityków oraz natywna zgodność z ekosystemem państwa (mObywatel, WCAG, RODO)."
+  ]
+}

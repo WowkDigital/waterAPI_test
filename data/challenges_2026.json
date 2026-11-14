@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0.0",
+  "source": "https://hacknation.pl/zadania (SSR payload crawled 2026-11-14)",
+  "status_note": "Na stronie głównej zapowiedziano 15 wyzwań od 15 partnerów. Na dzień 2026-11-14 opublikowano publicznie 10 zadań partnerskich (poniżej). Pełne opisy techniczne, zbiory danych, wagi kryteriów oraz ewentualne pozostałe zadania zostaną ujawnione najpóźniej w sobotę 21.11.2026 o godz. 11:00.",
+  "total_announced": 15,
+  "currently_published": 10,
+  "unrevealed_partner_signals_from_mentors_and_partners": [
+    "Urząd Komisji Nadzoru Finansowego (UKNF) — 3 mentorów na /mentorzy (w tym CIO i Z-ca Dyr. Departamentu Informatyki)",
+    "Instytut Badań Edukacyjnych (IBE) — 2 ekspertów na /mentorzy (w tym Ekspert ds. Mikropoświadczeń)",
+    "Ośrodek Przetwarzania Informacji – PIB (OPI PIB) — komunikat własny o partnerstwie przy HackNation 2026 oraz obecność w sekcji partnerów",
+    "Ministerstwo Rozwoju i Technologii (MRiT) — 1 ekspert na /mentorzy",
+    "Kancelaria Prezesa Rady Ministrów (KPRM) / AKMF — 7 mentorów z KPRM + 1 dyrektor AKMF"
+  ],
+  "challenges": [
+    {
+      "id": "risk-miner",
+      "official_uuid": "5eef552f-bc06-4244-a9bd-7a34061475be",
+      "title": "RISK MINER",
+      "initiator_institution": "MINISTERSTWO FUNDUSZY I POLITYKI REGIONALNEJ",
+      "sector_category": "Finanse publiczne / Zarządzanie projektami UE i PPP / Analiza ryzyka AI",
+      "prize_pool_pln": 25000,
+      "prize_pool_status": "published",
+      "official_description": "Każda inwestycja publiczna to wiele decyzji, zależności i potencjalnych zagrożeń. Jak wykorzystać dane, AI i nowoczesne technologie, aby wcześniej identyfikować ryzyka, przewidywać problemy i skuteczniej planować realizację inwestycji?",
+      "core_problem": "Wczesna detekcja ryzyk, anomalii harmonogramowo-budżetowych oraz zależności w inwestycjach publicznych i projektach współfinansowanych przed eskalacją problemów.",
+      "institutional_mentors_on_roster": [
+        "Michał Piwowarczyk (Dyrektor Dep. PPP w MFiPR)",
+        "Paweł Żbikowski (Naczelnik Wydziału Rozwoju i Wdrażania Systemów Informatycznych w MFiPR)",
+        "Marcin Bogucki (Kierownik w MFiPR)"
+      ],
+      "suggested_tech_stack": [
+        "Python (FastAPI), parsing dokumentów (PDF/DOCX/XML)",
+        "RAG z cytowaniem źródeł + LLM do ekstrakcji ryzyk i niespójności",
+        "Grafy zależności / detekcja anomalii (XGBoost / Isolation Forest / NetworkX)",
+        "Dashboard dla analityków z wyjaśnialnością scoringu (XAI)"
+      ],
+      "govtech_compliance_requirements": [
+        "Pełna wyjaśnialność (XAI) – urzędnik musi widzieć powód alertu i konkretny fragment dokumentu, nie czarną skrzynkę",
+        "Brak halucynacji i deterministyczna weryfikacja liczb/terminów",
+        "Możliwość pracy na dokumentach wrażliwych (on-prem / lokalne lub izolowane LLM)"
+      ],
+      "mvp_win_strategy": "Połączenie ekstrakcji ustrukturyzowanej (terminy, kamienie milowe, koszty, podmioty) z grafem powiązań/zależności oraz czytelnym panelem 'Early Warning' wskazującym konkretne czerwone flagi z odnośnikami do źródeł."
+    },
+    {
+      "id": "attack-surface-intelligence",
+      "official_uuid": "186f55a9-15ad-4e85-9ea8-2556feab44ca",
+      "title": "ATTACK SURFACE INTELLIGENCE",
+      "initiator_institution": "AKADEMIA GÓRNICZO-HUTNICZA",
+      "sector_category": "Cyberbezpieczeństwo / EASM / Threat Intelligence / AppSec",
+      "prize_pool_pln": 25000,
+      "prize_pool_status": "published",
+      "official_description": "Rozbudowana infrastruktura sieciowa może skrywać wiele niewidocznych zagrożeń, czających się w jej najmniej oczywistych zakamarkach. Każda organizacja powinna znać swoją infrastrukturę równie dobrze, jak generał zna pole bitwy i możliwości swojej armii. Jak rozproszyć mgłę cyfrowej wojny, dostrzec zagrożenia, zanim uderzą, i uniknąć porażki? Jak budować cyfrowe mury obronne, by udaremnić próby ich podkopania, sforsowania czy obejścia?",
+      "core_problem": "Ciągłe mapowanie zewnętrznej i wewnętrznej powierzchni ataku (EASM), wykrywanie nieudokumentowanych zasobów (shadow IT), błędów konfiguracji i priorytetyzacja podatności zanim zostaną wykorzystane.",
+      "institutional_mentors_on_roster": [
+        "Paweł Skalny (Specjalista ds. bezpieczeństwa w AGH)",
+        "Tomasz Nal (Inżynier bezpieczeństwa aplikacji w AGH)"
+      ],
+      "suggested_tech_stack": [
+        "Passive OSINT & DNS/Certificate Transparency enumeration (subfinder/amass/crt.sh/Shodan-style passive feeds)",
+        "Korelacja z NVD / CVE / CISA KEV / EPSS",
+        "Graf aktywów i ścieżek ataku (Attack Graph / Neo4j lub D3/Cytoscape)",
+        "Asystent AI do priorytetyzacji i generowania gotowych playbooków mitigacji"
+      ],
+      "govtech_compliance_requirements": [
+        "Pasywny / nieinwazyjny rekonesans lub skanowanie wyłącznie autoryzowanego zakresu (zero naruszenia infrastruktury osób trzecich)",
+        "Priorytetyzacja oparta na realnej eksploatowalności (KEV/EPSS), a nie samym CVSS",
+        "Czytelne raportowanie zarówno dla CISO/SOC, jak i administratorów IT uczelni/instytucji"
+      ],
+      "mvp_win_strategy": "Nie buduj kolejnego prostego wrappera na nmap. Zbuduj mapę aktywów powiązaną ze ścieżkami ataku (choke points), scoringiem KEV/EPSS oraz automatycznym wyliczaniem ekspozycji zmian w czasie (diff alerty)."
+    },
+    {
+      "id": "radar-innowacji",
+      "official_uuid": "89279589-ac41-41f5-bb0b-3ce32acb14bc",
+      "title": "RADAR INNOWACJI",
+      "initiator_institution": "PODKARPACKIE CENTRUM INNOWACJI",
+      "sector_category": "Transfer technologii / Edukacja & B+R / Analiza potencjału innowacji",
+      "prize_pool_pln": 11111,
+      "prize_pool_status": "published",
+      "official_description": "W szkołach, uczelniach, samorządach i innych instytucjach publicznych rodzą się pomysły, których znaczenie może wykraczać daleko poza miejsce ich powstania. Część z nich zyskuje rozgłos, inne pozostają w cieniu codziennych działań. Co sprawia, że dostrzegamy ich potencjał? Jak odnaleźć wśród lokalnych inicjatyw te, które mogą stać się początkiem większej zmiany?",
+      "core_problem": "Odkrywanie, ocena potencjału wdrożeniowego/skalowania (TRL, wpływ społeczno-rynkowy) oraz kojarzenie rozproszonych inicjatyw i pomysłów ze szkół, uczelni, samorządów i instytutów z mentorami, finansowaniem i partnerami.",
+      "institutional_mentors_on_roster": [
+        "Krzysztof Grabka (Menadżer ds. Technologii Protolab w PCI)",
+        "Łukasz Szubart (Ekspert w PCI)",
+        "Kacper Moczarny (Starszy Specjalista ds. organizacji wydarzeń w PCI)"
+      ],
+      "suggested_tech_stack": [
+        "Aggregator + scraping publicznych źródeł (BIP, uczelnie, granty, hackathonowe/szkolne repozytoria)",
+        "Wyszukiwanie semantyczne i embeddingi (Qdrant / pgvector)",
+        "Scoring potencjału innowacyjnego (TRL, unikalność, replikowalność w innych samorządach)",
+        "Interaktywny 'Radar' + generator kart innowacji (one-pager)"
+      ],
+      "govtech_compliance_requirements": [
+        "Prosty interfejs dostępny zarówno dla nauczyciela/urzędnika/studenta, jak i menedżera transferu technologii",
+        "Przejrzyste kryteria oceny potencjału pomysłu bez faworyzowania wyłącznie dużych ośrodków"
+      ],
+      "mvp_win_strategy": "Wizualny radar inicjatyw + inteligentny matching między 'małym lokalnym pomysłem' a potrzebami innych samorządów/biznesu oraz ścieżkami wsparcia (np. Protolab, granty, inkubatory)."
+    },
+    {
+      "id": "kompas-kompetencji",
+      "official_uuid": "6d4687ec-3d38-458a-8580-4b5f189c26c4",
+      "title": "KOMPAS KOMPETENCJI",
+      "initiator_institution": "BIURO DYREKTORA GENERALNEGO - MINISTERSTWO CYFRYZACJI",
+      "sector_category": "HR Tech / Administracja publiczna / Zarządzanie kompetencjami i rozwojem",
+      "prize_pool_pln": null,
+      "prize_pool_status": "not_published_yet",
+      "official_description": "Dobór odpowiednich kryteriów, rzetelna ocena kompetencji i rozmowa o wynikach pracy to wyzwania, z którymi mierzą się przełożeni w służbie cywilnej. Wśród procedur i formularzy łatwo zgubić najważniejszy cel tego procesu - wsparcie pracownika w dalszym rozwoju. Jak wykorzystać technologię, by ułatwić dokonywanie obiektywnych ocen i stworzyć przestrzeń do rozmowy o osiągnięciach, obszarach do poprawy oraz kolejnych krokach zawodowych?",
+      "core_problem": "Cyfryzacja i humanizacja procesu oceny okresowej oraz planowania indywidualnego rozwoju zawodowego (IPR) w służbie cywilnej tak, by zbiurokratyzowane formularze zamienić w obiektywne narzędzie rozwojowe.",
+      "institutional_mentors_on_roster": [
+        "Iwona Szelenbaum (Naczelnik wydziału w MC)",
+        "Karolina Kościerzyńska (Radca w MC)",
+        "Magdalena Dąbrowska (Radca w MC)",
+        "Karol Teodorowicz (Starszy specjalista w MC)",
+        "Arkadiusz Maliński (Referent w MC)"
+      ],
+      "suggested_tech_stack": [
+        "React / Next.js + formularze oparte na strukturze kompetencji służby cywilnej",
+        "Asystent AI wspierający przełożonego w formułowaniu konstruktywnego, pozbawionego uprzedzeń feedbacku (anti-bias check)",
+        "Moduł przygotowania do rozmowy oceniającej (dla pracownika i menedżera) + rekomendacja szkoleń/ścieżek rozwoju"
+      ],
+      "govtech_compliance_requirements": [
+        "Zgodność z AI Act! Uwaga: systemy AI używane do oceny pracowników w miejscu pracy mogą wpadać w kategorię High-Risk AI – kluczowe jest podejście Human-in-the-Loop (AI wspiera i porządkuje dowody, NIE podejmuje automatycznych decyzji kadrowych)",
+        "RODO i prywatność danych pracowniczych",
+        "WCAG 2.1 AA"
+      ],
+      "mvp_win_strategy": "Wyraźnie podkreśl zasadę Human-in-the-Loop i zgodność z AI Act. Pokaż konkretny workflow przed, w trakcie i po rozmowie oceniającej, który eliminuje 'syndrom pustej kartki' i tłumaczy procedury na plan rozwoju."
+    },
+    {
+      "id": "kolekcjoner-fejkow",
+      "official_uuid": "4864e8b8-0387-48d3-8d54-5709afc10e50",
+      "title": "KOLEKCJONER FEJKÓW",
+      "initiator_institution": "NAUKOWA I AKADEMICKA SIEĆ KOMPUTEROWA",
+      "sector_category": "Cyberbezpieczeństwo / Zwalczanie oszustw / Multimodal AI & OSINT",
+      "prize_pool_pln": null,
+      "prize_pool_status": "not_published_yet",
+      "official_description": "Fałszywe reklamy wykorzystujące wizerunki znanych osób pozorują wiarygodność i prowadzą użytkowników wprost w pułapkę oszustów. Szybko znikają, zmieniają formę i wracają pod nowymi adresami, utrudniając rozpoznanie skali zagrożenia. Pojedynczy podejrzany materiał może być zaledwie fragmentem znacznie większej kampanii. Jak dostrzec szerszy obraz w chaosie internetowych oszustw i skuteczniej chronić ich potencjalne ofiary?",
+      "core_problem": "Wykrywanie, gromadzenie, klastrowanie w kampanie i śledzenie rotujących fałszywych reklam (scam ads z wizerunkiem celebrytów/polityków/instytucji, deepfake'ami) pomimo ciągłej zmiany domen, kreacji i kont reklamowych.",
+      "institutional_mentors_on_roster": [
+        "Ewelina Bartuzi-Trokielewicz (Kierownik Zakładu Analiz Audiowizualnych i Systemów Biometrycznych w NASK PIB)",
+        "Donat Stankiewicz (Starszy Specjalista ds. AI w NASK PIB)",
+        "Katarzyna Roszczewska (Ekspert ds. AI w NASK PIB)",
+        "Dominik Brach (Specjalista ds. ML w NASK PIB)",
+        "Alicja Martinek (Ekspert ds. AI w NASK PIB)",
+        "Adrian Kordas (ML Engineer w NASK PIB)",
+        "Ada Sawilska (Specjalista ds. ML w NASK PIB)"
+      ],
+      "suggested_tech_stack": [
+        "Perceptual hashing (pHash/PDQ) + embeddingi wizualne (CLIP/SigLIP) i OCR do klastrowania podobnych kreacji mimo drobnych zmian",
+        "Graf powiązań kampanii (domeny, certyfikaty SSL, landing page'e, przekierowania, konta w Meta Ad Library / Google Ads Transparency)",
+        "Detekcja twarzy / deepfake audio-video i klasyfikacja wzorców scamu inwestycyjnego",
+        "Wtyczka przeglądarkowa lub portal zgłaszania + automatyczne generowanie pakietu takedown dla CERT Polska / NASK"
+      ],
+      "govtech_compliance_requirements": [
+        "Zachowanie materiału dowodowego (zrzut ekranu, DOM, łańcuch przekierowań, hash) zanim reklama zniknie",
+        "Integracja koncepcyjna z CERT Polska / incydent.cert.pl"
+      ],
+      "mvp_win_strategy": "Skup się na słowie 'Kolekcjoner' i 'szerszy obraz kampanii': nie tylko oceniaj 1 obrazek jako fake, ale grupuj różne reklamy w klastry tej samej grupy przestępczej (campaign clustering) i pokazuj oś czasu/infrastrukturę."
+    },
+    {
+      "id": "cyfryzacja-formularzy",
+      "official_uuid": "91135059-bafd-4f0f-990e-f5767334e4e9",
+      "title": "CYFRYZACJA FORMULARZY",
+      "initiator_institution": "CENTRALNY OŚRODEK INFORMATYKI",
+      "sector_category": "GovTech / E-usługi publiczne / AI Document-to-App / UX & WCAG",
+      "prize_pool_pln": null,
+      "prize_pool_status": "not_published_yet",
+      "official_description": "Jak sztuczna inteligencja może wspierać rozwój nowoczesnych usług publicznych? Zadaniem uczestników będzie znalezienie rozwiązania, które pomoże usprawnić proces cyfryzacji i sprawić, że droga od potrzeby do wygodnej usługi online będzie prostsza i szybsza.",
+      "core_problem": "Przyspieszenie przekształcania złożonych, papierowych lub PDF-owych procedur/formularzy urzędowych w intuicyjne, dostępne i zwalidowane e-usługi (np. w stylu mObywatela / gov.pl).",
+      "institutional_mentors_on_roster": [
+        "Mikołaj Mroszczak (CAIO w COI)",
+        "Magda Kołba-Górna (Dyrektorka Dep. Badań i Projektowania Doświadczeń w COI)",
+        "Eliza Fijołek (Dyrektor Dep. Komunikacji Elektronicznej w COI)",
+        "Emilian Duda (Kierownik Zespołu Usług Cyfrowych w COI)",
+        "Piotr Laskosz (Ekspert Projektowania UX/UI w COI)",
+        "Stella Chwedoruk (Badaczka UX w COI)",
+        "Jędrzej Szpygiel (Senior Data Scientist w COI)",
+        "Bartosz Krajewski (Inżynier ML w COI)",
+        "Tomasz Łuczak (Starszy Programista Java w COI)",
+        "Marek Fabiński & Dawid Czaja (Automatyzacja w COI)",
+        "Krzysztof Wysocki (Product Owner w COI)"
+      ],
+      "suggested_tech_stack": [
+        "Multimodal LLM / OCR (PDF/DOCX/rozporządzenie -> JSON Schema formularza + logika warunkowa)",
+        "Generator interaktywnego kreatora krok-po-kroku zgodnego z WCAG 2.1 AA i zasadami prostego języka (Plain Polish)",
+        "Walidacja reguł biznesowych i eksport gotowego formularza (np. JSON Schema / Formio / komponent React / XSD dla ePUAP/e-Doręczeń)"
+      ],
+      "govtech_compliance_requirements": [
+        "WCAG 2.1 AA (bardzo silny dział UX Research w COI obecny w mentorach!)",
+        "Prosty język (Plain Polish) tłumaczący urzędnicze pola obywatelowi",
+        "Deterministyczna weryfikacja przez urzędnika przed publikacją usługi (Human-in-the-Loop)"
+      ],
+      "mvp_win_strategy": "Zrób działający pipeline end-to-end: wgrywasz dowolny skomplikowany urzędowy PDF -> AI parsuje pola, reguły warunkowe i język prawny -> w 30 sekund powstaje zarówno gotowa, dostępna (WCAG) e-usługa dla obywatela (z mObywatel-like designem), jak i edytor dla analityka COI."
+    },
+    {
+      "id": "przewodnik-przyszlej-mamy",
+      "official_uuid": "8d826688-24c2-4329-8c42-f2a3aee0c382",
+      "title": "PRZEWODNIK PRZYSZŁEJ MAMY",
+      "initiator_institution": "ZAKŁAD UBEZPIECZEŃ SPOŁECZNYCH",
+      "sector_category": "GovTech / Usługi obywatelskie / Świadczenia społeczne / Mobile-first UX",
+      "prize_pool_pln": null,
+      "prize_pool_status": "not_published_yet",
+      "official_description": "Narodziny dziecka to początek niezwykłej przygody, ale także czas wielu pytań i formalności. Stwórz aplikację, która pomoże przyszłym i świeżo upieczonym rodzicom odnaleźć się w świecie świadczeń, uprawnień i formalności związanych z ciążą oraz rodzicielstwem. Zaprojektuj rozwiązanie, które zamieni skomplikowane procedury w prostą, intuicyjną i przyjazną ścieżkę.",
+      "core_problem": "Rozproszenie i złożoność przepisów oraz terminów dotyczących świadczeń (zasiłek chorobowy w ciąży, macierzyński, rodzicielski, 800+, Aktywny Rodzic, kosiniakowe, urlopy, zgłoszenie dziecka do ubezpieczenia ZUS, USC) zależnych od formy zatrudnienia i sytuacji życiowej.",
+      "institutional_mentors_on_roster": [
+        "Michał Dębiński (Dyrektor w ZUS)"
+      ],
+      "suggested_tech_stack": [
+        "PWA / Mobile-first React / Next.js",
+        "Silnik regułowy (deterministyczny!) obliczający uprawnienia i warianty świadczeń (UoP, zlecenie, B2B, bezrobotni, rolnicy)",
+        "Spersonalizowana oś czasu (timeline wg tygodnia ciąży / daty porodu) z przypomnieniami i checklistą dokumentów",
+        "RAG nad oficjalnymi poradnikami ZUS / kodeksem pracy jako wsparcie konwersacyjne (z twardym uziemieniem w źródłach)"
+      ],
+      "govtech_compliance_requirements": [
+        "100% poprawności merytoryczno-prawnej i finansowej (deterministyczny kalkulator reguł zamiast zgadywania przez LLM)",
+        "Wysoka empatia UX, prosty język, brak konieczności podawania wrażliwych danych medycznych na zewnątrz (privacy-first)"
+      ],
+      "mvp_win_strategy": "Połącz krótki onboarding (3–5 pytań: tydzień ciąży/data porodu, forma umowy, drugi rodzic) z dynamiczną osią czasu 'Co, gdzie i do kiedy załatwić' oraz symulatorem wariantów urlopu/świadczeń (np. 81,5% vs 100%/70% + Aktywny Rodzic)."
+    },
+    {
+      "id": "osintowy-lapacz-cyfrowych-sladow",
+      "official_uuid": "bfa061d7-f365-44be-8d55-a75af9ee4323",
+      "title": "OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW",
+      "initiator_institution": "MINISTERSTWO FINANSÓW - KRAJOWA ADMINISTRACJA SKARBOWA",
+      "sector_category": "FinTech / Blockchain Forensics / OSINT / Analiza kryminalna i skarbowa",
+      "prize_pool_pln": null,
+      "prize_pool_status": "not_published_yet",
+      "official_description": "Krypto to nie czarna skrzynka- to dane, algorytmy i fakty. Rozkoduj z nami świat kryptowalut, rozpraw się z popularnymi mitami i wykorzystaj potencjał nowoczesnych technologii. Wesprzyj naszych analityków. Podejmujesz wyzwanie?",
+      "core_problem": "Śledzenie przepływów kryptowalutowych i łączenie danych on-chain z otwartymi źródłami off-chain (OSINT: ogłoszenia, media społecznościowe, domeny, giełdy, podmioty VASP) w celu wsparcia analityków KAS w wykrywaniu nieopodatkowanych dochodów, oszustw i prania pieniędzy.",
+      "institutional_mentors_on_roster": [
+        "Paweł Roszkowski (Dyrektor Departamentu w MF / CIRF)",
+        "Szymon Marciniak (Z-ca Dyrektora Departamentu w CIRF)",
+        "Adam Graliński (Kierownik Zespołu w Aplikacje Krytyczne MF)",
+        "Maciej Kastner (Z-ca Naczelnika Urzędu Skarbowego w IAS Bydgoszcz)",
+        "Andrzej Szczotka (Kierownik Referatu Rejestrów Działalności Regulowanej w KAS IAS Katowice)"
+      ],
+      "suggested_tech_stack": [
+        "Graph analytics (Neo4j / NetworkX / Cytoscape.js) do wizualizacji przepływów on-chain i klastrów adresów",
+        "Heurystyki klasteryzacji (common-input-ownership, peeling chains, cross-chain bridges, mixer/DEX interactions)",
+        "OSINT scraper/korelowanie adresów portfeli z wyciekami/ogłoszeniami/forami/rejestrem działalności w zakresie walut wirtualnych (RDWW)",
+        "Eksport audytowalnego raportu dowodowego (PDF/JSON z hash-ami transakcji)"
+      ],
+      "govtech_compliance_requirements": [
+        "Powtarzalność i weryfikowalność ścieżki dowodowej dla analityka skarbowego (każdy link na grafie wskazuje konkretny tx_hash / źródło OSINT)",
+        "Szybkie przetwarzanie bez płatnych zamkniętych licencji"
+      ],
+      "mvp_win_strategy": "Pokaż most między światem on-chain (graf przepływów, wykrywanie wzorców wyprowadzania/mikserów/giełd) a off-chain OSINT (przypisanie adresu do konkretnego podmiotu/konta/rejestru RDWW) + jedno kliknięcie do raportu analityka."
+    },
+    {
+      "id": "prawdowid",
+      "official_uuid": "081567c6-e8fc-4bae-a21c-4da9b01fc783",
+      "title": "PRAWDOWID",
+      "initiator_institution": "MINISTERSTWO SPRAW ZAGRANICZNYCH",
+      "sector_category": "NLP / Fact-Checking / OSINT / Dyplomacja cyfrowa i walka z dezinformacją",
+      "prize_pool_pln": null,
+      "prize_pool_status": "not_published_yet",
+      "official_description": "Fakt czy manipulacja? Stwórz narzędzie, które pomoże je rozróżnić. W świecie nadmiaru informacji coraz trudniej ocenić, którym treściom można zaufać. Wykorzystaj sztuczną inteligencję i nowoczesne technologie, aby stworzyć prototyp narzędzia pomagającego użytkownikom weryfikować informacje, docierać do wiarygodnych źródeł i świadomie oceniać napotykane treści.",
+      "core_problem": "Wsparcie użytkowników (obywateli / dziennikarzy / analityków) w szybkiej weryfikacji wiarygodności napotykanych treści poprzez dekonstrukcję tez, konfrontację z pierwotnymi, wiarygodnymi źródłami i wykrywanie technik manipulacji.",
+      "institutional_mentors_on_roster": [
+        "Konrad Gałczyński (Radca generalny w MSZ)",
+        "Piotr Sosnowski (Analityk w MSZ)",
+        "Aleksandra Wojtowicz (Ekspertka w PISM)"
+      ],
+      "suggested_tech_stack": [
+        "Claim decomposition + cross-lingual search (weryfikacja czy informacja ma pokrycie w źródłach pierwotnych/urzędowych/agencjach)",
+        "Detektor technik manipulacji (cherry-picking, fałszywy kontekst, clickbait, błędy logiczne, manipulacja emocjami)",
+        "Wtyczka do przeglądarki + webowa piaskownica analizy linku/tekstu/obrazu z przejrzystą kartą wiarygodności i odnośnikami"
+      ],
+      "govtech_compliance_requirements": [
+        "Narzędzie nie może być 'arbitrem prawdy' bez dowodów — musi pokazywać źródła pierwotne i uzasadnienie, by użytkownik świadomie ocenił treść",
+        "Odporność na stronniczość polityczną i prompt injection w analizowanych artykułach"
+      ],
+      "mvp_win_strategy": "Przetestuj demo na żywo na realnych artykułach/postach z sieci: pokaż rozbicie tekstu na pojedyncze twierdzenia, weryfikację każdego z nich względem źródeł pierwotnych (z linkami i datami) oraz wykrycie technik retoryczno-manipulacyjnych."
+    },
+    {
+      "id": "zatrzymaj-wode-chron-plony",
+      "official_uuid": "ccada234-745a-4129-90c0-3b453ab86b3b",
+      "title": "ZATRZYMAJ WODĘ, CHROŃ PLONY",
+      "initiator_institution": "KRAJOWY OŚRODEK WSPARCIA ROLNICTWA",
+      "sector_category": "AgriTech / GIS / Teledetekcja / Adaptacja do zmian klimatu",
+      "prize_pool_pln": null,
+      "prize_pool_status": "not_published_yet",
+      "official_description": "Zmiany klimatu stawiają przed polskim rolnictwem coraz większe wyzwania. Podejmij wyzwanie i zaprojektuj rozwiązanie, które pomoże rolnikom podejmować trafniejsze decyzje, chronić plony i budować bardziej odporne na zmiany klimatu gospodarstwa.",
+      "core_problem": "Przełożenie danych przestrzennych, hydrologicznych, glebowych i klimatycznych (retencja wody, ryzyko suszy/podtopień) na praktyczne, lokalne rekomendacje dla rolników i zarządców gruntów rolnych (w tym zasobów KOWR).",
+      "institutional_mentors_on_roster": [],
+      "suggested_tech_stack": [
+        "GIS (Leaflet/Mapbox/Deck.gl) + otwarte polskie i unijne dane (Copernicus Sentinel-2 NDVI/NDWI, IMGW, Geoportal NMT/działki ewidencyjne, IUNG susza rolnicza)",
+        "Analiza retencji mikro-zlewni dla konkretnej działki lub gospodarstwa",
+        "Asystent decyzyjny dla rolnika rekomendujący konkretne działania retencyjne/agrotechniczne wraz ze wskazaniem dostępnych programów wsparcia"
+      ],
+      "govtech_compliance_requirements": [
+        "Bardzo prosty, praktyczny język i UX dopasowany do rolnika (wybierasz działkę na mapie lub podajesz gminę -> dostajesz konkretny plan działań)",
+        "Oparcie na realnych otwartych danych przestrzennych dla Polski"
+      ],
+      "mvp_win_strategy": "Wybierz dowolną działkę rolną na mapie Polski -> policz wskaźniki wilgotności/nachylenia terenu/zagrożenia suszą -> zarekomenduj konkretne interwencje (mała retencja, zadrzewienia śródpolne, dobór międzyplonów) z szacowanym efektem wodnym."
+    }
+  ]
+}

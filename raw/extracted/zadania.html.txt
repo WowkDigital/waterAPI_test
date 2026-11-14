@@ -1,0 +1,139 @@
+Zadania — HackNation 2026 
+
+HOME 
+Hackathon 
+Transport Zarejestruj się Zadania UCZESTNIK MEDIA FAQ Ustawienia dostępności 
+
+Zadania 
+
+Zadania Partnerskie 
+
+> RISK MINER 
+
+hacknation@tasks:~$ bat risk_miner.md 
+# O projekcie 
+| Inicjator projektu | MINISTERSTWO FUNDUSZY I POLITYKI REGIONALNEJ | 
+| Kampania | RISK MINER | 
+- [x] Każda inwestycja publiczna to wiele decyzji, zależności i potencjalnych zagrożeń. Jak wykorzystać dane, AI i nowoczesne technologie, aby wcześniej identyfikować ryzyka, przewidywać problemy i skuteczniej planować realizację inwestycji? 
+PULA NAGRÓD: 25 000 
+PULA NAGRÓD 
+
+hacknation@tasks:~$ _ 
+
+> ATTACK SURFACE INTELLIGENCE 
+
+hacknation@tasks:~$ bat attack_surface_intelligence.md 
+# O projekcie 
+| Inicjator projektu | AKADEMIA GÓRNICZO-HUTNICZA | 
+| Kampania | ATTACK SURFACE INTELLIGENCE | 
+- [x] Rozbudowana infrastruktura sieciowa może skrywać wiele niewidocznych zagrożeń, czających się w jej najmniej oczywistych zakamarkach. Każda organizacja powinna znać swoją infrastrukturę równie dobrze, jak generał zna pole bitwy i możliwości swojej armii. Jak rozproszyć mgłę cyfrowej wojny, dostrzec zagrożenia, zanim uderzą, i uniknąć porażki? Jak budować cyfrowe mury obronne, by udaremnić próby ich podkopania, sforsowania czy obejścia? 
+PULA NAGRÓD: 25 000 
+PULA NAGRÓD 
+
+hacknation@tasks:~$ _ 
+
+> RADAR INNOWACJI 
+
+hacknation@tasks:~$ bat radar_innowacji.md 
+# O projekcie 
+| Inicjator projektu | PODKARPACKIE CENTRUM INNOWACJI | 
+| Kampania | RADAR INNOWACJI | 
+- [x] W szkołach, uczelniach, samorządach i innych instytucjach publicznych rodzą się pomysły, których znaczenie może wykraczać daleko poza miejsce ich powstania. Część z nich zyskuje rozgłos, inne pozostają w cieniu codziennych działań. Co sprawia, że dostrzegamy ich potencjał? Jak odnaleźć wśród lokalnych inicjatyw te, które mogą stać się początkiem większej zmiany? 
+PULA NAGRÓD: 11 111 
+PULA NAGRÓD 
+
+hacknation@tasks:~$ _ 
+
+> KOMPAS KOMPETENCJI 
+
+hacknation@tasks:~$ bat kompas_kompetencji.md 
+# O projekcie 
+| Inicjator projektu | BIURO DYREKTORA GENERALNEGO - MINISTERSTWO CYFRYZACJI | 
+| Kampania | KOMPAS KOMPETENCJI | 
+- [x] Dobór odpowiednich kryteriów, rzetelna ocena kompetencji i rozmowa o wynikach pracy to wyzwania, z którymi mierzą się przełożeni w służbie cywilnej. Wśród procedur i formularzy łatwo zgubić najważniejszy cel tego procesu - wsparcie pracownika w dalszym rozwoju. Jak wykorzystać technologię, by ułatwić dokonywanie obiektywnych ocen i stworzyć przestrzeń do rozmowy o osiągnięciach, obszarach do poprawy oraz kolejnych krokach zawodowych? 
+
+hacknation@tasks:~$ _ 
+
+> KOLEKCJONER FEJKÓW 
+
+hacknation@tasks:~$ bat kolekcjoner_fejkow.md 
+# O projekcie 
+| Inicjator projektu | NAUKOWA I AKADEMICKA SIEĆ KOMPUTEROWA | 
+| Kampania | KOLEKCJONER FEJKÓW | 
+- [x] Fałszywe reklamy wykorzystujące wizerunki znanych osób pozorują wiarygodność i prowadzą użytkowników wprost w pułapkę oszustów. Szybko znikają, zmieniają formę i wracają pod nowymi adresami, utrudniając rozpoznanie skali zagrożenia. Pojedynczy podejrzany materiał może być zaledwie fragmentem znacznie większej kampanii. Jak dostrzec szerszy obraz w chaosie internetowych oszustw i skuteczniej chronić ich potencjalne ofiary? 
+
+hacknation@tasks:~$ _ 
+
+> CYFRYZACJA FORMULARZY 
+
+hacknation@tasks:~$ bat cyfryzacja_formularzy.md 
+# O projekcie 
+| Inicjator projektu | CENTRALNY OŚRODEK INFORMATYKI | 
+| Kampania | CYFRYZACJA FORMULARZY | 
+- [x] Jak sztuczna inteligencja może wspierać rozwój nowoczesnych usług publicznych? Zadaniem uczestników będzie znalezienie rozwiązania, które pomoże usprawnić proces cyfryzacji i sprawić, że droga od potrzeby do wygodnej usługi online będzie prostsza i szybsza. 
+
+hacknation@tasks:~$ _ 
+
+> PRZEWODNIK PRZYSZŁEJ MAMY 
+
+hacknation@tasks:~$ bat przewodnik_przyszlej_mamy.md 
+# O projekcie 
+| Inicjator projektu | ZAKŁAD UBEZPIECZEŃ SPOŁECZNYCH | 
+| Kampania | PRZEWODNIK PRZYSZŁEJ MAMY | 
+- [x] Narodziny dziecka to początek niezwykłej przygody, ale także czas wielu pytań i formalności. Stwórz aplikację, która pomoże przyszłym i świeżo upieczonym rodzicom odnaleźć się w świecie świadczeń, uprawnień i formalności związanych z ciążą oraz rodzicielstwem. Zaprojektuj rozwiązanie, które zamieni skomplikowane procedury w prostą, intuicyjną i przyjazną ścieżkę. 
+
+hacknation@tasks:~$ _ 
+
+> OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW 
+
+hacknation@tasks:~$ bat osintowy_lapacz_cyfrowych_sladow.md 
+# O projekcie 
+| Inicjator projektu | MINISTERSTWO FINANSÓW - KRAJOWA ADMINISTRACJA SKARBOWA | 
+| Kampania | OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW | 
+- [x] Krypto to nie czarna skrzynka- to dane, algorytmy i fakty. 
+Rozkoduj z nami świat kryptowalut, rozpraw się z popularnymi mitami i wykorzystaj potencjał nowoczesnych technologii. Wesprzyj naszych analityków. Podejmujesz wyzwanie? 
+
+hacknation@tasks:~$ _ 
+
+> PRAWDOWID 
+
+hacknation@tasks:~$ bat prawdowid.md 
+# O projekcie 
+| Inicjator projektu | MINISTERSTWO SPRAW ZAGRANICZNYCH | 
+| Kampania | PRAWDOWID | 
+- [x] Fakt czy manipulacja? Stwórz narzędzie, które pomoże je rozróżnić. 
+- [x] W świecie nadmiaru informacji coraz trudniej ocenić, którym treściom można zaufać. Wykorzystaj sztuczną inteligencję i nowoczesne technologie, aby stworzyć prototyp narzędzia pomagającego użytkownikom weryfikować informacje, docierać do wiarygodnych źródeł i świadomie oceniać napotykane treści. 
+
+hacknation@tasks:~$ _ 
+
+> ZATRZYMAJ WODĘ, CHROŃ PLONY 
+
+hacknation@tasks:~$ bat zatrzymaj_wode_chron_plony.md 
+# O projekcie 
+| Inicjator projektu | KRAJOWY OŚRODEK WSPARCIA ROLNICTWA | 
+| Kampania | ZATRZYMAJ WODĘ, CHROŃ PLONY | 
+- [x] Zmiany klimatu stawiają przed polskim rolnictwem coraz większe wyzwania. Podejmij wyzwanie i zaprojektuj rozwiązanie, które pomoże rolnikom podejmować trafniejsze decyzje, chronić plony i budować bardziej odporne na zmiany klimatu gospodarstwa. 
+
+hacknation@tasks:~$ _ 
+
+KONTAKT 
+
+KWESTIE ORGANIZACYJNE 
+kontakt@hacknation.pl 
+
+TRANSPORT 
+transport@hacknation.pl 
+
+REJESTRACJA 
+rejestracja@hacknation.pl 
+
+MEDIA I COMMUNITY 
+media@hacknation.pl 
+
+Tu tworzymy przyszłość 
+Discord 
+
+Regulamin 
+Polityka prywatności 
+Zgody na rozpowszechnianie wizerunku 
+Ustawienia cookies 

@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "source": "https://hacknation.pl/ (#agenda, /transport-z-polski, /transport, /przewodnik-uczestnika, /faq) & https://transporthacknation.pl/",
+  "agenda": {
+    "day_1_saturday_2026_11_21": [
+      {"time": "08:00", "title": "Start Rejestracji | Śniadanie", "notes": "Odbiór identyfikatora i opaski przy wejściu głównym od ul. Gdańskiej (wymagany bilet Eventory i dowód tożsamości)."},
+      {"time": "10:30", "title": "Ceremonia Otwarcia", "notes": "Scena Główna; również czas na Team Building po starcie."},
+      {"time": "11:00", "title": "Publikacja pełnych treści zadań - Start Kodowania", "notes": "Otwarcie platformy HackTribe i publikacja szczegółowych regulaminów/kryteriów zadań. Początek 24h pracy."},
+      {"time": "13:00", "title": "Przerwa Obiadowa", "notes": "Wydawana w Bistro na terenie BCTW."},
+      {"time": "14:00", "title": "Keynote", "notes": ""},
+      {"time": "18:00", "title": "Pizza time", "notes": ""},
+      {"time": "20:00", "title": "Quizwanie + DEADLINE NA DRAFT W HACKTRIBE", "notes": "Krytyczny checkpoint: do 20:00 projekt musi być założony na HackTribe z wybranym Zadaniem Partnerskim. Po 20:00 nie można tworzyć nowych projektów ani zmieniać zadania."}
+    ],
+    "day_2_sunday_2026_11_22": [
+      {"time": "07:00", "title": "Śniadanie", "notes": "Wydawane w Bistro na terenie BCTW."},
+      {"time": "11:00", "title": "Koniec Kodowania - Start oceny zadań", "notes": "Twardy deadline zgłoszenia finalnego projektu na HackTribe (PDF max 10 MB, demo, repozytorium). Po 11:00 zmiany nie są brane pod uwagę. Start Etapu 1 oceny."},
+      {"time": "11:30", "title": "Keynote", "notes": ""},
+      {"time": "13:00", "title": "Przerwa Obiadowa", "notes": ""},
+      {"time": "14:45", "title": "Ogłoszenie finalistów", "notes": "Publikacja TOP 5 zespołów z każdego Zadania Partnerskiego oraz kolejności prezentacji na Discordzie (ok. 15:00 widoczne oceny z Etapu 1)."},
+      {"time": "15:15", "title": "Pitching / II etap oceny", "notes": "Prezentacje na żywo przed Jury + Q&A (prezentacje nie będą nagrywane; punkty z Etapu 1 się nie liczą)."},
+      {"time": "17:15", "title": "Ceremonia zamknięcia", "notes": "Ogłoszenie zwycięzców i wręczenie nagród."},
+      {"time": "18:30", "title": "Odjazd bezpłatnych autokarów powrotnych", "notes": "Autobusy odjeżdżają spod BCTW do wszystkich miejscowości wyjazdowych."}
+    ]
+  },
+  "national_bus_transport": {
+    "booking_portal": "https://transporthacknation.pl/",
+    "booking_open": true,
+    "booking_deadline": "2026-11-17T22:00:00+00:00",
+    "booking_deadline_local_cet": "2026-11-17 23:00 CET",
+    "allow_cancellation": true,
+    "ticket_sync_hours_cet": ["11:00", "15:00", "19:00", "23:00"],
+    "contact_email": "transport@hacknation.pl",
+    "return_date": "2026-11-22",
+    "return_time_approx": "18:30",
+    "rules": [
+      "Transport całkowicie bezpłatny dla zarejestrowanych uczestników (wymagany numer biletu z Eventory i e-mail, weryfikacja kodem 6-cyfrowym).",
+      "Liczba miejsc ograniczona – decyduje kolejność zgłoszeń.",
+      "Przed wejściem na pokład sprawdzana jest lista zapisanych uczestników.",
+      "Autokary mają rozkładane fotele, zaplanowane postoje i dojeżdżają bezpośrednio pod BCTW przed startem wydarzenia."
+    ],
+    "departures_2026_11_21": [
+      {"id": "dep-12", "city": "Rzeszów", "date": "2026-11-21", "time": "00:01", "location": "ul. Podpromie (Parking Podpromie)", "map_url": "https://maps.app.goo.gl/h2kvpMg2DVjQxrpW8"},
+      {"id": "dep-06", "city": "Kraków", "date": "2026-11-21", "time": "02:00", "location": "ul. Pawia (Pawia P+R/Kiss & Ride)", "map_url": "https://maps.app.goo.gl/R4kRhraP3zNH6nCb7"},
+      {"id": "dep-07", "city": "Lublin", "date": "2026-11-21", "time": "02:00", "location": "pl. Zamkowy", "map_url": "https://maps.app.goo.gl/gzKExvhDsrFWDUrn9"},
+      {"id": "dep-01", "city": "Białystok", "date": "2026-11-21", "time": "02:30", "location": "pl. Jana Pawła II (przystanek pl. Jana Pawła II/Pałac Branickich 182)", "map_url": ""},
+      {"id": "dep-10", "city": "Opole", "date": "2026-11-21", "time": "02:30", "location": "ul. Stawowa (Centrum Przesiadkowe Opole Zachodnie)", "map_url": ""},
+      {"id": "dep-03", "city": "Katowice", "date": "2026-11-21", "time": "03:00", "location": "ul. Sądowa 5 (Międzynarodowy Dworzec Autobusowy)", "map_url": "https://maps.app.goo.gl/brHMGhLPjUFZgAXbA"},
+      {"id": "dep-04", "city": "Kielce", "date": "2026-11-21", "time": "03:00", "location": "ul. Wystawowa (Targi Kielce - Terminal Zachodni, obok parkingu wielopoziomowego)", "map_url": ""},
+      {"id": "dep-15", "city": "Wrocław", "date": "2026-11-21", "time": "04:00", "location": "ul. Wybrzeże Słowackiego (Parking przy Urzędzie Marszałkowskim)", "map_url": "https://maps.app.goo.gl/9nNiAP4uSKiGfYbJA"},
+      {"id": "dep-14", "city": "Warszawa", "date": "2026-11-21", "time": "04:30", "location": "al. Jerozolimskie (Parking przy PKiN)", "map_url": "https://maps.app.goo.gl/QMURwHvF2PWKy7Aw8"},
+      {"id": "dep-16", "city": "Zielona Góra", "date": "2026-11-21", "time": "04:30", "location": "ul. Sulechowska (parking przy CRS Zielona Góra)", "map_url": ""},
+      {"id": "dep-13", "city": "Szczecin", "date": "2026-11-21", "time": "05:00", "location": "przystanek przy Trasie zamkowej / ul. Farnej", "map_url": "https://maps.app.goo.gl/R13WxTvVkTJUaqmA8"},
+      {"id": "1e6f1025-d8bf-4088-bc4c-6a9e1ba29fea", "city": "Gdynia", "date": "2026-11-21", "time": "05:40", "location": "ul. Górskiego 8, Parking przy Atlas Arenie", "map_url": "https://maps.app.goo.gl/USGzJoNqA2FKZrfWA"},
+      {"id": "dep-05", "city": "Koszalin", "date": "2026-11-21", "time": "05:45", "location": "ul. Śniadeckich (Parking pod Politechniką Koszalińska)", "map_url": "https://maps.app.goo.gl/oiR3p1gdNvbtWYyB9"},
+      {"id": "dep-08", "city": "Łódź", "date": "2026-11-21", "time": "05:45", "location": "ul. Tuwima (Parking autobusów turystycznych)", "map_url": "https://maps.app.goo.gl/Ng79AAyUfgXuPiRH9"},
+      {"id": "dep-09", "city": "Olsztyn", "date": "2026-11-21", "time": "05:45", "location": "Plac Konstytucji 3 Maja (Dworzec Autobusowy)", "map_url": ""},
+      {"id": "0c9ab81a-f01a-494a-a0c0-e7ff148700ba", "city": "Sopot", "date": "2026-11-21", "time": "06:00", "location": "ul. Niepodległości - stacja paliw BP", "map_url": "https://maps.app.goo.gl/Y2VVTzjXaCkyiTuJ9"},
+      {"id": "dep-02", "city": "Gdańsk", "date": "2026-11-21", "time": "06:30", "location": "ul. 3 maja (Dworzec autobusowy)", "map_url": "https://maps.app.goo.gl/prpdK5GmL7WCqu4JA"},
+      {"id": "dep-11", "city": "Poznań", "date": "2026-11-21", "time": "06:45", "location": "ul. Dworcowa (Dworzec Letni)", "map_url": "https://maps.app.goo.gl/QhvTgg78X52PjavZ7"}
+    ]
+  },
+  "local_bydgoszcz_shuttle": {
+    "description": "Bezpłatne bezpośrednie autobusy oznakowane z przodu tablicą HACKNATION między Dworcem PKP Bydgoszcz Główna a BCTW.",
+    "pkp_stop_map_url": "https://maps.app.goo.gl/y5sMeijtuh1z9RGW8",
+    "saturday_pkp_to_bctw": ["07:45", "08:15", "08:45", "09:15", "10:30", "11:15", "11:45"],
+    "sunday_bctw_to_pkp": ["18:05", "18:20", "18:45", "19:00"]
+  },
+  "onsite_facilities_and_checklist": {
+    "zones": [
+      "Hala nr 2: Główna Strefa Kodowania (stoły, krzesła, zasilanie 230V, Wi-Fi + kabel RJ45)",
+      "Hala nr 1: Strefa Mentorów",
+      "Strefa Relaksu (VR, symulatory, konkursy)",
+      "Strefa Partnerska i Scena Główna",
+      "Wydzielona Strefa Snu (łóżka polowe i ograniczona liczba koców)",
+      "Strefa Sanitarna z prysznicami",
+      "Szatnia (brak odpowiedzialności organizatora za rzeczy zostawione bez opieki)",
+      "Punkt medyczny obok Rejestracji"
+    ],
+    "catering": "Łącznie 5 posiłków w trakcie hackathonu: 4 posiłki w Bistro na terenie BCTW + 1 przerwa z pizzą (opcje: mięsna, wegetariańska, wegańska, bezglutenowa), napoje, kawa i przekąski.",
+    "packing_checklist": {
+      "mandatory": [
+        "Dokument tożsamości (dowód osobisty/paszport)",
+        "Bilet z Eventory (elektroniczny lub papierowy)",
+        "Laptop + ładowarka"
+      ],
+      "highly_recommended_tech": [
+        "Przejściówka Ethernet RJ45 -> USB-C / USB-A (na stanowiskach jest kabel RJ45!)",
+        "Własny przedłużacz / listwa zasilająca",
+        "Słuchawki (najlepiej z wygłuszeniem hałasu), myszka, powerbank"
+      ],
+      "sleep_and_hygiene": [
+        "Własny śpiwór (lub koc) i mała poduszka",
+        "Ręcznik, klapki i przybory toaletowe (na miejscu są prysznice)",
+        "Butelka wielokrotnego użytku i wygodne ubranie na zmianę"
+      ]
+    }
+  }
+}

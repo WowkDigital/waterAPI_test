@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BkSabwWG.js";import{t}from"./routes-C_bMAb88.js";var n=e(),r=()=>(0,n.jsx)(t,{});export{r as errorComponent};

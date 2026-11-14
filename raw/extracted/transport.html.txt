@@ -1,0 +1,69 @@
+Transport — HackNation 2026 
+
+HOME 
+Hackathon 
+Transport Zarejestruj się Zadania UCZESTNIK MEDIA FAQ Ustawienia dostępności 
+
+Transport 
+
+BEZPŁATNY AUTOBUS Z DWORCA PKP BYDGOSZCZ GŁÓWNA 
+Dla uczestników HackNation organizujemy bezpłatne, bezpośrednie autobusy kursujące z Dworca PKP Bydgoszcz Główna do BCTW oraz z BCTW na Dworzec PKP Bydgoszcz Główna. 
+JAK ROZPOZNAĆ AUTOBUS? 
+Wszystkie autobusy będą oznaczone z przodu tablicą HACKNATION . 
+ROZKŁAD JAZDY 
+Aby podróż na wydarzenie była możliwie komfortowa i spokojna, przygotowaliśmy dla Was zestaw rozwiązań, które ułatwią dojazd z Bydgoszczy: 
+
+optymalne trasy z zaplanowanymi postojami na odpoczynek czy przekąskę, 
+nowoczesne, wygodne autobusy z regulowanymi, rozkładanymi fotelami, 
+bezpośredni dojazd na miejsce wydarzenia, 
+zaplanowaną godzinę przyjazdu, tak aby każdy mógł skorzystać ze strefy relaksu, zjeść przygotowane śniadanie i odświeżyć się przed startem hackathonu. 
+Poniżej znajdziesz szczegółowy harmonogram dla każdego miasta: 
+
+SOBOTA — TRASA DWORZEC PKP BYDGOSZCZ GŁÓWNA > BCTW 
+Autobusy odjeżdżają z przystanku sprzed dworca PKP Bydgoszcz Główna – dokładna lokalizacja przystanku 
+
+hacknation@pl:~$ cat Sobota_trasa_dworzec_pkp_bydgoszcz_główna_bctw.md 
+│ File: Sobota_trasa_dworzec_pkp_bydgoszcz_główna_bctw.md 
+# Godzina odjazdu 
+[ 07:45 ] 
+[ 08:15 ] 
+[ 08:45 ] 
+[ 09:15 ] 
+[ 10:30 ] 
+[ 11:15 ] 
+[ 11:45 ] 
+hacknation@pl:~$ 
+
+NIEDZIELA — TRASA BCTW > DWORZEC PKP BYDGOSZCZ GŁÓWNA 
+Autobusy odjeżdżają z przystanku sprzed BCTW 
+
+hacknation@pl:~$ cat Niedziela_trasa_bctw_dworzec_pkp_bydgoszcz_główna.md 
+│ File: Niedziela_trasa_bctw_dworzec_pkp_bydgoszcz_główna.md 
+# Godzina odjazdu 
+[ 18:05 ] 
+[ 18:20 ] 
+[ 18:45 ] 
+[ 19:00 ] 
+hacknation@pl:~$ 
+
+KONTAKT 
+
+KWESTIE ORGANIZACYJNE 
+kontakt@hacknation.pl 
+
+TRANSPORT 
+transport@hacknation.pl 
+
+REJESTRACJA 
+rejestracja@hacknation.pl 
+
+MEDIA I COMMUNITY 
+media@hacknation.pl 
+
+Tu tworzymy przyszłość 
+Discord 
+
+Regulamin 
+Polityka prywatności 
+Zgody na rozpowszechnianie wizerunku 
+Ustawienia cookies 

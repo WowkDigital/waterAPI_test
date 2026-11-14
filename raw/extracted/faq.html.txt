@@ -1,0 +1,206 @@
+FAQ — HackNation 2026 
+
+HOME 
+Hackathon 
+Transport Zarejestruj się Zadania UCZESTNIK MEDIA FAQ Ustawienia dostępności 
+
+FAQ 
+
+O HACKNATION 
+
+1. CO TO JEST HACKNATION? + 
+
+To druga edycja hackathonu organizowanego przez administrację publiczną! Spotykamy się stacjonarnie w Bydgoskim Centrum Targowo - Wystawienniczym, aby wspólnie tworzyć technologie, które odpowiadają na realne potrzeby społeczne, wspierają cyfrowy rozwój Polski i budują most między sektorem publicznym, nauką i biznesem. 
+
+2. GDZIE I KIEDY? + 
+
+21-22.11.2026 r., Bydgoskie Centrum Targowo - Wystawiennicze, ul. Gdańska 187, 85-674 Bydgoszcz. 
+
+3. CZY UDZIAŁ W WYDARZENIU JEST TYLKO STACJONARNY? + 
+
+Tak, udział jest tylko stacjonarny. Zapraszamy do Bydgoszczy! 
+
+4. KTO MOŻE UCZESTNICZYĆ [OSOBY PEŁNOLETNIE] + 
+
+Szukamy programistów – od backendowych mistrzów, przez frontendowych magików, po full-stackowych ninja. Ale najlepsze zespoły to różnorodne zespoły! Designerzy UX/UI, testerzy i inne kreatywne umysły są mile widziane, by wspólnie przekuć pomysły w rzeczywistość. Możesz dołączyć sam lub z zespołem. I pamiętaj - wspólnie możemy zaprogramować przyszłość Polski! 
+Bardzo ważne: wszyscy uczestnicy muszą mieć ukończone 18 lat i posiadać obywatelstwo UE lub obywatelstwo kraju trzeciego oraz kartę pobytu na terenie UE. 
+
+5. CZY UDZIAŁ W WYDARZENIU JEST BEZPŁATNY? + 
+
+Tak, wydarzenie jest darmowe. 
+
+6. CO JEŚLI NIGDY NIE BRAŁEM/AM UDZIAŁU W HACKATHONIE? + 
+
+To świetna okazja, żeby spróbować swoich sił w hackathonie. Nie wymagamy doświadczenia, więc brak udziału w innych wydarzeniach tego typu nie jest przeszkodą. 
+
+7. CO MAM ZE SOBĄ ZABRAĆ? + 
+
+Zabierz ze sobą komputer (laptop lub PC) oraz wszelkie przydatne akcesoria, takie jak słuchawki, mysz, klawiatura czy dodatkowy monitor. 
+Jeśli Twój laptop nie ma portu do podłączenia kabla internetowego (RJ45), zabierz przejściówkę z RJ45 na USB-C (lub USB-A, w zależności od portów w Twoim komputerze) . Dzięki temu będziesz mieć możliwość korzystania z internetu przewodowego. 
+Pamiętaj, że odpowiadasz za swój sprzęt. Gdy odchodzisz od stanowiska, zabierz go ze sobą lub zostaw pod opieką osoby ze swojej drużyny. Nie ponosimy odpowiedzialności za rzeczy pozostawione bez opieki. 
+Na miejscu zapewniamy Ci stół, krzesło, dostęp do prądu oraz internetu - zarówno przez Wi-Fi, jak i kabel (RJ45). 
+
+8. CZY ZAPEWNIACIE DOSTĘP DO INTERNETU I PRĄDU? + 
+
+Tak, na miejscu będzie dostęp do prądu i internetu - zarówno przewodowego jak i bezprzewodowego. 
+
+9. CZY NA MIEJSCU BĘDZIE PRYSZNIC? + 
+
+Tak, przygotujemy dla Was strefę sanitarną, gdzie będzie można umyć zęby i wziąć prysznic. 
+
+BEZPŁATNY UDZIAŁ 
+
+1. JAK SIĘ ZAPISAĆ? + 
+
+Aby się zapisać wypełnij formularz rejestracyjny tutaj i zaplanuj swoją podróż do Bydgoszczy. Pamiętaj, że możesz skorzystać z darmowego transportu, który dla Was przygotowaliśmy: 
+https://transporthacknation.pl/ 
+
+2. REJESTRUJĘ SIĘ SAMODZIELNIE CZY ZESPOŁOWO? + 
+
+Każdy uczestnik rejestruje się samodzielnie i pojedynczo. 
+
+3. WYPEŁNIŁEM/AM FORMULARZ REJESTRACYJNY, CO DALEJ? + 
+
+Otrzymasz od nas maila z potwierdzeniem rejestracji i biletem, pamiętaj aby zabrać go ze sobą na wydarzenie. Jeśli wypełniłeś/aś informacje dotyczące bezpłatnego transportu, otrzymasz maila ze szczegółami. 
+
+4. DO KIEDY MOŻNA REJESTROWAĆ SIĘ NA WYDARZENIE? + 
+
+Liczba miejsc jest ograniczona. Rejestrować można się aż do wypełnienia miejsc. 
+
+WYŻYWIENIE 
+
+1. CZY ZAPEWNIACIE WYŻYWIENIE? CO MUSZĘ ZABRAĆ DO JEDZENIA? + 
+
+Gwarantujemy 4 posiłki w opcji mięsnej, wegetariańskiej, wegańskiej i bezglutenowej oraz (oczywiście!) pizzę! Jeżeli jednak jesteś na specjalnej diecie lub masz indywidualne problemy żywieniowe, to zabierz ze sobą jedzenie, z którym będziesz czuł/a się komfortowo. 
+
+NOCLEG 
+
+1. DOSTĘPNA STREFA SPANIA NA OBIEKCIE + 
+
+Na przestrzeni obiektu dostępna będzie  przestrzeń, gdzie można odpocząć, przespać się i zregenerować siły. Zapewniamy łóżka polowe oraz ograniczoną liczbę koców. Ze względów higienicznych i dla własnego komfortu zachęcamy jednak do zabrania własnej poduszki oraz śpiwora, jeśli planujesz odpoczynek na miejscu. 
+
+TRANSPORT 
+
+1. DOJAZD NA WYDARZENIE + 
+
+Zapewniamy darmowy transport w obie strony (przyjazd i powrót) z 15 miast w całej Polsce. Po więcej informacji sprawdź zakładkę “Transport” . 
+Podczas wypełniania formularza rejestracyjnego, wybierz miasto wojewódzkie najbliżej Ciebie. Pamiętaj, liczba miejsc jest ograniczona - decyduje kolejność zgłoszeń! 
+
+ZESPOŁY 
+
+1. ILE OSÓB MOŻE BYĆ W ZESPOLE? + 
+
+Zespół powinien składać się z od 1 do 6 osób, więc możesz wybrać się jako samotny wilk lub zabrać ze sobą znajomych! Nie musisz zgłaszać składu swojej drużyny przed wydarzeniem. 
+
+2. MAMY ZESPÓŁ, CO TERAZ? + 
+
+Przeczytaj wymagania zadania, nad którym chcesz pracować i jeśli się z nimi zgadzasz, podejmij pracę. Jeśli się zgubiła/eś lub nie wiesz, co robić, skontaktuj się z naszymi mentorami za pośrednictwem naszych kanałów Discord i poproś o poradę! 
+
+3. NIE MAMY ZESPOŁU, CO TERAZ? + 
+
+Nie ma z tym problemu! Możesz działać samodzielnie, ale…Jeśli chcesz utworzyć zespół, możesz znaleźć jego członków na kilka sposobów: 
+
+Zarejestruj się na naszym Discordzie ,  gdzie znajduje się specjalny kanał dla uczestników, którzy chcą dołączyć lub utworzyć nowy zespół. 
+
+Porozmawiaj z przyjaciółmi lub znajomymi z uczelni! Opowiedz im o HackNation - jesteśmy pewni, że zechcą dołączyć! 
+
+Możesz znaleźć swój zespół na miejscu - zaraz po ogłoszeniu szczegółów zadań w strefie kodowania ruszy TeamBuilding, gdzie możesz stworzyć swój zespół. 
+
+4. CZY MOGĘ BYĆ W WIĘCEJ NIŻ JEDNYM ZESPOLE? + 
+
+Nie. Możesz być członkiem tylko jednego zespołu. 
+
+5. CZY MOGĘ ZMIENIĆ ZESPÓŁ PODCZAS HACKATHONU? + 
+
+Jasne, możesz zmieniać drużynę tyle razy, ile chcesz. Pamiętaj tylko, żeby być na liście członków zespołu w momencie składania projektu. Jest to ostateczna deklaracja składu zespołu. 
+
+6. CZY MOGĘ DODAĆ/USUNĄĆ CZŁONKÓW DO ZESPOŁU? + 
+
+Może to zrobić tylko lider zespołu. Edycja jest możliwa tak długo, jak system jest otwarty - podczas wgrywania projektu na HackTribe, czyli od 11:00 (21.11.2026) do 11:00 (22.11.2026). Podczas dodawania członków zespołu należy pamiętać o wpisaniu imienia, nazwiska i adresu e-mail. 
+
+7. CZY MOGĘ ZMIENIĆ NAZWĘ ZESPOŁU? + 
+
+Lider zespołu deklaruje nazwę zespołu podczas przesyłania projektu - wcześniej możesz zmieniać nazwę dowolną liczbę razy. Pamiętaj! Po przesłaniu projektu możesz edytować dane projektu i zespołu (tj. nazwę teamu, nazwę projektu, członków, załączniki). 
+
+ZADANIA 
+
+1. JAK SĘDZIOWIE BĘDĄ OCENIAĆ ZADANIA? + 
+
+Każde zadanie będzie miało swoje indywidualne kryteria oraz przypisane do nich wagi. Kryteria każdego zadania znajdują się w regulaminie lub w szczegółowym opisie zadania, które pojawi się w dniu wydarzenia o godzinie 11:00. 
+
+2. CZY MÓJ ZESPÓŁ MOŻE WYKONAĆ WIĘCEJ NIŻ JEDNO ZADANIE? + 
+
+Twój zespół może rozwiązać maksymalnie dwa zadania. Pamiętaj - możesz zgłosić tylko jeden projekt w danej kategorii. 
+
+3. CZY MOGĘ ZGŁOSIĆ JEDEN PROJEKT DO WIĘCEJ NIŻ JEDNEJ KATEGORII? + 
+
+Każde zadanie ma indywidualne wymagania i specyfikację, dlatego naprawdę ciężko jest stworzyć „jeden projekt, który będzie odpowiadał wszystkim”. Trzeba też pamiętać o prawach autorskich, gdyż niektóre zadania będą wymagały przeniesienia praw autorskich (zwycięzcy) i nie da się tego zrobić w ramach dwóch różnych zadań. Dlatego, o ile jest to technicznie możliwe, zdecydowanie odradzamy zgłaszanie jednego projektu do więcej niż jednej kategorii. 
+
+4. SKOŃCZYLIŚMY, CO TERAZ? + 
+
+Prześlij swój projekt na platformę wymaganą dla każdego zadania. Większość zadań należy wgrać do HackTribe, jednak każdy Partner może wybrać własną platformę. Sprawdź opisy zadań, aby dowiedzieć się, gdzie przesłać swój projekt. 
+Skończyłeś wcześniej? 
+
+Jeśli czujesz, że Twoje zadanie może wygrać, zacznij myśleć o prezentacji. 
+
+Jeśli zmęczenie sprawia, że nie masz już na nic ochoty - zrelaksuj się trochę, odwiedź stoiska partnerów lub poznaj więcej ludzi! 
+
+5. NIE JESTEM DUMNY Z SWOJEGO PROJEKTU, CZY MUSZĘ GO PRZESŁAĆ? + 
+
+Nie, jeśli nie podoba Ci się to, co wymyśliłaś/eś, nie musisz nic wysyłać. Mimo to nadal zachęcamy Cię do spróbowania, bo być może sędziowie dostrzegą w tym coś, czego Ty nie widzisz! 
+
+6. KTO POSIADA PRAWA DO TEGO, CO TWORZYMY? + 
+
+Przewiduje się przeniesienie autorskich praw majątkowych do zwycięskich projektów na instytucje zgłaszające wyzwania. W niektórych przypadkach mogą jednak obowiązywać inne rozwiązania, np. udostępnienie projektu na licencji open source. Szczegółowe zasady dotyczące praw do projektów zostaną określone w regulaminach poszczególnych wyzwań, które będą opublikowane najpóźniej w dniu wydarzenia, tj. 21.11.2026 r. do godz. 11:00. 
+
+7. JAK MOGĘ PRZESŁAĆ GOTOWY PROJEKT? + 
+
+Gotowy projekt należy wgrać na platformę wskazaną w regulaminie zadania. Szczegółowe informacje znajdziesz w momencie ich opublikowania na stronie internetowej www.hacknation.pl 
+Pamiętaj, aby przed przesłaniem projektu utworzyć konto na Discordzie . 
+
+8. CO, JEŚLI NIE ZDĄŻĘ NA CZAS PRZESYŁAĆ PROJEKTU? + 
+
+Termin to termin . Nie da się tego zmienić ani ominąć, więc lepiej upewnij się, że wszystko będzie gotowe kilka minut wcześniej, żeby nie przegapić godziny zero! 
+Możesz przesłać projekt na platformę określoną w regulaminie zadania, który nie jest jeszcze ukończony, i zmieniać go później – dzięki temu nie przegapisz terminu. 
+
+9. CZY MUSZĘ ZAPREZENTOWAĆ SWÓJ POMYSŁ? + 
+
+Jeśli uda ci się dotrzeć do finału, to tak. Z każdego zadania jury wybiera najlepsze zespoły i zaprasza je do zaprezentowania po kolei swoich pomysłów. 
+
+10. SKĄD MAM WIEDZIEĆ, ŻE MÓJ ZESPÓŁ DOSTAŁ SIĘ DO FINAŁU? + 
+
+Gdy jury wybierze listę drużyn, które zakwalifikowały się do finału, ogłosimy to na Discordzie HackNation . 
+
+11. CZY MOGĘ TWORZYĆ PSEUDOKODY I PROJEKTY UI PRZED HACKATHONEM I WYKORZYSTAĆ JE W TRAKCIE WYDARZENIA? + 
+
+Wszyscy uczestnicy otrzymują szczegółowe informacje na temat wszystkich zadań dopiero na początku wydarzenia. Jeśli chcesz skorzystać z wcześniej ukończonych lub zewnętrznych zasobów, narzędzi, repozytoriów itp., musisz je rzetelnie zacytować lub wymienić, że użyłeś ich w swojej prezentacji, kodzie itp. 
+
+MENTORZY 
+
+1. KTO JEST MENTOREM? + 
+
+Mentor to specjalista w określonej dziedzinie , którego zadaniem podczas hackathonu jest wsparcie uczestnika w pracy nad projektem poprzez dzielenie się wiedzą i doświadczeniem oraz zachęcanie uczestników do dyskusji. Mentorami mogą być przedstawiciele partnera, który jest autorem zadania lub całkowicie niezależni specjaliści. 
+
+2. JAKA JEST ROLA MENTORA? + 
+
+W praktyce mentor odpowiada na pytania zadawane przez uczestnika, które mogą sięgać od pytań ściśle technicznych, związanych np. z językiem programowania, przez merytoryczne, związane z danymi publikowanymi przez partnera czy aktualnością proponowanych rozwiązań, po ogólne, nieformalne pytania, takie jak: „czy mój pomysł ma sens?” lub związane z prezentacją samego pomysłu. 
+Wsparcie mentora polega na pomocy uczestnikowi w dopracowaniu pomysłu, a gdy uczestnik się zagubi lub „utknie” – naprowadzeniu go na właściwą drogę. 
+Wsparcie mentorów doceniane jest także podczas budowania zespołu. Mając szerszą perspektywę, mentorzy często mogą pomóc uczestnikom łączyć się w zespoły wyposażone w odpowiednie umiejętności i wiedzę. 
+
+3. JAK ZOSTAĆ MENTOREM? + 
+
+To proste! Wystarczy wypełnić formularz zgłoszeniowy . 
+Wskaż swoje obszary specjalizacji i mocne strony. Opisz, w jaki sposób możesz być mentorem dla naszych uczestników. Daj nam o sobie znać 🙂 
+
+4. GDZIE MOGĘ ZNALEŹĆ MENTORA? + 
+
+Mentorzy zawsze mają specjalne miejsce podczas hackathonu. W Bydgoskim Centrum Targowo - Wystawienniczym możesz spotkać mentorów w miejscu oznaczonym " Strefa Mentorska ". 
+Oprócz tego pamiętaj, że mentorzy są na Discordzie . Możesz zadawać pytania na kanale konkretnego zadania lub wysłać im bezpośrednią wiadomość. Mentorzy mają przedrostek „MENTOR |” w wyświetlanej nazwie i są oznaczeni zieloną rangą „Mentor”. 
+
+Tu tworzymy przyszłość 
+Discord 
+
+Regulamin 
+Polityka prywatności 
+Zgody na rozpowszechnianie wizerunku 
+Ustawienia cookies 

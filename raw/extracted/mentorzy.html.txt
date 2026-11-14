@@ -1,0 +1,134 @@
+Mentorzy — HackNation 2026 
+
+HOME 
+Hackathon 
+Transport Zarejestruj się Zadania UCZESTNIK MEDIA FAQ Ustawienia dostępności 
+
+Mentorzy 
+Michał Szleger Presales Solution Architect w Capgemini 
+Kamil Kupcewicz AI Product Manager w DLabs.AI | BKI 
+Adrian Iwanek Wiceprezes w Bydgoskim Klastrze Informatycznym 
+Szymon Redzik Project Manager w Hitachi 
+Natalia Basiura Operations Director w Kraków Miastem Startupów 
+Marcin Orocz Hartownik w orocz.com 
+Jordan Mruczyński Software Engineer w BeeSafe.pl 
+Olga Strembska AI/UX Consultant w Uniwersytet WSB w Warszawie 
+Maciej Trzciński Developer at tonik 
+Paweł Łukaszuk Tech Lead & Senior .NET developer 
+Stanisław Kozioł Ekspert d/s Architektury Korporacyjnie w Orange Polska S.A. 
+Aneta Hapka Kierownik Katedry Inżynierii Komputerowej; Politechnika Koszalińska 
+Natalia Cholewa Lead Product Owner w NataliaCholewa.pl 
+Dominika Urbańczyk Product Designer/ UX Design Lead w Telewizja Polska S.A. 
+Sylwia Puzio SBC Software Developer w Nokia Solutions and Networks 
+Michał Kamiński Fullstack Developer w SEACOTEC GmbH & Co. KG 
+Michał Bukowski Prodziekan w Akademii WSB Wydział w Warszawie 
+Alicja Migda Liders UX/UI w Link Group 
+Łukasz Nowatkowski Cybersecurity advocate w Xopero Software S.A. 
+Joanna Foks Specjalistka ds. cyberbezpieczeństwa w Fundacja Imagine Inclusive Technology 
+Jacek Wosz CEO w Nuvira 
+Waldemar Nowak Prezes w Pro Basecamp 
+Przemysław Bykowski CEO w Senteli Przemysław Bykowski 
+Rafał Woźniak Nauczyciel akademicki w Politechnice Łódzkiej 
+Tomasz Pogorzelski Specjalista ds. Badawczych w Sieć Badawcza Łukasiewicz – Instytut Lotnictwa 
+Rafał Wojszczyk Adiunkt w Politechnice Koszalińskiej 
+Anna Broniarek Ekspert w MRiT 
+Marek Mieńkowski Ekspert ds. Mikropoświadczeń w Instytut Badań Edukacyjnych 
+Aleksandra Wojtowicz Ekspertka w PISM 
+Łukasz Wiśniewski Software developer w CARFAX 
+Piotr Tomalak Inżynier oprogramowania w BROWIN 
+Daniel Czachorowski Członek Zarządu, MD w Logopasja sp. z o.o. 
+Agata Kosińska-Kujawska Freelancer 
+Joanna Łaszcz Specjalista ds. projektów edukacyjnych w Gdańska Fundacja Przedsiębiorczości 
+Monika Błędowska Art Director | UX/UI Designer w AD-AGENCY MONIKA BŁĘDOWSKA 
+Michał Lektarski Dyrektor Techniczny w Lektarski Technologies 
+Mateusz Palczewski CEO w MEDUCASE SP Z O. O. 
+Ziemowit Socha Ekspert w Instytut Badań Edukacyjnych 
+Marcin Merchel Niezależny badacz 
+Szymon Giżycki Główny Specjalista w Urząd Gminy Nowa Wieś Wielka 
+Grzegorz Ługowski CEO & Founder w GL Omniflow 
+Piotr Szymczyk Szkoleniowiec, wdrożeniowiec w LT MASTERY SZKOLENIA DLA BIZNESU PIOTR SZYMCZYK 
+Ivan Marshalok Data Engineer w LINGARO 
+Patrycja Kornaś Radca prawny / właścicielka kancelarii w Kancelaria Radcy Prawnego Patrycja Kornaś 
+Szymon Gruszczyński Software Engineer & Founder w Novo Nordisk / Solutions Factory 
+Filip Chlebowski Senior Devops / Principal Architect w Nuvira 
+Hubert Zmudzinski Founder / Założyciel w BlackSpire Consulting 
+Maciej Kastner Zastępca Naczelnika Urzędu Skarbowego w Izba Administracji Skarbowej w Bydgoszczy 
+Krzysztof Błaszkiewicz Prezes Zarządu w BluHolding P.S.A. / Bydgoski Klaster informatyczny 
+Tomasz Szmidt AI Product Engineering Lead w WithSecure 
+Piotr Bednarski Full-Stack Software Engineer | Co-founder & VP, AgroPool P.S.A. 
+Patryk Grażewicz Analityk OSINT / Investigation Lead w Stowarzyszenie Pravda / Corsearch 
+Kacper Moczarny Starszy Specjalista ds. organizacji wydarzeń w Podkarpackie Centrum Innowacji Sp. z o.o. 
+Krzysztof Grabka Menadżer ds. Technologii Protolab w Podkarpackie Centrum Innowacji Sp z o.o. 
+Piotr Laskosz Ekspert Projektowania UX/UI w COI 
+Mikołaj Mroszczak CAIO w COI 
+Marek Fabiński Starszy Programista Automatyzacji Procesów Biznesowych w Centralny Ośrodek Informatyki 
+Michał Piwowarczyk Dyrektor Dep. PPP w Ministerstwo Funduszy i Polityki Regionalnej 
+Marcin Bogucki Kierownik w Ministerstwo Funduszy i Polityki Regionalnej 
+Michał Włochal Dyrektor w Kancelaria Prezesa Rady Ministrów 
+Łukasz Szubart Ekspert w Podkarpackie Centrum Innowacji Sp. z o.o. 
+Paweł Skalny Specjalista ds. bezpieczeństwa w Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie 
+Tomasz Łuczak Starszy Programista Java w Centralny Ośrodek Informatyki 
+Magda Kołba-Górna Dyrektorka Dep. Badań i Projektowania Doświadczeń w COI 
+Jacek Pawłowski Radca w Kancelaria Prezesa Rady Ministrów 
+Eliza Fijołek Dyrektor Departamentu Komunikacji Elektronicznej w COI 
+Krzysztof Wysocki Product Owner w COI 
+Rafał Jabłoński Radca w Kancelaria Prezesa Rady Ministrów 
+Maciej Szczygieł Naczelnik w Kancelaria Prezesa Rady Ministrów 
+Kamil Kazimierczuk Radca w Kancelaria Prezesa Rady Ministrów 
+Magdalena Pruszyńska-Gora Radca w Kancelaria Prezesa Rady ministrów 
+Kamil Warpechowski Mentor Instytucjonalny 
+Dawid Czaja Starszy programista automatyzacji w COI 
+Jędrzej Szpygiel Senior Data Scientist w COI 
+Iwona Szelenbaum Naczelnik wydziału w Ministerstwo Cyfryzacji 
+Paweł Żbikowski Naczelnik Wydziału Rozwoju i Wdrażania Systemów Informatycznych w Ministerstwo Funduszy i Polityki Regionalnej 
+Jacek Orłowski Mentor Instytucjonalny 
+Donat Stankiewicz Starszy Specjalista ds. Sztucznej Inteligencji w NASK PIB 
+Katarzyna Roszczewska Ekspert ds. sztucznej inteligencji w NASK PIB 
+Ewelina Bartuzi-Trokielewicz Kierownik Zakładu Analiz Audiowizualnych i Systemów Biometrycznych, pracownik naukowy - adiunkt w NASK PIB 
+Emilian Duda Kierownik Zespołu Usług Cyfrowych w COI 
+Dominik Brach Specjalista ds. uczenia maszynowego w NASK PIB 
+Alicja Martinek Ekspert ds. sztucznej inteligencji w NASK PIB 
+Karol Teodorowicz Starszy specjalista ds. Edukacji i Popularyzacji Danych w Ministerstwo Cyfryzacji 
+Bartosz Krajewski Inżynier uczenia maszynowego w COI 
+Adrian Kordas Machine Learning Engineer w NASK PIB 
+Arkadiusz Maliński Referent w Ministerstwo Cyfryzacji 
+Adam Graliński Kierownik Zespołu w Aplikacje Krytyczne Ministerstwa Finansów 
+Julia Tyszko Główna specjalistka w Kancelaria Prezesa Rady Ministrów 
+Karolina Świszcz Radca w Kancelaria Prezesa Rady Ministrów 
+Karolina Kościerzyńska Radca w Ministerstwo Cyfryzacji 
+Paweł Roszkowski Dyrektor Departamentu w Ministerstwo Finansów / Centrum Informatyki Resortu Finansów 
+Michał Dębiński Dyrektor w Zakład Ubezpieczeń Społecznych 
+Konrad Gałczyński Radca generalny w Ministerstwo Spraw Zagranicznych 
+Dariusz Kobusiński Zastępca Dyrektora Departamentu Informatyki w Urząd Komisji Nadzoru Finansowego 
+Stella Chwedoruk Badaczka UX w COI 
+Magdalena Dąbrowska Radca w Ministerstwo Cyfryzacji 
+Tomasz Nal Inżynier bezpieczeństwa aplikacji w AGH 
+Maciej Morawski Dyrektor w AKMF 
+Piotr Sosnowski Analityk w MSZ 
+Andrzej Szczotka Kierownik Referatu Rejestrów Działalności Regulowanej w KAS Izba Administracji Skarbowej w Katowicach 
+Szymon Marciniak Zastępca Dyrektora Departamentu w Centrum Informatyki Resortu Finansów 
+Sławomir Flis CIO w UKNF 
+Ada Sawilska Specjalista ds. uczenia maszynowego w NASK PIB 
+Mateusz Świętochowski Ekspert w Urząd Komisji Nadzoru Finansowego 
+
+KONTAKT 
+
+KWESTIE ORGANIZACYJNE 
+kontakt@hacknation.pl 
+
+TRANSPORT 
+transport@hacknation.pl 
+
+REJESTRACJA 
+rejestracja@hacknation.pl 
+
+MEDIA I COMMUNITY 
+media@hacknation.pl 
+
+Tu tworzymy przyszłość 
+Discord 
+
+Regulamin 
+Polityka prywatności 
+Zgody na rozpowszechnianie wizerunku 
+Ustawienia cookies 

@@ -1,0 +1,80 @@
+Przewodnik uczestnika — HackNation 2026 
+
+HOME 
+Hackathon 
+Transport Zarejestruj się Zadania UCZESTNIK MEDIA FAQ Ustawienia dostępności 
+
+PRZEWODNIK UCZESTNIKA 
+
+PRZYGOTUJ SIĘ NA HACKNATION INFORMACJE PLIKI DO POBRANIA FAQ 
+
+21–22 listopada 2026 | Bydgoszcz BCTW 
+Wszystko, co musisz wiedzieć przed HackNation i podczas wydarzenia. Sprawdź najważniejsze terminy, zasady uczestnictwa i zgłaszania projektów. 
+SZYBKIE LINKI: [Rejestracja] · [Discord] · [Agenda] · [Regulamin] · [FAQ] 
+01. PRZED WYDARZENIEM 
+Zarejestruj się na HackNation, zapoznaj z regulaminem i dołącz do oficjalnego Discorda. Sprawdź również dostęp do platformy HackTribe, na której będziesz zarządzać swoim projektem. 
+Co zabrać? Laptop, ładowarkę, słuchawki, potrzebne adaptery i ewentualnie przedłużacz. Jeśli planujesz nocleg na miejscu, przydadzą się śpiwór, ręcznik i przybory toaletowe. 
+02. DOJAZD I ORGANIZACJA 
+Lokalizacja: Bydgoskie Centrum Targowo-Wystawiennicze (BCTW), ul. Gdańska 187, Bydgoszcz. 
+
+Transport: bezpłatne autobusy z wybranych miast. Liczba miejsc jest ograniczona. 
+
+Parking: bezpłatny parking przy BCTW. 
+
+Wejście: od strony ul. Gdańskiej. Przygotuj bilet i odbierz identyfikator. 
+
+Na miejscu: Wi-Fi, internet przez kabel RJ45, zasilanie, catering, strefa odpoczynku, prysznice, szatnia i pomoc medyczna. 
+
+Stanowisko pracy: dostęp do stołu, krzesła, zasilania i internetu. Dodatkowy sprzęt i adaptery zabierz ze sobą. 
+
+Posiłki: Zapewniamy 5 posiłków w trakcie hackathonu (wliczając pizzę na kolację) 
+SPRAWDŹ BEZPŁATNY TRANSPORT 
+03. ZESPOŁY, ZADANIA I MENTORZY 
+Zespół: od 1 do 6 osób. Możesz przyjechać z gotowym zespołem lub znaleźć współpracowników na Discordzie. 
+Zadania Partnerskie: możesz rywalizować w maksymalnie dwóch zadaniach, zgłaszając jeden projekt do każdego z nich. Przed rozpoczęciem pracy sprawdź wymagania i kryteria oceny. Zadania wraz z ich wytycznymi zostaną opublikowane w sobotę 21.11. o godz: 11:00. 
+ZADANIA PARTNERSKIE 
+Mentorzy: eksperci techniczni i branżowi pomogą Ci rozwiązać problemy, zweryfikować pomysły i przygotować projekt. Znajdziesz ich w Strefie Mentorów oraz na Discordzie. 
+LISTA MENTORÓW 
+04. ZGŁASZANIE PROJEKTÓW – HACKTRIBE 
+21 listopada, 20:00 – DRAFT 
+Utwórz projekt w HackTribe, wybierz właściwe Zadanie Partnerskie i uzupełnij podstawowe informacje: nazwę projektu i zespołu, repozytorium w którym będziecie pracować, numer stolika oraz wstępny opis rozwiązania. 
+Po 20:00 nie będzie możliwości tworzenia nowych projektów ani zmieniać Zadania Partnerskiego. Utworzone wcześniej zgłoszenia możesz nadal edytować. 
+22 listopada, 11:00 – FINALNE ZGŁOSZENIE 
+Uzupełnij wszystkie wymagane pola oraz dodaj prezentację i materiały umożliwiające sprawdzenie projektu, zgodnie z wymaganiami zadania. 
+Pamiętaj! Jurorzy mają tylko kilka minut na ocenę rozwiązania. Przygotuj konkretny opis, działające linki i krótkie demo (zalecamy do 2 minut). Nie zostawiaj przesyłania materiałów na ostatnią chwilę. 
+Jeśli Twoje zadanie wskazuje inną platformę zgłoszeniową, postępuj zgodnie z jego regulaminem. 
+[INSTRUKCJA OBSŁUGI PLATFORMY HACKTRIBE] 
+05. OCENA I FINAŁ 
+Etap 1 – ocena wstępna: od 11:00 w niedzielę Jurorzy oceniają zgłoszenia na podstawie kryteriów danego zadania. Pięć najwyżej ocenionych zespołów z każdego Zadania Partnerskiego awansuje do finału. 
+Etap 2 – finał: o 14:45 poznamy finalistów, a o 15:15 rozpoczną się prezentacje projektów przed Jury. Finaliści prezentują działanie rozwiązania i odpowiadają na pytania. 
+Wyniki oceny wstępnej nie są przenoszone do finału. 
+Ogłoszenie zwycięzców: niedziela, 17:15. 
+06. PYTANIA I POMOC 
+Discord to główny kanał komunikacji podczas HackNation. Znajdziesz tam aktualności, ogłoszenia Organizatorów oraz wsparcie Mentorów. 
+Potrzebujesz pomocy? Skorzystaj z kanału #zapytaj-organizatora , odwiedź Info Point lub skontaktuj się z członkiem zespołu HackNation. 
+Pamiętaj o przestrzeganiu regulaminu wydarzenia i zasad wybranego zadania. Wątpliwości dotyczące korzystania z AI, wcześniej przygotowanego kodu czy praw autorskich wyjaśnij przed zgłoszeniem projektu. 
+GOTOWY NA HACKNATION? 
+Przygotuj sprzęt, zbierz zespół i zaprogramuj przyszłość Polski! 
+21–22 LISTOPADA 2026 | BYDGOSZCZ BCTW 
+[ZAREJESTRUJ SIĘ] · [FAQ] 
+
+PLIKI DO POBRANIA 
+
+Przewodnik Uczestnika 
+Najważniejsze informacje dotyczące hackathonu zebrane w jednym pliku! 
+[HackNation 2026] Przewodnik Uczestnika PL.pdf · 708,1 KiB POBIERZ 
+
+Przewodnik po platformie HackTribe 
+Zastanawiasz się jak wgrać projekt do oceny? Tutaj znajdziesz odpowiedź! 
+[HackNation 2026] Tutorial HackTribe PL.pdf · 710,6 KiB POBIERZ 
+
+MASZ PYTANIA? 
+Sprawdź odpowiedzi na najczęściej zadawane pytania. PRZEJDŹ DO FAQ 
+
+Tu tworzymy przyszłość 
+Discord 
+
+Regulamin 
+Polityka prywatności 
+Zgody na rozpowszechnianie wizerunku 
+Ustawienia cookies 

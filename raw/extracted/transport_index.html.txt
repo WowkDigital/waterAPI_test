@@ -1,0 +1,32 @@
+Rezerwacja transportu | HackNation Transport 
+
+HackNation Transport 
+
+Tutaj będziesz mógł zarezerwować swój przejazd na wydarzenie. Zależnie od godziny rejestracji na wydarzenie, Twój bilet w systemie pojawi się po 11:00, 15:00, 19:00 lub 23:00 . 
+
+1 Weryfikacja 
+
+2 Dojazd 
+
+3 Powrót 
+
+4 Dane kontaktowe 
+
+5 Podsumowanie 
+Rezerwacje i zmiany są możliwe do 17 listopada 2026 23:00 . 
+
+Weryfikacja 
+Podaj numer biletu i adres e-mail użyty przy zakupie. Wyślemy jednorazowy kod. 
+Numer biletu 
+Adres e-mail Wyślij kod 
+Masz już rezerwację? Moja rezerwacja 
+
+Organizatorzy wydarzenia 
+
+> Ministerstwo Cyfryzacji 
+
+> Departament GovTech Polska 
+
+> Miasto Bydgoszcz 
+
+Edit with 

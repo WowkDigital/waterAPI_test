@@ -1,0 +1,632 @@
+[
+  {
+    "id": "2f2a1337-7766-4a24-9fd0-185df792a1e8",
+    "name": "Michał Szleger",
+    "company_position": "Presales Solution Architect w Capgemini",
+    "bio": "Michał Szleger jest Presales Solution Architectem z ponad 11-letnim doświadczeniem w IT. Przeszedł drogę od sieci i infrastruktury do architektury rozwiązań i pracy z klientami. Łączy wiedzę techniczną z perspektywą biznesową, pomagając przekładać potrzeby i pomysły na wykonalne rozwiązania oraz jasno komunikować ich wartość.\nRegularnie angażuje się w hackathony i inicjatywy edukacyjne jako mentor, prelegent i juror. Wspiera zespoły w definiowaniu problemu, weryfikacji założeń i ustalaniu zakresu, który można realnie zrealizować. Pomaga również przygotowywać pitche i prezentacje, skupiając się na wartości projektu, a nie tylko jego technologii. W mentoringu stawia na konkretne pytania, szczery feedback i wspólne szukanie rozwiązań zamiast narzucania gotowych odpowiedzi."
+  },
+  {
+    "id": "859dbc21-8392-402b-9594-718b8fe93ab4",
+    "name": "Kamil Kupcewicz",
+    "company_position": "AI Product Manager w DLabs.AI | BKI",
+    "bio": "AI Product Manager w DLabs.AI. Dostarczam systemy AI klientom z US i UK, łącząc produkt, sprzedaż i opiekę nad klientem. Na co dzień tłumaczę między tym, co AI obiecuje, a tym, co da się realnie i bezpiecznie dowieźć. Współzałożyciel Bydgoskiego Klastra Informatycznego, mentor na hackathonach, uczę też na uczelni."
+  },
+  {
+    "id": "6de7fcee-785a-472b-907a-b53fb39c9041",
+    "name": "Adrian Iwanek",
+    "company_position": "Wiceprezes w Bydgoskim Klastrze Informatycznym",
+    "bio": "Programista z ponad 25-letnim doświadczeniem. Współtwórca dziesiątek projektów webowych i mobilnych. Pasjonat AI i cyberbezpieczeństwa. Od kilkunastu lat cyfryzuje przedsiębiorstwa, wdrażając automatyzacje oraz współtworząc systemy CRM i ERP. Realizował rozwiązania dla kilkudziesięciu branż, między innymi finansowej, eventowej, sportowej i turystycznej. Prowadzi szkolenia i warsztaty, łącząc wymagania biznesowe z technologią, by optymalizować procesy w firmach."
+  },
+  {
+    "id": "153d66d5-33c0-49e3-8ed5-22486a6dbad3",
+    "name": "Szymon Redzik",
+    "company_position": "Project Manager w Hitachi",
+    "bio": "Project i Delivery Manager, który od dziesięciu lat dowozi projekty IT. Dziś w Hitachi (#InspireTheNext) prowadzi projekty od algorytmu po banknot: wyjaśnialną AI, która ocenia ryzyko kredytowe i wyłapuje nadużycia, oraz bankomaty recyklingowe i liczarki. Wcześniej w PwC, RWS, Capita, RevDeBug i T Komp odpowiadał za pełny cykl życia projektów: zespoły, procesy, wdrożenia SaaS i DevOps, w Scrumie i w Waterfallu.\nHackathony zna z obu stron stołu. Współpracuje w ramach Bydgoskiego Klastra Informatycznego (BKI), gdzie współorganizował wydarzenia technologiczne, w tym hackathony, a jako doświadczony mentor pomaga zespołom w społeczności tech, ostatnio na HackYeah 2026 w Krakowie. Prowadzi też Q-iav, firmę doradczą od strategii i automatyzacji.\nJako mentor pomogę zamienić mglisty pomysł w plan, który zdążycie dowieźć, oddzielić to, co musi działać na demo, od tego, co może poczekać, i nie zgubić kierunku, kiedy zegar zaczyna gonić. A przed pitchem spojrzę na projekt oczami jury."
+  },
+  {
+    "id": "61813eb7-edd5-42b1-ba1e-fd237aaccf01",
+    "name": "Natalia Basiura",
+    "company_position": "Operations Director w Kraków Miastem Startupów",
+    "bio": "Dyrektorka Operacyjna w Kraków Miastem Startupów, od ponad 3 lat związana z krakowskim ekosystemem startupowym. Od 7 lat rozwija projekty, buduje partnerstwa, odpowiada za ich finansowanie i łączy ludzi wokół innowacji. Angażuje się w rozwój rozwiązań na styku bezpieczeństwa i energetyki oraz inicjatywy z obszaru deeptech. Wierzy, że technologia powinna zaczynać się nie od produktu, ale od realnych potrzeb użytkowników końcowych, a dopiero potem prowadzić do rozwiązań, które odpowiadają na te potrzeby."
+  },
+  {
+    "id": "56071aef-aab3-4ae2-a39e-c8aedf033d1f",
+    "name": "Marcin Orocz",
+    "company_position": "Hartownik w orocz.com",
+    "bio": "Hartownik, wieloletni mentor hackathonów i lider zespołów developerskich - stawiam człowieka wyżej niż technologię do ludzi i projektów podchodzę z serduchem \\x3C3"
+  },
+  {
+    "id": "c5f26b74-e9bb-4a9a-8a50-8edf5c209967",
+    "name": "Jordan Mruczyński",
+    "company_position": "Software Engineer w BeeSafe.pl",
+    "bio": "Software Engineer & Startup Founder po godzinach, HackYeah Finalist 2024, HackYeah Winner 2025, HackYeah Juror&Mentor 2026 :)"
+  },
+  {
+    "id": "419551c9-b18f-4292-abc9-49e75014f7ee",
+    "name": "Olga Strembska",
+    "company_position": "AI/UX Consultant w Uniwersytet WSB w Warszawie",
+    "bio": "Dr Olga Strembska - badaczka i projektantka innowacji z ponad 10-letnim doświadczeniem w branży IT, w tym na stanowiskach liderskich. Uwielbia odkrywać, wymyślać i eksperymentować. Od ponad 7 lat tworzy innowacyjne produkty cyfrowe, w tym rozwiązania z zakresu sztucznej inteligencji. Obecnie koncentruje się na automatyzacji procesów biznesowych za pomocą agentów AI. Ponadto jest zaangażowana w działania GRAI przy Ministerstwie Cyfryzacji w trzech sekcjach. Równolegle, intensywnie dzieli się wiedzą jako prelegentka na konferencjach i wykładowczyni na Uniwersytecie WSB Merito w Warszawie, a także jako mentorka, łącząc świat AI i UX."
+  },
+  {
+    "id": "addd78cd-0cc3-4aea-972b-0e84c1dc101d",
+    "name": "Maciej Trzciński",
+    "company_position": "Developer at tonik",
+    "bio": "Jestem Engineerem w toniku, studiu, które projektuje produkty dla startupów z funduszami VC. Od około siedmiu lat zajmuję się web developmentem, ostatnie cztery to strony i systemy treści dla firm B2B SaaS. Na co dzień piszę w TypeScripcie, Reakcie i Next.js, a dane i treści modeluję w Sanity. Na hackathonie pomogę zespołom szybko postawić działający prototyp i tak ułożyć dane, żeby dało się go dalej rozwijać."
+  },
+  {
+    "id": "59f51582-6edf-4804-8761-bfd46a127b26",
+    "name": "Paweł Łukaszuk",
+    "company_position": "Tech Lead & Senior .NET developer",
+    "bio": "Lider techniczny i doświadczony programista specjalizujący się w aplikacjach internetowych tworzonych w środowisku .NET. Wielki zwolennik optymalizacji obciążenia pracą i automatyzacji. Prelegent na weekendowych konferencjach, wykładowca akademicki oraz trener w zakresie narzędzi i rzemiosła programistycznego. Wolny czas spędzam na strzelnicy, wędrówkach po lesie lub czytając książki.\nJako mentor mogę pomóc Ci w burzy mózgów, dopracowaniu koncepcji projektu, udzielaniu wskazówek technicznych, rozwiązywaniu problemów z kodem, udoskonalaniu prezentacji oraz radzeniu sobie z wyzwaniami związanymi z pracą zespołową i zarządzaniem czasem."
+  },
+  {
+    "id": "e9992021-9e85-40b5-b4be-2a02daaba415",
+    "name": "Stanisław Kozioł",
+    "company_position": "Ekspert d/s Architektury Korporacyjnie w Orange Polska S.A.",
+    "bio": "I’m Stanisław Kozioł, a cybersecurity expert, security architect, and professional breaker-of-things-before-others-break-them. I work with pentesting, blue teaming, AI/LLM security, and secure architecture at Orange Polska, with a background that somehow connects PCB design, hardware prototypes, startups, MCP gateways, and large-scale security standards. As a hackathon mentor, I help teams turn wild ideas into working, secure-ish products - while politely asking uncomfortable questions before production does. In my free time, I’m a member of the Secret Anticriminal Nerd Syndicate, which is exactly as serious and suspiciously nerdy as it sounds.\nAs a mentor, I can help participants with cybersecurity, secure architecture, pentesting ideas, AI/LLM security, backend and hardware concepts, debugging weird issues, and turning ambitious prototypes into something that actually works."
+  },
+  {
+    "id": "c2c53a82-dc08-4f36-a86c-642f8295362a",
+    "name": "Aneta Hapka",
+    "company_position": "Kierownik Katedry Inżynierii Komputerowej; Politechnika Koszalińska",
+    "bio": "Jestem nauczycielem akademickim z ponad dwudziestoletnim doświadczeniem zawodowym, związanym z Politechniką Koszalińską od 2000 roku. Ukończyłam Technikum Elektryczne w Słupsku (specjalizacja: Technik Elektronik), a następnie jednolite studia magisterskie na kierunku Elektronika i Telekomunikacja, ze specjalnością Aparatura Medyczna. W 2009 roku uzyskałam stopień doktora nauk technicznych w dyscyplinie Elektronika. W latach 2018–2022 pełniłam funkcję Pełnomocnika Dziekana Wydziału Elektroniki  i Informatyki ds. Ewaluacji i Projektów, a od 2022 roku jestem pełnomocnikiem Dziekana ds. Nauki i Rozwoju. Kieruję Katedrą Inżynierii Komputerowej oraz koordynuję program międzynarodowej wymiany akademickiej CEEPUS. Od maja 2025 roku jestem członkiem Komitetu Naukowego Komisji Akredytacyjnej Eksperckiego Centrum Szkolenia Cyberbezpieczeństwa, a od kwietnia 2026 r.  pełnię funkcję Prezesa Zarządu Środkowopomorskiego Oddziału Polskiego Towarzystwa Informatycznego. W roku akademickim 2026/2027 wprowadzam do programu kształcenia kierunku Informatyka (Politechnika Koszalińska) specjalności: Inżynieria Cyberbezpieczeństwa (studia inżynierskie) oraz Zarządzanie Systemami Cyberbezpieczeństwa (studia magisterskie)."
+  },
+  {
+    "id": "fa555371-4268-4377-912d-5d493cb4c135",
+    "name": "Natalia Cholewa",
+    "company_position": "Lead Product Owner w NataliaCholewa.pl",
+    "bio": "Natalia Cholewa — Lead Product Owner, od 2017 roku nieprzerwanie w projektach IT (20+ produktów, także dla dużych organizacji). Uczy Product Ownerów i Analityków Biznesowych, przeszkoliła ponad 1000 osób. Na hackathonie pomoże Ci przejść od wyzwania do produktu: kto jest użytkownikiem, jaki problem naprawdę rozwiązujecie, co wchodzi do MVP, a co wyrzucić, i jak to przekonująco pokazać jury. Specjalność: domykanie decyzji, kiedy zespół kręci się w kółko."
+  },
+  {
+    "id": "cd090202-fa27-4e57-b1df-49d09675517b",
+    "name": "Dominika Urbańczyk",
+    "company_position": "Product Designer/ UX Design Lead w Telewizja Polska S.A.",
+    "bio": "Jestem Senior Product Designerką, konsultantką i trenerką z doświadczeniem w projektowaniu produktów cyfrowych, prowadzeniu zespołów oraz przekładaniu złożonych potrzeb biznesowych na konkretne rozwiązania technologiczne.\n\nPrzez blisko 4 lata prowadziłam zespół UX w Telewizji Polskiej, odpowiedzialny za projektowanie produktów cyfrowych na platformach web, mobile i Smart TV. Współtworzyłam kierunki rozwoju produktów, wspierałam Product Ownerów w definiowaniu wymagań oraz koordynowałam współpracę między projektantami, developerami i interesariuszami biznesowymi.\n\nW sektorze prywatnym współpracowałam m.in. z Loconi Intermodal, gdzie przeprojektowanie procesu operacyjnego skróciło czas tworzenia zlecenia o 50%, oraz z Polskimi Portami Lotniczymi, wspierając rozwój serwisu Lotniska Chopina i założeń Design Systemu dla grupy PPL.\n\nRównolegle prowadzę warsztaty i szkolenia z UX, Product Discovery i Design Thinking dla organizacji takich jak Orlen, GUS, NFZ, Rossmann czy Uniwersytet Warszawski. Jestem również autorką kursu Design Thinking dla Grupy Helion.\n\nŁączę perspektywę użytkownika, biznesu i technologii. Pomagam zespołom przechodzić od niejasnego problemu do świadomych decyzji produktowych, ustalać priorytety i tworzyć rozwiązania, które nie tylko dobrze wyglądają, ale przede wszystkim działają i dostarczają realną wartość."
+  },
+  {
+    "id": "79881962-d75a-4c63-ad48-4d9c1655f23e",
+    "name": "Sylwia Puzio",
+    "company_position": "SBC Software Developer w Nokia Solutions and Networks",
+    "bio": "Zawodowo Python, C++ i sieci komputerowe. Naukowo interesuję się kognitywistyką i projektuję narzędzia do wizualizacji danych dla naukowców. Za sobą mam sporo hackathonów, wygranych i przegranych, i kocham tę twórczą energię, współpracę i rywalizację. Jako mentor pomagam zespołom uporządkować wymagania, złożyć działający produkt i pokazać go w najlepszej możliwej formie."
+  },
+  {
+    "id": "12223c7f-79d6-4c3a-b401-38cb7a9ad5c5",
+    "name": "Michał Kamiński",
+    "company_position": "Fullstack Developer w SEACOTEC GmbH & Co. KG",
+    "bio": "Tworzę aplikacje webowe do monitorowania emisji gazów cieplarnianych w żegludze, a w ramach doktoratu na Politechnice Gdańskiej zajmuję się wykorzystaniem uczenia maszynowego w tym obszarze. Brałem udział w kilku hackathonach, więc wiem, jak wygląda praca nad pomysłem pod presją czasu. Chętnie pomogę zespołom z programowaniem, wykorzystaniem AI, dopracowaniem pomysłu czy przygotowaniem prezentacji."
+  },
+  {
+    "id": "663e377e-d2c2-4068-84c1-644652d13c1c",
+    "name": "Michał Bukowski",
+    "company_position": "Prodziekan w Akademii WSB Wydział w Warszawie",
+    "bio": "Dr inż. Michał Bukowski – naukowiec, nauczyciel akademicki, ekspert w dziedzinie bezpieczeństwa i nowych technologii oraz menedżer szkolnictwa wyższego. Od 1 września 2026 r. pełni funkcję prodziekana Akademii WSB – Wydziału w Warszawie. W swojej działalności łączy wieloletnie doświadczenie zawodowe związane ze służbami mundurowymi, kompetencje techniczne i informatyczne oraz dorobek naukowo-dydaktyczny.\n\nJest absolwentem Wojskowej Akademii Technicznej, gdzie uzyskał tytuł inżyniera na kierunku elektronika i telekomunikacja, oraz Uniwersytetu Kardynała Stefana Wyszyńskiego w Warszawie, gdzie ukończył studia magisterskie na kierunku informatyka i ekonometria. Stopień doktora w dziedzinie informatyki uzyskał w Polsko-Japońskiej Akademii Technik Komputerowych. Jego wykształcenie łączy przygotowanie inżynierskie, wiedzę informatyczną i analityczną oraz interdyscyplinarne podejście do problematyki bezpieczeństwa i zarządzania.\n\nPrzez wiele lat był związany z Policją, zdobywając doświadczenie w obszarze bezpieczeństwa i zwalczania przestępczości. Pracował m.in. w Biurze Kryminalnym Komendy Głównej Policji, a następnie rozwijał działalność naukową, dydaktyczną i organizacyjną w Akademii Policji w Szczytnie. Pełnił tam funkcję dyrektora Instytutu Służby Kryminalnej Wydziału Bezpieczeństwa i Nauk Prawnych, angażując się w rozwój kształcenia kadr, inicjowanie przedsięwzięć naukowo-badawczych oraz organizację szkoleń i konferencji o zasięgu międzynarodowym.\n\nJest autorem licznych publikacji naukowych i eksperckich. Jego zainteresowania zawodowe i badawcze obejmują informatykę, cyberbezpieczeństwo, przetwarzanie obrazu, grafikę komputerową, zastosowania sztucznej inteligencji, analizę informacji oraz wykorzystanie nowoczesnych technologii w edukacji i działalności służb odpowiedzialnych za bezpieczeństwo państwa. Szczególne znaczenie przypisuje integracji wiedzy technicznej z praktyką operacyjną, rozwojowi kompetencji cyfrowych oraz wdrażaniu innowacyjnych rozwiązań w procesach kształcenia i doskonalenia zawodowego.\n\nJako inicjator przedsięwzięć naukowo-badawczych, szkoleń i międzynarodowych konferencji wspiera współpracę środowisk akademickich, ekspertów technologicznych i praktyków bezpieczeństwa. W swojej działalności koncentruje się na tworzeniu warunków do rozwoju nauki, podnoszeniu jakości kształcenia oraz dostosowywaniu oferty edukacyjnej do potrzeb współczesnego rynku pracy i wyzwań związanych z transformacją cyfrową.\n\nOd września 2026 r., jako prodziekan Akademii WSB – Wydziału w Warszawie, odpowiada za wspieranie rozwoju stołecznego wydziału, wykorzystując doświadczenie w zarządzaniu, działalności naukowej i dydaktycznej oraz współpracy z instytucjami publicznymi. Jego celem jest wzmacnianie potencjału akademickiego wydziału, rozwijanie nowoczesnych form kształcenia i inicjowanie przedsięwzięć sprzyjających współpracy nauki z praktyką.\n\nW działalności zawodowej kieruje się przekonaniem, że nowoczesna edukacja, rozwój nauki i odpowiedzialne wykorzystanie technologii stanowią fundament budowania kompetencji niezbędnych dla bezpieczeństwa i rozwoju społeczeństwa."
+  },
+  {
+    "id": "c3a0336d-4eec-494b-9f5d-c836af451111",
+    "name": "Alicja Migda",
+    "company_position": "Liders UX/UI w Link Group",
+    "bio": "Projektowaniem zajmuję się od 20 lat. Przez ostatnie 10 lat koncentrowałam się głównie na projektowaniu produktów cyfrowych. W tym czasie doskonaliłam również swoje umiejętności w tworzeniu Design Systemów opartych na Design Tokenach oraz automatyzacji współpracy na linii zespołów designerskich i front-end deweloperskich. W trakcie swojej kariery miałam okazję zarządzać zespołami projektowymi i programistycznymi w różnych konfiguracjach. Przez ostatnie lata pracowałam również jako wykładowczyni, szkoląc młodsze pokolenia projektantów i developerów."
+  },
+  {
+    "id": "dd817d68-62f6-4281-b0bd-24d214dba77f",
+    "name": "Łukasz Nowatkowski",
+    "company_position": "Cybersecurity advocate w Xopero Software S.A.",
+    "bio": "Od ponad 20 lat zajmuje się bezpieczeństwem cyber, był pionierem szerokopasmowych sieci dostępu do Internetu i współtworzył pierwszy program antywirusowy usuwający robaka Sasser w 2004 roku.Doświadczony administrator systemów Linux i Windows. Badał zarówno ofensywne, jak i defensywne cyberbezpieczeństwo, rozumiejąc zagrożenia zarówno ze strony atakujących, jak i użytkowników systemu.Jego doświadczenie obejmuje zabezpieczanie systemów cybernetycznych i edukowanie użytkowników w zakresie cyberzagrożeń. Sam doświadczył ataków i przeprowadził testy bezpieczeństwa. Dzieli się swoją wiedzą, aby wzmocnić bezpieczeństwo informacji i odporność na ewoluujące zagrożenia cybernetyczne - teraz."
+  },
+  {
+    "id": "dce5840a-cc9f-402c-9659-f688c3c25135",
+    "name": "Joanna Foks",
+    "company_position": "Specjalistka ds. cyberbezpieczeństwa w Fundacja Imagine Inclusive Technology",
+    "bio": "Specjalistka ds. cyberbezpieczeństwa i infrastruktury IT z ponad 15-letnim doświadczeniem w sektorze ochrony zdrowia. Z wykształcenia programistka i specjalistka baz danych, łączy inżynierskie podejście z praktycznym doświadczeniem zdobytym w organizacji należącej do sektora infrastruktury krytycznej. Audytorka ISO-27001.\n\nSwobodnie porusza się zarówno w obszarze infrastruktury i sprzętu IT, jak i konfiguracji narzędzi bezpieczeństwa, monitorowania podatności oraz zagadnień związanych z Systemem Zarządzania Bezpieczeństwem Informacji (SZBI). Łączy kompetencje techniczne z umiejętnością współpracy, empatią i nastawieniem na ciągły rozwój.\n\nPosiada doświadczenie w wystąpieniach publicznych. Regularnie przemawia na konferencjach ogólnopolskich i międzynarodowych. Występuje również w roli prowadzącej sale podczas takich wydarzeń, jak CyberTek, Insecon czy Mega sekurak Hacking Party.\n\nAktywnie angażuje się w działania na rzecz zwiększania udziału kobiet w branży IT i cyberbezpieczeństwa. Jako wolontariuszka Fundacji Imagine Inclusive Technology oraz Girls Code Fun wspiera rozwój kompetencji technologicznych i budowanie różnorodności w sektorze nowych technologii.\n\nUczestniczka programów Tech Leaders, Be Visible in IT, Cyber Women Leaders oraz Kobiety do Cyber. Członkini stowarzyszeń Women Go Cyber i ISSA Polska. Współorganizatorka programów Tech Leaders oraz Be Visible in IT, wspierających rozwój zawodowy i budowanie widoczności kobiet w branży technologicznej."
+  },
+  {
+    "id": "753a500f-fab0-49ef-a37a-a99018cfcc91",
+    "name": "Jacek Wosz",
+    "company_position": "CEO w Nuvira",
+    "bio": "Od 2025 roku jest CEO Nuviry, firmy budującej suwerenną chmurę nowej generacji tworzoną w Polsce. Ma prawie 20 lat doświadczenia w sieciach i infrastrukturze chmurowej. Wcześniej przez blisko dekadę pracował w VMware, ostatnio jako Lead Solution Engineer. Prowadził tam projekty transformacji cyfrowej dla największych firm w Polsce: chmurę prywatną i hybrydową, VMware Cloud Foundation oraz Kubernetes (Tanzu). Zamknął też pierwsze w Polsce wdrożenia z portfolio Tanzu. Współtworzył pionierskie w kraju wdrożenia VMware Cloud on AWS, PKS oraz pierwszej implementacji NFV opartej na VMware u operatora telekomunikacyjnego. W WASKO S.A. projektował i wdrażał duże sieci ISP, centrów danych i operatorskie, w tym:\n\nmetropolitalną sieć 100GE,\nogólnokrajowe migracje do IP/MPLS,\nplatformy CG-NAT i BNG dla ponad 200 tys. abonentów.\n\nPosiada certyfikaty JNCIE #877 (Service Provider), VCP6-NV, ITIL i PRINCE2. Regularnie występuje na konferencjach branżowych."
+  },
+  {
+    "id": "2a52d67b-93a5-4a7f-b1e2-8b186f21b2e3",
+    "name": "Waldemar Nowak",
+    "company_position": "Prezes w Pro Basecamp",
+    "bio": "Ekspert i menedżer z ponad 25-letnim międzynarodowym doświadczeniem w automatyzacji i optymalizacji procesów biznesowych, cyfryzacji oraz przetwarzaniu danych i dokumentów. Zarządzał złożonymi projektami i globalnymi programami transformacji technologicznej i operacyjnej dla międzynarodowych organizacji i instytucji.\n\nPosiada doświadczenie w branżach regulowanych, m.in. Defence & Security, Pharma & Life Sciences, Financial Services oraz Healthcare, gdzie szczególne znaczenie mają jakość danych, bezpieczeństwo, zgodność regulacyjna i niezawodność procesów.\n\nSpecjalizuje się w Data Governance, Data Quality, automatyzacji i integracji procesów oraz ocenie wykonalności i gotowości wdrożeniowej rozwiązań technologicznych.\n\nWykładowca i członek rad programowych studiów podyplomowych oraz programów z zakresu automatyzacji procesów biznesowych. Jako mentor wspiera zespoły w weryfikacji założeń, identyfikacji ryzyk, projektowaniu mierników jakości i rozwijaniu rozwiązań możliwych do bezpiecznego wdrożenia i skalowania w rzeczywistych środowiskach organizacyjnych, w tym administracji publicznej."
+  },
+  {
+    "id": "a3125974-86b5-45d1-8441-0e1c274cc7a0",
+    "name": "Przemysław Bykowski",
+    "company_position": "CEO w Senteli Przemysław Bykowski",
+    "bio": "Engineering Manager z 15-letnim doświadczeniem w IT - od programowania Java/C# i architektury systemów po zarządzanie kilkoma zespołami inżynierskimi. Specjalizuję się w szybkim dostarczaniu PoC, weryfikacji korzyści biznesowych oraz zarządzaniu trade-offami technologicznymi pod presją czasu. Mam doświadczenie w projektach startupowych, transformacjach technologicznych oraz budowaniu kompetencji inżynierskich. Aktualnie prowadzę badania nad architekturą systemów AI na Uniwersytecie Gdańskim."
+  },
+  {
+    "id": "460131a2-ba44-42f8-85e0-ef5f5da2c189",
+    "name": "Rafał Woźniak",
+    "company_position": "Nauczyciel akademicki w Politechnice Łódzkiej",
+    "bio": "Jako nauczyciel akademicki w Instytucie Informatyki Politechniki Łódzkiej prowadzę zajęcia dydaktyczne ze studentami, wykładam na studiach podyplomowych Data Science oraz opiekuję się zespołem projektowym Data Science w Kole Informatycznego Niepokoju. Na co dzień zajmuję się analizą i przetwarzaniem danych, a także projektowaniem i wdrażaniem modeli uczenia maszynowego. Poza pracą na uczelni jestem współzałożycielem startupu SmartShelter, który zdobył wyróżnienie w konkursie EkSoc startUP! i przeszedł program mentoringowy Unicorn Hub Innovation Lab. Dzisiaj nasze rozwiązanie wspiera codzienne funkcjonowanie schronisk dla zwierząt. Regularnie biorę udział w największych polskich hackathonach jako mentor. Pomogę przełożyć pomysły uczestników na realne założenia techniczne, wybrać kluczowe funkcje i opowiedzieć o projekcie tak, by przekonać do niego jury."
+  },
+  {
+    "id": "ca2d8951-e6a3-4a7e-b4ad-09ad79002a49",
+    "name": "Tomasz Pogorzelski",
+    "company_position": "Specjalista ds. Badawczych w Sieć Badawcza Łukasiewicz – Instytut Lotnictwa",
+    "bio": "Inżynier i specjalista R&D ze stopniem doktora nauk inżynieryjno-technicznych (Politechnika Warszawska), specjalizujący się w autonomicznej nawigacji BSP/UAV, odometrii wizyjno-inercjalnej (VIO) oraz rozwiązaniach Edge AI w środowiskach pozbawionych sygnału GNSS (GPS-denied). Posiadam bogate doświadczenie w projektowaniu lotniczych systemów wizyjnych, integracji ROS/ROS 2, fuzji czujników oraz testach poligonowych typu hardware-in-the-loop (HIL) dla sektora obronnego i komercyjnego przemysłu lotniczego."
+  },
+  {
+    "id": "5de7aa1b-56c4-4b10-b0ee-859e650faa8f",
+    "name": "Rafał Wojszczyk",
+    "company_position": "Adiunkt w Politechnice Koszalińskiej",
+    "bio": "Wykładowca akademicki i praktyk IT specjalizujący się w programowaniu, architekturze oprogramowania, technologiach firmy Microsoft oraz bazach danych."
+  },
+  {
+    "id": "ea768822-e031-4415-8ef5-2a65bee118db",
+    "name": "Anna Broniarek",
+    "company_position": "Ekspert w MRiT",
+    "bio": "Doradzam w skalowaniu firm w Polsce i poza. Działam w ekosystemie akceleracji i inkubacji."
+  },
+  {
+    "id": "9a30ca66-a5a9-47fd-89ff-cff6fd2cd2ac",
+    "name": "Marek Mieńkowski",
+    "company_position": "Ekspert ds. Mikropoświadczeń w Instytut Badań Edukacyjnych",
+    "bio": "Dr Marek Mieńkowski – doktor nauk humanistycznych (filozofia), MBA. Ekspert w zakresie zarządzania strategicznego, ESG, nowych technologii oraz zastosowań sztucznej inteligencji w sektorze budowlanym i ochronie infrastruktury krytycznej. Kierownik studiów podyplomowych „Inżynier Kontraktu” na Uczelni Łazarskiego w Warszawie i wykładowca programu MBA w Budownictwie; współtwórca programów studiów podyplomowych tej uczelni, m.in. w obszarze FIDIC, BIM i zarządzania w budownictwie. Certyfikowany audytor systemów zarządzania sztuczną inteligencją według normy ISO/IEC 42001; współpracuje z Instytutem Badań Edukacyjnych – Państwowym Instytutem Badawczym przy rozwoju Krajowego Systemu Mikropoświadczeń. Związany z centrum cyberbezpieczeństwa Wojskowej Akademii Technicznej, Szkołą Główną Handlową w Warszawie oraz Komitetem Technologii Kwantowych Krajowej Izby Gospodarczej; praktyk bezpieczeństwa cyfrowego, uczestnik zawodów typu CTF. Autor publikacji i ekspertyz dotyczących zrównoważonego rozwoju, innowacji technologicznych oraz gospodarki regeneratywnej."
+  },
+  {
+    "id": "69dd3816-7b8b-45bf-8cc8-ac9734ae16c7",
+    "name": "Aleksandra Wojtowicz",
+    "company_position": "Ekspertka w PISM",
+    "bio": "Analityczka ds. nowych technologii w PISM; badaczka dezinformacji"
+  },
+  {
+    "id": "0ca2ca86-01f9-4103-907c-69c0972b5781",
+    "name": "Łukasz Wiśniewski",
+    "company_position": "Software developer w CARFAX",
+    "bio": "Hej, jestem Łukasz - na codzień pracuję jako developer w CARFAX głównie odpowiedzialnym za frontend aplikacji: analitykę, podnoszenie konwersji ecomerce, oraz testy A/B na stronie www. Mam mocno rozwinięte skile posługiwania się LLMami co potwierdzają kursy związane z tymi zagadnieniami. Środowisko startupowe nie jest mi obce w przeszłości brałem udział z projektem finansowym w akceleracji Youth Business Poland czy też ReaktorX. W moim gronie zainteresowań jest również IoT - budowanie projektów w których czysty kod wychodzi poza ramy monitora i zaczyna napędzać silniki, czujniki oraz osprzęt - jako Mechatronik budowałem maszyny, urządzenia, elektronikę użytkową a aktualnie rozwijam po godzinach projekt związany z Maszynami CNC oparty na LLMach :)"
+  },
+  {
+    "id": "2020bc13-55de-4108-8655-00cfab4647e1",
+    "name": "Piotr Tomalak",
+    "company_position": "Inżynier oprogramowania w BROWIN",
+    "bio": "Jako inżynier oprogramowania w firmie BROWIN buduję kompletne rozwiązania IoT: programuję ESP32, piszę backend w Pythonie i rozwijam aplikację mobilną we Flutterze. W codziennej pracy efektywnie wykorzystuję AI do przyspieszania prototypowania, biorąc pełną odpowiedzialność za architekturę i jakość kodu. Jestem też co-founderem startupu SmartShelter, który dostarcza systemy zarządzania dla schronisk dla zwierząt. Odpowiadam tam za kierunek rozwoju produktu i pitchowanie, a jednocześnie sam piszę kod, przez co doskonale rozumiem, jak dowozić projekty pod presją czasu. Jako mentor pomogę uczestnikom skupić się na tym, co najważniejsze, aby w ciągu 24h dowieźć działający projekt i świetną prezentację."
+  },
+  {
+    "id": "28ab4a34-16ff-4090-8744-8c514317cc2d",
+    "name": "Daniel Czachorowski",
+    "company_position": "Członek Zarządu, MD w Logopasja sp. z o.o.",
+    "bio": "Witam serdecznie,\n\nNa wstępie zapraszam na LinkedIn. Tam można znaleźć więcej informacji na mój temat.\n\nLong story short.\n- 6 lat doświadczenia międzynarodowego w branży wysokich technologii (zaawansowane technologie radarowe). Zarówno wdrożenia jak i sprzedaż, do 10 krajów.\n- Co-founder med-techu. Bardzo niszowa branża, z wysoce wyspecjalizowaną kadrą terapeutów. Świadczymy usługi polskim ekspatom na całym świecie.\n- Bardzo duże doświadczenie sprzedażowe i marketingowe, zarówno d2c jak i b2b.\n- Wyznawca Teorii Ograniczeń, która wprost mówi o tym, jak rozwiązywać skomplikowane problemy. A czymże są sprawy administracyjno-państwowe jak nie skomplikowanymi systemami?\n\nZ przyjemnością podzielę się swoimi doświadczeniami z uczestnikami HackNation... skoro już jestem w Polsce :-)\n\nPowodzenia w rekrutowaniu Mentorów!\n\nDziękuję i pozdrawiam,\nDaniel Cz."
+  },
+  {
+    "id": "6d891553-d78a-4b65-bd95-915c8ef8026b",
+    "name": "Agata Kosińska-Kujawska",
+    "company_position": "Freelancer",
+    "bio": "Jestem z zawodu inżynierem po PW El-ka, skończyłam studia podyplomowe na SGH z zarządzania, Ostatnio Umiejętności jutra AI. Z Google, program AIDEAS.\nPracowałam zarówno w działach sprzedaży (jako specjalista produktowy), w działach konsultingu jako kierownik projektu.\nTeraz pracuje nad projektem rozpoczętym z SurferamiWiedzy nad szkoleniem „Synergia działu sprzedaży i wdrożenia. Wyeliminowanie efektu głuchego telefonu w komunikacji ustnej i e-mailowej”\nJestem wioślarka i zawodowym (hobby) fotografem"
+  },
+  {
+    "id": "41c0cec0-ece5-4050-bd7a-9a9af014384d",
+    "name": "Joanna Łaszcz",
+    "company_position": "Specjalista ds. projektów edukacyjnych w Gdańska Fundacja Przedsiębiorczości",
+    "bio": "Od ponad 4 lat koordynuję projekty z zakresu edukacji przedsiębiorczej dla uczniów i uczennic szkół ponadpodstawowych oraz studentów i studentek z Gdańska i województwa pomorskiego. Zajmuję się tematyką przedsiębiorczości i innowacji, ESG i odpowiedzialnego biznesu (w tym zielonej i niebieskiej gospodarki), rynku pracy. W ramach projektów przygotowuję innowatony – wzorowane na hackathonach maratony projektowania prototypów rozwiązań – których uczestnicy i uczestniczki pracują zespołowo nad wyzwaniami biznesowymi przekazanymi przez instytucje i firmy partnerskie. Z wykształcenia jestem filolożką rosyjską, specjalizującą się w językoznawstwie, i nauczycielką. Pracowałam w liceum oraz pomagałam dorosłym w nauce języków obcych."
+  },
+  {
+    "id": "c6b87cd3-7e7a-4aa1-acb4-be6e7188cab4",
+    "name": "Monika Błędowska",
+    "company_position": "Art Director | UX/UI Designer w AD-AGENCY MONIKA BŁĘDOWSKA",
+    "bio": "Specjalistka ds. komunikacji wizualnej i projektantka UX/UI, absolwentka Akademii Sztuk Pięknych w Warszawie. Łączy wieloletnie doświadczenie w kreacji reklamowej i komunikacji wizualnej z projektowaniem użytecznych rozwiązań cyfrowych.\nProjektowała interfejsy aplikacji dla FRONTEX. Szczególną wagę przywiązuje do dostępności cyfrowej, uwzględniając w projektowaniu wytyczne WCAG i zróżnicowane potrzeby użytkowników.\nPełniła funkcję dyrektora kreatywnego w wydawnictwie Axel Springer oraz dyrektora artystycznego w prasie kobiecej. Specjalizuje się również w mediach społecznościowych i tworzeniu kampanii wizerunkowych.\n\nPodczas HackNation pomoże zespołom dopracować koncepcje, zadbać o użyteczność i dostępność rozwiązań oraz jasno komunikować ich wartość."
+  },
+  {
+    "id": "ff64403f-abb2-409f-9dd4-c101d2a10136",
+    "name": "Michał Lektarski",
+    "company_position": "Dyrektor Techniczny w Lektarski Technologies",
+    "bio": "Jestem współzałożycielem i dyrektorem technicznym Lektarski Technologies, gdzie rozwijam rozwiązania wykorzystujące systemy bezzałogowe, zaawansowane sensory oraz analizę danych. Interesuję się praktycznym zastosowaniem sztucznej inteligencji, automatyzacją i tworzeniem technologii odpowiadających na rzeczywiste potrzeby administracji publicznej, służb i przedsiębiorstw. W swojej pracy łączę perspektywę techniczną z biznesową, koncentrując się na przełożeniu możliwości nowych technologii na konkretne zastosowania. Chętnie pomagam rozwijać pomysły, analizować ich wykonalność i szukać rozwiązań, które mogą przynieść realną wartość użytkownikom."
+  },
+  {
+    "id": "686bb705-9b56-4ef4-bdc5-1514fc634cbb",
+    "name": "Mateusz Palczewski",
+    "company_position": "CEO w MEDUCASE SP Z O. O.",
+    "bio": "Lekarz, przedsiębiorca, naukowiec (doktor nauk medycznych) i innowator - założyciel MEDUCASE (od 2009 PrzypadkiMedyczne.pl, obecnie MedCaseReports.com, Doclert.com) oraz szef walidacji klinicznej w Infermedica. Uwielbiam ludzi, wiem jak zarządzać zespołem, od zawsze byłem kreatywny (i podobno dalej jestem)."
+  },
+  {
+    "id": "9df9db46-4b2e-45b5-a8f0-c8cdf42b1225",
+    "name": "Ziemowit Socha",
+    "company_position": "Ekspert w Instytut Badań Edukacyjnych",
+    "bio": "Badacz, socjolog i specjalista ds. oceny skutków regulacji. Pracował jako analityk, trener i ekspert w zakresie tworzenia rozwiązań łączących edukację z rynkiem pracy (ZSK, mikropoświadczenia), zwłaszcza w szkolnictwie branżowym, sektorze przemysłowym i branży IT. Od blisko 20 lat związany z branżą badań rynku i opinii – uczestnik blisko 200 projektów badawczych dla sektora publicznego i prywatnego. Pracował jako wykładowca na Uniwersytecie Wrocławskim, Uniwersytecie WSB Merito, Uniwersytecie Humanistyczno-Społecznym SWPS i Krajowej Szkole Administracji Publicznej."
+  },
+  {
+    "id": "0ae70524-f588-4056-9f76-3f646015e225",
+    "name": "Marcin Merchel",
+    "company_position": "Niezależny badacz",
+    "bio": "Jestem niezależnym badaczem i analitykiem zajmującym się wpływem technologii na ludzi, w szczególności na ich decyzje, zachowania i zaufanie. W swojej pracy łączę analizę trendów, komunikację oraz zagadnienia związane z interakcją człowieka ze sztuczną inteligencją.\n\nW 2026 roku byłem członkiem zespołu, który zdobył pierwsze miejsce w DISINFOHACK organizowanym przez NASK. Otrzymałem również główną nagrodę w kategorii Bachelor's Division konkursu Cambridge LML Essay Competition za pracę dotyczącą autonomii pacjentów w komunikacji wspomaganej AI.\n\nAnalizuję m.in. mechanizmy dezinformacji, oszukańczych reklam internetowych i manipulowania zaufaniem odbiorców.\n\nPodczas HackNation chciałbym wspierać zespoły w analizie potrzeb i zachowań użytkowników, identyfikowaniu ryzyk oraz projektowaniu rozwiązań uwzględniających społeczne konsekwencje technologii. Szczególnie interesują mnie projekty dotyczące sztucznej inteligencji, dezinformacji, zaufania i bezpieczeństwa użytkowników."
+  },
+  {
+    "id": "00059cde-0e44-4298-9e2b-bb1fa121ffe9",
+    "name": "Szymon Giżycki",
+    "company_position": "Główny Specjalista w Urząd Gminy Nowa Wieś Wielka",
+    "bio": "Jestem specjalistą IT i cyberbezpieczeństwa z ponad 19-letnim doświadczeniem w sektorze publicznym, łączącym praktyczną wiedzę techniczną z doświadczeniem w zarządzaniu infrastrukturą IT i realizacji projektów cyberbezpieczeństwa w jednostkach samorządu terytorialnego."
+  },
+  {
+    "id": "d87f52bc-3956-4006-b023-8c1fe056bcfa",
+    "name": "Grzegorz Ługowski",
+    "company_position": "CEO & Founder w GL Omniflow",
+    "bio": "Nazywam się Grzegorz Ługowski, jestem założycielem startupu software house GL Omniflow zajmującego się głównie automatyzacją procesów biznesowych. Mamy już trochę klientów i prężnie się rozwijamy w szerokiej i kompleksowej obsłudze informatycznej dla firm które są gotowe na automatyzacje. Strona internetowa znajduje się pod adresem www.getomniflow.pl"
+  },
+  {
+    "id": "8c1f95d4-0d64-4826-9bf4-dacac159db0d",
+    "name": "Piotr Szymczyk",
+    "company_position": "Szkoleniowiec, wdrożeniowiec w LT MASTERY SZKOLENIA DLA BIZNESU PIOTR SZYMCZYK",
+    "bio": "Piotr Szymczyk — ekspert cyberbezpieczeństwa i compliance, założyciel LegacyTurn / LT Mastery. Od ponad 25 lat pracuje w obszarze bezpieczeństwa IT dla globalnych korporacji, administracji publicznej i sektora MŚP.\nSpecjalizuje się we wdrożeniach NIS2, UoKSC i Cyber Resilience Act — od analizy ryzyka, przez budowę SZBI opartego na ISO 27001, po przygotowanie do audytów i obsługę incydentów. Certyfikowany audytor (ISO 27001 Auditor, ICVC-SURE, EITCA/IS), autor książki UoKSC i NIS2 w Praktyce.\nNa hackathonie może wesprzeć zespoły w obszarach: zgodność z regulacjami (NIS2, DORA, CRA), bezpieczeństwo produktów ICT, wdrożenia w podmiotach kluczowych i ważnych, modele zarządzania ryzykiem dla administracji publicznej i spółek Skarbu Państwa."
+  },
+  {
+    "id": "0772a26c-dc7c-4050-ba5b-64ea4b1fef51",
+    "name": "Ivan Marshalok",
+    "company_position": "Data Engineer w LINGARO",
+    "bio": "Cześć! Jestem inżynierem danych z kilkuletnim doświadczeniem. Moją pasją jest Apache Spark oraz budowa skalowalnych rozwiązań do przetwarzania danych. Na co dzień pracuję z Azure, Azure DevOps, Databricks i SQL. Podczas HackNation chętnie pomogę uczestnikom w obszarach związanych z inżynierią danych."
+  },
+  {
+    "id": "2066a6d7-e28c-4a86-8519-48e32f04b41a",
+    "name": "Patrycja Kornaś",
+    "company_position": "Radca prawny / właścicielka kancelarii w Kancelaria Radcy Prawnego Patrycja Kornaś",
+    "bio": "Jestem radcą prawnym i prowadzę własną kancelarię. Mam 18 lat doświadczenia w administracji publicznej, a specjalizuję się w prawnych aspektach gospodarki wodnej i infrastruktury. Łączę wiedzę prawną z praktyczną znajomością funkcjonowania instytucji publicznych — ich potrzeb, procedur i wyzwań.\nJako mentorka chcę pomagać zespołom przekładać pomysły technologiczne na rozwiązania możliwe do wdrożenia w administracji. Mogę wesprzeć uczestników w zrozumieniu problemu stojącego za wyzwaniem, rozpoznaniu uwarunkowań prawnych oraz dopasowaniu projektów do potrzeb urzędów i obywateli. Wierzę, że dobre rozwiązania powstają tam, gdzie technologia spotyka się z doświadczeniem osób znających dany obszar od środka."
+  },
+  {
+    "id": "16a2c411-05c6-491d-98b9-c5c3f9488124",
+    "name": "Szymon Gruszczyński",
+    "company_position": "Software Engineer & Founder w Novo Nordisk / Solutions Factory",
+    "bio": "Pracuję na kontrakcie w Novo Nordisk, a po godzinach rozwijam własną firmę Solutions Factory. Sam projektuję i buduję produkty SaaS od pomysłu po wdrożenie: m.in. budowapodreka.pl (AI analizujące dokumentację budowlaną) i agregator przetargów nieruchomości, który zbiera i porządkuje dane publikowane przez instytucje publiczne (w tym ekstrakcję danych z PDF-ów przez LLM). Na co dzień: TypeScript/Next.js, Postgres (Supabase, Neon), Vercel, Claude API, structured outputs i ewaluacje modeli. Pomogę z architekturą, szybkim MVP, integracją AI, pracą z danymi publicznymi i doprowadzeniem projektu do działającego demo."
+  },
+  {
+    "id": "3f66ade1-3966-4d20-9ad5-13739dde41ff",
+    "name": "Filip Chlebowski",
+    "company_position": "Senior Devops / Principal Architect w Nuvira",
+    "bio": "Główny devops w hitachi eu od 4 lat, 8 lat doświadczenia na rynku, początki z javą a potem tranzycja do devops i architekta systemów. Konsultuje rozwiazania automatyzacji i zabezpieczeń z startupami, bankami oraz instytucjami finansowymi."
+  },
+  {
+    "id": "03f2c296-a3d5-4713-a311-2355cfd0af07",
+    "name": "Hubert Zmudzinski",
+    "company_position": "Founder / Założyciel w BlackSpire Consulting",
+    "bio": "Przedsiębiorca, strateg biznesowy oraz założyciel BlackSpire Consulting, polsko-amerykańskiej firmy doradczej z siedzibą w USA specjalizującej się w zarządzaniu strategicznym, rozwoju organizacji i transformacji biznesowej. Absolwent Fox School of Business z wyróżnieniem summa cum laude, członek Beta Gamma Sigma, międzynarodowego stowarzyszenia honorowego absolwentów kierunków biznesowych. Obecnie kontynuuje studia magisterskie na Harvard University. Posiada międzynarodowe doświadczenie w realizacji projektów strategicznych. W swojej działalności łączy amerykańskie podejście do zarządzania z europejską perspektywą biznesową, koncentrując się na budowaniu efektywnych organizacji, rozwoju przywództwa oraz wdrażaniu innowacyjnych rozwiązań wspierających długoterminowy wzrost przedsiębiorstw."
+  },
+  {
+    "id": "8d67c7ba-3393-4349-ac49-6bef4c0a2bd3",
+    "name": "Maciej Kastner",
+    "company_position": "Zastępca Naczelnika Urzędu Skarbowego w Izba Administracji Skarbowej w Bydgoszczy",
+    "bio": "W administracji skarbowej działam od 1993 roku – obecnie jako  Zastępca Naczelnika Urzędu Skarbowego w Grudziądzu, gdzie zarządzam pionem kontroli. Moje prawnicze wykształcenie, zamiłowanie do nowych technologii i zdany egzamin na doradcę podatkowego łączę z nowoczesnym podejściem – jestem absolwentem Transformacji Cyfrowej na SGH w Warszawie.\nUwielbiam dzielić się wiedzą, dlatego jako wykładowca tłumaczę zawiłości podatkowe i cyfrowe nowinki, a także uczę przedmiotów prawniczych i... fotografii. Po godzinach zamieniam paragrafy na obiektyw – jestem artystą fotografikiem zrzeszonym w ZPAF, zafascynowanym historycznymi technikami fotograficznymi. Do zespołu wnoszę unikalny miks wiedzy prawniczej, nowych technologii,  znajomości procedur, cyfrowego mindsetu i artystycznego oka. Jako mentor chętnie pomogę Wam okiełznać kwestie prawne i podatkowe, podpowiem, jak ugryźć transformację cyfrową w Waszych projektach i zadbam o to, by Wasz pomysł miał solidne fundamenty proceduralne oraz biznesowe."
+  },
+  {
+    "id": "a9188e34-d26d-4a85-b22e-b58d6a2decce",
+    "name": "Krzysztof Błaszkiewicz",
+    "company_position": "Prezes Zarządu w BluHolding P.S.A. / Bydgoski Klaster informatyczny",
+    "bio": "Krzysztof Błaszkiewicz – Prezes Zarządu BluHolding, BKI, główny architekt IT i ekspert cyberbezpieczeństwa z 25-letnim doświadczeniem. Twórca platformy chmurowej e-Pulpit24 oraz systemu DemoNiS2 (automatyzacja dyrektywy NIS2/UKSC). Realizował krytyczne wdrożenia m.in. dla NBP, PKO oraz zarządzał architekturą IT dla sieci 150 oddziałów branży automotive. Łączy twardą inżynierię (Cloud, Security, Architecture) ze strategią biznesową i komercjalizacją innowacji."
+  },
+  {
+    "id": "8180ef6c-2dbf-4874-b7a4-64562e199d8f",
+    "name": "Tomasz Szmidt",
+    "company_position": "AI Product Engineering Lead w WithSecure",
+    "bio": "Zawodowo w cyber bezpieczeństwie. Wcześniej jako data scientist, teraz jako lider jednostki wprowadzającej AI do produktów. Poza pracą, współtworzę Szczeciński Combinat Coworking, występuję na konferencjach - ostatnio na Infoshare w Gdańsku. Kiedy mogę, angażuję się w hackathony. Ostatnim razem prowadziłem ścieżkę tematyczną na European Critical Infrastructure Hackathon 2026. Jestem fanem eksperymentowania i myślenia krytycznego, opierania się na danych - nie na opiniach. Pomagam zamieniać surowe pomysły w działające MVP"
+  },
+  {
+    "id": "1956fed2-6193-48ac-8e2c-d22dbf5257b6",
+    "name": "Piotr Bednarski",
+    "company_position": "Full-Stack Software Engineer | Co-founder & VP, AgroPool P.S.A.",
+    "bio": "Na co dzień projektuję i wdrażam rozwiązania technologiczne dla firm z różnych branż, m.in. motoryzacyjnej, geodezyjnej, logistycznej, rolniczej i morskiej. Współpracuję bezpośrednio z klientami, poznaję ich potrzeby i prowadzę projekty od pierwszych rozmów i koncepcji aż po stworzenie i wdrożenie działającego systemu. Zajmuję się projektowaniem architektury i tworzeniem oprogramowania, pracując zarówno nad frontendem, jak i backendem, z wykorzystaniem m.in. .NET, React, Next.js i PostgreSQL.\nStudiuję informatykę na PJATK w Gdańsku i planuję specjalizację z cyberbezpieczeństwa. Jestem również absolwentem technikum mechatronicznego. Interesuję się AI, bioinformatyką, technologiami kosmicznymi i dual-use, a także projektowaniem systemów i urządzeń elektronicznych oraz inżynierią dźwięku.\nJestem współzałożycielem AgroPool P.S.A., startupu rozwijającego rozwiązania dla sektora rolno-spożywczego i logistyki. Z projektem AgroPool zdobyliśmy 2. miejsce na Hack4Change, a następnie zakwalifikowaliśmy się do programu inkubacyjnego WAB2, w ramach którego rozwijamy produkt i model biznesowy.\nBrałem też udział w StartupHack, gdzie współtworzyłem MaRescue, rozwiązanie wspierające koordynację akcji poszukiwawczo-ratowniczych (SAR) na Bałtyku. Projekt spotkał się z zainteresowaniem. Podczas Hackathonu Morskiego pracowałem nad aplikacją dla gospodarki morskiej, którą rozwijaliśmy także po zakończeniu wydarzenia.\nNa HackNation chętnie pomogę zespołom w analizie problemów, projektowaniu architektury, wyborze technologii, tworzeniu MVP oraz przygotowaniu dema i pitchu."
+  },
+  {
+    "id": "07a003ef-1639-4952-b33c-91df0f574cfe",
+    "name": "Patryk Grażewicz",
+    "company_position": "Analityk OSINT / Investigation Lead w Stowarzyszenie Pravda / Corsearch",
+    "bio": "Analityk OSINT, fact-checker i śledczy z ponad siedmioletnim doświadczeniem. Walczy z dezinformacją jako członek organizacji fact-checkingowej Pravda, należącej do sieci IFCN. Kieruje również międzynarodowym zespołem prowadzącym dochodzenia dotyczące obrotu podrabianymi produktami największych marek na świecie. Prowadzi szkolenia z OSINTu, zwalczania dezinformacji oraz monitorowania grup radykalnych w internecie. Zainteresowania zawodowe: radykalizm, dezinformacja w Afryce, rosyjskie FIMI, kultura internetowa, nietypowe śledztwa.\n\nWystępował m.in. na EU DisinfoLab, Kongresie Bezpieczeństwa Informacyjnego ReInfo oraz ESMH Summer School w Parlamencie Europejskim."
+  },
+  {
+    "id": "86ec6911-f162-4c7f-b138-8828283fb8ee",
+    "name": "Kacper Moczarny",
+    "company_position": "Starszy Specjalista ds. organizacji wydarzeń w Podkarpackie Centrum Innowacji Sp. z o.o.",
+    "bio": "Absolwent Politechniki Rzeszowskiej, gdzie zdobył wykształcenie techniczne na kierunku logistyka oraz zarządzanie projektami. W trakcie studiów był aktywnym członkiem Zarządu Samorządu Studenckiego, co pozwoliło mu rozwijać umiejętności zarządzania oraz współpracować z innymi studentami w ramach różnorodnych projektów.\nJego doświadczenie zawodowe obejmuje pracę firmie Pratt & Whitney Rzeszów, gdzie zdobył cenne doświadczenie w obszarze pracy w dużych organizacjach. Kacper przez wiele lat pełnił funkcję Project Managera w PCI ProtoLab w Podkarpackim Centrum Innowacji. Jego umiejętności skutecznego kierowania zespołami zadaniowymi oraz zarządzania projektami zostały docenione i przyczyniły się do sukcesów projektowych, co potwierdzają jego osiągnięcia jako lokalnego lidera NASA Space Apps Rzeszów – największego kosmicznego hackathonu na świecie.\nAktualnie pełni rolę Starszego specjalisty ds. organizacyjnych, odpowiedzialnego za koordynację konferencji, eventów, szkoleń, warsztatów oraz hackathonów w przestrzeniach PCI ProtoLab. Jego praca obejmuje troskę o potrzeby zarówno pracowników, jak i gości, zapewniając wysoki poziom organizacyjny i satysfakcji z udziału w wydarzeniach."
+  },
+  {
+    "id": "573ac53e-488b-4ec2-91e0-ae03e5c66f23",
+    "name": "Krzysztof Grabka",
+    "company_position": "Menadżer ds. Technologii Protolab w Podkarpackie Centrum Innowacji Sp z o.o.",
+    "bio": "Technolog, menedżer R&D i ekspert w obszarze rozwoju technologii oraz wdrażania innowacji. Obecnie zarządza zespołem ekspertów i rozwojem pracowni technicznych PCI Protolab w Podkarpackim Centrum Innowacji w Rzeszowie. Posiada wieloletnie doświadczenie w prowadzeniu projektów badawczo-rozwojowych, wdrażaniu nowych produktów i technologii oraz współpracy z biznesem i środowiskiem naukowym. Jako mentor wspiera zespoły w rozwijaniu pomysłów, ocenie ich potencjału technologicznego oraz przekładaniu koncepcji na praktyczne rozwiązania."
+  },
+  {
+    "id": "127907e6-7845-42fa-b204-8a6d0e07cf1d",
+    "name": "Piotr Laskosz",
+    "company_position": "Ekspert Projektowania UX/UI w COI",
+    "bio": "Jestem projektantem z 15-letnim doświadczeniem w obszarze UX/UI, brandingu i produktów cyfrowych. Łączę projektowanie z technologią, koncentrując się na tworzeniu intuicyjnych, dostępnych i użytecznych rozwiązań. W Centralnym Ośrodku Informatyki współtworzę usługi cyfrowe administracji publicznej wykorzystywane przez miliony obywateli. Interesuje mnie przede wszystkim to, jak dobry design może upraszczać złożone procesy i realnie wpływać na codzienne doświadczenia użytkowników."
+  },
+  {
+    "id": "2652e747-ca42-44a8-99b1-848d92d70aba",
+    "name": "Mikołaj Mroszczak",
+    "company_position": "CAIO w COI",
+    "bio": "Mikołaj Mroszczak kieruje Zespołem AI i Automatyzacji w Centralnym Ośrodku Informatyki – twórcy mObywatela, aplikacji z około 11 mln użytkowników, której wirtualny asystent obsługuje ok. 200 tys. pytań miesięcznie. Buduje produkcyjne rozwiązania AI dla administracji publicznej, doradza technicznie Ministerstwu Cyfryzacji i prowadzi wewnętrzną transformację AI w COI. Wcześniej, jako inżynier w Faculty AI, wdrażał systemy AI dla rządu brytyjskiego – m.in. DfE Content Store oraz NHS AI Deployment Platform. Z AI zetknął się jeszcze podczas doktoratu, którego tematem były jej zastosowania w badaniach nieniszczących (NDT). Doświadczenie zbierał w administracji, sektorze prywatnym i akademii – w Polsce i Wielkiej Brytanii."
+  },
+  {
+    "id": "8caf2433-3c0e-47e0-aa7f-50a11b80a202",
+    "name": "Marek Fabiński",
+    "company_position": "Starszy Programista Automatyzacji Procesów Biznesowych w Centralny Ośrodek Informatyki",
+    "bio": "Automatyzuję procesy, od prostych botów RPA po własne narzędzia pisane od zera i systemy oparte na agentach AI. Vibe coding to dla mnie szybki sposób na prototypowanie, ale każde rozwiązanie opieram na przemyślanej architekturze i testach. Poza komputerem trenuję na siłowni i nie rozstaję się z grami, a nowinki technologiczne śledzę z czystej ciekawości."
+  },
+  {
+    "id": "2b67ea33-58cf-486d-a4b9-16282464598d",
+    "name": "Michał Piwowarczyk",
+    "company_position": "Dyrektor Dep. PPP w Ministerstwo Funduszy i Polityki Regionalnej",
+    "bio": "Od sierpnia 2026 r. dyrektor Dep. Partnerstwa Publiczno-Prywatnego w Ministerstwie Funduszy i Polityki Regionalnej. Zajmuje się wsparciem dla podmiotów publicznych przygotowujących projekty PPP. Posiada wieloletnie doświadczenie związane z praktycznym przygotowaniem publicznych projektów inwestycyjnych. Współpracuje z samorządami różnych szczebli. Uczestniczy również w pracach dot. projektów finansowych ze środków unijnych i różnych inicjatywach związanych z inwestycjami publicznymi."
+  },
+  {
+    "id": "adc1996f-5546-4f87-b2a0-c6404a6af1f2",
+    "name": "Marcin Bogucki",
+    "company_position": "Kierownik w Ministerstwo Funduszy i Polityki Regionalnej",
+    "bio": "W Departamencie PPP Ministerstwa Funduszy i Polityki Regionalnej zajmuję się modelowaniem finansowym i analizą ryzyka inwestycji publicznych. Jako mentor w wyzwaniu Risk Miner pomogę zespołom zrozumieć zakres i metodologię wyzwania oraz powiązać dane z CST2021 i e-Zamówień na poziomie pojedynczego kontraktu oraz sprawdzić, czy prototyp poprawnie odczytuje z umów i aneksów przyczynę zmiany i jej skutek wyrażony w opóźnieniu lub wzroście kosztów."
+  },
+  {
+    "id": "a395e85c-a3e4-4ef9-92df-fd56bfe83e01",
+    "name": "Michał Włochal",
+    "company_position": "Dyrektor w Kancelaria Prezesa Rady Ministrów",
+    "bio": "Od ponad 20 lat związany ze służbą cywilną. Karierę zawodową rozpoczynał przy wdrażaniu programów finansowanych ze środków Unii Europejskiej w Polsce, a następnie realizował zadania związane z udzielaniem dofinansowania inwestycji samorządowych ze środków unijnych oraz budżetu państwa.\nOd ponad 12 lat zajmuje się obszarami zarządzania zasobami ludzkimi oraz organizacji pracy urzędu. Odpowiada za sprawy kadrowo-płacowe, rozwój kompetencji pracowników, szkolenia, oceny okresowe, rozwój zawodowy oraz obsługę finansowo-księgową. Jako trener wewnętrzny służby cywilnej prowadzi szkolenia z zakresu opisywania i wartościowania stanowisk pracy.\nSzczególne zainteresowania zawodowe: ocenianie i rozwój zawodowy pracowników administracji publicznej oraz wdrażanie nowoczesnych narzędzi zarządzania wspierających efektywność organizacji."
+  },
+  {
+    "id": "10a883fb-6c27-4eef-8d4a-39336649e426",
+    "name": "Łukasz Szubart",
+    "company_position": "Ekspert w Podkarpackie Centrum Innowacji Sp. z o.o.",
+    "bio": "Łukasz Szubart – ekspert w Podkarpackim Centrum Innowacji i wykładowca akademicki. Specjalizuje się w Design Thinking, projektowaniu innowacyjnych rozwiązań oraz szybkim prototypowaniu i testowaniu pomysłów. Wspiera zespoły w identyfikacji potrzeb, tworzeniu koncepcji i doskonaleniu rozwiązań. Łączy wiedzę projektową i umiejętności miękkie z doświadczeniem w wykorzystaniu nowoczesnych technologii wytwarzania. Mentor podczas wydarzeń takich jak NASA Space Apps Challenge i HackCarpathia oraz w programach akceleracyjnych, m.in. InnoStart Hub Polska."
+  },
+  {
+    "id": "9a5f6a58-ffbf-4386-a19b-6985d787e0ae",
+    "name": "Paweł Skalny",
+    "company_position": "Specjalista ds. bezpieczeństwa w Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie",
+    "bio": "Specjalista ds. bezpieczeństwa w AGH, związany zawodowo z obszarem testów penetracyjnych aplikacji webowych oraz serwerów. Posiada praktyczne doświadczenie w pracy z narzędziami i środowiskami wykorzystywanymi w bezpieczeństwie ofensywnym, takimi jak Kali Linux, Burp Suite i Nessus, a także w pracy z systemami Windows oraz językami programowania, m.in. C, C++, Python i Rust. Posiada certyfikat OSCP Offensive Security. Interesuje się kryptografią, rozwiązywaniem zadań CTF oraz tworzeniem oprogramowania. W szkoleniach łączy podejście praktyczne z naciskiem na etykę, metodykę i rzetelne raportowanie wyników testów bezpieczeństwa."
+  },
+  {
+    "id": "db4ae7c7-b3c8-445a-b015-c21c347d5186",
+    "name": "Tomasz Łuczak",
+    "company_position": "Starszy Programista Java w Centralny Ośrodek Informatyki",
+    "bio": "Programista Java z ponad 10 letnim doświadczeniem, współtworzący i rozwijający systemy z różnych dziedzin, pasjonat nowych technologii."
+  },
+  {
+    "id": "90687d2c-0318-4935-982d-1a65d8205823",
+    "name": "Magda Kołba-Górna",
+    "company_position": "Dyrektorka Dep. Badań i Projektowania Doświadczeń w COI",
+    "bio": "Badaczka z wieloletnim doświadczeniem w różnorodnych obszarach związanych z wykorzystaniem wiedzy o doświadczeniach człowieka. Pracowała w agencjach badawczych i konsultingowych, wspierając firmy z Polski i ze świata w prowadzeniu projektów badawczych. W Santander Bank Polska była odpowiedzialna za strategię słuchania głosu pracowników i skuteczne projektowanie ich doświadczeń. Aktualnie zarządza obszarem Badań i Projektowania Doświadczeń w Centralnym Ośrodku Informatyki - skupiając się na tworzeniu dobrych interakcji obywateli z cyfrowymi usługami administracji publicznej (m.in. mObywatel, Profil Zaufany, gov.pl).\nPropagatorka inkluzywnego podejścia w badaniach - reprezentowania w nich różnych grup użytkowników i spójnego działania na rzecz dostępności rozwiązań. Badania to dla niej nie tylko element procesu projektowego, ale strategiczny obszar w prowadzeniu biznesu. W ramach Hacknation 2026 wspiera wyzwanie Centralnego Ośrodka Informatyki - Cyfryzacja Formularzy."
+  },
+  {
+    "id": "dcbb660e-0fc5-42fd-a1ed-5fda53bb138f",
+    "name": "Jacek Pawłowski",
+    "company_position": "Radca w Kancelaria Prezesa Rady Ministrów",
+    "bio": "Od ponad 25 lat działam na rzecz profesjonalizacji służby cywilnej w Polsce. Specjalizuję się w projektowaniu systemów i narzędzi HR dla administracji publicznej, a w ostatnich latach aktywnie promuję rozwiązania wspierające równowagę między życiem zawodowym a prywatnym. Obecnie pracuję w Kancelarii Prezesa Rady Ministrów na stanowisku radcy i jestem urzędnikiem mianowanym.\n\nJestem absolwentem politologii na Uniwersytecie Warszawskim oraz studiów podyplomowych z zakresu zarządzania zasobami ludzkimi w Szkole Głównej Handlowej. Zawodowo interesuję się nowoczesnym zarządzaniem w sektorze publicznym oraz poszukiwaniem skutecznych rozwiązań dla administracji przyszłości.\n\nPrywatnie pasjonuję się kolarstwem i bieganiem długodystansowym. Jestem maratończykiem, miłośnikiem gór, dobrych koncertów i podróży, które pozwalają mi odkrywać nowe miejsca i perspektywy."
+  },
+  {
+    "id": "a3a434bb-ae2b-4b5a-a8e9-9a1ac2e833a1",
+    "name": "Eliza Fijołek",
+    "company_position": "Dyrektor Departamentu Komunikacji Elektronicznej w COI",
+    "bio": "Na co dzień zarządzam rozwojem dużych usług cyfrowych dla obywateli i administracji publicznej. Łączę perspektywę biznesową, produktową i projektową, przekładając potrzeby użytkowników na konkretne rozwiązania. Mam doświadczenie w prowadzeniu interdyscyplinarnych zespołów, wyznaczaniu kierunku rozwoju produktów, priorytetyzacji oraz pracy w złożonym środowisku wielu interesariuszy. Jako mentor chętnie pomogę uporządkować pomysł, spojrzeć na niego z perspektywy użytkownika i biznesu oraz przygotować go do skutecznej prezentacji."
+  },
+  {
+    "id": "55897190-2e69-4cce-abe8-3390c00780e7",
+    "name": "Krzysztof Wysocki",
+    "company_position": "Product Owner w COI",
+    "bio": "Jestem Product Ownerem, który wierzy, że najlepsze produkty powstają na styku potrzeb użytkowników, biznesu i technologii. Szczególnie interesuję się zarządzaniem produktami, projektami oraz rozwojem kompetencji zespołów."
+  },
+  {
+    "id": "ae92427c-fea9-4a9b-ad18-ac9a80378e1a",
+    "name": "Rafał Jabłoński",
+    "company_position": "Radca w Kancelaria Prezesa Rady Ministrów",
+    "bio": "Pasjonat technologii i cyberbezpieczeństwa, na co dzień związany z administracją publiczną. Interesuje się bezpieczeństwem IT, nowymi technologiami i praktycznym rozwiązywaniem problemów technologicznych. Chętnie dzieli się doświadczeniem i angażuje w inicjatywy łączące ludzi, technologię i nowe pomysły. Zaangażowany w cyfryzację administracji publicznej."
+  },
+  {
+    "id": "272e6509-a568-4e17-ba89-74ee016d7ee2",
+    "name": "Maciej Szczygieł",
+    "company_position": "Naczelnik w Kancelaria Prezesa Rady Ministrów",
+    "bio": "Menedżer IT z wieloletnim doświadczeniem w administracji publicznej, rozwoju oprogramowania i zarządzaniu zespołami technologicznymi. Na co dzień związany z Kancelarią Prezesa Rady Ministrów, wcześniej m.in. z Ministerstwem Cyfryzacji. Łączy perspektywę technologiczną z praktycznym podejściem do architektury, rozwoju, wdrażania i utrzymania systemów oraz zarządzania projektami i produktami IT. Chętnie dzieli się doświadczeniem, zadaje pytania i wspiera zespoły w porządkowaniu pomysłów oraz przekuwaniu ich w rozwiązania, które są nie tylko ciekawe technologicznie, ale przede wszystkim użyteczne i możliwe do zastosowania w praktyce."
+  },
+  {
+    "id": "854cb0bc-4ae1-4c44-8742-3a2101e4ac8a",
+    "name": "Kamil Kazimierczuk",
+    "company_position": "Radca w Kancelaria Prezesa Rady Ministrów",
+    "bio": "Psycholog z wykształcenia. Z zawodu urzędnik służby cywilnej. Absolwent Krajowej Szkoły Administracji Publicznej (XX Promocja). Asesor metodą AC/DC. Zajmuje się systemem i narzędziami zarządzania ludźmi. Jego zainteresowania obejmują relacje między otoczeniem (fizycznym i wirtualnym) a człowiekiem, praktyczne aplikacje metodologii oceny pracownika oraz automatyzację procesów kadrowych. Obecnie pracownik Departamentu Służby Cywilnej w Kancelarii Prezesa Rady Ministrów."
+  },
+  {
+    "id": "3ae05f2e-dab1-4456-90cf-6566f1d8b232",
+    "name": "Magdalena Pruszyńska-Gora",
+    "company_position": "Radca w Kancelaria Prezesa Rady ministrów",
+    "bio": "ekspertka z wieloletnim doświadczeniem w obszarze zarządzania zasobami ludzkimi. Specjalizuje się w rekrutacji, rozwoju pracowników oraz tworzeniu i wdrażaniu nowoczesnych rozwiązań HR. Doświadczenie zdobywała w firmach doradczych oraz urzędach administracji publicznej, zajmując stanowiska specjalistyczne i kierownicze .\nRadca w Departamencie Służby Cywilnej Kancelarii Prezesa Rady Ministrów, odpowiada za współtworzenie i koordynację wdrażania standardów zarządzania zasobami ludzkimi w służbie cywilnej. Asesor Centrum Oceny Zintegrowanej KSAP. Psycholog z doświadczeniem w diagnozie i ocenie kompetencji kierowniczych."
+  },
+  {
+    "id": "f1441d09-eec8-494e-a549-cc10a1fb7787",
+    "name": "Kamil Warpechowski",
+    "company_position": "Mentor Instytucjonalny",
+    "bio": "Kieruje wytwarzaniem oprogramowania dla kluczowych systemów administracji publicznej, konsolidując rozwój usług cyfrowych państwa i wdrażając automatyzację, technologie low-code oraz AI. Wcześniej realizował projekty m.in. w Allegro, T-Mobile Polska, PZU i LPP."
+  },
+  {
+    "id": "8533610b-21c0-4d44-94b2-a250e0bb145e",
+    "name": "Dawid Czaja",
+    "company_position": "Starszy programista automatyzacji w COI",
+    "bio": "Architekt i Developer. Buduje systemy, które zdejmują z ludzi żmudną pracę urzędniczą oraz dodają do świata trochę fantastyki. Stworzył platformę, która czyta wnioski do rejestru pojazdów (CEPiK) i obsługuje je od skanu po rejestrację w systemie, oraz osobny projekt wieloagentowy do tworzenia spójnych wielo-odcinkowych opowiadań oraz dogenerowania do nich narracyjne spójnych obrazów. Używa do tego modeli w tym wizyjnych AI, klasycznego ML, mikroserwisów i botów RPA. Na HackNation pomoże przejść od pomysłu do działającego prototypu."
+  },
+  {
+    "id": "174175ca-50ba-451a-87b7-dabbaefe2a02",
+    "name": "Jędrzej Szpygiel",
+    "company_position": "Senior Data Scientist w COI",
+    "bio": "Jestem Senior Data Scientistem w Centralnym Ośrodku Informatyki. Wcześniej pracowałem nad computer vision i sieciami konwolucyjnymi, a dziś rozwijam rozwiązania oparte na LLM-ach - od systemów RAG po podejścia agentowe. W COI pracowałem przy Wirtualnym Asystencie w mObywatelu, gdzie AI pomaga ludziom odnaleźć się w sprawach urzędowych."
+  },
+  {
+    "id": "3b216d80-7652-430f-bc74-3627bbffcb7c",
+    "name": "Iwona Szelenbaum",
+    "company_position": "Naczelnik wydziału w Ministerstwo Cyfryzacji",
+    "bio": "Koordynatorka rozwoju portalu dane.gov.pl oraz wdrażania programu otwierania danych w administracji publicznej. Zajmuje się prawno-legislacyjnymi aspektami otwierania danych. Zaangażowana w wiele projektów dotyczących otwartości danych i ponownego wykorzystywania informacji sektora publicznego."
+  },
+  {
+    "id": "c2bfc7cc-9b90-491d-834c-7ef0905e7156",
+    "name": "Paweł Żbikowski",
+    "company_position": "Naczelnik Wydziału Rozwoju i Wdrażania Systemów Informatycznych w Ministerstwo Funduszy i Polityki Regionalnej",
+    "bio": "Od ponad 30 lat pracuję na styku technologii, biznesu i zarządzania. W tym czasie prowadziłem zespoły IT, odpowiadałem za rozwój środowisk informatycznych, cyberbezpieczeństwo, projekty transformacyjne i codzienne funkcjonowanie IT w organizacjach z różnych branż. Najbardziej interesuje mnie praktyczna strona technologii: jak dobrze poukładać IT, jak wspierać biznes i użytkowników oraz jak sprawić, żeby technologia rzeczywiście pomagała organizacji, zamiast być celem samym w sobie. Lubię dzielić się doświadczeniami z realnych wdrożeń — także tymi, które nie zawsze przebiegały zgodnie z podręcznikiem."
+  },
+  {
+    "id": "9d63fc2b-bd4c-470a-93ae-b69ae4b511b1",
+    "name": "Jacek Orłowski",
+    "company_position": "Mentor Instytucjonalny",
+    "bio": "Ukończył studia na Politechnice Wrocławskiej. Od początku kariery zawodowej związany z zagadnieniami IT. Przez blisko 20 lat pracował jako redaktor i redaktor naczelny pism komputerowych. Przez wiele lat był również administratorem sieci i inżynierem R&D w międzynarodowej korporacji.\n\nW NASK-PIB nadzoruje wytwarzanie i udostępnianie treści edukacyjnych EZD RP oraz współpracę z firmami i urzędami m.in. w obszarze integracji w środowisku Piaskownicy API EZD RP. Jest również odpowiedzialny za funkcjonowanie i rozwój narzędzi informatycznych wspierających proces obsługi Partnerów EZD RP.\n\nMa duże doświadczenie w przygotowywaniu i prowadzeniu konferencji, wystąpieniach publicznych oraz szkoleniach. Specjalizuje się w zagadnieniach komunikacji elektronicznej i transformacji cyfrowej sektora publicznego."
+  },
+  {
+    "id": "0b68af8b-1518-4220-9278-f8b7bee0ed97",
+    "name": "Donat Stankiewicz",
+    "company_position": "Starszy Specjalista ds. Sztucznej Inteligencji w NASK PIB",
+    "bio": "Data Scientist i ML Engineer w NASK oraz doktorant TIB PAN. Zajmuje się wielomodalną analizą deepfake’ów, zwłaszcza audio, i buduje algorytmy wspierające pracę analityków dezinformacji. Łączy podejście naukowe z praktycznym wdrażaniem technologii. Chętnie pomoże lepiej zrozumieć działanie modeli audio i doradzi jak wykorzystać je w swoim projekcie."
+  },
+  {
+    "id": "a18b9f44-fcfa-4179-a45e-18d258cb1046",
+    "name": "Katarzyna Roszczewska",
+    "company_position": "Ekspert ds. sztucznej inteligencji w NASK PIB",
+    "bio": "Ekspertka ds. sztucznej inteligencji w NASK oraz doktorantka Politechniki Warszawskiej. Specjalizuje się w sztucznej inteligencji, biometrii twarzy oraz badaniach nad bezpieczeństwem i wiarygodnością systemów AI. Jej zainteresowania obejmują rozpoznawanie twarzy, wykrywanie ataków prezentacyjnych, analizę deepfake’ów oraz ocenę wpływu cech demograficznych na działanie modeli uczenia maszynowego.\n\nW swojej pracy łączy wiedzę naukową z praktycznym podejściem do nowych technologii. Chętnie pomoże w doborze modeli i architektur AI, wyborze odpowiednich metod i narzędzi, ocenie jakości i bezpieczeństwa rozwiązań oraz przełożeniu pomysłów na konkretne, działające rozwiązania."
+  },
+  {
+    "id": "5d64d607-e727-4ea4-b1a7-c9f6779b2611",
+    "name": "Ewelina Bartuzi-Trokielewicz",
+    "company_position": "Kierownik Zakładu Analiz Audiowizualnych i Systemów Biometrycznych, pracownik naukowy - adiunkt w NASK PIB",
+    "bio": "Kierowniczka Zakładu Analiz Audiowizualnych i Systemów Biometrycznych w NASK-PIB, ekspertka AI, uczenia maszynowego i cyberbezpieczeństwa. Specjalizuje się w biometrii, analizie danych multimodalnych, detekcji deepfake’ów i dezinformacji oraz bezpieczeństwie AI. Ma doświadczenie w kierowaniu zespołami badawczo-rozwojowymi i tworzeniu rozwiązań AI. Chętnie pomoże w ocenie pomysłów, doborze technologii, weryfikacji skuteczności modeli i określeniu potencjału wdrożeniowego projektów."
+  },
+  {
+    "id": "e77bc6f2-9207-4f80-9a78-85db5d03c7a6",
+    "name": "Emilian Duda",
+    "company_position": "Kierownik Zespołu Usług Cyfrowych w COI",
+    "bio": "Manager i productowiec związany z cyfryzacją usług publicznych. W Centralnym Ośrodku Informatyki kieruje Zespołem Usług Cyfrowych. Lubi łączyć technologię z realnymi potrzebami użytkowników i szukać rozwiązań, które da się nie tylko wymyślić, ale też skutecznie wdrożyć. Ma doświadczenie w pracy na styku biznesu, technologii i administracji publicznej."
+  },
+  {
+    "id": "e71d17a5-6833-4d0b-a5c3-484513c1495b",
+    "name": "Dominik Brach",
+    "company_position": "Specjalista ds. uczenia maszynowego w NASK PIB",
+    "bio": "Machine Learning Engineer w NASK z doświadczeniem w projektowaniu, trenowaniu i ewaluacji modeli uczenia maszynowego, ze szczególnym uwzględnieniem przetwarzania i analizy sygnałów audio, w tym mowy. Specjalizuję się w rozwiązaniach opartych na deep learningu, wykorzystując przede wszystkim Python i PyTorch. Podczas hackathonu chętnie pomogę w wyzwaniach związanych z ML i AI: od doboru odpowiednich narzędzi i gotowych modeli, przez ich praktyczne zastosowanie, aż po rozwiązywanie problemów technicznych i ocenę skuteczności proponowanych rozwiązań."
+  },
+  {
+    "id": "869ac90c-dc06-407b-a0fb-8c437b4ed73e",
+    "name": "Alicja Martinek",
+    "company_position": "Ekspert ds. sztucznej inteligencji w NASK PIB",
+    "bio": "Ekspertka ds. sztucznej inteligencji w NASK oraz doktorantka na AGH w Krakowie. W pracy na co dzień zajmuje się wielomodalną detekcją danych syntetycznych. Z zamiłowania estetka, więc prezentacja danych i wyników nie jest jej obca. Ale wcześniej oczywiście z chęcią przeanalizuje te dane na ósmą stronę!"
+  },
+  {
+    "id": "cc5a949a-5d3c-44b8-928b-d8481a97b6aa",
+    "name": "Karol Teodorowicz",
+    "company_position": "Starszy specjalista ds. Edukacji i Popularyzacji Danych w Ministerstwo Cyfryzacji",
+    "bio": "Absolwent socjologii cyfrowej na Uniwersytecie Warszawskim. Pracowałem na UW i w Digital Economy Lab UW przy projektach europejskich z zakresu polityk publicznych, rynku pracy oraz kompetencji cyfrowych. Specjalizuję się w badaniach jakościowych na styku nowych technologii i nauk społecznych. Mam doświadczenie w analizie UX, administracji projektami oraz komunikacji instytucji naukowych i publicznych. Aktualnie zajmuję się działaniami edukacyjnymi i komunikacyjnymi w obszarze otwartych danych."
+  },
+  {
+    "id": "7b6b38f5-ad6b-4d7f-990a-d3594b67627c",
+    "name": "Bartosz Krajewski",
+    "company_position": "Inżynier uczenia maszynowego w COI",
+    "bio": "Jestem inżynierem uczenia maszynowego w Centralnym Ośrodku informatyki. Pracowałem jako Data Scientist w projekcie Wirtualnego Asystenta w mObywatelu, a teraz głównie zajmuję się tematyką MLOps. Na co dzień buduję infrastrukturę dla rozwiązań AI w administracji publicznej. Chętnie pomogę Wam zarówno w pracy koncepcyjnej, jak i przejściu z prototypu do działającego rozwiązania.\nZ wykształcenia (i zamiłowania) jestem fizykiem."
+  },
+  {
+    "id": "13f8b6bc-0720-4eb6-a1c7-feb2c48494ef",
+    "name": "Adrian Kordas",
+    "company_position": "Machine Learning Engineer w NASK PIB",
+    "bio": "Data Scientist i ML Engineer w NASK oraz doktorant TIB PAN. Specjalizuje się w AI, uczeniu głębokim i analizie danych multimodalnych. Ma doświadczenie w projektowaniu architektury rozwiązań AI oraz rozwijaniu produktów w dynamicznym środowisku startupowym. Łączy podejście naukowe z praktycznym wdrażaniem technologii. Chętnie pomoże w doborze modeli, architekturze i szybkim dowiezieniu działającego MVP."
+  },
+  {
+    "id": "94d2aacf-d674-4567-91b2-74187304b72c",
+    "name": "Arkadiusz Maliński",
+    "company_position": "Referent w Ministerstwo Cyfryzacji",
+    "bio": "Arkadiusz Maliński jest inżynierem informatyki ze specjalizacją w cyberbezpieczeństwie. Na co dzień pracuje w Zespole CSIRT Cyfra w Departamencie Cyberbezpieczeństwa Ministerstwa Cyfryzacji, gdzie wspiera działania związane z bezpieczeństwem cyberprzestrzeni. Interesuje się nowymi technologiami oraz zagadnieniami z obszaru cyberbezpieczeństwa."
+  },
+  {
+    "id": "96823a5e-47c9-4ab7-9f36-c2d827211959",
+    "name": "Adam Graliński",
+    "company_position": "Kierownik Zespołu w Aplikacje Krytyczne Ministerstwa Finansów",
+    "bio": "Manager zespołu FE, pasjonat IT. W AKMF budujemy cyfrową przyszłość finansów publicznych. Prywatnie zapalony gamer."
+  },
+  {
+    "id": "50b8961e-c897-4351-b903-297efec18332",
+    "name": "Julia Tyszko",
+    "company_position": "Główna specjalistka w Kancelaria Prezesa Rady Ministrów",
+    "bio": "Psycholożka, absolwentka KSAP, od 2017 roku jestem związana ze służbą cywilną. Tworzę rozwiązania z obszaru zarządzania ludźmi oraz wspieram inicjatywy z zakresu dobrostanu i zdrowia psychicznego w pracy. Wierzę, że skuteczna administracja zaczyna się od ludzi, którzy czują się bezpiecznie oraz mogą w pełni wykorzystywać swój potencjał. Bliskie jest mi tworzenie środowiska pracy, w którym ludzie mają przestrzeń do rozwoju, współpracy i działają z poczuciem sensu."
+  },
+  {
+    "id": "ba0f6a7c-1c2b-478e-8b91-be710f7585f0",
+    "name": "Karolina Świszcz",
+    "company_position": "Radca w Kancelaria Prezesa Rady Ministrów",
+    "bio": "Od lat jestem związana z administracją publiczną i obszarem miękkiego HR. Łączę doświadczenie praktyczne z tworzeniem rozwiązań, które wspierają nowoczesne zarządzanie ludźmi. Jestem praktykiem HR, asesorką Assessment i Development Center oraz coachem. W swojej pracy koncentruję się na kształtowaniu i rozwijaniu standardów oraz narzędzi zarządzania zasobami ludzkimi w administracji publicznej, szczególnie w obszarze ocen okresowych i kompetencji miękkich, w tym kierowniczych. Lubię dzielić się wiedzą i doświadczeniem, inspirować do poszukiwania nowych perspektyw i wspólnie wypracowywać praktyczne rozwiązania, które przynoszą realną wartość organizacjom i ludziom, którzy w nich pracują."
+  },
+  {
+    "id": "43fad7b9-4cf9-4aaf-b733-db4750089a64",
+    "name": "Karolina Kościerzyńska",
+    "company_position": "Radca w Ministerstwo Cyfryzacji",
+    "bio": "Radca, Ministerstwo Cyfryzacji\nPierwsza pomoc w zakresie logo dla wyzwania AED\n\nWspieram uczestników w rozwijaniu innowacyjnych pomysłów opartych na danych, łącząc wiedzę merytoryczną z praktycznym podejściem do projektowania rozwiązań odpowiadających na realne potrzeby społeczne i biznesowe. Dzięki doświadczeniu w zarządzaniu projektami, komunikacji i promocji pomagam zespołom skutecznie prezentować swoje pomysły, budować wartość projektów oraz zwiększać ich potencjał wdrożeniowy. Od nazwy i logo, przez storytelling, aż po finałowy pitch. Pomagam opowiedzieć historię produktu w sposób, który zapada w pamięć i wyróżnia go na tle konkurencji.\n\nSpecjalizuję się w kreatywnych działaniach marketingowych i skutecznej komunikacji. Jestem certyfikowaną ekspertką marketingu cyfrowego (DIMAQ Professional), a moje doświadczenie obejmuje strategiczne planowanie komunikacji, budowanie zaangażowania społeczności oraz wykorzystanie nowoczesnych narzędzi digital marketingu.\n\nJako koordynatorka hackathonów, w tym Datathonu #OtwarteDane, doskonale rozumiem, że nawet najlepsze rozwiązanie potrzebuje przekonującej narracji. Dlatego pomagam uczestnikom zamienić dane, technologię i pomysł w atrakcyjną historię, która buduje zainteresowanie, wzmacnia wiarygodność projektu i zwiększa jego szanse na sukces podczas finałowych prezentacji."
+  },
+  {
+    "id": "d68571f5-3655-4713-ae59-b0987734aafb",
+    "name": "Paweł Roszkowski",
+    "company_position": "Dyrektor Departamentu w Ministerstwo Finansów / Centrum Informatyki Resortu Finansów",
+    "bio": "Dyrektor Departamentu Eksploatacji Systemów w Centrum Informatyki Resortu Finansów. Z IT związany od 1996."
+  },
+  {
+    "id": "45dc0da2-2497-4280-ae62-b902d65ebc2f",
+    "name": "Michał Dębiński",
+    "company_position": "Dyrektor w Zakład Ubezpieczeń Społecznych",
+    "bio": "Dyrektor Departamentu Planowania i Nowych Technologii IT nadzorujący m.in.:\n· Opiniowanie inicjatyw biznesowych na etapie koncepcji, potrzeby biznesowej, realizacji zmian IT pod kątem zgodności oraz wpływu na architekturę z uwzględnieniem kierunków rozwoju systemów informatycznych w ZUS.\n· Wysokopoziomowe projektowanie rozwiązań w systemach IT ZUS\n· Definiowanie i egzekwowanie pryncypiów i standardów Architektonicznych\nPotencjał wdrożeń i ocena realnych możliwości technologicznych.\nAI Act w sektorze publicznym w zakresie limitacji, wymogów prawnych i zgodności projektów AI z nowymi regulacjami."
+  },
+  {
+    "id": "19f0d23d-6627-4a93-91c5-f55c4679b464",
+    "name": "Konrad Gałczyński",
+    "company_position": "Radca generalny w Ministerstwo Spraw Zagranicznych",
+    "bio": "Konrad Gałczyński jest pracownikiem Ministerstwa Spraw Zagranicznych, specjalizującym się w międzynarodowej polityce cyberbezpieczeństwa. Swoją karierę w MSZ rozpoczął od zadań związanych z rozwojem stron internetowych i administracją systemami IT. Następnie zajmował się współpracą międzynarodową w obszarze polityki bezpieczeństwa, w tym cyberbezpieczeństwem w ramach współpracy z NATO, cywilnymi aspektami zarządzania kryzysowego w Unii Europejskiej, oraz przeciwdziałaniem rozprzestrzenianiu broni masowego rażenia. Po zdobyciu doświadczenia w tych obszarach powrócił do zagadnień związanych z cyberdyplomacją. Obecnie zajmuje się międzynarodowymi aspektami polityki cyberbezpieczeństwa, reprezentując i wspierając działania Polski na forach wielostronnych, w szczególności w ramach NATO i Unii Europejskiej."
+  },
+  {
+    "id": "611f7cca-fa97-4000-9102-e7dd36372777",
+    "name": "Dariusz Kobusiński",
+    "company_position": "Zastępca Dyrektora Departamentu Informatyki w Urząd Komisji Nadzoru Finansowego",
+    "bio": "Inżynier z ponad 30-letnim doświadczeniem w IT - od wsparcia użytkownika, poprzez administrację systemami i bazami danych po zarządzanie zespołami. Swobodnie porusza się zarówno w obszarze infrastruktury jak i usług IT oraz zagadnień związanych z Systemem Zarządzania Bezpieczeństwem Informacji (SZBI) i Systemem Zarządzania Ciągłością Działania (SZCD)."
+  },
+  {
+    "id": "847dedea-c4bf-400f-a656-76360b7e1f67",
+    "name": "Stella Chwedoruk",
+    "company_position": "Badaczka UX w COI",
+    "bio": "Badam potrzeby użytkowników usług publicznych. Zajmowałam się m.in. cyfryzacją samorządów - badałam doświadczenia JST z wykorzystaniem rozwiązań AI oraz potrzeby urzędów i jednostek IT związane z tworzeniem cyfrowych formularzy.\nJako mentorka pomogę zespołom dobrze zdefiniować problem, zrozumieć potrzeby różnych uczestników procesu i sprawdzić, czy proponowane rozwiązanie rzeczywiście na nie odpowiada."
+  },
+  {
+    "id": "1e8ee356-ea2a-4334-8c1e-794d09dd8fa8",
+    "name": "Magdalena Dąbrowska",
+    "company_position": "Radca w Ministerstwo Cyfryzacji",
+    "bio": "Od 15 lat związana z administracją publiczną, gdzie angażuje się w działania na rzecz otwierania danych, edukacji i promocji innowacji. Współtworzyła i współorganizowała liczne konferencje oraz hackathony, m.in. odpowiadając za współpracę z partnerami w ramach projektu Datathon #OtwarteDane. W swojej pracy wykorzystuje doświadczenie w komunikacji i organizacji wydarzeń, a także rozwija kompetencje w zakresie wystąpień publicznych i skutecznego przekazywania informacji."
+  },
+  {
+    "id": "30bd00fa-aa1a-4970-8de9-9bbda5b8a36b",
+    "name": "Tomasz Nal",
+    "company_position": "Inżynier bezpieczeństwa aplikacji w AGH",
+    "bio": "Specjalista cyberbezpieczeństwa z doświadczeniem w bezpieczeństwie aplikacji i testach penetracyjnych. Projektuję i prowadzę szkolenia z cyberbezpieczeństwa, skupiając się na tłumaczeniu wymagań bezpieczeństwa na język biznesu."
+  },
+  {
+    "id": "edec300a-23b1-4276-bbab-da755b55c6e4",
+    "name": "Maciej Morawski",
+    "company_position": "Dyrektor w AKMF",
+    "bio": "Menadżer z doświadczeniem w strategicznym zarządzaniu procesami i zespołami, realizacji złożonych projektów oraz prowadzeniu transformacji cyfrowych w przestrzeni publicznej i technologicznej."
+  },
+  {
+    "id": "4d6b016b-8090-4be8-89d4-d3e0ecd9fe40",
+    "name": "Piotr Sosnowski",
+    "company_position": "Analityk w MSZ",
+    "bio": "Dr Piotr Sosnowski – zajmuje się bezpieczeństwem międzynarodowym oraz badaniem zagranicznych manipulacji i ingerencji w przestrzeni informacyjnej (FIMI). Członek zespołu badawczego międzynarodowego projektu SAUFEX, w ramach którego rozwijane są systemy wykrywania i analizy zagrożeń informacyjnych oraz ich interoperacyjność."
+  },
+  {
+    "id": "01fbeb95-850e-4844-8f21-d522c41dfa4a",
+    "name": "Andrzej Szczotka",
+    "company_position": "Kierownik Referatu Rejestrów Działalności Regulowanej w KAS Izba Administracji Skarbowej w Katowicach",
+    "bio": "Zajmuje się zagadnieniami związanymi z rynkiem kryptoaktywów, analizą ryzyka oraz wykorzystaniem nowych technologii w pracy analitycznej. Na co dzień porusza się na styku regulacji, danych i technologii. Jest prelegentem wydarzeń poświęconych kryptowalutom, AML i nowym technologiom. Interesuje się wykorzystaniem DLT,  blockchainu, sztucznej inteligencji oraz technik OSINT do wyszukiwania, łączenia i analizowania informacji. W wolnym czasie eksperymentuje z nowymi narzędziami, sprawdzając ich przydatność w analizie danych i identyfikowaniu cyfrowych śladów.\nPodczas HackNation będzie wspierał uczestników w analizie informacji, wykorzystaniu metod OSINT oraz lepszym zrozumieniu ekosystemu kryptowalut i technologii blockchain."
+  },
+  {
+    "id": "5bd45a02-dc1a-41ee-a3a9-27a3e9880161",
+    "name": "Szymon Marciniak",
+    "company_position": "Zastępca Dyrektora Departamentu w Centrum Informatyki Resortu Finansów",
+    "bio": "Menadżer IT w Centrum Informatyki Resortu Finansów (CIRF). Rozwija praktyczne zastosowania AI w administracji skarbowej, m. in. w wyszukiwaniu informacji i prototypowaniu narzędzi usprawniających codzienna pracę. Ma doświadczenie w zarządzaniu zespołami i usługami IT, bezpieczeństwa informacji, ciągłości działania oraz odpowiedzialnego wykorzystywania AI.\nJako mentor HackNation pomoże zespołom doprecyzować zakres, co warto zbudować w czasie hackathonu, i sprawdzić, gdzie AI rzeczywiście wnosi wartość. Wesprze je także w ocenie ryzyk związanych z danymi."
+  },
+  {
+    "id": "e1442a97-6506-4488-b1d4-76630f50dce0",
+    "name": "Sławomir Flis",
+    "company_position": "CIO w UKNF",
+    "bio": "Menadżer z wieloletnim doświadczeniem w organach administracji publicznej, odpowiedzialny za wdrażanie innowacyjnych rozwiązań teleinformatycznych, w szczególności związanych z informatyzacją organizacji, przetwarzaniem dużych zbiorów danych i bezpieczeństwem elektronicznych usług publicznych. Uczestnik szeregu seminariów poświęconych tematyce IT, w tym dotyczących wykorzystywania nowoczesnych technologii."
+  },
+  {
+    "id": "55d57cc1-869f-4c2e-8512-00fd7724131b",
+    "name": "Ada Sawilska",
+    "company_position": "Specjalista ds. uczenia maszynowego w NASK PIB",
+    "bio": "Specjalistka ds. uczenia maszynowego w NASK oraz doktorantka na Politechnice Warszawskiej. Na co dzień zajmuję się analizą i przetwarzaniem sygnałów audio oraz analizą materiałów deepfake, a w ramach doktoratu generuję syntetyczne bazy obrazowych danych biometrycznych. Chętnie pomogę w złapaniu szerszego kontekstu albo połączeniu kropek i zdefiniowaniu konkretnego problemu."
+  },
+  {
+    "id": "771acb89-2750-47eb-a706-e9ce8543b119",
+    "name": "Mateusz Świętochowski",
+    "company_position": "Ekspert w Urząd Komisji Nadzoru Finansowego",
+    "bio": "Ekspert w Zespole Nowoczesnych Technologii Nadzorczych w Centrum Nowoczesnych Technologii Urzędu Komisji Nadzoru Finansowego, gdzie zajmuje się rozwojem rozwiązań SupTech wspierających pracę nadzoru. Łączy kilkuletnie doświadczenie zdobyte w nadzorze finansowym, domach maklerskich i towarzystwach funduszy inwestycyjnych z kompetencjami inżynierskimi. Po latach pracy w finansach przeszedł do świata programowania. Obecnie tworzy oprogramowanie w Pythonie, SQL, JavaScript i TypeScript, a także odpowiada za jego wdrażanie i utrzymanie w środowiskach OpenShift i Kubernetes, z wykorzystaniem PostgreSQL, praktyk DevOps, monitoringu i automatyzacji procesów. Autor publikacji naukowych."
+  }
+]

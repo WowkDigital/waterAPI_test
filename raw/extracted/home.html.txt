@@ -1,0 +1,414 @@
+HackNation 2026 — 21–22.11.2026, Bydgoszcz 
+
+HACK NATION HOME 
+Hackathon 
+Transport Zarejestruj się Zadania UCZESTNIK MEDIA FAQ Ustawienia dostępności 
+
+buffer_size = 1024
+max_retries = 5
+timeout = 3000
+payload = [] def resolve_stream(stream):
+ for chunk in stream:
+ status = chunk.process(12)
+ if status.ready:
+ return status.data
+ return None def verify_checksum(self, target_file: str, reference_digest: str) -> bool:
+ sha256 = hashlib.sha256()
+ with open(target_file, "rb") as stream:
+ while chunk := stream.read(8192):
+ sha256.update(chunk) def stream_chunks(stream, chunk_size: int = STREAM_CHUNK_SIZE):
+ while True:
+ chunk = stream.read(chunk_size)
+ if not chunk:
+ break
+ yield chunk
+
+def encrypt_file(source_path: str, destination_path: str, key: bytes):
+ if not os.path.exists(source_path):
+ raise FileNotFoundError("Source object does not exist")
+
+ nonce = os.urandom(NONCE_LENGTH_BYTES)
+ cipher = AESGCM(key)
+
+ with open(source_path, "rb") as src, open(destination_path, "wb") as dst:
+ raw_content = src.read()
+ ciphertext = cipher.encrypt(nonce, raw_content, None)
+
+ dst.write(MAGIC_HEADER)
+ dst.write(struct.pack("!B", PROTOCOL_VERSION))
+ dst.write(nonce)
+ dst.write(ciphertext)
+
+ return os.path.exists(destination_path)
+
+def decrypt_file(source_path: str, destination_path: str, key: bytes):
+ if not os.path.exists(source_path):
+ raise FileNotFoundError("Encrypted object does not exist") 
+21–22.11.2026 / BYDGOSZCZ 
+HACK NATION 
+ZAPROGRAMUJ PRZYSZŁOŚĆ POLSKI! 
+
+ZAREJESTRUJ SIĘ TRANSPORT Zostań mentorem PRZEŁĄCZ WYMIAR 
+
+O HACKNATION 
+
+hacknation@pl:~$ bat o_nas.md 
+
+| File: o_nas.md 
+
+# HackNation 
+Druga edycja największego w Polsce hackathonu wdrożeniowego to 24 godziny na stworzenie rozwiązań, które mogą zmienić codzienne życie milionów Polaków. Łączymy ludzi, pomysły i technologie, by odpowiadać na konkretne potrzeby państwa, miast i instytucji publicznych. 
+- [x] 15 wyzwań od 15 partnerów - rzeczywiste problemy sektora publicznego czekają na Twoje rozwiązanie. 
+- [x] 24 godziny wspólnej pracy - od pomysłu do projektu, przy wsparciu ekspertów i mentorów. 
+- [x] Różne kompetencje, wspólny cel - programowanie, analiza, projektowanie i wiedza branżowa. Każda perspektywa ma znaczenie. 
+- [x] Nagrody finansowe i szansa na wdrożenie - tworzymy rozwiązania z potencjałem do dalszego rozwoju po wydarzeniu. 
+Za nami pierwsza edycja: blisko 1500 uczestników na miejscu i 437 zgłoszonych rozwiązań. Teraz czas na kolejne pomysły. Zaprogramuj z nami przyszłość Polski! 
+
+# Informacje organizacyjne 
+| Status | Rejestracja otwarta | 
+| Data | 21–22 Listopada 2026 | 
+| Lokalizacja | BYDGOSZCZ | 
+
+hacknation@pl:~$ _ 
+
+| 
+
+Pomiń animację 
+
+ORGANIZATORZY 
+
+> Ministerstwo Cyfryzacji 
+web: https://www.gov.pl/web/cyfryzacja 
+
+> Departament GovTech Polska 
+web: https://www.gov.pl/web/govtech 
+
+> Miasto Bydgoszcz 
+web: https://www.bydgoszcz.pl/ 
+
+REJESTRUJĄC SIĘ, ZYSKUJESZ DOSTĘP DO 
+
+Niepowtarzalnej energii hackathonu , który łączy państwo, ludzi i technologie 
+
+Pomocy mentorów – ekspertów w swoich dziedzinach. 
+
+Prelekcji prowadzonych przez topowych specjalistów z branży. 
+
+Strefy relaksu , VR, symulatorów, konkursów i innych atrakcji. 
+
+Bezpłatnego transportu z wybranych miast na miejsce hackathonu i z powrotem. 
+
+Wyżywienia – posiłków, przekąsek, napojów i pizzy. 
+
+AGENDA 
+
+21.11 – SOBOTA 
+08:00 
+
+Start Rejestracji | Śniadanie 
+10:30 
+
+Ceremonia Otwarcia 
+11:00 
+
+Publikacja pełnych treści zadań - Start Kodowania 
+13:00 
+
+Przerwa Obiadowa 
+14:00 
+
+Keynote 
+18:00 
+
+Pizza time 
+20:00 
+
+Quizwanie 
+
+22.11 – NIEDZIELA 
+07:00 
+
+Śniadanie 
+11:00 
+
+Koniec Kodowania - Start oceny zadań 
+11:30 
+
+Keynote 
+13:00 
+
+Przerwa Obiadowa 
+14:45 
+
+Ogłoszenie finalistów 
+15:15 
+
+Pitching / II etap oceny 
+17:15 
+
+Ceremonia zamknięcia 
+cipher = AESGCM(key)
+decrypted_bytes = cipher.decrypt(nonce, ciphertext, None)
+
+if compute_digest(decrypted_bytes) != envelope.get("checksum"):
+ raise ValueError("Payload integrity checksum mismatch") 
+
+Zadania partnerskie 
+
+> RISK MINER 
+
+hacknation@tasks:~$ bat risk_miner.md 
+# O projekcie 
+| Inicjator projektu | MINISTERSTWO FUNDUSZY I POLITYKI REGIONALNEJ | 
+| Kampania | RISK MINER | 
+
+- [x] Każda inwestycja publiczna to wiele decyzji, zależności i potencjalnych zagrożeń. Jak wykorzystać dane, AI i nowoczesne technologie, aby wcześniej identyfikować ryzyka, przewidywać problemy i skuteczniej planować realizację inwestycji? 
+PULA NAGRÓD: 25 000 
+PULA NAGRÓD 
+
+hacknation@tasks:~$ _ 
+
+> ATTACK SURFACE INTELLIGENCE 
+
+hacknation@tasks:~$ bat attack_surface_intelligence.md 
+# O projekcie 
+| Inicjator projektu | AKADEMIA GÓRNICZO-HUTNICZA | 
+| Kampania | ATTACK SURFACE INTELLIGENCE | 
+
+- [x] Rozbudowana infrastruktura sieciowa może skrywać wiele niewidocznych zagrożeń, czających się w jej najmniej oczywistych zakamarkach. Każda organizacja powinna znać swoją infrastrukturę równie dobrze, jak generał zna pole bitwy i możliwości swojej armii. Jak rozproszyć mgłę cyfrowej wojny, dostrzec zagrożenia, zanim uderzą, i uniknąć porażki? Jak budować cyfrowe mury obronne, by udaremnić próby ich podkopania, sforsowania czy obejścia? 
+PULA NAGRÓD: 25 000 
+PULA NAGRÓD 
+
+hacknation@tasks:~$ _ 
+
+> RADAR INNOWACJI 
+
+hacknation@tasks:~$ bat radar_innowacji.md 
+# O projekcie 
+| Inicjator projektu | PODKARPACKIE CENTRUM INNOWACJI | 
+| Kampania | RADAR INNOWACJI | 
+
+- [x] W szkołach, uczelniach, samorządach i innych instytucjach publicznych rodzą się pomysły, których znaczenie może wykraczać daleko poza miejsce ich powstania. Część z nich zyskuje rozgłos, inne pozostają w cieniu codziennych działań. Co sprawia, że dostrzegamy ich potencjał? Jak odnaleźć wśród lokalnych inicjatyw te, które mogą stać się początkiem większej zmiany? 
+PULA NAGRÓD: 11 111 
+PULA NAGRÓD 
+
+hacknation@tasks:~$ _ 
+
+> KOMPAS KOMPETENCJI 
+
+hacknation@tasks:~$ bat kompas_kompetencji.md 
+# O projekcie 
+| Inicjator projektu | BIURO DYREKTORA GENERALNEGO - MINISTERSTWO CYFRYZACJI | 
+| Kampania | KOMPAS KOMPETENCJI | 
+
+- [x] Dobór odpowiednich kryteriów, rzetelna ocena kompetencji i rozmowa o wynikach pracy to wyzwania, z którymi mierzą się przełożeni w służbie cywilnej. Wśród procedur i formularzy łatwo zgubić najważniejszy cel tego procesu - wsparcie pracownika w dalszym rozwoju. Jak wykorzystać technologię, by ułatwić dokonywanie obiektywnych ocen i stworzyć przestrzeń do rozmowy o osiągnięciach, obszarach do poprawy oraz kolejnych krokach zawodowych? 
+
+hacknation@tasks:~$ _ 
+
+> KOLEKCJONER FEJKÓW 
+
+hacknation@tasks:~$ bat kolekcjoner_fejkow.md 
+# O projekcie 
+| Inicjator projektu | NAUKOWA I AKADEMICKA SIEĆ KOMPUTEROWA | 
+| Kampania | KOLEKCJONER FEJKÓW | 
+
+- [x] Fałszywe reklamy wykorzystujące wizerunki znanych osób pozorują wiarygodność i prowadzą użytkowników wprost w pułapkę oszustów. Szybko znikają, zmieniają formę i wracają pod nowymi adresami, utrudniając rozpoznanie skali zagrożenia. Pojedynczy podejrzany materiał może być zaledwie fragmentem znacznie większej kampanii. Jak dostrzec szerszy obraz w chaosie internetowych oszustw i skuteczniej chronić ich potencjalne ofiary? 
+
+hacknation@tasks:~$ _ 
+
+> CYFRYZACJA FORMULARZY 
+
+hacknation@tasks:~$ bat cyfryzacja_formularzy.md 
+# O projekcie 
+| Inicjator projektu | CENTRALNY OŚRODEK INFORMATYKI | 
+| Kampania | CYFRYZACJA FORMULARZY | 
+
+- [x] Jak sztuczna inteligencja może wspierać rozwój nowoczesnych usług publicznych? Zadaniem uczestników będzie znalezienie rozwiązania, które pomoże usprawnić proces cyfryzacji i sprawić, że droga od potrzeby do wygodnej usługi online będzie prostsza i szybsza. 
+
+hacknation@tasks:~$ _ 
+
+> PRZEWODNIK PRZYSZŁEJ MAMY 
+
+hacknation@tasks:~$ bat przewodnik_przyszlej_mamy.md 
+# O projekcie 
+| Inicjator projektu | ZAKŁAD UBEZPIECZEŃ SPOŁECZNYCH | 
+| Kampania | PRZEWODNIK PRZYSZŁEJ MAMY | 
+
+- [x] Narodziny dziecka to początek niezwykłej przygody, ale także czas wielu pytań i formalności. Stwórz aplikację, która pomoże przyszłym i świeżo upieczonym rodzicom odnaleźć się w świecie świadczeń, uprawnień i formalności związanych z ciążą oraz rodzicielstwem. Zaprojektuj rozwiązanie, które zamieni skomplikowane procedury w prostą, intuicyjną i przyjazną ścieżkę. 
+
+hacknation@tasks:~$ _ 
+
+> OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW 
+
+hacknation@tasks:~$ bat osintowy_lapacz_cyfrowych_sladow.md 
+# O projekcie 
+| Inicjator projektu | MINISTERSTWO FINANSÓW - KRAJOWA ADMINISTRACJA SKARBOWA | 
+| Kampania | OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW | 
+
+- [x] Krypto to nie czarna skrzynka- to dane, algorytmy i fakty. 
+Rozkoduj z nami świat kryptowalut, rozpraw się z popularnymi mitami i wykorzystaj potencjał nowoczesnych technologii. Wesprzyj naszych analityków. Podejmujesz wyzwanie? 
+
+hacknation@tasks:~$ _ 
+
+> PRAWDOWID 
+
+hacknation@tasks:~$ bat prawdowid.md 
+# O projekcie 
+| Inicjator projektu | MINISTERSTWO SPRAW ZAGRANICZNYCH | 
+| Kampania | PRAWDOWID | 
+
+- [x] Fakt czy manipulacja? Stwórz narzędzie, które pomoże je rozróżnić. 
+- [x] W świecie nadmiaru informacji coraz trudniej ocenić, którym treściom można zaufać. Wykorzystaj sztuczną inteligencję i nowoczesne technologie, aby stworzyć prototyp narzędzia pomagającego użytkownikom weryfikować informacje, docierać do wiarygodnych źródeł i świadomie oceniać napotykane treści. 
+
+hacknation@tasks:~$ _ 
+
+> ZATRZYMAJ WODĘ, CHROŃ PLONY 
+
+hacknation@tasks:~$ bat zatrzymaj_wode_chron_plony.md 
+# O projekcie 
+| Inicjator projektu | KRAJOWY OŚRODEK WSPARCIA ROLNICTWA | 
+| Kampania | ZATRZYMAJ WODĘ, CHROŃ PLONY | 
+
+- [x] Zmiany klimatu stawiają przed polskim rolnictwem coraz większe wyzwania. Podejmij wyzwanie i zaprojektuj rozwiązanie, które pomoże rolnikom podejmować trafniejsze decyzje, chronić plony i budować bardziej odporne na zmiany klimatu gospodarstwa. 
+
+hacknation@tasks:~$ _ 
+Zobacz wszystkie zadania 
+
+Mentorzy 
+
+Michał Szleger Presales Solution Architect w Capgemini 
+Kamil Kupcewicz AI Product Manager w DLabs.AI | BKI 
+Adrian Iwanek Wiceprezes w Bydgoskim Klastrze Informatycznym 
+Szymon Redzik Project Manager w Hitachi 
+Natalia Basiura Operations Director w Kraków Miastem Startupów 
+Marcin Orocz Hartownik w orocz.com 
+Jordan Mruczyński Software Engineer w BeeSafe.pl 
+Olga Strembska AI/UX Consultant w Uniwersytet WSB w Warszawie 
+Maciej Trzciński Developer at tonik 
+Paweł Łukaszuk Tech Lead & Senior .NET developer 
+Stanisław Kozioł Ekspert d/s Architektury Korporacyjnie w Orange Polska S.A. 
+Aneta Hapka Kierownik Katedry Inżynierii Komputerowej; Politechnika Koszalińska 
+Natalia Cholewa Lead Product Owner w NataliaCholewa.pl 
+Dominika Urbańczyk Product Designer/ UX Design Lead w Telewizja Polska S.A. 
+Sylwia Puzio SBC Software Developer w Nokia Solutions and Networks 
+Michał Kamiński Fullstack Developer w SEACOTEC GmbH & Co. KG 
+Michał Bukowski Prodziekan w Akademii WSB Wydział w Warszawie 
+Alicja Migda Liders UX/UI w Link Group 
+Łukasz Nowatkowski Cybersecurity advocate w Xopero Software S.A. 
+Joanna Foks Specjalistka ds. cyberbezpieczeństwa w Fundacja Imagine Inclusive Technology 
+Jacek Wosz CEO w Nuvira 
+Waldemar Nowak Prezes w Pro Basecamp 
+Przemysław Bykowski CEO w Senteli Przemysław Bykowski 
+Rafał Woźniak Nauczyciel akademicki w Politechnice Łódzkiej 
+Tomasz Pogorzelski Specjalista ds. Badawczych w Sieć Badawcza Łukasiewicz – Instytut Lotnictwa 
+Rafał Wojszczyk Adiunkt w Politechnice Koszalińskiej 
+Anna Broniarek Ekspert w MRiT 
+Marek Mieńkowski Ekspert ds. Mikropoświadczeń w Instytut Badań Edukacyjnych 
+Aleksandra Wojtowicz Ekspertka w PISM 
+Łukasz Wiśniewski Software developer w CARFAX 
+Piotr Tomalak Inżynier oprogramowania w BROWIN 
+Daniel Czachorowski Członek Zarządu, MD w Logopasja sp. z o.o. 
+Agata Kosińska-Kujawska Freelancer 
+Joanna Łaszcz Specjalista ds. projektów edukacyjnych w Gdańska Fundacja Przedsiębiorczości 
+Monika Błędowska Art Director | UX/UI Designer w AD-AGENCY MONIKA BŁĘDOWSKA 
+Michał Lektarski Dyrektor Techniczny w Lektarski Technologies 
+Mateusz Palczewski CEO w MEDUCASE SP Z O. O. 
+Ziemowit Socha Ekspert w Instytut Badań Edukacyjnych 
+Marcin Merchel Niezależny badacz 
+Szymon Giżycki Główny Specjalista w Urząd Gminy Nowa Wieś Wielka 
+Grzegorz Ługowski CEO & Founder w GL Omniflow 
+Piotr Szymczyk Szkoleniowiec, wdrożeniowiec w LT MASTERY SZKOLENIA DLA BIZNESU PIOTR SZYMCZYK 
+Ivan Marshalok Data Engineer w LINGARO 
+Patrycja Kornaś Radca prawny / właścicielka kancelarii w Kancelaria Radcy Prawnego Patrycja Kornaś 
+Szymon Gruszczyński Software Engineer & Founder w Novo Nordisk / Solutions Factory 
+Filip Chlebowski Senior Devops / Principal Architect w Nuvira 
+Hubert Zmudzinski Founder / Założyciel w BlackSpire Consulting 
+Maciej Kastner Zastępca Naczelnika Urzędu Skarbowego w Izba Administracji Skarbowej w Bydgoszczy 
+Krzysztof Błaszkiewicz Prezes Zarządu w BluHolding P.S.A. / Bydgoski Klaster informatyczny 
+Tomasz Szmidt AI Product Engineering Lead w WithSecure 
+Piotr Bednarski Full-Stack Software Engineer | Co-founder & VP, AgroPool P.S.A. 
+Patryk Grażewicz Analityk OSINT / Investigation Lead w Stowarzyszenie Pravda / Corsearch 
+Kacper Moczarny Starszy Specjalista ds. organizacji wydarzeń w Podkarpackie Centrum Innowacji Sp. z o.o. 
+Krzysztof Grabka Menadżer ds. Technologii Protolab w Podkarpackie Centrum Innowacji Sp z o.o. 
+Piotr Laskosz Ekspert Projektowania UX/UI w COI 
+Mikołaj Mroszczak CAIO w COI 
+Marek Fabiński Starszy Programista Automatyzacji Procesów Biznesowych w Centralny Ośrodek Informatyki 
+Michał Piwowarczyk Dyrektor Dep. PPP w Ministerstwo Funduszy i Polityki Regionalnej 
+Marcin Bogucki Kierownik w Ministerstwo Funduszy i Polityki Regionalnej 
+Michał Włochal Dyrektor w Kancelaria Prezesa Rady Ministrów 
+Łukasz Szubart Ekspert w Podkarpackie Centrum Innowacji Sp. z o.o. 
+Paweł Skalny Specjalista ds. bezpieczeństwa w Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie 
+Tomasz Łuczak Starszy Programista Java w Centralny Ośrodek Informatyki 
+Magda Kołba-Górna Dyrektorka Dep. Badań i Projektowania Doświadczeń w COI 
+Jacek Pawłowski Radca w Kancelaria Prezesa Rady Ministrów 
+Eliza Fijołek Dyrektor Departamentu Komunikacji Elektronicznej w COI 
+Krzysztof Wysocki Product Owner w COI 
+Rafał Jabłoński Radca w Kancelaria Prezesa Rady Ministrów 
+Maciej Szczygieł Naczelnik w Kancelaria Prezesa Rady Ministrów 
+Kamil Kazimierczuk Radca w Kancelaria Prezesa Rady Ministrów 
+Magdalena Pruszyńska-Gora Radca w Kancelaria Prezesa Rady ministrów 
+Kamil Warpechowski Mentor Instytucjonalny 
+Dawid Czaja Starszy programista automatyzacji w COI 
+Jędrzej Szpygiel Senior Data Scientist w COI 
+Iwona Szelenbaum Naczelnik wydziału w Ministerstwo Cyfryzacji 
+Paweł Żbikowski Naczelnik Wydziału Rozwoju i Wdrażania Systemów Informatycznych w Ministerstwo Funduszy i Polityki Regionalnej 
+Jacek Orłowski Mentor Instytucjonalny 
+Donat Stankiewicz Starszy Specjalista ds. Sztucznej Inteligencji w NASK PIB 
+Katarzyna Roszczewska Ekspert ds. sztucznej inteligencji w NASK PIB 
+Ewelina Bartuzi-Trokielewicz Kierownik Zakładu Analiz Audiowizualnych i Systemów Biometrycznych, pracownik naukowy - adiunkt w NASK PIB 
+Emilian Duda Kierownik Zespołu Usług Cyfrowych w COI 
+Dominik Brach Specjalista ds. uczenia maszynowego w NASK PIB 
+Alicja Martinek Ekspert ds. sztucznej inteligencji w NASK PIB 
+Karol Teodorowicz Starszy specjalista ds. Edukacji i Popularyzacji Danych w Ministerstwo Cyfryzacji 
+Bartosz Krajewski Inżynier uczenia maszynowego w COI 
+Adrian Kordas Machine Learning Engineer w NASK PIB 
+Arkadiusz Maliński Referent w Ministerstwo Cyfryzacji 
+Adam Graliński Kierownik Zespołu w Aplikacje Krytyczne Ministerstwa Finansów 
+Julia Tyszko Główna specjalistka w Kancelaria Prezesa Rady Ministrów 
+Karolina Świszcz Radca w Kancelaria Prezesa Rady Ministrów 
+Karolina Kościerzyńska Radca w Ministerstwo Cyfryzacji 
+Paweł Roszkowski Dyrektor Departamentu w Ministerstwo Finansów / Centrum Informatyki Resortu Finansów 
+Michał Dębiński Dyrektor w Zakład Ubezpieczeń Społecznych 
+Konrad Gałczyński Radca generalny w Ministerstwo Spraw Zagranicznych 
+Dariusz Kobusiński Zastępca Dyrektora Departamentu Informatyki w Urząd Komisji Nadzoru Finansowego 
+Stella Chwedoruk Badaczka UX w COI 
+Magdalena Dąbrowska Radca w Ministerstwo Cyfryzacji 
+Tomasz Nal Inżynier bezpieczeństwa aplikacji w AGH 
+Maciej Morawski Dyrektor w AKMF 
+Piotr Sosnowski Analityk w MSZ 
+Andrzej Szczotka Kierownik Referatu Rejestrów Działalności Regulowanej w KAS Izba Administracji Skarbowej w Katowicach 
+Szymon Marciniak Zastępca Dyrektora Departamentu w Centrum Informatyki Resortu Finansów 
+Sławomir Flis CIO w UKNF 
+Ada Sawilska Specjalista ds. uczenia maszynowego w NASK PIB 
+Mateusz Świętochowski Ekspert w Urząd Komisji Nadzoru Finansowego 
+Zobacz wszystkich mentorów 
+
+Partnerzy 
+
+PARTNERZY ZADAŃ 
+
+Partnerzy Medialni 
+
+Partnerzy Społecznościowi 
+
+KONTAKT 
+
+KWESTIE ORGANIZACYJNE 
+kontakt@hacknation.pl 
+
+TRANSPORT 
+transport@hacknation.pl 
+
+REJESTRACJA 
+rejestracja@hacknation.pl 
+
+MEDIA I COMMUNITY 
+media@hacknation.pl 
+
+Tu tworzymy przyszłość 
+Discord 
+
+Regulamin 
+Polityka prywatności 
+Zgody na rozpowszechnianie wizerunku 
+Ustawienia cookies 

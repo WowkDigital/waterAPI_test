@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "last_verified_at": "2026-11-14T14:00:00+01:00",
+  "event": {
+    "name": "HackNation 2026",
+    "edition": 2,
+    "tagline": "Zaprogramuj przyszłość Polski!",
+    "secondary_slogan": "Tu tworzymy przyszłość",
+    "type": "Ogólnopolski hackathon wdrożeniowy sektora publicznego (GovTech)",
+    "format": "Wyłącznie stacjonarny, 24-godzinny maraton projektowo-programistyczny",
+    "registration_status": "Otwarta (od 2026-09-29, do wyczerpania miejsc)",
+    "dates": {
+      "start_date": "2026-11-21",
+      "end_date": "2026-11-22",
+      "doors_open": "2026-11-21T08:00:00+01:00",
+      "opening_ceremony": "2026-11-21T10:30:00+01:00",
+      "coding_start": "2026-11-21T11:00:00+01:00",
+      "draft_deadline": "2026-11-21T20:00:00+01:00",
+      "coding_end": "2026-11-22T11:00:00+01:00",
+      "finalists_announcement": "2026-11-22T14:45:00+01:00",
+      "pitching_start": "2026-11-22T15:15:00+01:00",
+      "closing_ceremony": "2026-11-22T17:15:00+01:00",
+      "return_buses_departure": "2026-11-22T18:30:00+01:00"
+    },
+    "venue": {
+      "name": "Bydgoskie Centrum Targowo-Wystawiennicze (BCTW)",
+      "address": "ul. Gdańska 187, 85-674 Bydgoszcz",
+      "entrance": "Główne wejście od strony ul. Gdańskiej",
+      "coding_hall": "Hala nr 2 (Główna Strefa Kodowania)",
+      "mentors_hall": "Hala nr 1 (Strefa Mentorów)",
+      "parking": "Bezpłatny główny parking przy BCTW"
+    },
+    "scale": {
+      "edition_2025_participants": "~1500",
+      "edition_2025_submitted_solutions": 437,
+      "edition_2025_tasks": 16,
+      "edition_2026_announced_challenges": 15,
+      "edition_2026_announced_partners": 15,
+      "edition_2026_published_challenges_as_of_2026_11_14": 10,
+      "edition_2026_published_mentors_as_of_2026_11_14": 105
+    }
+  },
+  "organizers_and_operator": {
+    "main_organizers": [
+      {
+        "name": "Ministerstwo Cyfryzacji",
+        "role": "Główny Organizator (Skarb Państwa – Minister Cyfryzacji) i Administrator Danych Osobowych",
+        "address": "ul. Królewska 27, 00-060 Warszawa",
+        "nip": "525-29-55-037",
+        "website": "https://www.gov.pl/web/cyfryzacja"
+      },
+      {
+        "name": "Departament GovTech Polska",
+        "role": "Współorganizator merytoryczny (KPRM / MC)",
+        "website": "https://www.gov.pl/web/govtech"
+      },
+      {
+        "name": "Miasto Bydgoszcz",
+        "role": "Współorganizator i Miasto Gospodarz",
+        "website": "https://www.bydgoszcz.pl/"
+      }
+    ],
+    "executive_operator": {
+      "name": "PROIDEA sp. z o.o.",
+      "address": "ul. Zakopiańska 9, 30-418 Kraków",
+      "role": "Obsługa organizacyjna, techniczna strony WWW, systemu rejestracji oraz logistyki wydarzenia"
+    }
+  },
+  "platforms_and_links": {
+    "official_website": "https://hacknation.pl/",
+    "challenges_page": "https://hacknation.pl/zadania",
+    "participant_guide_page": "https://hacknation.pl/przewodnik-uczestnika",
+    "national_transport_page": "https://hacknation.pl/transport-z-polski",
+    "local_transport_page": "https://hacknation.pl/transport",
+    "mentors_page": "https://hacknation.pl/mentorzy",
+    "faq_page": "https://hacknation.pl/faq",
+    "media_page": "https://hacknation.pl/media",
+    "ticket_registration": "https://eventory.cc/event/hacknation-2026/tickets",
+    "transport_booking_portal": "https://transporthacknation.pl/",
+    "submission_and_judging_platform": "HackTribe (SIA Uxinolab, Liepāja, Łotwa; link aktywacyjny publikowany na Discordzie #ogłoszenia przed startem)",
+    "discord_invite": "https://discord.gg/VtqwHWNnz7",
+    "social_media": {
+      "facebook": "https://www.facebook.com/HackNationPL?locale=pl_PL",
+      "instagram": "https://www.instagram.com/hacknation.pl/",
+      "linkedin": "https://www.linkedin.com/company/hacknation-pl/"
+    },
+    "official_documents": {
+      "regulamin_pdf": "https://hacknation.pl/api/public/dokumenty/5fb4b855-8bce-41fa-bbf3-c7bb647245c8/regulamin-hacknation.pdf",
+      "image_consent_annex_1_pdf": "https://hacknation.pl/api/public/dokumenty/8793d0ed-cda3-4181-a037-2272ffea2ab4/za-a-cznik-nr-1-do-regulaminu-hacknation---zgoda-na-wykorzystanie-wizerunku_30.0.pdf",
+      "privacy_policy_pdf": "https://hacknation.pl/api/public/dokumenty/94637909-5546-4737-a20f-51253a113b31/polityka-prywatnosci_hacknation_28.09.2026.pdf",
+      "participant_guide_pdf": "https://hacknation.pl/api/public/przewodnik/1f73a661-0852-4e9e-b3ed-58c93bce6456?asset=aa346c52-8bd9-44ac-9499-364e44c4b6b4",
+      "hacktribe_tutorial_pdf": "https://hacknation.pl/api/public/przewodnik/57cb2329-cdf7-4875-8f79-cf4793e80d10?asset=3977fd13-096a-4551-b0e5-3a8db1dbae0d"
+    }
+  },
+  "contacts": {
+    "emails": {
+      "general": "kontakt@hacknation.pl",
+      "contract_and_regulations": "hacknation@cyfra.gov.pl",
+      "transport": "transport@hacknation.pl",
+      "registration": "rejestracja@hacknation.pl",
+      "media": "media@hacknation.pl",
+      "rodo_controller": "kancelaria@cyfra.gov.pl",
+      "rodo_dpo": "iod.mc@cyfra.gov.pl"
+    },
+    "press_office": {
+      "name": "Adam Maliszewski",
+      "email": "adam@loudy.pl",
+      "phone": "+48 505 995 499"
+    },
+    "operations_team": [
+      {
+        "name": "Alicja Wójciga",
+        "area": "Wydarzenie i Logistyka",
+        "discord": "alicja9550",
+        "email": "alicja.wojciga@proidea.pl",
+        "phone": "+48 607 804 160"
+      },
+      {
+        "name": "Konrad Korzec",
+        "area": "Mentorzy i Platforma HackTribe",
+        "discord": "krzc",
+        "email": "konrad.korzec@proidea.pl",
+        "phone": "+48 605 626 440"
+      },
+      {
+        "name": "Adrian Legutko",
+        "area": "Strategia i Partnerzy",
+        "discord": "adrianlegutko_",
+        "email": "adrian.legutko@proidea.pl",
+        "phone": "+48 506 804 442"
+      },
+      {
+        "name": "Wojciech Fiksa",
+        "area": "Logistyka i transport",
+        "discord": "wfiksa",
+        "email": "wojciech.fiksa@proidea.pl",
+        "phone": "+48 505 275 078"
+      },
+      {
+        "name": "Mike Grochowski",
+        "area": "Wsparcie Discord",
+        "discord": "solveyourmind",
+        "email": "mikegrochowski@icloud.com"
+      },
+      {
+        "name": "Wiktoria Tyc",
+        "area": "Wsparcie Discord",
+        "discord": "wiki_tyc",
+        "email": "wiktoriatyc@icloud.com"
+      }
+    ]
+  }
+}

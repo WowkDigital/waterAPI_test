@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0.0",
+  "last_verified_at": "2026-11-14T14:00:00+01:00",
+  "summary": {
+    "organizer_profile": "Hackathon w całości zdominowany przez sektor publiczny, badawczy i regulacyjny (GovTech). Brak typowych komercyjnych sponsorów rekrutacyjnych wśród inicjatorów zadań – zamiast tego zadania wystawiają ministerstwa, agencje wykonawcze, instytuty badawcze PIB oraz uczelnie.",
+    "total_task_partners_on_website_logos": 9,
+    "plus_mc_internal_challenge": "Biuro Dyrektora Generalnego - Ministerstwo Cyfryzacji (zadanie Kompas Kompetencji)",
+    "total_media_partners": 26,
+    "total_community_and_academic_partners": 31
+  },
+  "core_organizers": [
+    {
+      "institution_name": "Ministerstwo Cyfryzacji & Departament GovTech Polska",
+      "type": "Ministerstwo / Organizator główny",
+      "website": "https://www.gov.pl/web/cyfryzacja",
+      "editions_active": [2025, 2026],
+      "challenges_sponsored_2025": ["Odnalezione zguby", "Ścieżka prawa (z GRAI)", "Zgrany budżet"],
+      "challenges_sponsored_2026": ["KOMPAS KOMPETENCJI (Biuro Dyrektora Generalnego MC)"],
+      "mentors_count_2026": "5 bezpośrednio z MC + 7 z KPRM",
+      "strategic_priorities": [
+        "Cyfryzacja administracji i podnoszenie efektywności służby cywilnej",
+        "Bezpieczne i etyczne wdrażanie AI w sektorze publicznym (AI Act, human-in-the-loop)",
+        "Projekty zdolne do rzeczywistego pilotażu/wdrożenia po hackathonie"
+      ],
+      "what_impresses_their_jury": "Konkretna ścieżka wdrożenia w urzędzie, poszanowanie procedur i prawa (RODO, AI Act, WCAG), przejrzystość dla użytkownika."
+    },
+    {
+      "institution_name": "Miasto Bydgoszcz",
+      "type": "Samorząd / Współorganizator i Gospodarz",
+      "website": "https://www.bydgoszcz.pl/",
+      "editions_active": [2025, 2026],
+      "challenges_sponsored_2025": ["Bydgoszcz – Ścieżki Pamięci 2.0"],
+      "challenges_sponsored_2026": [],
+      "strategic_priorities": ["Budowa wizerunku Bydgoszczy jako ośrodka IT/GovTech", "Smart city, usługi miejskie, lokalna społeczność (Bydgoski Klaster Informatyczny)"],
+      "what_impresses_their_jury": "Użyteczność dla mieszkańców i otwartość na lokalne ekosystemy."
+    }
+  ],
+  "task_partners_2026": [
+    {
+      "institution_name": "Ministerstwo Finansów – Krajowa Administracja Skarbowa (KAS) & CIRF",
+      "type": "Ministerstwo / Administracja skarbowa i IT resortowe",
+      "website": "https://www.gov.pl/web/kas",
+      "editions_active": [2025, 2026],
+      "challenges_sponsored_2025": ["Wyszukiwarka anomalii (wygrała MEWA)", "Kontrola zakładów wzajemnych (wygrało Extempore)"],
+      "challenges_sponsored_2026": ["OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW"],
+      "institutional_mentors_2026": [
+        "Paweł Roszkowski (Dyrektor Departamentu w MF / Centrum Informatyki Resortu Finansów)",
+        "Szymon Marciniak (Z-ca Dyrektora Departamentu w CIRF)",
+        "Adam Graliński (Kierownik Zespołu w Aplikacje Krytyczne MF)",
+        "Maciej Kastner (Z-ca Naczelnika US w IAS Bydgoszcz)",
+        "Andrzej Szczotka (Kierownik Referatu Rejestrów Działalności Regulowanej KAS Katowice)"
+      ],
+      "strategic_priorities": [
+        "Zwalczanie szarej strefy, oszustw podatkowych i prania pieniędzy (AML / krypto / nielegalny hazard)",
+        "Narzędzia OSINT i analityki grafowej wspierające pracę funkcjonariuszy i analityków KAS",
+        "Wysoka dokładność i mała liczba fałszywych alarmów, wartość dowodowa danych"
+      ],
+      "technical_and_legal_constraints": [
+        "Każde ustalenie musi mieć ścieżkę audytowalną (dowód: tx_hash, timestamp, źródło OSINT)",
+        "Rozwiązania projektowane z myślą o infrastrukturze wewnętrznej resortu (CIRF / Aplikacje Krytyczne)"
+      ],
+      "what_impresses_their_jury": "Praktyczne narzędzie dla analityka (nie gadżet), korelacja danych on-chain i off-chain, automatyczne generowanie raportu analitycznego gotowego do akt sprawy."
+    },
+    {
+      "institution_name": "Ministerstwo Spraw Zagranicznych (MSZ)",
+      "type": "Ministerstwo",
+      "website": "https://www.gov.pl/web/dyplomacja",
+      "editions_active": [2025, 2026],
+      "challenges_sponsored_2025": ["Scenariusze jutra (wygrał Maciej Kopiec / AIDA)"],
+      "challenges_sponsored_2026": ["PRAWDOWID"],
+      "institutional_mentors_2026": [
+        "Konrad Gałczyński (Radca generalny w MSZ)",
+        "Piotr Sosnowski (Analityk w MSZ)",
+        "Aleksandra Wojtowicz (Ekspertka w PISM)"
+      ],
+      "strategic_priorities": [
+        "Odporność informacyjna, przeciwdziałanie dezinformacji i operacjom wpływu",
+        "Weryfikacja informacji (fact-checking) w oparciu o wiarygodne, pierwotne źródła",
+        "Wsparcie analityków oraz zwykłych obywateli w ocenie treści medialnych"
+      ],
+      "technical_and_legal_constraints": [
+        "Neutralność i przejrzystość kryteriów oceny wiarygodności",
+        "Cytowanie źródeł pierwotnych zamiast wyroków AI bez pokrycia"
+      ],
+      "what_impresses_their_jury": "Ustrukturyzowane, źródłowe podejście do analizy (dekompozycja tez, triangulacja źródeł, rozpoznawanie technik manipulacji)."
+    },
+    {
+      "institution_name": "Ministerstwo Funduszy i Polityki Regionalnej (MFiPR)",
+      "type": "Ministerstwo",
+      "website": "https://www.gov.pl/web/fundusze-regiony",
+      "editions_active": [2026],
+      "challenges_sponsored_2026": ["RISK MINER (Pula nagród: 25 000 PLN)"],
+      "institutional_mentors_2026": [
+        "Michał Piwowarczyk (Dyrektor Dep. PPP w MFiPR)",
+        "Paweł Żbikowski (Naczelnik Wydziału Rozwoju i Wdrażania Systemów Informatycznych w MFiPR)",
+        "Marcin Bogucki (Kierownik w MFiPR)"
+      ],
+      "strategic_priorities": [
+        "Bezpieczne i terminowe wdrażanie inwestycji publicznych, projektów UE i partnerstwa publiczno-prywatnego (PPP)",
+        "Wczesne wykrywanie ryzyk kosztowych, harmonogramowych i proceduralnych"
+      ],
+      "technical_and_legal_constraints": [
+        "Wyjaśnialność scoringu ryzyka (XAI) dla kontrolerów i menedżerów projektów",
+        "Przetwarzanie wielostronicowej dokumentacji inwestycyjnej"
+      ],
+      "what_impresses_their_jury": "Przekonujące wykrywanie wczesnych sygnałów ostrzegawczych (red flags) i powiązań między ryzykami z podaniem dokładnego uzasadnienia."
+    },
+    {
+      "institution_name": "Centralny Ośrodek Informatyki (COI)",
+      "type": "Instytucja podległa MC / Główny dostawca IT państwa (mObywatel, PESEL, CEPiK, gov.pl)",
+      "website": "https://www.coi.gov.pl/",
+      "editions_active": [2025, 2026],
+      "challenges_sponsored_2025": ["Prawda w sieci (wygrał no signal / mZaufanaStrona)"],
+      "challenges_sponsored_2026": ["CYFRYZACJA FORMULARZY"],
+      "institutional_mentors_2026": [
+        "Mikołaj Mroszczak (CAIO w COI)",
+        "Magda Kołba-Górna (Dyrektorka Dep. Badań i Projektowania Doświadczeń w COI)",
+        "Eliza Fijołek (Dyrektor Dep. Komunikacji Elektronicznej w COI)",
+        "Emilian Duda (Kierownik Zespołu Usług Cyfrowych)",
+        "Piotr Laskosz (UX/UI), Stella Chwedoruk (Badaczka UX), Jędrzej Szpygiel (Senior Data Scientist), Bartosz Krajewski (ML Engineer), Tomasz Łuczak (Java), Marek Fabiński & Dawid Czaja (Automatyzacja), Krzysztof Wysocki (PO)"
+      ],
+      "strategic_priorities": [
+        "Transformacja usług publicznych z formularzocentrycznych w usługocentryczne dla obywatela",
+        "Dostępność cyfrowa (WCAG 2.1 AA), badania UX, prosty język",
+        "Zastosowanie AI przyspieszające pracę zespołów wytwórczych e-usług"
+      ],
+      "technical_and_legal_constraints": [
+        "Standardy dostępności WCAG, bezpieczeństwo i skalowalność w architekturze usług publicznych (m.in. ekosystem Java/web, integracje rejestrowe)"
+      ],
+      "what_impresses_their_jury": "Połączenie dojrzałego UX (spójrz na obecność szefowej Badań i Projektowania Doświadczeń oraz badaczki UX w mentorach!) z silną inżynierią AI automatyzującą tworzenie/walidację e-usług."
+    },
+    {
+      "institution_name": "NASK – Państwowy Instytut Badawczy",
+      "type": "Państwowy Instytut Badawczy (Cyberbezpieczeństwo / CERT Polska / AI)",
+      "website": "https://www.nask.pl/",
+      "editions_active": [2025, 2026],
+      "challenges_sponsored_2025": ["Dane bez twarzy (wygrało Habanero Code)"],
+      "challenges_sponsored_2026": ["KOLEKCJONER FEJKÓW"],
+      "institutional_mentors_2026": [
+        "Ewelina Bartuzi-Trokielewicz (Kierownik Zakładu Analiz Audiowizualnych i Systemów Biometrycznych NASK PIB)",
+        "Donat Stankiewicz, Katarzyna Roszczewska, Alicja Martinek (Eksperci AI)",
+        "Dominik Brach, Ada Sawilska (ML), Adrian Kordas (ML Engineer)"
+      ],
+      "strategic_priorities": [
+        "Walka z oszustwami finansowymi w sieci (scam ads, deepfake celebrytów, phishing)",
+        "Zaawansowana detekcja multimodalna (obraz, wideo, audio, tekst) oraz łączenie incydentów w kampanie",
+        "Operacyjna użyteczność dla zespołów CERT Polska / Dyżurnet"
+      ],
+      "technical_and_legal_constraints": [
+        "Odporność na techniki omijania detekcji (zmiany kadru, skrócone linki, cloaking, rotujące domeny)",
+        "Naukowa i inżynierska rzetelność (w mentorach jest kierowniczka zakładu biometrii i analiz audiowizualnych + 6 inżynierów AI/ML!)"
+      ],
+      "what_impresses_their_jury": "Solidne zaplecze ML/CV (clustering, perceptual hashing, detekcja manipulacji audiowizualnych) połączone z grafem kampanii i workflow zgłaszania/blokowania."
+    },
+    {
+      "institution_name": "Zakład Ubezpieczeń Społecznych (ZUS)",
+      "type": "Instytucja zabezpieczenia społecznego",
+      "website": "https://www.zus.pl/",
+      "editions_active": [2025, 2026],
+      "challenges_sponsored_2025": ["ZUS Accident Notification Tool (wygrali kanapowcy)"],
+      "challenges_sponsored_2026": ["PRZEWODNIK PRZYSZŁEJ MAMY"],
+      "institutional_mentors_2026": ["Michał Dębiński (Dyrektor w ZUS)"],
+      "strategic_priorities": [
+        "Zmniejszenie barier w załatwianiu świadczeń (e-ZUS / PUE ZUS), redukcja błędów we wnioskach obywateli",
+        "Jasna, empatyczna nawigacja przez zawiłe zbiegi uprawnień i terminów"
+      ],
+      "technical_and_legal_constraints": [
+        "Bezbłędność wyliczeń prawnych i terminowych (kalkulatory deterministyczne zamiast halucynacji LLM)",
+        "Ochrona danych wrażliwych (ciąża, zdrowie, dochody)"
+      ],
+      "what_impresses_their_jury": "Nieskazitelny, przyjazny mobile-first UX i konkretna, precyzyjna mapa terminów + kalkulator świadczeń dopasowany do indywidualnej sytuacji rodzica."
+    },
+    {
+      "institution_name": "Krajowy Ośrodek Wsparcia Rolnictwa (KOWR)",
+      "type": "Agencja wykonawcza (Rolnictwo i Zasoby Rolne Skarbu Państwa)",
+      "website": "https://www.gov.pl/web/kowr",
+      "editions_active": [2026],
+      "challenges_sponsored_2026": ["ZATRZYMAJ WODĘ, CHROŃ PLONY"],
+      "institutional_mentors_2026": [],
+      "strategic_priorities": [
+        "Ochrona zasobów wodnych w rolnictwie, retencja i adaptacja gospodarstw do susz oraz zmian klimatu",
+        "Praktyczne wsparcie decyzyjne dla rolników i zarządzania gruntami rolnymi"
+      ],
+      "what_impresses_their_jury": "Przełożenie danych GIS/satelitarnych/pogodowych na bardzo proste, konkretne i zrozumiałe dla rolnika rekomendacje poprawy retencji i ochrony plonów."
+    },
+    {
+      "institution_name": "Akademia Górniczo-Hutnicza w Krakowie (AGH)",
+      "type": "Uczelnia badawcza (Cyberbezpieczeństwo / IT)",
+      "website": "https://www.agh.edu.pl/",
+      "editions_active": [2026],
+      "challenges_sponsored_2026": ["ATTACK SURFACE INTELLIGENCE (Pula nagród: 25 000 PLN)"],
+      "institutional_mentors_2026": [
+        "Paweł Skalny (Specjalista ds. bezpieczeństwa w AGH)",
+        "Tomasz Nal (Inżynier bezpieczeństwa aplikacji w AGH)"
+      ],
+      "strategic_priorities": [
+        "Praktyczne zarządzanie powierzchnią ataku (EASM) i bezpieczeństwem aplikacji w rozległych, heterogenicznych sieciach uczelnianych i instytucjonalnych"
+      ],
+      "what_impresses_their_jury": "Techniczna głębia AppSec/NetSec, automatyczna korelacja aktywów z podatnościami i czytelne pokazanie ryzyk zanim dojdzie do incydentu."
+    },
+    {
+      "institution_name": "Podkarpackie Centrum Innowacji (PCI)",
+      "type": "Regionalny hub transferu technologii, prototypowania (ProtoLab) i B+R",
+      "website": "https://pcinn.org/",
+      "editions_active": [2026],
+      "challenges_sponsored_2026": ["RADAR INNOWACJI (Pula nagród: 11 111 PLN)"],
+      "institutional_mentors_2026": [
+        "Krzysztof Grabka (Menadżer ds. Technologii Protolab w PCI)",
+        "Łukasz Szubart (Ekspert w PCI)",
+        "Kacper Moczarny (Starszy Specjalista ds. organizacji wydarzeń w PCI)"
+      ],
+      "strategic_priorities": [
+        "Wyławianie oddolnych innowacji ze szkół, uczelni i samorządów i łączenie ich z ekosystemem B+R i biznesu"
+      ],
+      "what_impresses_their_jury": "Praktyczny mechanizm odkrywania i oceny potencjału 'ukrytych' lokalnych projektów oraz wspierania ich replikacji i komercjalizacji."
+    }
+  ],
+  "past_partners_2025_reference": [
+    "PKO Bank Polski (Indeks Branż)",
+    "Totalizator Sportowy (Gaming: Los decyduje)",
+    "JSW IT Systems (Zobacz to, czego nie widać)",
+    "Centralny Port Komunikacyjny – CPK (Chmura pod kontrolą)",
+    "Komenda Główna Państwowej Straży Pożarnej (Cyfrowy nieśmiertelnik)",
+    "Ministerstwo Sportu i Turystyki (AI w służbie decyzji)"
+  ],
+  "potential_additional_2026_partners_signals": [
+    {
+      "institution": "Urząd Komisji Nadzoru Finansowego (UKNF)",
+      "evidence": "3 mentorów wyższego szczebla na /mentorzy (CIO Sławomir Flis, Z-ca Dyr. IT Dariusz Kobusiński, Ekspert Mateusz Świętochowski)"
+    },
+    {
+      "institution": "Instytut Badań Edukacyjnych (IBE)",
+      "evidence": "2 ekspertów na /mentorzy (Marek Mieńkowski – Ekspert ds. Mikropoświadczeń, Ziemowit Socha – Ekspert IBE)"
+    },
+    {
+      "institution": "Ośrodek Przetwarzania Informacji – PIB (OPI PIB)",
+      "evidence": "Wymieniony jako Partner Społecznościowy na stronie głównej + publiczne zapowiedzi udziału w HackNation 2026"
+    },
+    {
+      "institution": "Ministerstwo Rozwoju i Technologii (MRiT) / AKMF / PISM",
+      "evidence": "Mentorzy obecni na oficjalnej liście /mentorzy"
+    }
+  ],
+  "partners_ecosystem_summary": {
+    "media_partners_count": 26,
+    "media_partners": [
+      "Onet", "Business Insider Polska", "Noizz", "Komputer Świat", "My Company Polska",
+      "Mam Startup", "Chip", "focusonbusiness.eu", "IT w Administracji", "Love Bydgoszcz",
+      "IT Professional", "ITWiz", "Zaufana Trzecia Strona", "ProgramistaMag.pl", "FX Mag",
+      "economista.pl", "Teleinfo24.pl", "Radio ESKA", "Elektroda.pl", "Dziennik Internautów",
+      "Taka jest Bydgoszcz", "Radio PiK", "Telepolis", "Radio 357", "PPE", "Brief"
+    ],
+    "community_and_academic_partners_count": 31,
+    "community_and_academic_partners": [
+      "Zielona Góra JUG", "Wise People", "Teoria Biznesu", "SJSI", "OPI", "Not The Hidden Wiki (nthw)",
+      "No Fluff Jobs", "MeetJS", "KSI", "KMS", "Kościuszkon (PK)", "KN Solvro (PWr)", "Kielce Java",
+      "Helion", "DevIT Jobs", "Best Hacking League (BHL)", "Android.com.pl", "Cyfrowe.org",
+      "Testerzy.pl", "Teatrikon", "SFI", "PTI", "KNN Neuron (PWr)", "Just Join IT",
+      "Wydział Informatyki AGH", "Girls Code Fun", "Forum STEM", "Brand24", "HackYeah",
+      "Bydgoski Klaster Informatyczny (BKI)", "4Developers"
+    ]
+  }
+}

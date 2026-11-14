@@ -1,0 +1,447 @@
+{
+  "schema_version": "1.0.0",
+  "last_verified_at": "2026-11-14T14:30:00+01:00",
+  "methodology_note": "Oceny w skali 1-5 oraz podziały procentowe UX/Algorytm stanowią ustrukturyzowaną ocenę analityczną opartą na treściach 10 opublikowanych wyzwań (/zadania), składzie 105 mentorów (/mentorzy), archiwum 16 zadań z 2025 r. oraz porównywalnych polskich hackathonach PROIDEA/GovTech. Twarde fakty (pule nagród, liczba mentorów, daty, laureaci historyczni) pochodzą bezpośrednio ze zweryfikowanych źródeł.",
+  "criteria_definitions": {
+    "dimension_1_technologia_i_dane": [
+      {
+        "id": "C1_dominant_tech_profile",
+        "name": "Dominujący ciężar techniczny",
+        "scale_or_values": [
+          "LLM/RAG & Document AI",
+          "Computer Vision / Multimodal ML",
+          "Cybersec / EASM / AppSec",
+          "Blockchain Forensics / Graph OSINT",
+          "GIS / Remote Sensing / Spatio-Temporal",
+          "Product / Mobile UX / Deterministic Rule Engine"
+        ],
+        "why_it_matters": "Określa główny rdzeń inżynieryjny MVP bez którego rozwiązanie nie przejdzie Etapu 1."
+      },
+      {
+        "id": "C2_domain_barrier_1_to_5",
+        "name": "Próg wiedzy domenowej",
+        "scale_or_values": "1 = niski / intuicyjny problem ogólny; 5 = wysoka specjalizacja domenowa (EASM, on-chain forensics, prawo świadczeń, zamówienia/PPP)",
+        "why_it_matters": "Wysoka bariera domenowa odstrasza przypadkowe zespoły i zmniejsza tłok, ale wymaga konsultacji z mentorem o 11:00-14:00."
+      },
+      {
+        "id": "C3_data_and_api_dependency_1_to_5",
+        "name": "Zależność od zewnętrznych API, scrapingu lub paczek danych z godz. 11:00",
+        "scale_or_values": "1 = pełna samowystarczalność na danych publicznych/syntetycznych; 5 = wysoka zależność od paczki partnera lub niestabilnego scrapingu",
+        "why_it_matters": "W 24-godzinnym sprincie blokady rate-limit, brak API lub trudny format danych mogą pochłonąć 6-8 godzin pracy."
+      },
+      {
+        "id": "C12_pre_hackathon_prep_potential_1_to_5",
+        "name": "Potencjał przygotowania przed 21.11 godz. 11:00",
+        "scale_or_values": "1 = trzeba czekać na konkretny dataset partnera; 5 = większość otwartych źródeł (przepisy, GIS, CVE/KEV, schematy) można zmapować wcześniej z jawnym oznaczeniem w prezentacji",
+        "why_it_matters": "Zgodnie z FAQ wcześniejsze własne narzędzia/biblioteki są dopuszczalne pod warunkiem jawnego oznaczenia, co nie powstało podczas hackathonu."
+      }
+    ],
+    "dimension_2_konkurencja_i_sklad": [
+      {
+        "id": "C4_expected_crowding_1_to_5",
+        "name": "Przewidywany tłok konkurencyjny w kategorii",
+        "scale_or_values": "1 = nisza / niski tłok (większa szansa na TOP 5); 5 = bardzo popularny temat / dziesiątki zespołów",
+        "why_it_matters": "Do Etapu 2 (finału) wchodzi tylko TOP 5 z każdego zadania niezależnie od liczby zgłoszeń."
+      },
+      {
+        "id": "C5_solo_or_duo_feasibility_1_to_5",
+        "name": "Wykonalność w 1-2 osoby (Solo/Duo) w 24h",
+        "scale_or_values": "1 = wymaga wieloosobowego podziału ról; 5 = idealne dla 1-2 osób o spójnym stacku",
+        "why_it_matters": "W HackNation 2025 co najmniej 2 zadania (UM Bydgoszcz i PKO BP) oraz kategoria Smart City na HackYeah 2026 (>130 projektów) zostały wygrane solo."
+      },
+      {
+        "id": "C6_team_3_to_6_synergy_1_to_5",
+        "name": "Synergia zespołu 3-6 osobowego",
+        "scale_or_values": "1 = trudne do równoległego podziału; 5 = naturalny podział na ML/Backend, Frontend/UX, Domenę i Pitch",
+        "why_it_matters": "Złożone zadania end-to-end (COI, NASK, MFiPR, KAS) premiują równoległą pracę nad UI, pipeline'em danych i prezentacją."
+      }
+    ],
+    "dimension_3_ekonomia_i_wsparcie": [
+      {
+        "id": "C7_prize_transparency_and_status",
+        "name": "Jawność i wysokość puli nagród",
+        "scale_or_values": "25 000 PLN opublikowane | 11 111 PLN opublikowane | TBA (standard HackNation 2025: 25 000 PLN)",
+        "why_it_matters": "Część zadań ma już jawną pulę na /zadania (RISK MINER i ATTACK SURFACE INTELLIGENCE po 25 000 PLN; RADAR INNOWACJI 11 111 PLN), co zmniejsza niepewność przed 21.11."
+      },
+      {
+        "id": "C8_mentor_bench_strength",
+        "name": "Siła i profil ławki mentorskiej partnera (/mentorzy)",
+        "scale_or_values": "Liczba i ranga mentorów instytucjonalnych z listy 105 mentorów",
+        "why_it_matters": "Skład mentorów (np. dyrektorzy UX, szefowie biometrii NASK, naczelnicy KAS, eksperci AppSec) ujawnia realne kryteria oceny danego partnera."
+      }
+    ],
+    "dimension_4_egzekucja_i_ryzyka": [
+      {
+        "id": "C9_ux_vs_algorithm_balance",
+        "name": "Wymagany balans UX/Frontend vs Algorytm/Backend",
+        "scale_or_values": "Proporcja procentowa (UX_Frontend_pct / Backend_AI_Algorithm_pct)",
+        "why_it_matters": "Pozwala dopasować zadanie do kompetencji zespołu (np. brak designera UX w COI lub ZUS jest ryzykowny)."
+      },
+      {
+        "id": "C10_demo_wow_potential_1_to_5",
+        "name": "Potencjał efektu WOW w wideo 2 min i pitchu na żywo",
+        "scale_or_values": "1 = mało wizualne / trudne do pokazania w 120s; 5 = bardzo czytelny wizualny efekt przed/po",
+        "why_it_matters": "Jurorzy w Etapie 1 oceniają PDF ≤ 10 MB i wideo do 2 min w kilka minut, a w Etapie 2 punkty z Etapu 1 się zerują."
+      },
+      {
+        "id": "C11_regulatory_and_hallucination_trap_risk_1_to_5",
+        "name": "Ryzyko pułapek regulacyjnych lub halucynacji LLM",
+        "scale_or_values": "1 = niskie ryzyko; 5 = krytyczne ryzyko dyskwalifikacji przy błędach prawnych, braku XAI lub złamaniu AI Act / zasad pasywnego skanowania",
+        "why_it_matters": "Administracja odrzuca czarne skrzynki, halucynacje kwotowe (ZUS) i systemy HR łamiące AI Act High-Risk (MC)."
+      }
+    ]
+  },
+  "challenges_evaluation": [
+    {
+      "id": "risk-miner",
+      "title": "RISK MINER",
+      "initiator": "Ministerstwo Funduszy i Polityki Regionalnej (MFiPR)",
+      "C1_dominant_tech_profile": "LLM/RAG & Document AI",
+      "C2_domain_barrier_1_to_5": 4,
+      "C3_data_and_api_dependency_1_to_5": 3,
+      "C4_expected_crowding_1_to_5": 4,
+      "C5_solo_or_duo_feasibility_1_to_5": 4,
+      "C6_team_3_to_6_synergy_1_to_5": 4,
+      "C7_prize_transparency_and_status": "25 000 PLN (jawna)",
+      "C8_mentor_bench_strength": "3 mentorów (Dyrektor Dep. PPP, Naczelnik Wydz. Rozwoju i Wdrażania Systemów IT, Kierownik)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 35,
+        "Backend_AI_Algorithm_pct": 65
+      },
+      "C10_demo_wow_potential_1_to_5": 4,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 4,
+      "C12_pre_hackathon_prep_potential_1_to_5": 4,
+      "ideal_participant_profile": "Inżynierowie Data/RAG, osoby umiejące łączyć parsing złożonych PDF (budżety/harmonogramy PPP/UE), reguły deterministyczne i wyjaśnialny dashboard ryzyk (XAI).",
+      "main_winning_differentiator": "Graf powiązań ryzyk między dokumentami/podwykonawcami + deterministyczna kontrola odchyleń z klikalnym cytowaniem dokładnej strony źródłowej (XAI).",
+      "main_failure_trap": "Zbudowanie zwykłego czatbota typu 'wrzuć PDF i zapytaj LLM o ryzyka' bez strukturyzacji liczb/dat, grafu zależności i weryfikowalnych źródeł."
+    },
+    {
+      "id": "attack-surface-intelligence",
+      "title": "ATTACK SURFACE INTELLIGENCE",
+      "initiator": "Akademia Górniczo-Hutnicza (AGH)",
+      "C1_dominant_tech_profile": "Cybersec / EASM / AppSec",
+      "C2_domain_barrier_1_to_5": 5,
+      "C3_data_and_api_dependency_1_to_5": 3,
+      "C4_expected_crowding_1_to_5": 2,
+      "C5_solo_or_duo_feasibility_1_to_5": 4,
+      "C6_team_3_to_6_synergy_1_to_5": 4,
+      "C7_prize_transparency_and_status": "25 000 PLN (jawna)",
+      "C8_mentor_bench_strength": "2 mentorów technicznych (Specjalista ds. bezpieczeństwa AGH, Inżynier bezpieczeństwa aplikacji AGH)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 30,
+        "Backend_AI_Algorithm_pct": 70
+      },
+      "C10_demo_wow_potential_1_to_5": 4,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 4,
+      "C12_pre_hackathon_prep_potential_1_to_5": 5,
+      "ideal_participant_profile": "Specjaliści AppSec/NetSec/Blue Team lub zespoły z twardymi kompetencjami w EASM, OSINT pasywnym, grafach ataku i priorytetyzacji CVE (KEV/EPSS).",
+      "main_winning_differentiator": "Wizualny Attack Graph (choke points prowadzące od ekspozycji brzegowej do zasobu krytycznego) + priorytetyzacja CISA KEV/EPSS + detekcja dryfu w czasie + gotowe playbooki mitigacji.",
+      "main_failure_trap": "Przekroczenie zakresu autoryzacji (aktywne skanowanie cudzych sieci) lub zrobienie prostego dashboardu nad jednym wrapperem nmap/nuclei."
+    },
+    {
+      "id": "radar-innowacji",
+      "title": "RADAR INNOWACJI",
+      "initiator": "Podkarpackie Centrum Innowacji (PCI)",
+      "C1_dominant_tech_profile": "LLM/RAG & Document AI",
+      "C2_domain_barrier_1_to_5": 2,
+      "C3_data_and_api_dependency_1_to_5": 4,
+      "C4_expected_crowding_1_to_5": 2,
+      "C5_solo_or_duo_feasibility_1_to_5": 5,
+      "C6_team_3_to_6_synergy_1_to_5": 3,
+      "C7_prize_transparency_and_status": "11 111 PLN (jawna)",
+      "C8_mentor_bench_strength": "3 mentorów (Menadżer ds. Technologii Protolab, Ekspert PCI, Starszy Specjalista ds. organizacji wydarzeń)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 50,
+        "Backend_AI_Algorithm_pct": 50
+      },
+      "C10_demo_wow_potential_1_to_5": 4,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 1,
+      "C12_pre_hackathon_prep_potential_1_to_5": 4,
+      "ideal_participant_profile": "Solo builderzy lub duety Fullstack + Product szukające niskiego tłoku, łatwego wejścia do TOP 5 i narzędzia łączącego wyszukiwanie semantyczne z czytelnym UX.",
+      "main_winning_differentiator": "Dwustronny matching: wyławianie ukrytych projektów ze szkół/BIP/uczelni + ocena TRL i replikowalności + łączenie ich z problemami samorządów i prototypowniami (Protolab).",
+      "main_failure_trap": "Stworzenie kolejnej zwykłej bazy projektów typu 'lista kartek z wyszukiwarką' bez wskaźnika potencjału wdrożeniowego i inteligentnego matchingu."
+    },
+    {
+      "id": "kompas-kompetencji",
+      "title": "KOMPAS KOMPETENCJI",
+      "initiator": "Biuro Dyrektora Generalnego – Ministerstwo Cyfryzacji",
+      "C1_dominant_tech_profile": "Product / Mobile UX / Deterministic Rule Engine",
+      "C2_domain_barrier_1_to_5": 3,
+      "C3_data_and_api_dependency_1_to_5": 2,
+      "C4_expected_crowding_1_to_5": 3,
+      "C5_solo_or_duo_feasibility_1_to_5": 5,
+      "C6_team_3_to_6_synergy_1_to_5": 4,
+      "C7_prize_transparency_and_status": "TBA (standard 2025: 25 000 PLN)",
+      "C8_mentor_bench_strength": "5 mentorów bezpośrednio z MC (Naczelnik, 2 Radców, St. specjalista, Referent) + 7 mentorów z KPRM",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 60,
+        "Backend_AI_Algorithm_pct": 40
+      },
+      "C10_demo_wow_potential_1_to_5": 3,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 5,
+      "C12_pre_hackathon_prep_potential_1_to_5": 4,
+      "ideal_participant_profile": "Product-oriented builderzy rozumiejący UX HR, służbę cywilną i wymogi unijnego AI Act (Human-in-the-Loop, anti-bias).",
+      "main_winning_differentiator": "Ścisła architektura Human-in-the-Loop (AI porządkuje dowody osiągnięć, proponuje pytania do rozmowy i plan rozwoju IPR, ale nigdy nie ocenia automatycznie pracownika) + anti-bias check.",
+      "main_failure_trap": "Zaproponowanie algorytmu, który automatycznie wystawia ocenę okresową pracownikowi — bezpośrednie zderzenie z kategorią High-Risk AI w unijnym AI Act."
+    },
+    {
+      "id": "kolekcjoner-fejkow",
+      "title": "KOLEKCJONER FEJKÓW",
+      "initiator": "NASK – Państwowy Instytut Badawczy",
+      "C1_dominant_tech_profile": "Computer Vision / Multimodal ML",
+      "C2_domain_barrier_1_to_5": 4,
+      "C3_data_and_api_dependency_1_to_5": 4,
+      "C4_expected_crowding_1_to_5": 4,
+      "C5_solo_or_duo_feasibility_1_to_5": 2,
+      "C6_team_3_to_6_synergy_1_to_5": 5,
+      "C7_prize_transparency_and_status": "TBA (standard 2025: 25 000 PLN)",
+      "C8_mentor_bench_strength": "7 mentorów (Kierownik Zakładu Analiz Audiowizualnych i Systemów Biometrycznych NASK + 6 ekspertów/inżynierów AI/ML)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 30,
+        "Backend_AI_Algorithm_pct": 70
+      },
+      "C10_demo_wow_potential_1_to_5": 5,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 3,
+      "C12_pre_hackathon_prep_potential_1_to_5": 4,
+      "ideal_participant_profile": "Zespoły 3-5 osobowe z mocnym zapleczem ML/Computer Vision, embeddingów (CLIP/pHash) i OSINT reklam/domen.",
+      "main_winning_differentiator": "Klastrowanie pojedynczych reklam w całe kampanie przestępcze (campaign graph: pHash + CLIP + OCR + łańcuch przekierowań/SSL) + zabezpieczenie dowodów (zrzut + DOM) zanim scam zniknie.",
+      "main_failure_trap": "Zrobienie tylko prostego klasyfikatora 'czy ten obrazek wygląda na scam' bez łączenia rotujących kreacji i domen w spójne kampanie."
+    },
+    {
+      "id": "cyfryzacja-formularzy",
+      "title": "CYFRYZACJA FORMULARZY",
+      "initiator": "Centralny Ośrodek Informatyki (COI)",
+      "C1_dominant_tech_profile": "LLM/RAG & Document AI",
+      "C2_domain_barrier_1_to_5": 3,
+      "C3_data_and_api_dependency_1_to_5": 2,
+      "C4_expected_crowding_1_to_5": 5,
+      "C5_solo_or_duo_feasibility_1_to_5": 3,
+      "C6_team_3_to_6_synergy_1_to_5": 5,
+      "C7_prize_transparency_and_status": "TBA (standard 2025: 25 000 PLN)",
+      "C8_mentor_bench_strength": "11 mentorów — największa ławka na wydarzeniu (CAIO, Dyrektorka Dep. Badań i Projektowania Doświadczeń, Dyr. Komunikacji Elektronicznej, badaczka UX, UX/UI, ML, Java, Automatyzacja, PO)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 55,
+        "Backend_AI_Algorithm_pct": 45
+      },
+      "C10_demo_wow_potential_1_to_5": 5,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 3,
+      "C12_pre_hackathon_prep_potential_1_to_5": 5,
+      "ideal_participant_profile": "Zespoły Fullstack + AI + UX/UI Designer potrafiące dowieźć perfekcyjny pipeline 'PDF urzędowy -> gotowy dostępny formularz WCAG 2.1 AA'.",
+      "main_winning_differentiator": "Pipeline end-to-end w 30 sekund: parsing PDF -> JSON Schema z logiką warunkową -> tłumaczenie na Plain Polish -> żywy kreator mObywatel/gov.pl spełniający WCAG 2.1 AA + panel weryfikacji dla urzędnika.",
+      "main_failure_trap": "Zignorowanie dostępności (WCAG 2.1 AA), prostego języka i potrzeb badaczy UX COI — bez mocnego UI w tej kategorii bardzo trudno wyprzedzić faworytów."
+    },
+    {
+      "id": "przewodnik-przyszlej-mamy",
+      "title": "PRZEWODNIK PRZYSZŁEJ MAMY",
+      "initiator": "Zakład Ubezpieczeń Społecznych (ZUS)",
+      "C1_dominant_tech_profile": "Product / Mobile UX / Deterministic Rule Engine",
+      "C2_domain_barrier_1_to_5": 4,
+      "C3_data_and_api_dependency_1_to_5": 2,
+      "C4_expected_crowding_1_to_5": 4,
+      "C5_solo_or_duo_feasibility_1_to_5": 4,
+      "C6_team_3_to_6_synergy_1_to_5": 4,
+      "C7_prize_transparency_and_status": "TBA (standard 2025: 25 000 PLN)",
+      "C8_mentor_bench_strength": "1 mentor (Michał Dębiński — Dyrektor w ZUS)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 65,
+        "Backend_AI_Algorithm_pct": 35
+      },
+      "C10_demo_wow_potential_1_to_5": 4,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 5,
+      "C12_pre_hackathon_prep_potential_1_to_5": 5,
+      "ideal_participant_profile": "Product/Mobile Frontend developerzy + UX designerzy + osoba potrafiąca zakodować bezbłędną logikę przepisów ZUS/Kodeksu Pracy w drzewie decyzyjnym.",
+      "main_winning_differentiator": "Zero halucynacji finansowych (deterministyczny kalkulator wariantów: UoP/B2B/zlecenie, 81,5% vs 100%/70%, Aktywny Rodzic, 800+, kosiniakowe) + spersonalizowana oś czasu wg daty porodu/tygodnia ciąży w empatycznym mobile-first UX.",
+      "main_failure_trap": "Opieranie odpowiedzi o terminach i kwotach świadczeń na swobodnym LLM bez deterministycznego silnika reguł — wystarczy jeden błąd merytoryczny w pytaniu jurora z ZUS."
+    },
+    {
+      "id": "osintowy-lapacz-cyfrowych-sladow",
+      "title": "OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW",
+      "initiator": "Ministerstwo Finansów – Krajowa Administracja Skarbowa (KAS)",
+      "C1_dominant_tech_profile": "Blockchain Forensics / Graph OSINT",
+      "C2_domain_barrier_1_to_5": 5,
+      "C3_data_and_api_dependency_1_to_5": 4,
+      "C4_expected_crowding_1_to_5": 2,
+      "C5_solo_or_duo_feasibility_1_to_5": 3,
+      "C6_team_3_to_6_synergy_1_to_5": 4,
+      "C7_prize_transparency_and_status": "TBA (standard 2025: 25 000 PLN)",
+      "C8_mentor_bench_strength": "5 mentorów wysokiego szczebla (Dyrektor Dep. w MF/CIRF, Z-ca Dyr. w CIRF, Kierownik Aplikacje Krytyczne MF, Z-ca Naczelnika US KAS Bydgoszcz, Kierownik Referatu KAS Katowice)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 30,
+        "Backend_AI_Algorithm_pct": 70
+      },
+      "C10_demo_wow_potential_1_to_5": 5,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 4,
+      "C12_pre_hackathon_prep_potential_1_to_5": 4,
+      "ideal_participant_profile": "Specjaliści analizy grafowej (Neo4j/NetworkX), OSINT oraz on-chain analytics/krypto rozumiejący ścieżkę dowodową w pracy analityka skarbowego.",
+      "main_winning_differentiator": "Most między grafem transakcji on-chain (klasteryzacja portfeli, peeling chains, mosty/miksery/giełdy) a danymi off-chain OSINT i polskim rejestrem RDWW + eksport notatki dowodowej z dokładnymi tx_hash.",
+      "main_failure_trap": "Budowa ogólnego eksploratora bloków bez heurystyk analitycznych i bez możliwości audytowalnego udokumentowania, skąd wzięło się powiązanie adresu z osobą/podmiotem."
+    },
+    {
+      "id": "prawdowid",
+      "title": "PRAWDOWID",
+      "initiator": "Ministerstwo Spraw Zagranicznych (MSZ)",
+      "C1_dominant_tech_profile": "LLM/RAG & Document AI",
+      "C2_domain_barrier_1_to_5": 3,
+      "C3_data_and_api_dependency_1_to_5": 4,
+      "C4_expected_crowding_1_to_5": 5,
+      "C5_solo_or_duo_feasibility_1_to_5": 4,
+      "C6_team_3_to_6_synergy_1_to_5": 4,
+      "C7_prize_transparency_and_status": "TBA (standard 2025: 25 000 PLN)",
+      "C8_mentor_bench_strength": "3 mentorów (Radca generalny MSZ, Analityk MSZ, Ekspertka z PISM)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 40,
+        "Backend_AI_Algorithm_pct": 60
+      },
+      "C10_demo_wow_potential_1_to_5": 4,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 4,
+      "C12_pre_hackathon_prep_potential_1_to_5": 4,
+      "ideal_participant_profile": "Inżynierowie NLP/RAG potrafiący budować pipeline dekompozycji tez, wielojęzycznej triangulacji źródeł pierwotnych oraz odporności na prompt injection.",
+      "main_winning_differentiator": "Rozbijanie tekstu na atomowe twierdzenia (atomic claims) + weryfikacja w źródłach pierwotnych/urzędowych + nazwanie konkretnych technik manipulacji (cherry-picking, fałszywy kontekst) bez pozowania na arbitralnego cenzora.",
+      "main_failure_trap": "Wystawianie arbitralnego wskaźnika '78% fake news' przez sam prompt LLM bez wiarygodnych źródeł pierwotnych lub podatność na manipulację w treści analizowanego artykułu."
+    },
+    {
+      "id": "zatrzymaj-wode-chron-plony",
+      "title": "ZATRZYMAJ WODĘ, CHROŃ PLONY",
+      "initiator": "Krajowy Ośrodek Wsparcia Rolnictwa (KOWR)",
+      "C1_dominant_tech_profile": "GIS / Remote Sensing / Spatio-Temporal",
+      "C2_domain_barrier_1_to_5": 4,
+      "C3_data_and_api_dependency_1_to_5": 4,
+      "C4_expected_crowding_1_to_5": 1,
+      "C5_solo_or_duo_feasibility_1_to_5": 4,
+      "C6_team_3_to_6_synergy_1_to_5": 4,
+      "C7_prize_transparency_and_status": "TBA (standard 2025: 25 000 PLN)",
+      "C8_mentor_bench_strength": "0 mentorów przypisanych na /mentorzy na dzień 14.11 (weryfikuj ponownie 21.11 o 11:00)",
+      "C9_ux_vs_algorithm_balance": {
+        "UX_Frontend_pct": 45,
+        "Backend_AI_Algorithm_pct": 55
+      },
+      "C10_demo_wow_potential_1_to_5": 5,
+      "C11_regulatory_and_hallucination_trap_risk_1_to_5": 2,
+      "C12_pre_hackathon_prep_potential_1_to_5": 5,
+      "ideal_participant_profile": "Specjaliści GIS/teledetekcji, fullstackowcy umiejący w Leaflet/Mapbox/Deck.gl lub programiści chcący wykorzystać otwarte dane polskie (Geoportal ULDK, Copernicus Sentinel, IMGW, IUNG) w kategorii o najniższym tłoku.",
+      "main_winning_differentiator": "Klikasz dowolną działkę rolną na mapie Polski -> dostajesz indeks wilgotności/suszy/rzeźby terenu + prosty dla rolnika plan interwencji retencyjnych (zastawki, zadrzewienia, międzyplony) z oszacowaniem efektu wodnego.",
+      "main_failure_trap": "Przekombinowany naukowy panel hydrologiczny niezrozumiały dla zwykłego rolnika lub brak oparcia o rzeczywiste polskie dane działek ewidencyjnych."
+    }
+  ],
+  "participant_archetypes_matching": [
+    {
+      "archetype_id": "solo_fullstack_ai_builder",
+      "name": "Solo / Duo Fullstack + LLM API Builder",
+      "top_1_challenge_id": "radar-innowacji",
+      "top_2_challenge_id": "kompas-kompetencji",
+      "backup_challenge_id": "risk-miner",
+      "rationale": "RADAR INNOWACJI i KOMPAS KOMPETENCJI nie wymagają ciężkich modeli CV ani wielowątkowej infrastruktury, mają niską/średnią barierę domenową i pozwalają 1-2 osobom dowieźć spójny, dopracowany produkt w 24h."
+    },
+    {
+      "archetype_id": "ux_product_frontend_heavy",
+      "name": "Zespół Product-First / UX & Mobile/Web Frontend",
+      "top_1_challenge_id": "przewodnik-przyszlej-mamy",
+      "top_2_challenge_id": "cyfryzacja-formularzy",
+      "backup_challenge_id": "kompas-kompetencji",
+      "rationale": "ZUS i COI mają największy udział UX/WCAG w sukcesie rozwiązania (COI wysyła aż dyrekcję UX Research). Warunek w ZUS: bezbłędny deterministyczny silnik reguł świadczeń."
+    },
+    {
+      "archetype_id": "backend_data_rag_engineer",
+      "name": "Inżynierowie Backend / Data / Parsing / RAG & XAI",
+      "top_1_challenge_id": "risk-miner",
+      "top_2_challenge_id": "prawdowid",
+      "backup_challenge_id": "cyfryzacja-formularzy",
+      "rationale": "RISK MINER ma już jawną pulę 25 000 PLN, wyraźny nacisk na ekstrakcję danych z dokumentacji i XAI, oraz mniej rozbudowaną barierę UI niż zadania obywatelskie COI/ZUS."
+    },
+    {
+      "archetype_id": "ml_cv_multimodal_researcher",
+      "name": "Zespół ML / Computer Vision / Embeddingi Multimodalne",
+      "top_1_challenge_id": "kolekcjoner-fejkow",
+      "top_2_challenge_id": "prawdowid",
+      "backup_challenge_id": "risk-miner",
+      "rationale": "KOLEKCJONER FEJKÓW jest skrojony pod pHash, CLIP, OCR, detekcję deepfake i klastrowanie kampanii, a ławka NASK to kierowniczka biometrii/audiowizualna + 6 inżynierów AI/ML."
+    },
+    {
+      "archetype_id": "cybersec_appsec_osint_specialist",
+      "name": "Specjaliści Cybersec / AppSec / OSINT / Krypto",
+      "top_1_challenge_id": "attack-surface-intelligence",
+      "top_2_challenge_id": "osintowy-lapacz-cyfrowych-sladow",
+      "backup_challenge_id": "kolekcjoner-fejkow",
+      "rationale": "Obie kategorie mają wysoką barierę wejścia (mniejszy tłok!), a jury AGH i MF/KAS składa się z praktyków bezpieczeństwa i analityków śledczych."
+    },
+    {
+      "archetype_id": "gis_geospatial_agritech_analyst",
+      "name": "GIS / Mapy / Teledetekcja / Data Spatio-Temporal",
+      "top_1_challenge_id": "zatrzymaj-wode-chron-plony",
+      "top_2_challenge_id": "risk-miner",
+      "backup_challenge_id": "radar-innowacji",
+      "rationale": "ZATRZYMAJ WODĘ, CHROŃ PLONY to jedyne czyste zadanie GIS/AgriTech i prawdopodobnie najmniej zatłoczona kategoria na całym hackathonie."
+    },
+    {
+      "archetype_id": "ev_maximizer_low_crowding_hunter",
+      "name": "Maksymalizacja EV (najmniejszy tłok / najwyższa szansa TOP 5)",
+      "top_1_challenge_id": "zatrzymaj-wode-chron-plony",
+      "top_2_challenge_id": "attack-surface-intelligence",
+      "backup_challenge_id": "osintowy-lapacz-cyfrowych-sladow",
+      "rationale": "Wysoka specjalizacja domenowa (GIS, EASM, krypto-OSINT) naturalnie odfiltrowuje tłumy generycznych zespołów LLM-chat, zwiększając prawdopodobieństwo wejścia do TOP 5 i gwarantując przy AGH jawną pulę 25 000 PLN."
+    }
+  ],
+  "polish_hackathons_benchmark": {
+    "standard_hacktribe_weights_proidea": {
+      "source_events": ["HackYeah (PROIDEA / HackTribe)", "HackNation (PROIDEA / HackTribe)"],
+      "weights_reference_from_hackyeah": [
+        {"criterion": "Idea & Innovation", "typical_weight_pct": 30},
+        {"criterion": "Relation to Category / Challenge", "typical_weight_pct": 20},
+        {"criterion": "Practical Applicability / Usability", "typical_weight_pct": 20},
+        {"criterion": "Design / User Experience", "typical_weight_pct": 20},
+        {"criterion": "Completeness & Implementation Value", "typical_weight_pct": 10}
+      ],
+      "important_hacknation_2026_note": "Na HackNation 2026 szczegółowe wagi kryteriów każdego Zadania Partnerskiego zostaną opublikowane najpóźniej o 11:00 w sobotę 21.11; oceny Etapu 1 (PDF + wideo + opis w HackTribe) wyłaniają TOP 5, ale punkty z Etapu 1 NIE przechodzą do Etapu 2 (wybór zwycięzcy w głosowaniu Jury po prezentacji na żywo)."
+    },
+    "comparable_events": [
+      {
+        "event_name": "HackYeah (2024, 2025, 2026 — Tauron Arena Kraków)",
+        "operator_and_platform": "PROIDEA sp. z o.o. / HackTribe",
+        "scale": "2024: >2600 uczestników, >400 projektów; 2025: blisko 3000 uczestników, >400 projektów; 2026: 12. edycja",
+        "notable_winners": [
+          "Dmytrii Zherebtsov (WSIiZ) — wygrana SOLO w najbardziej oblężonej kategorii Smart City (>130 projektów) na HackYeah 2026 (autonomiczny system koordynacji dronów ratowniczych)",
+          "KN Solvro (PWr) — 1. miejsce w wyzwaniu bezpiecznego wdrażania AI (Goldman Sachs) na HackYeah 2026 (ekosystem proxy chroniący poufne dane)",
+          "SKN Data Science (Politechnika Śląska) — wygrane w Quantum AI (2024) i Biohacking (2025)",
+          "HexaTeam (WSIiZ) — powtarzalne zwycięstwa w Gamedev (2024 i 2025)"
+        ],
+        "relevance_to_hacknation_2026": "Identyczny operator wykonawczy (PROIDEA) i ten sam system zgłoszeń/oceny (HackTribe). Pokazuje skuteczność zarówno zgranych kół naukowych (Solvro, PŚ), jak i wybitnie zorientowanych na demo uczestników solo."
+      },
+      {
+        "event_name": "Supervision_hack (Urząd Komisji Nadzoru Finansowego – UKNF)",
+        "operator_and_platform": "UKNF (nadzór finansowy / RegTech / Anti-Scam)",
+        "notable_winners": [
+          "#FakeJobHunter: Bobby Tables (Scam Hunter), Data Science Club PJATK (Whistleblower on Web-scams), Fake Job Finders",
+          "#AdsDetect: GigaMiNIony (GigaAdsDetector), TheFlowersAI (FakeBuster), StackOvergrows (AdsFinder)"
+        ],
+        "relevance_to_hacknation_2026": "Kategoria #AdsDetect jest bezpośrednim pierwowzorem dla zadania NASK 'KOLEKCJONER FEJKÓW', a 3 mentorów wyższego szczebla UKNF (w tym CIO) jest obecnych na liście mentorów HackNation 2026."
+      },
+      {
+        "event_name": "Wyzwania Ministerstwa Finansów i KAS na HackYeah",
+        "operator_and_platform": "MF / KAS w ramach PROIDEA HackYeah",
+        "notable_winners": [
+          "Follow the river to reach the sea: 1. cvtservices, 2. CodeVillains",
+          "Digital Tax: 1. BRAD-PIT-37, 2. TaxRobot, 3. SKAN Konwerter"
+        ],
+        "relevance_to_hacknation_2026": "Bezpośrednia linia genealogiczna do zadań HackNation 2026: 'OSINTOWY ŁAPACZ CYFROWYCH ŚLADÓW' (MF/KAS), 'CYFRYZACJA FORMULARZY' (COI) i 'PRZEWODNIK PRZYSZŁEJ MAMY' (ZUS)."
+      },
+      {
+        "event_name": "DISINFOHACK (NASK + Ministerstwo Cyfryzacji)",
+        "operator_and_platform": "NASK PIB / Ministerstwo Cyfryzacji",
+        "notable_winners": ["Konkurs dla zespołów akademickich analizujących kampanie dezinformacyjne w polskich mediach społecznościowych"],
+        "relevance_to_hacknation_2026": "Bezpośredni kontekst badawczo-operacyjny NASK i MC pod 'PRAWDOWID' (MSZ) oraz 'KOLEKCJONER FEJKÓW' (NASK)."
+      },
+      {
+        "event_name": "Datathon #OtwarteDane (KPRM / MF / GUS / NASK)",
+        "operator_and_platform": "KPRM przy udziale MF, GUS i NASK",
+        "notable_winners": ["Data Drivers (Mateusz Jakubczak, Krzysztof Olipra, Karol Oleszek) — 1. miejsce w kategorii API MF TREZOR 3.0 (interaktywny dashboard decyzyjny)"],
+        "relevance_to_hacknation_2026": "Wzorzec wygrywania w administracji publicznej poprzez przekształcenie surowych otwartych API/danych resortowych w intuicyjny panel decyzyjny (RISK MINER, ZATRZYMAJ WODĘ)."
+      },
+      {
+        "event_name": "CuValley Hack (KGHM) & zadania przemysłowo-inżynieryjne HackNation 2025",
+        "operator_and_platform": "KGHM / MC (JSW IT Systems, CPK, MF KAS RTG)",
+        "notable_winners": ["MEWA (KAS RTG — segmentacja semantyczna + YOLO, niski FPR)", "CombAIns PW (JSW taśmy górnicze)", "HackStorm D.R.W.A.L. (CPK LiDAR/BIM)"],
+        "relevance_to_hacknation_2026": "Dowodzi, że w zadaniach technicznych/analitycznych administracja nagradza niską liczbę fałszywych alarmów, zgodność ze standardami (BIM, CVE/KEV) i mierzalne metryki ML."
+      }
+    ]
+  }
+}

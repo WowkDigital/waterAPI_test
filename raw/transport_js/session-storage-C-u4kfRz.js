@@ -1,0 +1,1 @@
+var e=`transport_participant_session`;function t(){return typeof window>`u`?null:window.localStorage.getItem(e)}function n(){typeof window>`u`||window.localStorage.removeItem(e)}export{n,t as r,e as t};

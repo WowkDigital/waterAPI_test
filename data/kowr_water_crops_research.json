@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0.0",
+  "last_verified_at": "2026-11-14T15:00:00+01:00",
+  "challenge": {
+    "id": "zatrzymaj-wode-chron-plony",
+    "official_uuid": "ccada234-745a-4129-90c0-3b453ab86b3b",
+    "title": "ZATRZYMAJ WODĘ, CHROŃ PLONY",
+    "initiator": "Krajowy Ośrodek Wsparcia Rolnictwa (KOWR)",
+    "official_description": "Zmiany klimatu stawiają przed polskim rolnictwem coraz większe wyzwania. Podejmij wyzwanie i zaprojektuj rozwiązanie, które pomoże rolnikom podejmować trafniejsze decyzje, chronić plony i budować bardziej odporne na zmiany klimatu gospodarstwa.",
+    "target_team_fit": {
+      "team_size": "1-2 osoby",
+      "preferred_tech": "PWA (Progressive Web App) + system informowania w czasie rzeczywistym (Web Push / alerty progowe / live telemetry)",
+      "expected_crowding_rating": "1/5 (najniższy spodziewany tłok na hackathonie — idealne pod wejście do TOP 5)"
+    }
+  },
+  "challenge_context": {
+    "kowr_institutional_role": [
+      "Gospodarowanie Zasobem Własności Rolnej Skarbu Państwa (grunty rolne, dzierżawy, gospodarstwa wielkoobszarowe)",
+      "Przeciwdziałanie degradacji gleb i wspieranie poprawy struktury agrarnej",
+      "Wsparcie projektów badawczo-innowacyjnych w rolnictwie (m.in. wykorzystanie teledetekcji satelitarnej do monitoringu upraw, suszy rolniczej — np. wskaźnik DISS — i szacowania strat)"
+    ],
+    "hydrological_paradox_in_poland": "Tradycyjne systemy melioracyjne były projektowane głównie jako odwadniające (szybki odpływ wody z pól wiosną i po ulewach), co przy rosnącej zmienności klimatu pogłębia susze rolnicze w kluczowych fazach wzrostu zbóż, kukurydzy i warzyw. Rozwiązaniem jest tzw. mała retencja (zatrzymywanie wody tam, gdzie spadnie: zastawki piętrzące, rowy, oczka wodne) oraz agrotechnika podnosząca retencję glebową (materia organiczna, poplony, uproszczenia uprawowe).",
+    "public_support_ecosystem": [
+      "Plan Strategiczny dla WPR (budżet na inwestycje środowiskowo-klimatyczne zwiększony do 2,8 mld zł)",
+      "Ekoschematy ARiMR (dopłaty m.in. za retencjonowanie wody na gruntach ornych, poplony, zwiększanie materii organicznej i ograniczenie erozji)",
+      "Lokalne Partnerstwa Wodne (LPW), spółki wodne oraz dotacje samorządowe/ARiMR na utrzymanie urządzeń melioracji i budowę małej retencji"
+    ]
+  },
+  "public_apis_and_datasets": [
+    {
+      "id": "imgw_pib_public_api",
+      "provider": "IMGW-PIB (Instytut Meteorologii i Gospodarki Wodnej)",
+      "base_url": "https://danepubliczne.imgw.pl/api",
+      "auth_required": false,
+      "cors_supported": true,
+      "formats": ["json", "xml", "csv", "html (przez dopisanie /format/{typ})"],
+      "endpoints": [
+        {
+          "name": "warningsmeteo",
+          "url": "https://danepubliczne.imgw.pl/api/data/warningsmeteo",
+          "purpose": "Aktywne ostrzeżenia meteorologiczne (burze, ulewy, przymrozki, silny wiatr, upały) powiązane z kodem TERYT jednostki",
+          "key_fields": ["nazwa_zdarzenia", "stopien", "prawdopodobienstwo", "obowiazuje_od", "obowiazuje_do", "tresc", "biuro", "teryt"]
+        },
+        {
+          "name": "warningshydro",
+          "url": "https://danepubliczne.imgw.pl/api/data/warningshydro",
+          "purpose": "Aktywne ostrzeżenia hydrologiczne (susza hydrologiczna, gwałtowne wezbrania, przekroczenia stanów)",
+          "key_fields": ["zdarzenie", "stopień", "data_od", "data_do", "wojewodztwo", "kod_zlewni", "obszary"]
+        },
+        {
+          "name": "meteo",
+          "url": "https://danepubliczne.imgw.pl/api/data/meteo",
+          "purpose": "Gęsta automatyczna sieć pomiarowa z opadem 10-minutowym i temperaturą gruntu (idealne pod real-time alerty)",
+          "key_fields": ["id_stacji", "stacja", "data_pomiaru", "godzina_pomiaru", "temperatura_powietrza", "temperatura_gruntu", "wiatr_srednia_predkosc", "opad_10min"]
+        },
+        {
+          "name": "synop",
+          "url": "https://danepubliczne.imgw.pl/api/data/synop",
+          "purpose": "Pomiary synoptyczne (opad dobowy, wilgotność względna, ciśnienie, wiatr); można filtrować po /id/{id_stacji}",
+          "key_fields": ["id_stacji", "stacja", "data_pomiaru", "godzina_pomiaru", "temperatura", "predkosc_wiatru", "kierunek_wiatru", "wilgotnosc_wzgledna", "suma_opadu", "cisnienie"]
+        },
+        {
+          "name": "hydro",
+          "url": "https://danepubliczne.imgw.pl/api/data/hydro",
+          "purpose": "Bieżące stany wód i przepływy na wodowskazach (wykrywanie niskich stanów / fali wezbraniowej w zlewni)",
+          "key_fields": ["id_stacji", "stacja", "rzeka", "wojewodztwo", "stan_wody", "stan_ostrzegawczy", "stan_alarmowy", "temperatura_wody", "przeplyw"]
+        }
+      ],
+      "station_dictionaries": "Słowniki stacji ze współrzędnymi lat/lon są udostępniane w zasobach plikowych IMGW (dane.imgw.pl)."
+    },
+    {
+      "id": "gugik_uldk_api",
+      "provider": "GUGiK (Główny Urząd Geodezji i Kartografii) — ULDK",
+      "base_url": "https://uldk.gugik.gov.pl/",
+      "auth_required": false,
+      "endpoints": [
+        {
+          "name": "GetParcelByXY",
+          "url_template": "https://uldk.gugik.gov.pl/?request=GetParcelByXY&xy={X},{Y}&result=geom_wkt,voivodeship,county,commune,region,parcel,teryt&srid=4326",
+          "purpose": "Identyfikacja dokładnej działki ewidencyjnej (i jej poligonu + kodu TERYT gminy) po kliknięciu na mapie lub pobraniu GPS z telefonu w PWA",
+          "notes": "Domyślnie bez srid zwraca układ PUWG 1992 (EPSG:2180) i geometrię WKB; wspiera też m.in. GetParcelByIdOrNr, SnapToPoint, GetCommuneById."
+        },
+        {
+          "name": "GetParcelById",
+          "url_template": "https://uldk.gugik.gov.pl/?request=GetParcelById&id={TERYT_PARCEL_ID}&result=geom_wkt,voivodeship,county,commune,region,parcel",
+          "purpose": "Wyszukanie działki po numerze ewidencyjnym (np. 141201_1.0001.1867/2) znanym rolnikowi lub dzierżawcy KOWR"
+        }
+      ]
+    },
+    {
+      "id": "gugik_nmt_api",
+      "provider": "GUGiK — Numeryczny Model Terenu (ALS 1m x 1m)",
+      "base_url": "https://services.gugik.gov.pl/nmt/",
+      "auth_required": false,
+      "endpoints": [
+        {
+          "name": "GetHbyXY",
+          "url_template": "https://services.gugik.gov.pl/nmt/?request=GetHbyXY&x={X_2180}&y={Y_2180}",
+          "purpose": "Pobranie rzędnej wysokości Z (m n.p.m.) dla punktu w układzie PUWG 1992 (EPSG:2180). Pozwala wyznaczyć spadek terenu na działce, kierunek spływu wody i najniższy punkt na mikro-retencję/zastawkę."
+        },
+        {
+          "name": "WKT Polygon / Batch",
+          "url_template": "https://services.gugik.gov.pl/nmt/",
+          "purpose": "Serwis wspiera też masowy odczyt wysokości dla listy punktów oraz analizę poligonu WKT (min/max wysokość obszaru i powierzchnia)."
+        }
+      ]
+    },
+    {
+      "id": "open_meteo_agro_api",
+      "provider": "Open-Meteo Weather Forecast API",
+      "base_url": "https://api.open-meteo.com/v1/forecast",
+      "auth_required": false,
+      "cors_supported": true,
+      "endpoints": [
+        {
+          "name": "Soil, Evapotranspiration & Crop Stress Forecast",
+          "url_template": "https://api.open-meteo.com/v1/forecast?latitude={LAT}&longitude={LON}&hourly=precipitation,precipitation_probability,et0_fao_evapotranspiration,vapour_pressure_deficit,soil_moisture_0_to_1cm,soil_moisture_1_to_3cm,soil_moisture_3_to_9cm,wind_speed_10m,soil_temperature_0cm&timezone=Europe/Warsaw",
+          "purpose": "Prognoza wilgotności gleby na kilku głębokościach (m3/m3), parowania referencyjnego FAO-56 ET0 (mm/h = l/m2), niedosytu wilgotności powietrza VPD (kPa) i opadów dla dokładnych współrzędnych pola",
+          "thresholds": {
+            "VPD_high_stress_kPa": "> 1.6 kPa (silna transpiracja i stres wodny roślin)",
+            "VPD_low_transpiration_kPa": "< 0.4 kPa",
+            "ET0_conversion": "1 mm/h = 1 litr na m2 na godzinę = 10 m3 wody na 1 hektar na godzinę"
+          }
+        }
+      ]
+    },
+    {
+      "id": "geoportal_wms_layers",
+      "provider": "GUGiK Geoportal Krajowy (usługi WMS/WMTS pod Leaflet / MapLibre)",
+      "auth_required": false,
+      "layers": [
+        {
+          "name": "Ortofotomapa standardowa (WMS)",
+          "url": "https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution"
+        },
+        {
+          "name": "Mapa Hydrograficzna Polski (WMS)",
+          "url": "http://mapy.geoportal.gov.pl/wss/service/img/guest/HYDRO/MapServer/WMSServer"
+        },
+        {
+          "name": "Mapa Glebowo-Rolnicza (WMS)",
+          "url": "https://mapy.geoportal.gov.pl/wss/service/pub/guest/MapaGlebowoRolnicza/MapServer/WMSServer"
+        }
+      ],
+      "note": "W module Rolnictwo Geoportalu zintegrowana jest również warstwa IUNG 'Podatność gleb na susze'."
+    },
+    {
+      "id": "iung_pib_smsr_methodology",
+      "provider": "IUNG-PIB System Monitoringu Suszy Rolniczej (susza.iung.pulawy.pl)",
+      "auth_required": "Brak publicznego REST JSON bez kontaktu (susza@iung.pulawy.pl), ale w pełni jawna metodologia do odtworzenia lokalnego i integracji po gminach (~2477 gmin) i WMS",
+      "kbw_formula": "KBW (Klimatyczny Bilans Wodny) = Opad atmosferyczny (mm) - Ewapotranspiracja potencjalna ET0 (mm)",
+      "soil_vulnerability_categories_wod_1_5m": [
+        {"category": "I", "label": "Bardzo podatna na suszę", "wod_mm": "< 127.5", "examples": "piaski luźne (pl), piaski słabo gliniaste (ps)"},
+        {"category": "II", "label": "Podatna na suszę", "wod_mm": "127.5 - 169.9", "examples": "piaski gliniaste lekkie i mocne (pgl, pgm)"},
+        {"category": "III", "label": "Średnio podatna na suszę", "wod_mm": "170.0 - 202.5", "examples": "gliny lekkie (gl), pyły zwykłe (płz)"},
+        {"category": "IV", "label": "Mało podatna na suszę", "wod_mm": "> 202.5", "examples": "gliny średnie i ciężkie (gs, gc), iły (i)"}
+      ]
+    }
+  ],
+  "domain_formulas_for_deterministic_engine": {
+    "parcel_water_volume_m3": "Powierzchnia_ha * 10 * Bilans_mm (ponieważ 1 mm opadu lub parowania = 10 m3 wody na 1 ha)",
+    "local_kbw_forecast_48h_mm": "Suma(precipitation_48h) - Suma(et0_fao_evapotranspiration_48h * crop_kc_coefficient)",
+    "runoff_retention_opportunity": "Jeśli prognoza opadu >= 15 mm w 24h ORAZ nachylenie działki z NMT >= 2% -> wysoki potencjał spływu powierzchniowego (alert: 'Zamknij zastawkę / zabezpiecz spływ z pola — inaczej stracisz X m3 darmowej wody')",
+    "evaporation_loss_alert": "Jeśli VPD > 1.6 kPa i wiatr > 4 m/s -> krytyczne okno wysokiego parowania (odradzaj opryski i bezcelowe nawadnianie w południe, wskaż dokładne godziny nocne/poranne)",
+    "frost_and_thermal_alert": "Jeśli temperatura_gruntu (IMGW meteo) lub soil_temperature_0cm <= 2 C -> alert ochrony wschodów/kwiatostanów"
+  },
+  "pwa_realtime_solution_concepts": [
+    {
+      "id": "concept_1_wodostraznik_pola",
+      "name": "WodoStrażnik Pola — Osobisty Dyspozytor Wodny Działki (PWA + Web Push)",
+      "core_pitch": "Rolnik raz wskazuje swoją działkę na mapie lub wpisuje numer ULDK/GPS. PWA działa w tle i wysyła natychmiastowe, konkretne powiadomienia Push przełożone na m3 wody na jego polu ('Jutro między 14:00 a 19:00 spadnie 22 mm deszczu = 1100 m3 wody na Twojej działce 5 ha. Zamknij zastawkę na rowie R-2 przed 13:00').",
+      "why_1_2_person_pwa_friendly": "Zero potrzeby budowy własnej bazy działek czy modeli ML: cały backend to lekki worker odpytujący IMGW + Open-Meteo + ULDK/NMT i wysyłający Web Push przez VAPID + widok offline w Service Workerze.",
+      "demo_wow_for_jury": "Na scenie klikasz prawdziwą działkę pod Bydgoszczą -> wylicza powierzchnię, kategorię gleby, rzędne terenu (NMT) -> przycisk 'Symuluj nadchodzącą ulewę / falę suszy' natychmiast wywołuje prawdziwe powiadomienie Push na telefonie i aktualizuje bilans m3 w czasie rzeczywistym."
+    },
+    {
+      "id": "concept_2_spolka_wodna_live",
+      "name": "Waze dla Wody Rolniczej — Sąsiedzka Koordynacja Zastawek i Alertów w Mikrozlewni",
+      "core_pitch": "W Polsce pojedynczy rolnik często nie może podpiąć wody w rowie, dopóki nie dogada się z sąsiadami w górze i dole zlewni (Lokalne Partnerstwa Wodne). PWA łączy automatyczne alerty IMGW/hydro z prostym raportowaniem jednym tapnięciem z pola ('Zastawka zamknięta', 'Rów drożny', 'Podtopienie na odcinku', 'Brak wody w cieku').",
+      "why_1_2_person_pwa_friendly": "Idealne dla miłośnika systemów real-time (WebSockets / Supabase Realtime / SSE + Web Push geofencing dla sąsiadów w tej samej zlewni).",
+      "demo_wow_for_jury": "Dwa ekrany obok siebie (Rolnik A w górze rowu + Rolnik B poniżej / Spółka Wodna): zmiana stanu zastawki albo zgłoszenie wezbrania na ekranie A w ułamku sekundy aktualizuje mapę zlewni i wysyła powiadomienie do sąsiada B."
+    },
+    {
+      "id": "concept_3_okno_polowe_24h",
+      "name": "Okno Polowe 24h — Semafor Czasu Rzeczywistego chroniący Wodę i Plon",
+      "core_pitch": "Aplikacja ciągłego doradztwa operacyjnego na najbliższe 72 godziny, która zamiast wykresów pogodowych daje prostą oś 'Zielone / Żółte / Czerwone światło' dla 4 decyzji: (1) Piątrzenie na zastawce, (2) Zastosowanie zabiegu zatrzymującego parowanie / agrotechniki, (3) Optymalna godzina nawadniania bez strat VPD, (4) Bezpieczne okno na oprysk (wiatr + wilgotność + brak spłukania przez ulewę).",
+      "why_1_2_person_pwa_friendly": "Wszystkie zmienne godzinowe przychodzą z jednego wywołania Open-Meteo + IMGW; cała wartość leży w czystym deterministycznym silniku progowym i czytelnym mobile UX w trybie offline w traktorze.",
+      "demo_wow_for_jury": "Bardzo zrozumiałe dla każdego jurora i rolnika: wyraźna oszczędność wody, paliwa i środków ochrony roślin pokazana na osi godzinowej."
+    },
+    {
+      "id": "concept_4_suszaradar_ekoschematy",
+      "name": "SuszaRadar & Retencja+ — Bilans KBW Live + Kalkulator Dopłat za Zatrzymanie Wody",
+      "core_pitch": "Łączy real-time monitoring lokalnego KBW i wilgotności gleby (Open-Meteo + IMGW + progi IUNG dla danej gminy/gleby) z konkretnym bodźcem finansowym: oblicza, ile plonu (i pieniędzy) rolnik traci przez odpływ z danej działki z NMT oraz jakie Ekoschematy ARiMR i dotacje WPR (retencjonowanie wody, poplony, rolnictwo węglowe) może uruchomić od razu.",
+      "why_1_2_person_pwa_friendly": "Statyczna baza reguł Ekoschematów + żywe dane KBW/ULDK + generator gotowej karty rekomendacji PDF dla działki.",
+      "demo_wow_for_jury": "Przemawia bezpośrednio do administracji (KOWR/MRiRW): łączy ekologię i retencję z twardą kalkulacją ekonomiczną dla gospodarstwa i polityką WPR (2,8 mld zł)."
+    },
+    {
+      "id": "concept_5_kowr_klimat_audytor",
+      "name": "KOWR Zasób Live — System Wczesnego Ostrzegania dla Dzierżawców i Zarządców Gruntów Skarbu Państwa",
+      "core_pitch": "Rozwiązanie dwuwidokowe uszyte wprost pod instytucję KOWR: (A) Lekka aplikacja PWA dla dzierżawcy z alertami real-time (susza, spływ powierzchniowy, przymrozek gruntu, stan wód IMGW) oraz prostym raportowaniem retencji w polu, (B) Dashboard KOWR monitorujący indeks ryzyka suszy/odpływu w czasie rzeczywistym dla portfela działek Zasobu WRSP z rekomendacją inwestycji retencyjnych w umowach dzierżawy.",
+      "why_1_2_person_pwa_friendly": "Ten sam backend zasila zarówno mobilną kartę działki dla rolnika (PWA), jak i mapę agregującą kilka zaznaczonych działek dla urzędnika KOWR.",
+      "demo_wow_for_jury": "Uderza bezpośrednio w DNA KOWR — zamawiający widzi narzędzie nie tylko dla anonimowego rolnika, ale też do ochrony wartości i produktywności gruntów Skarbu Państwa w dzierżawie."
+    }
+  ],
+  "existing_systems_and_competitive_gap": {
+    "warning_for_hacknation_team": "KOWR oraz polska administracja rolna posiadają już rozbudowane systemy satelitarne i portale ex-post. Na prezentacji należy wyraźnie odciąć się od prostego duplikowania S2MUR (przeglądarka NDVI) lub eDWIN (ochrona ŚOR) i pozycjonować PWA jako brakującą warstwę operacyjną real-time 'ostatniej mili'.",
+    "systems": [
+      {
+        "id": "s2mur_kowr",
+        "name": "S2MUR (System Satelitarnego Monitorowania Upraw Rolnych — KOWR + IGiK)",
+        "what_it_does": "Strategiczny system IT finansowany m.in. przez KOWR (Plan Finansowy Zasobu WRSP) do całorocznego monitorowania upraw w kraju na bazie danych satelitarnych, meteorologicznych i glebowych (identyfikacja suszy, wymoknięć, wymarznięć).",
+        "limitations_and_gaps": "System makro-analityczny i monitoringowy z perspektywy agencji/państwa; nie jest lekkim narzędziem PWA dla rolnika z alertami wyprzedzającymi 24-72h ani koordynacją sąsiedzkich zastawek na rowie.",
+        "how_to_position_against_it": "NIE buduj kolejnej przeglądarki zdjęć satelitarnych NDVI. Pokaż na slajdzie architektury, że Twoje PWA jest warstwą decyzyjną ostatniej mili, która docelowo może konsumować wskaźniki S2MUR / DISS."
+      },
+      {
+        "id": "edwin_platform",
+        "name": "eDWIN (Internetowa Platforma Doradztwa i Wspomagania Decyzji w Integrowanej Ochronie Roślin)",
+        "what_it_does": "Ogólnopolski bezpłatny system (WODR Poznań + 19 partnerów): 'Wirtualne gospodarstwo' (karta pola, ewidencja ŚOR, import z ARiMR), sieć kilkuset stacji meteo, ostrzeżenia o agrofagach i okna opryskowe (Android/iOS/WWW).",
+        "limitations_and_gaps": "Skupiony na ochronie chemicznej przed chorobami/szkodnikami; wymaga ręcznego wprowadzania faz rozwojowych roślin oraz stałego dostępu do internetu (brak trybu offline w polu); trudniejszy interfejs dla mniej zaawansowanych rolników; brak kalkulatora retencji w m3, analizy spływu po rzeźbie NMT i koordynacji zastawek.",
+        "how_to_position_against_it": "Zaczerpnij inspirację z prostoty 'okien zabiegowych', ale rozwiąż główną bolączkę eDWIN: tryb offline-first (PWA Service Worker), zero ręcznego wklepywania kart pola na start (1 klik na mapie w ULDK) oraz focus w 100% na zatrzymanie wody."
+      },
+      {
+        "id": "smsr_iung_and_szkoda_rolnicza",
+        "name": "SMSR IUNG-PIB (susza.iung.pulawy.pl) + aplikacja 'Zgłoś szkodę rolniczą' (MRiRW)",
+        "what_it_does": "Oficjalny 60-dniowy, dekadowy i dwumiesięczny monitoring KBW dla ok. 2477 gmin i 4 kategorii podatności gleb pod wycenę strat i pomoc suszową po wystąpieniu klęski.",
+        "limitations_and_gaps": "Działa wyłącznie EX-POST (po fakcie, na poziomie statystyk gminnych) do wypłaty odszkodowań; nie podpowiada rolnikowi z wyprzedzeniem 24-72h, jak zapobiec ucieczce wody przed zbliżającą się ulewą lub falą VPD.",
+        "how_to_position_against_it": "Pozycjonuj swój system jako 'prewencję przed suszą zanim wejdziesz do aplikacji Zgłoś szkodę rolniczą' — z rozdzielczością do konkretnej działki (ULDK + NMT) zamiast średniej dla całej gminy."
+      },
+      {
+        "id": "agrometeo_imgw_and_hydroportal_isok",
+        "name": "Agrometeo IMGW (agrometeo.imgw.pl) + Hydroportal ISOK / 'Stop Suszy!' (Wody Polskie)",
+        "what_it_does": "Publiczne portale mapowe i prognozy agrometeorologiczne IMGW oraz mapy zagrożenia powodziowego i Plan Przeciwdziałania Skutkom Suszy (PPSS / hasło 'Stop Suszy! Start Retencji!') Wód Polskich.",
+        "limitations_and_gaps": "Pasywne portale informacyjne ('trzeba samemu wejść i szukać w tabelach/warstwach GIS'); brak powiadomień Web Push dla wybranej działki i brak przeliczenia mm na konkretne m3 wody w polu.",
+        "how_to_position_against_it": "Wykorzystaj otwarte API IMGW jako paliwo pod aktywny mechanizm Push + odwołaj się bezpośrednio do polityki 'Stop Suszy! Start Retencji!' (melioracje odwrócone i Lokalne Partnerstwa Wodne)."
+      },
+      {
+        "id": "satagro_onesoil",
+        "name": "SatAgro / OneSoil (komercyjne platformy rolnictwa precyzyjnego SaaS)",
+        "what_it_does": "Monitoring satelitarny kondycji roślin i stresu wodnego połączony z mapami zmiennego dawkowania nawozów (VRA) i wysiewu dla dużych gospodarstw.",
+        "limitations_and_gaps": "Płatne subskrypcje komercyjne i wysoki próg wejścia dla mniejszych/średnich gospodarstw; fokus na nawożeniu/VRA, brak bezpłatnej koordynacji sąsiedzkiej zastawek i kalkulacji Ekoschematów retencyjnych.",
+        "how_to_position_against_it": "Darmowe narzędzie dostępne bez barier dla każdego rolnika i dzierżawcy w Polsce w 10 sekund z przeglądarki."
+      },
+      {
+        "id": "iot_smart_retention_rd",
+        "name": "Metos (Pessl) oraz projekty B+R NCBiR 'Inteligentnej małej retencji' (IoT)",
+        "what_it_does": "Stacje pogodowe/glebowe na polu oraz zdalnie sterowane zastawki i przepusty IoT (GSM/LTE + czujniki poziomu wody + AI).",
+        "limitations_and_gaps": "Koszt sprzętu i instalacji na pojedynczym polu to tysiące złotych — bariera nie do pokonania w skali setek tysięcy małych działek i spółek wodnych.",
+        "how_to_position_against_it": "PWA działa od pierwszego dnia jako 'wirtualny czujnik działki' zasilany danymi Open-Meteo + IMGW + NMT za 0 zł, z otwartą ścieżką do podpięcia fizycznych czujników IoT w przyszłości."
+      },
+      {
+        "id": "waterfolder_panda",
+        "name": "WaterFolder / kalkulatory retencji miejskiej (oparte na atlasie opadów PANDa)",
+        "what_it_does": "Narzędzia inżynierskie dla projektantów budowlanych i wodociągów do wymiarowania zbiorników retencyjnych i kanalizacji deszczowej.",
+        "limitations_and_gaps": "Przeznaczone dla betonu miejskiego i inżynierów sanitarnych, nie dla rolnika i gleby rolniczej.",
+        "how_to_position_against_it": "Zaczerpnij inspirację UX z prostoty przeliczania opadu na m3 retencji i przenieś ten koncept na działkę rolną i rów melioracyjny."
+      }
+    ],
+    "key_design_takeaways": [
+      "1. Przeliczanie na m3 i rów (inspiracja WaterFolder + Stop Suszy!): pokaż konkretną objętość wody i spadek z NMT zamiast wykresów dla naukowców.",
+      "2. Prosty semafor okien operacyjnych (inspiracja eDWIN), ale offline-first PWA bez ręcznego zakładania skomplikowanego wirtualnego gospodarstwa.",
+      "3. Komplementarność z S2MUR KOWR: nie konkuruj w podglądzie NDVI — dostarczaj warstwę alertów real-time na telefon i koordynację zastawek w zlewni.",
+      "4. Wirtualny czujnik za 0 zł (alternatywa dla drogiego IoT): działa natychmiast dla każdej działki ewidencyjnej w Polsce bez kupowania sprzętu."
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+import{r as e,t}from"./jsx-runtime-BkSabwWG.js";import{t as n}from"./react-DHmoMYoq.js";var r=e(n(),1),i=t(),a=()=>!0,o=()=>!1;function s({children:e,fallback:t=null}){return(0,i.jsx)(r.Fragment,{children:c()?e:t})}function c(e=!0){return r.useSyncExternalStore(l,a,e?o:a)}function l(){return()=>{}}export{c as n,s as t};
