@@ -342,3 +342,48 @@ select { width: 100%; min-height: 41px; padding: 7px 10px; border: 1px solid var
   .farm-row > span { font-size: .8rem; }
   .map-tools .button, .terrain-tools .button, .area-actions .button { min-height: 42px; }
 }
+
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
+.sat-curtain-line {
+  position: absolute;
+  z-index: 650;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #15382e80, 0 0 10px #00000044;
+  pointer-events: none;
+}
+.sat-curtain-line::after {
+  content: "⇄";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #15382e;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 700;
+}
+.sat-card { margin-top: 20px; }
+.sat-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.sat-primary { background: #17694f; color: #fff; border-color: #17694f; }
+.sat-primary:hover:not(:disabled) { background: #135640; border-color: #135640; color: #fff; }
+.sat-select-wrap, .sat-curtain-wrap { display: inline-flex; align-items: center; gap: 8px; font-size: .83rem; font-weight: 600; color: var(--muted); }
+.sat-select-wrap select { width: auto; min-height: 38px; }
+.sat-curtain-wrap input[type="range"] { width: 120px; accent-color: #17694f; }
+.sat-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: .83rem; font-weight: 600; cursor: pointer; }
+.sat-hover-readout { margin-top: 8px; padding: 7px 11px; border-radius: 9px; background: var(--soft); border: 1px solid var(--line); font-size: .82rem; font-variant-numeric: tabular-nums; color: var(--ink); }
+.sat-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: .76rem; color: var(--muted); }
+.sat-kpis { margin-top: 12px; }
+.sat-ranking-wrap { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.sat-ranking { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.sat-rank-item { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 7px 10px; border-radius: 10px; background: var(--soft); border: 1px solid var(--line); }
+.sat-legend { display: block; margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: var(--soft); border: 1px solid var(--line); }
+.sat-legend-hint { font-size: .8rem; color: var(--ink); font-weight: 500; margin-bottom: 7px; }
+.sat-legend-items { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .77rem; color: var(--muted); }

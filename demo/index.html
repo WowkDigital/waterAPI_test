@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f4f6f2" />
+  <meta name="theme-color" content="#15382e" />
   <meta name="description" content="Sprawdź prognozę bilansu wody, rzeźbę terenu i alerty pogodowe dla swojej działki." />
   <title>WodoStrażnik Pola | Bilans wody i mapa działki</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -18,11 +20,15 @@
     <div class="shell topbar-inner">
       <a class="brand" href="#panel"><span class="brand-mark" aria-hidden="true"><span class="drop"></span></span> WodoStrażnik<span class="brand-secondary"> Pola</span></a>
       <nav class="top-nav" aria-label="Nawigacja po panelu">
+        <a href="#satelita">Satelita</a>
         <a href="#moje-pola">Moje pola</a>
         <a href="#bilans">Bilans wody</a>
         <a href="#alerty">Alerty</a>
       </nav>
-      <button id="btn-notify" class="button button-quiet" type="button"><span class="bell" aria-hidden="true"></span> Powiadomienia</button>
+      <div class="topbar-actions">
+        <button id="btn-install" class="button button-quiet" type="button" hidden>Zainstaluj PWA</button>
+        <button id="btn-notify" class="button button-quiet" type="button"><span class="bell" aria-hidden="true"></span> Powiadomienia</button>
+      </div>
     </div>
   </header>
 
@@ -57,6 +63,7 @@
         <p id="draw-guide" class="section-note map-guide" role="status" hidden></p>
         <div class="map-frame">
           <div id="map" aria-label="Interaktywna mapa działek"></div>
+          <div id="sat-curtain-line" class="sat-curtain-line" aria-hidden="true" hidden></div>
           <p id="map-feedback" class="map-feedback" hidden></p>
         </div>
         <div class="map-meta">
@@ -126,6 +133,49 @@
         </div>
       </section>
     </div>
+
+    <section id="satelita" class="card data-card sat-card" aria-labelledby="sat-title">
+      <div class="card-head">
+        <div>
+          <h2 id="sat-title">Rentgen satelitarny · Stres cieplny pól (Sentinel-2 + Landsat)</h2>
+          <p>Strumieniowanie wycinków COG przez STAC (bez backendu). Wskazuje pola, na których roślinom jest zbyt ciepło.</p>
+        </div>
+        <span id="sat-badge" class="badge info" role="status">Gotowy do pobrania</span>
+      </div>
+      <div class="sat-controls">
+        <button id="sat-fetch" class="button sat-primary" type="button">Pobierz scenę z satelity dla widoku</button>
+        <label class="sat-select-wrap" for="sat-layer-mode">
+          <span>Warstwa</span>
+          <select id="sat-layer-mode">
+            <option value="stress" selected>Stres cieplny roślin (°C + NDMI)</option>
+            <option value="ndmi">Wilgotność liści (Sentinel-2 NDMI)</option>
+            <option value="ndvi">Kondycja roślin (Sentinel-2 NDVI)</option>
+            <option value="">Ukryj nakładkę</option>
+          </select>
+        </label>
+        <label class="sat-curtain-wrap" for="sat-curtain">
+          <span>Kurtyna Rentgena <strong id="sat-curtain-val">100%</strong></span>
+          <input id="sat-curtain" type="range" min="0" max="100" value="100" />
+        </label>
+        <label class="sat-toggle">
+          <input id="sat-heatwave" type="checkbox" />
+          <span>Symulacja fali upałów (+14 °C)</span>
+        </label>
+      </div>
+      <p id="sat-status" class="section-note" role="status">Przybliż mapę na pola (zoom ≥ 12) i kliknij „Pobierz scenę z satelity”, aby wczytać dane Sentinel-2 L2A oraz Landsat Thermal ST_B10.</p>
+      <p id="sat-hover-readout" class="sat-hover-readout">Odczyt spod kursora pojawi się po załadowaniu wycinka satelitarnego.</p>
+      <div id="sat-legend" class="sat-legend" aria-label="Legenda warstwy satelitarnej"></div>
+      <div class="kpi-grid sat-kpis">
+        <div class="kpi featured"><div class="label">Temperatura powierzchni (LST)</div><div class="val" id="sat-lst">—</div><div class="sub" id="sat-lst-sub">Landsat 8/9 ST_B10</div></div>
+        <div class="kpi"><div class="label">Wilgotność liści (NDMI)</div><div class="val" id="sat-ndmi">—</div><div class="sub" id="sat-ndmi-sub">Sentinel-2 (B08-B11)</div></div>
+        <div class="kpi"><div class="label">Kondycja roślin (NDVI)</div><div class="val" id="sat-ndvi">—</div><div class="sub" id="sat-ndvi-sub">Sentinel-2 (B08-B04)</div></div>
+        <div class="kpi"><div class="label">Przegrzany obszar</div><div class="val" id="sat-hotshare">—</div><div class="sub" id="sat-hotshare-sub">Ocena dla działki lub widoku</div></div>
+      </div>
+      <div class="sat-ranking-wrap">
+        <h3>Najcieplejsze pola w widoku (Moje pola)</h3>
+        <ul id="sat-ranking" class="sat-ranking"></ul>
+      </div>
+    </section>
 
     <section id="moje-pola" class="card data-card farm-card" aria-labelledby="farm-title">
       <div class="card-head">
@@ -209,6 +259,7 @@
           <button type="button" class="tab-btn" data-tab="nmt" aria-pressed="false">NMT</button>
           <button type="button" class="tab-btn" data-tab="openmeteo" aria-pressed="false">Open-Meteo</button>
           <button type="button" class="tab-btn" data-tab="imgw" aria-pressed="false">IMGW</button>
+          <button type="button" class="tab-btn" data-tab="sentinel" aria-pressed="false">Sentinel / Landsat</button>
         </div>
         <pre id="raw-output" class="raw-output" tabindex="0" aria-label="Odpowiedź wybranego API">Oczekiwanie na dane.</pre>
       </div>
@@ -216,7 +267,7 @@
   </main>
 
   <footer class="shell footer">
-    <span>WodoStrażnik Pola</span><span>Źródła danych · GUGiK, Open-Meteo i IMGW-PIB</span>
+    <span>WodoStrażnik Pola</span><span>Źródła danych · GUGiK, Open-Meteo, IMGW-PIB, Sentinel-2 i Landsat STAC</span>
   </footer>
 
   <div id="toast" class="toast" role="status"></div>
@@ -226,5 +277,6 @@
   <script defer src="app.js"></script>
   <script defer src="fields.js"></script>
   <script defer src="terrain.js"></script>
+  <script defer src="satellite.js"></script>
 </body>
 </html>

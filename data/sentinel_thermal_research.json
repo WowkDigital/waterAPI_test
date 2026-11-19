@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "verified_at": "2026-11-18T23:56:00+01:00",
+  "topic": "Sentinel-2 + Landsat Thermal STAC COG Streaming & Crop Heat Stress Detection for React PWA",
+  "stac_endpoints": [
+    {
+      "id": "element84_earth_search",
+      "name": "Element84 Earth Search v1",
+      "url": "https://earth-search.aws.element84.com/v1",
+      "search_url": "https://earth-search.aws.element84.com/v1/search",
+      "auth_required": false,
+      "cors_allowed": true,
+      "http_range_requests": true,
+      "collections": {
+        "sentinel-2-l2a": {
+          "purpose": "10m/20m multispectral surface reflectance COGs on public AWS S3 (sentinel-cogs)",
+          "assets": {
+            "red": { "band": "B04", "gsd_m": 10, "scale": 0.0001, "offset": -0.1, "nodata": 0 },
+            "nir": { "band": "B08", "gsd_m": 10, "scale": 0.0001, "offset": -0.1, "nodata": 0 },
+            "swir16": { "band": "B11", "gsd_m": 20, "scale": 0.0001, "offset": -0.1, "nodata": 0 },
+            "scl": { "band": "SCL", "gsd_m": 20, "cloud_classes_to_mask": [3, 8, 9, 10] },
+            "visual": { "band": "TCI", "gsd_m": 10 }
+          },
+          "crs_in_poland": ["EPSG:32633", "EPSG:32634"]
+        }
+      }
+    },
+    {
+      "id": "microsoft_planetary_computer",
+      "name": "Microsoft Planetary Computer STAC v1",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "search_url": "https://planetarycomputer.microsoft.com/api/stac/v1/search",
+      "sas_token_endpoint": "https://planetarycomputer.microsoft.com/api/sas/v1/token/landsateuwest/landsat-c2",
+      "auth_required": false,
+      "cors_allowed": true,
+      "http_range_requests": true,
+      "collections": {
+        "landsat-c2-l2": {
+          "purpose": "Actual Land Surface Temperature (LST) thermal infrared COGs (100m native resampled to 30m)",
+          "assets": {
+            "lwir11": {
+              "band": "ST_B10",
+              "gsd_m": 30,
+              "unit": "kelvin",
+              "scale": 0.00341802,
+              "offset": 149.0,
+              "nodata": 0,
+              "celsius_formula": "(DN * 0.00341802 + 149.0) - 273.15"
+            },
+            "qa_pixel": {
+              "band": "QA_PIXEL",
+              "cloud_mask_bits": { "cloud": 3, "cloud_shadow": 4 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "copernicus_cdse_stac",
+      "name": "Copernicus Data Space Ecosystem (CDSE) STAC v1",
+      "url": "https://stac.dataspace.copernicus.eu/v1",
+      "search_url": "https://stac.dataspace.copernicus.eu/v1/search",
+      "auth_required_for_rasters": true,
+      "notes": "Public catalog search & thumbnails; full JP2/SAFE band assets require OIDC/S3 CDSE credentials. Use Element84 Earth Search for zero-auth browser COG streaming, and CDSE for official ESA/KOWR S2MUR alignment."
+    }
+  ],
+  "spectral_and_thermal_formulas": {
+    "reflectance_esa_baseline_04": "R = DN * 0.0001 - 0.1 (skip where DN == 0)",
+    "ndvi": "(NIR - RED) / (NIR + RED)",
+    "ndmi_foliar_moisture": "(NIR - SWIR1) / (NIR + SWIR1) — drops rapidly when plants experience water/heat stress",
+    "lst_celsius_landsat": "(ST_B10 * 0.00341802 + 149.0) - 273.15",
+    "crop_heat_stress_index_0_100": {
+      "description": "Composite stress index identifying fields where crops are overheating (too hot / transpiring poorly)",
+      "components": [
+        "Thermal excess from Landsat LST (or Open-Meteo soil_temperature_0cm fallback)",
+        "Foliar moisture deficit from Sentinel-2 NDMI (low NDMI on vegetated NDVI > 0.25 pixels)",
+        "Atmospheric evaporative demand from Open-Meteo VPD (> 1.6 kPa)"
+      ],
+      "thresholds_celsius": {
+        "cool_optimal": "< 22 C",
+        "mild_heat_stress": "22 - 28 C",
+        "high_heat_stress": "28 - 33 C",
+        "critical_overheating": "> 33 C"
+      }
+    }
+  }
+}

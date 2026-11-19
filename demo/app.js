@@ -392,6 +392,7 @@ function renderTerrain() {
   $("kpi-elev").textContent = terrain ? format(terrain.lowest.data, 1) + "–" + format(terrain.highest.data, 1) + " m" : "—";
   $("kpi-slope").textContent = terrain ? "Spadek " + format(terrain.slope, 1) + "%" : (logs.nmt ? "Brak danych NMT" : "—");
   $("kpi-dir").textContent = terrain?.direction ?? "—";
+  window.refreshSatelliteMetrics?.();
 }
 
 function appendText(parent, tag, text) {
@@ -621,3 +622,25 @@ if (window.proj4) {
 }
 initMap();
 analyzeLocation(PRESETS.sicienko.lat, PRESETS.sicienko.lon, "sicienko");
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+
+let deferredInstallPrompt;
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  const installBtn = $("btn-install");
+  if (installBtn) installBtn.hidden = false;
+});
+
+$("btn-install")?.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  $("btn-install").hidden = true;
+});

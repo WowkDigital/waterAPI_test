@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Instrument Sans", "DM Sans", system-ui, sans-serif;
+}
+
+.leaflet-container {
+  font-family: inherit;
+}

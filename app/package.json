@@ -1,0 +1,32 @@
+{
+  "name": "hydrozgoda-wodostraznik-pwa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 4174"
+  },
+  "dependencies": {
+    "geotiff": "^2.1.3",
+    "jspdf": "^2.5.2",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.468.0",
+    "proj4": "^2.15.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/leaflet": "^1.9.16",
+    "@types/proj4": "^2.5.6",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vite-plugin-pwa": "^0.21.1"
+  }
+}

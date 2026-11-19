@@ -1,0 +1,20 @@
+{
+  "name": "WodoStrażnik Pola · HydroZgoda",
+  "short_name": "WodoStrażnik",
+  "description": "PWA do monitoringu bilansu wody, rzeźby terenu NMT oraz satelitarnego stresu cieplnego pól (Sentinel-2 + Landsat).",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4f6f2",
+  "theme_color": "#15382e",
+  "lang": "pl",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
